@@ -1,0 +1,51 @@
+@external *;
+
+/**** Sintax Highlighter ****/
+pre, code{
+    box-shadow:none !important;
+    color:#1A1A1A !important;
+}
+pre code *, pre code span
+{
+    font-family:Consolas, Lucida Console, monospace !important;
+    font-size: 13px !important;
+    font-weight:normal;
+}
+.token.keyword
+{
+    color:#AA006D !important;
+    font-weight:bold;
+}
+.token.string
+{
+    color:#0040B1 !important;
+}
+.token a
+{
+    text-decoration:none;
+}
+
+.choosenColor
+{
+	margin-bottom:10px;
+}
+
+.hide
+{
+	display:none;
+}
+
+/**** Layout ****/
+
+.textDescTitle
+{
+    color: #000000;
+    font-size: 20px;
+    padding: 10px 0 20px;
+    
+}
+
+.center, .buttonsPanel
+{
+	text-align:center;
+}
