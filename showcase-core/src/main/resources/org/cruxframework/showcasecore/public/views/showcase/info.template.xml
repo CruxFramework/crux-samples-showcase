@@ -1,0 +1,20 @@
+<t:template
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:t="http://www.cruxframework.org/templates" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	library="showcase"
+	useController="mainController"> 
+	
+	<div class="speechBubble">
+	   <gwt:label id="labelTitle" text="#{title}" styleName="textDescTitle"/>
+		<gwt:HTMLPanel id="descriptionCointainer">
+			<t:section name="description"/>
+		</gwt:HTMLPanel>
+		<center>
+			<crux:button id="buttonShowCode" onSelect="mainController.viewSourceCode" text="${messages_core.viewSourceCode}" style="margin:10px"/>
+		</center>
+	</div>
+</t:template>
