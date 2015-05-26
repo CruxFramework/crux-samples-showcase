@@ -1,0 +1,24 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="storyboardController" 
+	onLoad="storyboardController.onLoad"
+	title="StoryBoard">
+
+	<center>
+	<!-- 		Component use sample  -->
+		<crux:storyboard id="storyboard" height="100%" width="100%">
+		</crux:storyboard>
+
+		<!-- 		Component description -->
+		<showcase:info title="StoryBoard">
+			<showcase:description>
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+	</center>
+</v:view>

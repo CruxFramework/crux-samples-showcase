@@ -1,0 +1,49 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	onLoad="numberTextBoxController.onLoad" 	
+	useController="numberTextBoxController" 
+	title="NumberTextBox">
+
+	<center>
+	<!-- 		Component use sample  -->
+		<crux:styledPanel id="wrapper">
+			<gwt:HTMLPanel id="mainPanel" styleName="center">
+				<gwt:label id="labelText" text="Enter a number" />
+				<br />
+				<crux:numberTextBox id="boxNumber" maxLength="5"
+					value="44" />
+				<hr />
+				<gwt:label id="labelMaxlength" text="Choose the limit for entering the numbers" />
+				<br />
+				<gwt:HTMLPanel id="panelBoard" styleName="radioPanel">
+					<crux:storyboard id="radios" height="20px" width="100%"
+						largeDeviceItemWidth="85px">
+						<gwt:radioButton id="radioButton09" name="value"
+							text="0 to 9" onChange="numberTextBoxController.maxLength"/>
+						<gwt:radioButton id="radioButton099" name="value"
+							text="0 to 99" onChange="numberTextBoxController.maxLength" />
+						<gwt:radioButton id="radioButton0999" name="value"
+							text="0 to 999" checked="true"
+							onChange="numberTextBoxController.maxLength" />
+						<gwt:radioButton id="radioButtonFree" name="value"
+							text="Free" onChange="numberTextBoxController.maxLength" />
+					</crux:storyboard>
+				</gwt:HTMLPanel>
+			</gwt:HTMLPanel>
+		</crux:styledPanel>
+
+		<!-- 		Component description -->
+		<showcase:info title="NumberTextBox">
+			<showcase:description>
+				<gwt:HTML id="componentDescription" />
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

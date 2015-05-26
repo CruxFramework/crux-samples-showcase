@@ -1,0 +1,37 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="colorPickerDialogController" 
+	onLoad="colorPickerDialogController.onLoad" 
+	title="ColorPicker">
+
+	<center>
+	<!-- 		Component use sample  -->
+		<crux:styledPanel id="panel">
+			<gwt:HTMLPanel id="wrapper" styleName="center">
+				<gwt:label id="labelClickButton"
+					text="Click the button below to change the color of this text." />
+				<hr />
+				<gwt:label id="labelColorValue" styleName="choosenColor"
+					text="Chosen color:" />
+				<crux:button id="buttonChangeColor" text="ColorPicker"
+					onSelect="colorPickerDialogController.showColorPicker" />
+			</gwt:HTMLPanel>
+		</crux:styledPanel>
+		<crux:colorPickerDialog id="colorPicker"
+			text="Choose color" onClose="colorPickerDialogController.changeColor" />
+
+		<!-- 		Component description -->
+		<showcase:info title="ColorPicker">
+			<showcase:description>
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

@@ -1,0 +1,47 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="randomPagerController"
+	useDataSource="countryDS"
+	onLoad="randomPagerController.onLoad"
+	title="RandomPager"> 
+
+	<center>
+	<!-- 		Component use sample  -->
+		<crux:styledPanel id="wrapper">
+			<crux:adaptiveGrid id="grid" dataSource="countryDS" pageSize="7" styleName="grid" width="100%">
+				 <crux:largeColumns>
+					 <crux:widgetColumn key="flag" label="Flag">
+					 	<crux:image id="imageFlag" width="50px" height="30px" style="margin:10px; border:solid 1px #999"/>
+					 </crux:widgetColumn>
+					 <crux:dataColumn key="country" label="Country" width="110px"/>
+					 <crux:dataColumn key="capital" label="Capital" width="150px"/>
+					 <crux:dataColumn key="continent" label="Continent" width="150px"/>
+		 		 </crux:largeColumns>
+			 	<crux:smallColumns>
+			 		<crux:widgetColumn key="flag" label="Flag" width="80px">
+			 			<crux:image id="imageFlag" width="50px" height="30px" style="margin:10px; border:solid 1px #999"/>
+			 		</crux:widgetColumn>
+<!-- 			 		<crux:dataColumn key="flag" label="Flag" width="80px"/> -->
+			 	</crux:smallColumns>
+			 </crux:adaptiveGrid>
+		</crux:styledPanel>	 
+		
+		<crux:styledPanel id="panel">
+			<crux:randomPager id="pager" pageable="grid"/>
+		</crux:styledPanel>
+
+	<!-- 		Component description       -->
+		<showcase:info title="RandomPager">
+			<showcase:description>
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+	
+	</center>
+
+</v:view>

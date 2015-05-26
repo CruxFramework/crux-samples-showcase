@@ -1,0 +1,26 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="mainController" 
+	title="Home">
+
+	<center>
+		<gwt:HTMLPanel id="parentPanel" styleName="topMenuDisposalPanel">
+			<gwt:HTMLPanel id="panelTitle" styleName="topMenuDisposalPanelLeft">
+				<gwt:label id="labelTitle" text="Home" styleName="topMenuDisposalTitle"/>
+			</gwt:HTMLPanel>
+			<br />
+			<gwt:HTMLPanel id="panelLabels" styleName="topMenuDisposalPanelCenter">
+				<gwt:label id="labelText" text="Welcome to ByMore!" styleName="topMenuDisposalText"/>
+				<gwt:label id="labelTextComp" text="You can find everything you need here." styleName="topMenuDisposalText"/>
+			</gwt:HTMLPanel>
+			
+			<crux:image id="image" styleName="topMenuDisposalImageHome"/>
+		</gwt:HTMLPanel>
+	</center>
+
+</v:view>

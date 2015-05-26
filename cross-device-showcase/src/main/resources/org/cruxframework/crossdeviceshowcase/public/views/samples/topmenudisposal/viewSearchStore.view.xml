@@ -1,0 +1,31 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	title="Store Finder">
+
+	<center>
+		<gwt:HTMLPanel id="parentPanel" styleName="topMenuDisposalPanel">
+			<gwt:HTMLPanel id="panelLabel" styleName="topMenuDisposalPanelLeft">
+				<gwt:label id="labelTitle" text="Store Finder" styleName="topMenuDisposalTitle"/>
+			
+				<gwt:HTMLPanel id="panelForm" >
+				<gwt:label id="labelInfo" text="Find the store closest to you." styleName="topMenuDisposalInfo"/>
+				<br />
+				<crux:formDisplay id="formSearch">				
+				</crux:formDisplay>
+				</gwt:HTMLPanel>
+			</gwt:HTMLPanel>
+			
+			<br />
+			<crux:styledPanel id="panelList" styleName="topMenuDisposalPanelList">
+				<gwt:label id="labelSearch" text="Stores found." styleName="topMenuDisposalListInactive"/>
+			</crux:styledPanel>
+		</gwt:HTMLPanel>
+
+	</center>
+
+</v:view>

@@ -1,0 +1,43 @@
+<v:view 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	useController="adaptivegridController"
+	onLoad="adaptivegridController.onLoad"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useDataSource="personDS" 
+	title="DeviceAdaptiveGrid">
+
+	<center>
+<!-- 		Component use sample  -->
+		<crux:styledPanel id="panel1">
+			<crux:adaptiveGrid id="gridSample" width="100%"
+				dataSource="personDS" styleName="grid">
+				<crux:largeColumns>
+					<crux:dataColumn key="name" label="Name"
+						width="110px" />
+					<crux:dataColumn key="age" label="Age"
+						width="110px" />
+					<crux:dataColumn key="status"
+						label="Status" width="110px" />
+					<crux:dataColumn key="birthday"
+						label="Day of Birth" width="200px"
+						formatter="dateFormatter" />
+				</crux:largeColumns>
+				<crux:smallColumns>
+					<crux:dataColumn key="name" label="Name"
+						width="80px"/>
+				</crux:smallColumns>
+			</crux:adaptiveGrid>
+		</crux:styledPanel>
+
+<!-- 		Component description -->
+		<showcase:info title="DeviceAdaptiveGrid">
+			<showcase:description>
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+	</center>
+</v:view>
