@@ -1,0 +1,23 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useController="downloadButtonController" 
+	onLoad="downloadButtonController.onLoad" 
+	title="${messages_downloadButton.title}"> 
+
+	<center>
+		
+		<crux:downloadButton id="downloadButton" text="Download" onSelect="downloadButtonController.download"/>
+		
+		<showcase:info title="${messages_downloadButton.title}" library="Widgets" ie-version="8+">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText" />
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+</v:view>

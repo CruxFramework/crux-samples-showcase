@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>outputCharset</param-name>
+		<param-value>UTF-8</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.cruxframework.crux.core.server.InitializerListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>remoteServiceServlet</servlet-name>
+		<servlet-class>org.cruxframework.crux.core.server.dispatch.RemoteServiceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>remoteServiceServlet</servlet-name>
+		<url-pattern>*.rpc</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>restServiceServlet</servlet-name>
+		<servlet-class>org.cruxframework.crux.core.server.rest.servlet.RestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>restServiceServlet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>fileUploadServlet</servlet-name>
+		<servlet-class>org.cruxframework.crossdeviceshowcase.server.service.FileUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>fileUploadServlet</servlet-name>
+		<url-pattern>/upload-endpoint</url-pattern>
+	</servlet-mapping>
+  
+    <servlet>
+        <servlet-name>fileUploadServlet</servlet-name>
+        <servlet-class>org.cruxframework.crossdeviceshowcase.server.service.FileUploadServlet</servlet-class>
+        <multipart-config>
+<!--             <location>/temp</location> -->
+		    <max-file-size>20848820</max-file-size>
+		    <max-request-size>418018841</max-request-size>
+		    <file-size-threshold>1048576</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fileUploadServlet</servlet-name>
+        <url-pattern>/upload-endpoint</url-pattern>
+    </servlet-mapping>
+  
+</web-app>

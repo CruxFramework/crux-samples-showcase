@@ -1,0 +1,25 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="simpleViewContainerController"
+	onLoad="simpleViewContainerController.onLoad"
+	title="${messages_simpleViewContainer.title}"> 
+	
+	<center>
+			<crux:simpleViewContainer id="viewContainer" width="600px" height="400px">
+				<crux:view name="view1"/>
+			</crux:simpleViewContainer>
+			<br />
+			<crux:button id="buttonChangeView" text="${messages_simpleViewContainer.nextView}" onSelect="simpleViewContainerController.swapView"/>
+	</center>		
+	
+	<showcase:info title="${messages_simpleViewContainer.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+</v:view>

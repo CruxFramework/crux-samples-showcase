@@ -1,0 +1,33 @@
+<v:view xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="scrollBannerController" 
+	onLoad="scrollBannerController.onLoad"
+	title="ScrollBanner">
+
+	<center>
+	<!-- 		Component use sample  -->
+		<gwt:verticalPanel id="panel">
+			<crux:scrollBanner id="scrollBanner" messageScrollingPeriod="5000" styleName="crux-ScrollBanner scrollBannerWidth">
+				<crux:message>Three Laws of Asimov</crux:message>
+				<crux:message>1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.</crux:message>
+				<crux:message>2. A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.</crux:message>
+				<crux:message>3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.</crux:message>
+			</crux:scrollBanner>
+		</gwt:verticalPanel>
+
+		<!-- 		Component description -->
+		<showcase:info title="ScrollBanner" library="Widgets" ie-version="8+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>
+

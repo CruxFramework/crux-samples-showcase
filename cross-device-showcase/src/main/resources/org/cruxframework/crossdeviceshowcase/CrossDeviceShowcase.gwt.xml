@@ -1,0 +1,54 @@
+<module rename-to='crossdeviceshowcase'>
+
+    <!-- ******* Inherits ******* -->
+	<inherits name='org.cruxframework.showcasecore.ShowcaseCore' />
+	
+		<!-- ******* Locale ******* -->
+    <!-- <inherits name="com.google.gwt.i18n.CldrLocales"/> -->
+    <!-- <inherits name="com.google.gwt.i18n.I18N"/> -->
+<!--        <extend-property name="locale" values="pt_BR"/> -->
+<!-- 	   <extend-property name="locale" values="en_US"/> -->
+<!-- 	   <set-property-fallback name="locale" value="en_US"/>  -->
+
+    <!-- ******* To enable superdevmode ******* -->
+    
+    <inherits name='org.cruxframework.crux.tools.codeserver.CruxCodeServer' />
+<!-- 	<set-configuration-property name="devModeUrlWhitelistRegexp" value="http://(10\.1\.2\.186)(:\d+)?/.*" /> -->
+
+	<!-- ******* Compilations options ******* -->
+	
+	<!-- Define your browser -->
+    <set-property name="user.agent" value="safari" />
+<!--     <set-property name="user.agent" value="gecko1_8" /> -->
+<!--     <set-property name="user.agent" value="opera" /> -->
+    <!-- <set-property name="user.agent" value="ie9"/> -->
+    <!-- <set-property name="user.agent" value="ie10"/> -->
+  
+    <!-- Define your device type -->
+<!--     <set-property name="device.features" value="largeDisplayMouse"/> -->
+    <!-- <set-property name="device.features" value="largeDisplayTouch"/> -->
+    <!-- <set-property name="device.features" value="largeDisplayArrows"/> -->
+    <set-property name="device.features" value="smallDisplayTouch"/>
+    <!-- <set-property name="device.features" value="smallDisplayArrows"/> -->
+	
+	<!-- ******* Application paths ******* -->
+	
+	<public path="public" excludes="**/*.crux.xml,**/*.view.xml,**/*.template.xml,**/*.offline.xml" />
+
+    <source path="shared"/>
+    <source path="client"/>
+	
+	<!-- ******* Logging ******* -->
+	
+	<inherits name="com.google.gwt.logging.Logging" />
+	<set-property name="gwt.logging.logLevel"               value="FINE" />
+	<set-property name="gwt.logging.enabled"                value="TRUE" />
+	<set-property name="gwt.logging.consoleHandler"         value="ENABLED" />
+	<set-property name="gwt.logging.developmentModeHandler" value="ENABLED" />
+	<set-property name="gwt.logging.firebugHandler"         value="ENABLED" />
+	<set-property name="gwt.logging.popupHandler"           value="DISABLED" />
+	<set-property name="gwt.logging.hasWidgetsHandler"      value="DISABLED" />
+	<set-property name="gwt.logging.systemHandler"          value="DISABLED" />
+	<set-property name="gwt.logging.simpleRemoteHandler"    value="DISABLED" />
+
+</module>

@@ -1,0 +1,63 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="topMenuDisposalController" 
+	useResource="showcaseCoreResources"
+	onLoad="topMenuDisposalController.onLoad"
+	title="TopMenuDisposal">
+
+	<center>	
+		<crux:styledPanel id="mainPanel">
+			<gwt:flowPanel id="innerPanel">			
+				
+				<gwt:flowPanel id="topMenuDisposalPanel" styleName="faces-TopMenuDisposal simulate-screen">
+					<faces:topMenuDisposal id="topMenuDisposal" historyControlPrefix="topview">
+						<faces:view name="animals" id="animals-top"/>
+						<faces:largeHeader>
+							<faces:label id="largeHeader" text="Animals" autoHorizontalAlignment="center" styleName="faces-label menu-disposal-title"/>
+						</faces:largeHeader>
+						<faces:smallHeader>
+							<faces:label id="SmallHeader" text="Animals"/>
+						</faces:smallHeader>
+						<faces:mainMenu menuType="HORIZONTAL_DROPDOWN">
+							<faces:menuItem label="Amphibians">
+								<faces:menuItem label="Description" targetView="amphibians"/>
+								<faces:menuItem label="Curiosities" onSelect="topMenuDisposalController.showMessage"/>
+								<faces:menuItem label="Photos" onSelect="topMenuDisposalController.showMessage"/>
+							</faces:menuItem>
+							<faces:menuItem label="Birds">
+								<faces:menuItem label="Description" targetView="birds"/>
+								<faces:menuItem label="Curiosities" onSelect="topMenuDisposalController.showMessage"/>
+								<faces:menuItem label="Photos" onSelect="topMenuDisposalController.showMessage"/>
+							</faces:menuItem>	
+							<faces:menuItem label="Mammals" targetView="mammals"/>
+							<faces:menuItem label="Reptiles" targetView="reptiles"/>
+						</faces:mainMenu>
+						<faces:footer>
+							<faces:label id="footer" text="Produced by: Crux Framework"/>
+						</faces:footer>
+					</faces:topMenuDisposal>
+				</gwt:flowPanel>	
+				
+<!-- 				Image representing the disposals -->
+				<gwt:flowPanel id="mobileDisposalPanel" visible="false" styleName="center">
+					<faces:image id="topMenuDisposal_img" url="${showcaseCoreResources.topMenuDisposal}" styleName="faces-image mobileDisposal"/>
+				</gwt:flowPanel>
+					
+			</gwt:flowPanel>
+		</crux:styledPanel>
+		
+		<!-- 		Component description -->
+		<showcase:info title="TopMenuDisposal" library="SmartFaces" ie-version="10+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+</v:view>

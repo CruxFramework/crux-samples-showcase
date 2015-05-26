@@ -1,0 +1,39 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="timerController" 
+	onLoad="timerController.onLoad" 
+	title="Timer">
+
+	<center>
+		<!-- Component use sample -->
+		<crux:styledPanel id="wrapper">
+			<gwt:HTMLPanel id="parentPanel">
+				<gwt:HTMLPanel id="timerPanel" styleName="timerPanel">
+					<crux:timer id="timer" initial="0" start="false"/>
+				</gwt:HTMLPanel>
+				<br />
+				<gwt:HTMLPanel id="panelButtons" styleName="center">
+					<gwt:horizontalPanel id="buttonsPanel" style="display: inline-block">
+						<faces:button id="buttonStart" text="Start" onSelect="timerController.start"/>
+						<faces:button id="buttonStop" text="Stop" onSelect="timerController.stopAndRestart"/>
+						<faces:button id="buttonClear" text="Clear" onSelect="timerController.clear"/>
+					</gwt:horizontalPanel>
+				</gwt:HTMLPanel>
+			</gwt:HTMLPanel>
+		</crux:styledPanel>
+
+		<!-- Component description -->
+		<showcase:info title="Timer" library="Widgets" ie-version="8+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription" />
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+</v:view>

@@ -1,0 +1,52 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useResource="showcaseCoreResources"
+	useController="rollingPanelController"
+	onLoad="rollingPanelController.onLoad"
+	title="RollingPanel"> 
+
+	<center>
+	
+		<crux:styledPanel id="imagesRollingPanel">
+			<gwt:flowPanel id="panel">
+				<!-- Inserting image widgets to the RollingPanel component -->
+				<faces:label id="label1" text="This is a Image RollingPanel" styleName="faces-Label margin-bottom"/>
+				<faces:rollingPanel id="rollingPanelImages" tooltip="Sports" styleName="faces-RollingPanel showcase-RollingPanel" >
+					<faces:image id="baseball" url="${showcaseCoreResources.baseball}" styleName="faces-Image rollingPanel-image"/>
+					<faces:image id="basketball" url="${showcaseCoreResources.basketball}" styleName="faces-Image rollingPanel-image"/>
+					<faces:image id="canoeing" url="${showcaseCoreResources.canoeing}" styleName="faces-Image rollingPanel-image"/>
+					<faces:image id="football" url="${showcaseCoreResources.football}" styleName="faces-Image rollingPanel-image" />
+					<faces:image id="motocross" url="${showcaseCoreResources.motocross}" styleName="faces-Image rollingPanel-image"/>
+					<faces:image id="running" url="${showcaseCoreResources.running}" styleName="faces-Image rollingPanel-image"/>
+					<faces:image id="snowboard" url="${showcaseCoreResources.snowboard}" styleName="faces-Image rollingPanel-image"/>
+					<faces:image id="soccerball" url="${showcaseCoreResources.soccerball}" styleName="faces-Image rollingPanel-image"/>
+					<faces:image id="swimming" url="${showcaseCoreResources.swimming}" styleName="faces-Image rollingPanel-image"/>
+					<faces:image id="volleyball" url="${showcaseCoreResources.volleyball}" styleName="faces-Image rollingPanel-image"/>
+				</faces:rollingPanel>
+			</gwt:flowPanel>
+		</crux:styledPanel>
+		
+		<crux:styledPanel id="customRollingPanel">
+			<gwt:flowPanel id="innerPanel">
+					<!-- 				Inserting Personal widgets created to Sports Store for controller -->
+					<faces:label id="label2" text="This is a Customized Component RollingPanel" styleName="faces-Label margin-bottom"/>
+					<faces:rollingPanel id="rollingPanelCustomizedWidget" tooltip="Sports Store"/>
+			</gwt:flowPanel>
+		</crux:styledPanel>
+		
+<!-- 		Component description -->
+		<showcase:info title="RollingPanel" library="SmartFaces" ie-version="10+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription" />
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

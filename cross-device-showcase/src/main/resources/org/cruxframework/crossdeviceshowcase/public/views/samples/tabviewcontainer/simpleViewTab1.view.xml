@@ -1,0 +1,16 @@
+<v:view xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	title="${messages_tabView1.title}">
+	
+	<center>
+		<gwt:HTMLPanel id="panel" width="700px" height="400px" styleName="tabSimpleView1Background">
+			<gwt:label id="labelTitle" text="${messages_tabView1.title}" styleName="tabSimpleView1Title"/>
+			<gwt:label id="labelText" text="${messages_tabView1.labelText}" styleName="tabSimpleView1Text"/>
+		</gwt:HTMLPanel>
+	</center>
+
+</v:view> 

@@ -1,0 +1,21 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	useResource="showcaseCoreResources"
+	title="Purchase Completed"> 
+	
+	<center>
+		<gwt:HTMLPanel id="topPanel" styleName="swapView-topPanel">
+			<faces:label id="labelStore" text="Shop+" styleName="Faces-label swapView-topPanel-title"/>
+			<faces:image id="image" url="${showcaseCoreResources.shopping}" styleName="faces-Image swapView-topPanel-logo"/>
+			<faces:label id="labelLogin" text="Hello, user!" styleName="Faces-label swapView-topPanel-login"/>
+		</gwt:HTMLPanel>
+		<gwt:HTMLPanel id="contentPanel">
+			<faces:image id="purchaseCompleted" url="${showcaseCoreResources.purchaseCompleted}" styleName="swapView-image"/>
+		</gwt:HTMLPanel>
+	</center>	
+</v:view>

@@ -1,0 +1,41 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useResource="showcaseCoreResources"
+	useController="imageController" 
+	onLoad="imageController.onLoad" 
+	title="Image">
+
+	<center>
+	<!-- 		Component use sample  -->
+		<crux:styledPanel id="mainPanel">
+			<gwt:HTMLPanel id="panel" styleName="center">
+				<faces:label id="labelText" text="Click on the images to have information"/>
+				<br />
+						<crux:storyboard id="imagePanel">
+							<faces:image id="colosseum" url="${showcaseCoreResources.coliseu}" styleName="faces-Image imageNormal" onSelect="imageController.detailColosseum" tooltip="Colosseum"/>
+							<faces:image id="tower" url="${showcaseCoreResources.eiffel}" styleName="faces-Image imageNormal" onSelect="imageController.detailTower" tooltip="Eiffel Tower"/>
+							<faces:image id="statue" url="${showcaseCoreResources.liberty}" styleName="faces-Image imageNormal" onSelect="imageController.detailStatue" tooltip="Statue of Liberty"/>
+						</crux:storyboard>				
+				<gwt:HTMLPanel id="labelPanel">
+					<faces:label id="labelTitleImage" styleName="imagelabelTitleImage"/>
+					<br />
+					<faces:label id="labelInformImage" styleName="imagelabelInformImage"/>
+				</gwt:HTMLPanel>
+			</gwt:HTMLPanel>
+		</crux:styledPanel>	
+
+		<!-- 		Component description -->
+		<showcase:info title="Image" library="SmartFaces" ie-version="10+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+</v:view>

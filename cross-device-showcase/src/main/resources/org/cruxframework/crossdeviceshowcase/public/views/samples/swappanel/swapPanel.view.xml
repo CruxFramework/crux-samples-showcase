@@ -1,0 +1,74 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useResource="showcaseCoreResources"
+	useController="swapPanelController"
+	useDataSource="simplePersonDS"
+	onLoad="swapPanelController.onLoad"
+	title="SwapPanel"> 
+
+	<center>
+		<crux:styledPanel id="mainPanel">
+			<gwt:flowPanel id="innerPanel">
+				<faces:swapPanel id="swapPanel" styleName="faces-SwapPanel" animation="bounce" onSwap="swapPanelController.showMessage">
+					<crux:formDisplay id="form" visible="true" height="300px" width="300px">
+						<crux:entry label="Name: ">
+							<gwt:textBox id="txtName"/>
+						</crux:entry>
+						<crux:entry label="Age: ">
+							<crux:numberTextBox id="numberAge"/>
+						</crux:entry>			
+						<crux:entry label="profession: ">
+							<gwt:textBox id="txtProfession"/>
+						</crux:entry>
+						<crux:entry>
+							<faces:button id="btn" text="Send Data"/>
+						</crux:entry>
+					</crux:formDisplay>
+				</faces:swapPanel>
+								
+				<!-- 	DeviceAdaptiveGrid widget to swap in panel 	-->	
+				<crux:adaptiveGrid id="grid" dataSource="simplePersonDS"  width="100%"  styleName="grid" pageSize="5" visible="false">
+					<crux:largeColumns>
+						<crux:dataColumn key="name" label="Name" width="40%"/>
+						<crux:dataColumn key="age" label="Age" width="10%" />
+<!-- 						<crux:dataColumn key="status" label="Status" width="90px"/> -->
+						<crux:dataColumn key="birthday" label="Day of Birth" width="40%" formatter="dateFormatter" />
+					</crux:largeColumns>
+					<crux:smallColumns>
+						<crux:dataColumn key="name" label="Name" width="80px"/>
+					</crux:smallColumns>
+				</crux:adaptiveGrid>
+				
+				<!--	 Button to call widget transition method and ListBox to choice animation	-->
+				<hr />
+				<gwt:flowPanel id="actionPanel">
+					<faces:label id="labelList" text="Choice a animation type and swap the widget" style="margin: 30px 0 10px 0;"/>
+					<gwt:listBox id="listAnimation" styleName="">
+						<gwt:item label="Bounce" selected="true" value="bounce"/>
+						<gwt:item label="Fade" value="fade"/>
+						<gwt:item label="Flip X" value="flipX"/>
+						<gwt:item label="Flip Y" value="flipY"/>
+						<gwt:item label="Light Speed" value="lightSpeed"/>
+						<gwt:item label="Roll" value="roll"/>
+						<gwt:item label="Rotate" value="rotate"/>	
+					</gwt:listBox>
+					<faces:button id="btnSwapWidget" text="Swap Widget" styleName="faces-Button sp-button-margin" onSelect="swapPanelController.swapPanel"/>
+				</gwt:flowPanel>
+			</gwt:flowPanel>	
+		</crux:styledPanel>	
+
+<!-- 		Component description -->
+		<showcase:info title="SwapPanel" library="SmartFaces" ie-version="10+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription" />
+			</showcase:description>
+		</showcase:info>
+	</center>
+
+</v:view>

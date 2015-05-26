@@ -1,0 +1,46 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="i18nController" 
+	onLoad="i18nController.onLoad" 
+	title="Internationalization">
+
+	<center>
+	<!-- 		Component use sample  -->
+		<crux:styledPanel id="mainPanel">
+			<gwt:HTMLPanel id="htmlPanel">
+				<faces:label id="text" text="This is an example of internationalized content by crux framework"/>
+				<br />
+				<crux:formDisplay id="form">
+					<crux:entry label="${i18n_messages.name}">
+						<gwt:textBox id="txtName" width="200px" text="Paul Smith"/>
+					</crux:entry>
+					<crux:entry label="${i18n_messages.age}">
+						<gwt:textBox id="txtAge" width="200px" text="27 years"/>
+					</crux:entry>
+					<crux:entry label="${i18n_messages.profession}">
+						<gwt:textBox id="txtStatus" width="200px" text="Engineer"/>
+					</crux:entry>
+				</crux:formDisplay>
+			<hr />
+				<gwt:listBox id="listLocale" onChange="i18nController.changeLocale">
+					<gwt:item label="English" selected="true" value="en_US"/>
+					<gwt:item label="Português" value="pt_BR"/>
+				</gwt:listBox>
+			</gwt:HTMLPanel>
+		</crux:styledPanel>		
+
+		<!-- 		Component description -->
+		<showcase:info title="Internationalization (I18N)" library="SmartFaces" ie-version="10+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+</v:view>

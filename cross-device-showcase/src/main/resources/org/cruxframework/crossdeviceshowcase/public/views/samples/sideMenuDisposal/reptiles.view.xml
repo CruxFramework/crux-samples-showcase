@@ -1,0 +1,29 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useResource="showcaseCoreResources"
+	title="Reptiles"> 
+
+	<center>
+		<gwt:flowPanel id="innerPanel">
+			<faces:label id="title" text="Reptiles" styleName="faces-Label disposal-views-title"/>
+			<faces:image id="image" url="${showcaseCoreResources.reptiles}" styleName="faces-Image disposal-image"/>
+			<faces:html id="textPpanel" styleName="disposal-views-textPanel">
+				<p>
+					Reptiles, the class Reptilia, are an evolutionary grade of animals, comprising today's turtles, 
+					crocodilians, snakes, lizards and tuatara, their extinct relatives, and some of the extinct ancestors 
+					of mammals. Due to their evolutionary history and the diversity of extinct forms, the validity of 
+					the class is not universally supported in scientific circles, though in practice, it remains in use 
+					by some biologists and more laymen, especially in mass media. The study of reptiles, historically 
+					combined with that of amphibians, is called herpetology.
+				</p>
+			</faces:html>
+		</gwt:flowPanel>
+	</center>
+
+</v:view>

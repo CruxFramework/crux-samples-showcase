@@ -1,0 +1,29 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useResource="showcaseCoreResources"
+	title="Mammals"> 
+
+	<center>		
+			<gwt:flowPanel id="innerPanel">
+				<faces:label id="title" text="Mammals" styleName="faces-Label disposal-views-title"/>
+				<faces:image id="image" url="${showcaseCoreResources.mammals}" styleName="faces-Image disposal-image"/>
+				<faces:html id="textPpanel" styleName="disposal-views-textPanel">
+					<p>
+						Mammals (class Mammalia /məˈmeɪli.ə/) are a clade of endothermic amniotes distinguished from 
+						reptiles and birds by the possession of hair,[a] three middle ear bones, mammary glands, and a 
+						neocortex (a region of the brain). The mammalian brain regulates body temperature and the circulatory 
+						system, including the four-chambered heart. The mammals include the largest animals on the planet, the 
+						rorquals and some other whales, as well as some of the most intelligent, such as elephants, 
+						some primates and some cetaceans.
+					</p>
+				</faces:html>
+			</gwt:flowPanel>
+	</center>
+
+</v:view>

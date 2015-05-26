@@ -1,0 +1,27 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useController="fileUploaderController" 
+	onLoad="fileUploaderController.onLoad"
+	title="FileUploader"> 
+
+	<center>
+		<!-- Component use sample -->
+		<crux:styledPanel id="mainPanel">
+			<crux:fileUploader id="fileUploader" multiple="true" fileInputText="Choose files" autoUploadFiles="true" url="/upload-endpoint" />
+		</crux:styledPanel>
+
+		<!-- Component description -->
+		<showcase:info title="FileUploader" library="Widgets" ie-version="8+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription" />
+			</showcase:description>
+		</showcase:info>
+		
+	</center>
+</v:view>

@@ -1,0 +1,76 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	useResource="showcaseCoreResources"
+	useController="rollingTabPanelController"
+	onLoad="rollingTabPanelController.onLoad"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	title="${messages_rollingTabPanel.title}"> 
+
+	<center>
+		<crux:styledPanel id="mainPanel">
+			<crux:rollingTabPanel id="rollingTabPanel" visibleTab="3" animationEnabled="true">
+			
+				<crux:tab tabEnabled="false" >
+					<crux:tabText>Página 1</crux:tabText>
+					<crux:panelContent>
+							<crux:button id="buttonClickMe" text="${messages_rollingTabPanel.buttonClickMe}" width="200px" onSelect="rollingTabPanelController.onClickButton"/>
+					</crux:panelContent>
+				</crux:tab>
+				
+				<crux:tab tabEnabled="true">
+					<crux:tabHtml>
+						<img src="img/pageTwo.png" width="120px" height="25px"/>
+					</crux:tabHtml>
+					<crux:panelContent>
+						<crux:formDisplay id="formPerson" width="500px">
+							<crux:entry label="${messages_rollingTabPanel.formName}">
+								<gwt:textBox id="textBoxName"/>
+							</crux:entry>
+							<crux:entry label="${messages_rollingTabPanel.formAge}">
+								<gwt:textBox id="textBoxAge"/>
+							</crux:entry>
+							<crux:entry label="${messages_rollingTabPanel.formAdress}">
+								<gwt:textBox id="textBoxAdress"/>
+							</crux:entry>
+							<crux:entry>
+								<crux:button id="btnForm" text="${messages_rollingTabPanel.buttonClickMe}" onSelect="rollingTabPanelController.onClickTab2"/>
+							</crux:entry>
+						</crux:formDisplay>
+					</crux:panelContent>
+				</crux:tab>
+				
+				<crux:tab tabEnabled="true" >
+<!-- 				onClick="rollingTabPanelController.onClickTab3" -->
+					<crux:tabHtml>
+						<big>Página 3</big>
+					</crux:tabHtml>
+					<crux:panelContent>
+						<gwt:HTMLPanel id="panel" width="500px">
+							<gwt:label id="labelPanel" text="${messages_rollingTabPanel.labelPanel}"/>
+								<br />
+							<gwt:label id="labelPanelContent" text="${messages_rollingTabPanel.labelPanelContent}"/>
+								<br />
+							<crux:image id="image" url="${showcaseCoreResources.crux}"/>
+								<br />
+							<crux:button id="button1" text="${messages_rollingTabPanel.button1}"/>	
+							<crux:button id="button2" text="${messages_rollingTabPanel.button2}"/>
+						</gwt:HTMLPanel>
+					</crux:panelContent>
+				</crux:tab>
+				
+			</crux:rollingTabPanel>
+		</crux:styledPanel>
+
+		<showcase:info title="${messages_rollingTabPanel.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>		
+			</showcase:description>
+		</showcase:info>
+		
+	</center>		
+	
+</v:view>

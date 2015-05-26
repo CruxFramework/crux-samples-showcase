@@ -1,0 +1,33 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="styledPanelController" 
+	onLoad="styledPanelController.onLoad" 
+	title="StyledPanel">
+
+	<center>
+		<!-- Component use sample -->
+		<gwt:HTMLPanel id="styledWrap" styleName="styledWrap">
+			<crux:styledPanel id="panel1" height="110px" width="200px" styleName="rs-left center">
+				<faces:button id="btnSample" text="I am a button" />
+			</crux:styledPanel>
+			<crux:styledPanel id="panel2" height="110px" width="200px" styleName="rs-left center">
+				<faces:label id="txtSample" text="I am a label" />
+			</crux:styledPanel>
+			<gwt:simplePanel id="clear" styleName="clear"></gwt:simplePanel>
+		</gwt:HTMLPanel>
+
+		<!-- Component description -->
+		<showcase:info title="StyledPanel" library="Widgets" ie-version="8+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription" />
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+</v:view>

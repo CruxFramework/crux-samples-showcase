@@ -1,0 +1,73 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useController="sideMenuDisposalController"
+	useResource="showcaseCoreResources"
+	onLoad="sideMenuDisposalController.onLoad"
+	title="SideMenuDisposal"> 
+
+	<center>	
+		<crux:styledPanel id="mainPanel">
+			<gwt:flowPanel id="innerPanel">			
+<!-- 				panel to change menu type for sideMenuDisposal				 -->
+				<gwt:flowPanel id="typeMenuPanel" visible="true" style="margin-bottom: 10px; text-align: center;">
+					<faces:label id="textMenu" text="Choose the menu type" style="margin-bottom: 10px;"/>
+					<gwt:listBox id="listMenuType" onChange="sideMenuDisposalController.changeMenuType">
+						<gwt:item label="Vertical Accordion" selected="true" value="verticalAccordion"/>
+						<gwt:item label="Vertical Dropdown" value="verticalDropdown"/>
+						<gwt:item label="Vertical Tree" value="verticalTree"/>
+						<gwt:item label="Vertical Slide" value="verticalSlide"/>
+					</gwt:listBox>
+				</gwt:flowPanel>
+				
+				<gwt:flowPanel id="sideMenuDisposalPanel" visible="true" styleName="faces-SideMenuDisposal simulate-screen">
+					<faces:sideMenuDisposal id="sideMenuDisposal">
+						<faces:view name="animals" id="animals-side"/>
+						<faces:largeHeader>
+							<faces:label id="largeHeader" text="Animals" autoHorizontalAlignment="center" styleName="faces-label menu-disposal-title"/>
+						</faces:largeHeader>
+						<faces:smallHeader>
+							<faces:label id="SmallHeader" text="Animals"/>
+						</faces:smallHeader>
+						<faces:mainMenu menuType="VERTICAL_ACCORDION">
+							<faces:menuItem label="Amphibians" targetView="amphibians">
+								<faces:menuItem label="Description" targetView="amphibians"/>
+								<faces:menuItem label="Curiosities" onSelect="sideMenuDisposalController.showMessage"/>
+								<faces:menuItem label="Photos" onSelect="sideMenuDisposalController.showMessage"/>
+							</faces:menuItem>
+							<faces:menuItem label="Birds" targetView="birds">
+								<faces:menuItem label="Description" targetView="birds"/>
+								<faces:menuItem label="Curiosities" onSelect="sideMenuDisposalController.showMessage"/>
+								<faces:menuItem label="Photos" onSelect="sideMenuDisposalController.showMessage"/>
+							</faces:menuItem>
+							<faces:menuItem label="Mammals" targetView="mammals"/>
+							<faces:menuItem label="Reptiles" targetView="reptiles"/>
+						</faces:mainMenu>
+						<faces:footer>
+							<faces:label id="footer" text="Produced by: Crux Framework"/>
+						</faces:footer>
+					</faces:sideMenuDisposal>
+				</gwt:flowPanel>
+				
+<!-- 				Image representing the disposals -->
+				<gwt:flowPanel id="mobileDisposalPanel" visible="false" styleName="center">
+						<faces:image id="sideMenuDisposal_img"  url="${showcaseCoreResources.sideMenuDisposal}" styleName="faces-image mobileDisposal"/>
+				</gwt:flowPanel>
+				
+			</gwt:flowPanel>
+		</crux:styledPanel>
+		
+<!-- 		Component description -->
+		<showcase:info title="SideMenuDisposal" library="SmartFaces" ie-version="10+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription" />
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+</v:view>

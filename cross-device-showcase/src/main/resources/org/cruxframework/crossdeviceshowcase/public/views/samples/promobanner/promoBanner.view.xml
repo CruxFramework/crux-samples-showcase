@@ -1,0 +1,39 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	useController="promoBannerController"
+	onLoad="promoBannerController.onLoad"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useResource="showcaseCoreResources"
+	title="PromoBanner"> 
+
+	<center>
+	<!-- 		Component use sample  -->
+		<crux:promoBanner id="promobanner"
+			largeBannersHeight="312px" smallBannersHeight="200px"
+			autoTransitionInterval="500000" transitionDuration="450" styleName="promoBannerWidth">
+			<crux:banner buttonLabel=""
+				title="Life" text="Hurry to live well and think that every day is, in itself, a life. (Seneca)"
+				image="${showcaseCoreResources.banner1promo}" styleName="messagePanel" />
+			<crux:banner buttonLabel=""
+				title="Dream and live" text="Dream as if you'll live forever, live as if you were to die tomorrow. (James Dean)"
+				image="${showcaseCoreResources.banner2promo}" />
+			<crux:banner buttonLabel=""
+				title="Live" text="To live is the rarest thing in the world. Most people exist, that´s all.  (Oscar Wilde)"
+				image="${showcaseCoreResources.banner3promo}" />
+		</crux:promoBanner>
+
+		<!-- 		Component description -->
+		<showcase:info title="PromoBanner" library="Widgets" ie-version="8+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

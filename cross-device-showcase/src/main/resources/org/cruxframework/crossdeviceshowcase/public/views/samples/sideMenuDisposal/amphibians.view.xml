@@ -1,0 +1,28 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useResource="showcaseCoreResources"
+	title="Amphibians"> 
+
+	<center>
+		<gwt:flowPanel id="innerPanel">
+			<faces:label id="title" text="Amphibians" styleName="faces-Label disposal-views-title"/>
+			<faces:image id="image" url="${showcaseCoreResources.amphibians}" styleName="faces-Image disposal-image"/>
+			<faces:html id="textPpanel" styleName="disposal-views-textPanel">
+				<p>
+					Amphibians are ectothermic, tetrapod vertebrates of the class Amphibia. Modern amphibians are all 
+					Lissamphibia. They inhabit a wide variety of habitats with most species living within terrestrial, 
+					fossorial, arboreal or freshwater aquatic ecosystems. Amphibians typically start out as larva living 
+					in water, but some species have developed behavioural adaptations to bypass this. The young generally 
+					undergo metamorphosis from larva with gills to an adult air-breathing form with lungs. 
+				</p>
+			</faces:html>
+		</gwt:flowPanel>	
+	</center>
+
+</v:view>

@@ -1,0 +1,29 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useResource="showcaseCoreResources"
+	title="Birds"> 
+
+	<center>
+		<gwt:flowPanel id="innerPanel">
+			<faces:label id="title" text="Birds" styleName="faces-Label disposal-views-title"/>
+			<faces:image id="image" url="${showcaseCoreResources.birds}" styleName="faces-Image disposal-image"/>
+			<faces:html id="textPpanel" styleName="disposal-views-textPanel">
+				<p>
+					Birds (class Aves or clade Avialae) are feathered, winged, two-legged, warm-blooded, egg-laying vertebrates. 
+					Modern birds are characterised by feathers, a beak with no teeth, the laying of hard-shelled eggs, a high 
+					metabolic rate, a four-chambered heart, and a lightweight but strong skeleton. Extant birds have more or less 
+					developed wings; the most recent species without wings was the moa, which is generally considered to have become 
+					extinct in the 16th century. Wings are evolved forelimbs, and most bird species can fly. Flightless birds include 
+					ratites, penguins, and diverse endemic island species. 
+				</p>
+			</faces:html>
+		</gwt:flowPanel>
+	</center>
+
+</v:view>

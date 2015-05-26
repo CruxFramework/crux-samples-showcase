@@ -1,0 +1,16 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useResource="showcaseCoreResources"
+	title="Animals"> 
+	<center>
+		<gwt:flowPanel id="innerPanel">
+			<faces:image id="image" url="${showcaseCoreResources.animals}"/>
+		</gwt:flowPanel>	
+	</center>
+</v:view>

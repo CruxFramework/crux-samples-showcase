@@ -1,0 +1,21 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	useResource="showcaseCoreResources"
+	title="Simple View 2"> 
+	
+	<center>
+		<crux:styledPanel id="parentPanel" styleName="horizontalSwapViewPanel2">
+			<gwt:HTMLPanel id="panel">
+				<gwt:label id="labelViewTitle" text="${messages_horizontalSwapView2.title}" styleName="horizontalSwapView2title"/>
+				<br />
+				<crux:image id="image" styleName="horizontalSwapViewImage2"/>
+				<br />
+				<gwt:label id="labelViewText" text="${messages_horizontalSwapView2.labelTextView}" styleName="horizontalSwapView2text"/>
+			</gwt:HTMLPanel>
+		</crux:styledPanel>
+	</center>	
+</v:view>

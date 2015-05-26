@@ -1,0 +1,56 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useController="menuController"
+	onLoad="menuController.onLoad"
+	title="Menu"> 
+
+	<center>	
+		<crux:styledPanel id="mainPanel">
+			<gwt:flowPanel id="innerPanel" styleName="center">
+				<faces:menu id="menu" largeType="VerticalAccordion" smallType="VerticalAccordion" style="margin-bottom: 10px; display: inline-block">
+					<faces:item>
+						<faces:itemWidget>
+							<faces:label id="truck" text="Truck"/>
+						</faces:itemWidget>
+					</faces:item>
+					<faces:item>
+						<faces:itemWidget>
+							<faces:label id="car" text="Car"/>
+						</faces:itemWidget>
+					</faces:item>
+					<faces:item>
+						<faces:itemWidget>
+							<faces:label id="motorcycle" text="Motorcycle"/>
+						</faces:itemWidget>
+					</faces:item>
+				</faces:menu>
+				
+				<gwt:flowPanel id="typeMenuPanel">
+					<faces:label id="textMenu" text="Choose the menu type" styleName="faces-Label margin-top-bottom"/>
+					<gwt:listBox id="listMenuType" onChange="menuController.changeMenuType">
+						<gwt:item label="Horizontal Accordion" value="horizontalAccordion"/>
+						<gwt:item label="Horizontal Dropdown" value="horizontalDropdown"/>
+						<gwt:item label="Vertical Accordion" selected="true" value="verticalAccordion"/>
+						<gwt:item label="Vertical Dropdown" value="verticalDropdown"/>
+						<gwt:item label="Vertical Tree" value="verticalTree"/>
+						<gwt:item label="Vertical Slide" value="verticalSlide"/>
+					</gwt:listBox>
+				</gwt:flowPanel>
+				
+			</gwt:flowPanel>
+		</crux:styledPanel>
+		
+<!-- 		Component description -->
+		<showcase:info title="Menu" library="SmartFaces" ie-version="10+">
+			<showcase:description>
+				<gwt:HTML id="componentDescription" />
+			</showcase:description>
+		</showcase:info>
+	</center>
+</v:view>

@@ -1,0 +1,52 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useController="viewRegisterController" 
+	title="Register"> 
+
+	<center>
+			<gwt:HTMLPanel id="parentPanel" styleName="dialogViewContainer">
+				<faces:label id="labelText" text="Enter the information requested below and click confirm." />
+				<br />
+				<gwt:HTMLPanel id="panelError" visible="false">
+					<faces:label id="errorMessage" text="Fill out all fields." styleName="errorMessage"/>
+				</gwt:HTMLPanel>
+				
+				<crux:styledPanel id="formPanel">
+					<crux:formDisplay id="formRegister">
+						<crux:entry label="Name:">
+							<gwt:textBox id="txtName" maxLength="40"/>
+						</crux:entry>
+						<crux:entry label="E-mail:">
+							<gwt:textBox id="txtEmail" maxLength="20"/>
+						</crux:entry>
+						<crux:entry label="Address:">
+							<gwt:textBox id="txtAddress" maxLength="60"/>
+						</crux:entry>
+						<crux:entry horizontalAlignment="center">
+							<faces:button id="btnRegister" text="Confirm"
+								onSelect="viewRegisterController.showResult"/>
+						</crux:entry>
+					</crux:formDisplay>
+				</crux:styledPanel>
+
+				<gwt:HTMLPanel id="panelResult" visible="false" styleName="dialogViewContainerResult">
+					<faces:label id="labelResult" text="register completed!" styleName="successMessage"/>
+					<br />
+					<gwt:HTMLPanel id="panelResultData" styleName="panelResultData">
+					<faces:label id="labelResultName"/>
+					<br />
+					<faces:label id="labelResultEmail"/>
+					<br />
+					<faces:label id="labelResultAddress"/>
+					</gwt:HTMLPanel>
+				</gwt:HTMLPanel>			
+			</gwt:HTMLPanel>
+			
+	</center>
+</v:view>

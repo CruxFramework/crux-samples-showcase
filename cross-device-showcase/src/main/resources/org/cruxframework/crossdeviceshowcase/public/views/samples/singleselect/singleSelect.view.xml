@@ -1,0 +1,43 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	useController="singleSelectController"
+	onLoad="singleSelectController.onLoad"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	title="SingleSelect"> 
+
+	<center>
+		<!-- 		Component use sample  -->
+		<crux:styledPanel id="panel">
+			<gwt:HTMLPanel styleName="center" id="parentPanel">
+				<faces:label id="labelText" text="Choose one of the departments and then select one of the listed employees." />
+				<br />
+					<gwt:HTMLPanel id="panelDepartmentsEmployers">
+						<crux:singleSelect id="singleSelectDepartments"
+							visibleItemCount="6" width="150px"
+							onChange="singleSelectController.selectedItemDepartments">
+							<crux:item label="Accounting" selected="false" value="accounting" />
+							<crux:item label="Marketing" selected="false" value="marketing" />
+							<crux:item label="Production" selected="false" value="production" />
+						</crux:singleSelect>
+						<crux:singleSelect id="singleSelectEmployees"
+							visibleItemCount="6" width="150px"
+							onChange="singleSelectController.selectedItemEmployees" />							
+					</gwt:HTMLPanel>
+			</gwt:HTMLPanel>
+		</crux:styledPanel>
+
+		<!-- 		Component description -->
+		<showcase:info title="SingleSelect" library="Widgets" ie-version="8+">
+			<showcase:description>			
+				<gwt:HTML id="componentDescription"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>
