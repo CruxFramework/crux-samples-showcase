@@ -1,0 +1,41 @@
+<t:template
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:t="http://www.cruxframework.org/templates" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	library="showcase"
+	useResource="showcaseCoreResources"
+	useController="mainController"> 
+<!-- 	#{teste} -->
+	<div class="speechBubble">
+	    <faces:label id="labelTitle" text="#{title}" styleName="textDescTitle"/>
+	    <gwt:flowPanel id="libraryPanel" visible="#{libraryPanel-visible}">
+		    <faces:label id="titleLibrary" text="${messages_showcase.library}" styleName="textLibrary"/>
+		    <faces:label id="labelLibrary" text="#{library}" styleName="textLibrary sm-speech-panel"/>
+	    </gwt:flowPanel>
+	    
+	    <gwt:flowPanel id="browserPanel" visible="#{browserPanel-visible}">
+	    	<faces:label id="browsersLabel" text="${messages_showcase.browsers}" styleName="textBrowser"/>
+	    	<gwt:flowPanel id="browsers" styleName="browser-panel sm-speech-panel">
+	    		<gwt:flowPanel id="iePanel" styleName="ie-panel">
+			    	<faces:image id="ie" url="${showcaseCoreResources.ie9}" height="27px" width="27px" visible="#{ie-visible}" styleName="faces-Image browser-image"/>
+			    	<faces:label id="ieVersion" text="#{ie-version}" styleName="ie-version"/>
+		    	</gwt:flowPanel>
+		    	<faces:image id="chrome" url="${showcaseCoreResources.chrome}" height="27px" width="27px" visible="#{chrome-visible}" styleName="faces-Image browser-image"/>
+		    	<faces:image id="firefox" url="${showcaseCoreResources.firefox}" height="27px" width="27px" visible="#{firefox-visible}" styleName="faces-Image browser-image"/>
+		    	<faces:image id="safari" url="${showcaseCoreResources.safari}" height="27px" width="27px" visible="#{safari-visible}" styleName="faces-Image browser-image"/>
+	    	</gwt:flowPanel>
+	   	</gwt:flowPanel>
+	   	
+	    <hr style="background-color:#999"/>
+		<gwt:HTMLPanel id="descriptionCointainer">
+			<t:section name="description"/>
+		</gwt:HTMLPanel>
+		<center>
+			<crux:button id="buttonShowCode" onSelect="mainController.viewSourceCode" text="${messages_core.viewSourceCode}" style="margin:10px"/>
+		</center>
+	</div>
+</t:template>

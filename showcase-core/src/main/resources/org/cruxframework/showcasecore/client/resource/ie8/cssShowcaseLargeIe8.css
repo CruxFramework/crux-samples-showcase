@@ -1,0 +1,8 @@
+@external *;
+@if user.agent ie8
+{
+		.btn-Group .gwt-RadioButton input
+	{
+		visibility: visible;
+	}
+}
