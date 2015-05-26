@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:c="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:show="http://www.cruxframework.org/crux/showcase"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt">
+	
+	<head>
+		<title>Crux Framework - Cross-Device Showcase</title>
+		<meta name="fragment" content="!" />
+	</head>
+	
+	<body>
+		<script type="text/javascript" src="crossdeviceshowcase.nocache.js"></script>
+		
+		<c:screen useController="mainController" useView="*" 
+				  smallViewport="user-scalable=no, width=320" 
+				  largeViewport="user-scalable=no, width=device-width, height=device-height" 
+				  useResource="xStandardResources,showcaseCoreResources,showcaseCoreResourcesCommon" height="100%"
+				  onLoad="mainController.wellcome"/>
+
+		<crux:menuTabsDisposal id="menuDisposal">
+			<crux:header>
+				<gwt:flowPanel id="topBarpanel">
+					<gwt:label text="${messages_showcase.shortWelcome}" id="activeViewPage" styleName="activeView"></gwt:label>
+					<crux:button id="siteButton" text="${messages_showcase.site}" onSelect="mainController.navigateToSite" styleName="topBarIcon siteIcon"/>
+					<crux:button id="projectButton" text="${messages_showcase.project}" onSelect="mainController.navigateToProject" styleName="topBarIcon projectIcon"/>
+				</gwt:flowPanel>
+			</crux:header>
+			
+			<crux:menuSection label="${messages_showcase.formElements}"/>
+			<crux:menuEntry label="${messages_showcase.button}" targetView="cruxButton"/>
+			<crux:menuEntry label="${messages_showcase.fileUploader}" targetView="fileUploader"/>
+			<crux:menuEntry label="${messages_showcase.maskedLabel}" targetView="maskedLabel"/>
+			<crux:menuEntry label="${messages_showcase.maskedTextbox}" targetView="maskedTextBox"/>
+			<crux:menuEntry label="${messages_showcase.textArea}" targetView="textArea"/>
+			<crux:menuEntry label="${messages_showcase.textBox}" targetView="gwtTextBox"/>
+			
+			<crux:menuSection label="${messages_showcase.menuElements}" />
+			<crux:menuEntry label="${messages_showcase.topMenuDisposal}" targetView="topMenuDisposal"/>
+			<crux:menuEntry label="${messages_showcase.stackMenu}" targetView="stackMenu"/>
+			
+			<crux:menuSection label="${messages_showcase.dataElements}" />
+			<crux:menuEntry label="${messages_showcase.deviceAdaptiveGrid}" targetView="adaptiveGrid"/>
+			
+			<crux:menuSection label="${messages_showcase.layoutElements}"/>
+			<crux:menuEntry label="${messages_showcase.formDisplay}" targetView="formDisplay" />
+			<crux:menuEntry label="${messages_showcase.styledPanel}" targetView="styledPanel"/>
+			
+			<crux:menuSection label="${messages_showcase.dialogBoxes}"/>
+			<crux:menuEntry label="${messages_showcase.dialogViewContainer}" targetView="dialogViewContainer"/>
+			<crux:menuEntry label="${messages_showcase.messageBox}" targetView="messageBox"/>
+			<crux:menuEntry label="${messages_showcase.progressBox}" targetView="progressBox"/>
+			
+			<crux:menuSection label="${messages_showcase.imageElements}"/>
+			<crux:menuEntry label="${messages_showcase.image}" targetView="image"/>
+			<crux:menuEntry label="${messages_showcase.promoBanner}" targetView="promoBanner"/>
+			<crux:menuEntry label="${messages_showcase.slideShow}" targetView="slideshow"/>
+			<crux:menuEntry label="${messages_showcase.storyBoard}" targetView="storyBoard"/>
+			
+			<crux:menuSection label="${messages_showcase.listElements}" />
+			<crux:menuEntry label="${messages_showcase.listShuttle}" targetView="listShuttle"/>
+			<crux:menuEntry label="${messages_showcase.singleSelect}" targetView="singleSelect"/>
+
+			<crux:menuSection label="${messages_showcase.miscellaneousElements}" />
+			<crux:menuEntry label="${messages_showcase.colorPicker}" targetView="colorPickerDialog"/>
+			<crux:menuEntry label="${messages_showcase.scrollBanner}" targetView="scrollBanner"/>
+			<crux:menuEntry label="${messages_showcase.timer}" targetView="timer"/>
+			
+		</crux:menuTabsDisposal>
+	
+	</body>
+</html>

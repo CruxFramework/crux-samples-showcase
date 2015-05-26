@@ -1,0 +1,36 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	useController="promoBannerController"
+	onLoad="promoBannerController.onLoad"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useResource="showcaseCoreResources"
+	title="${messages_promoBanner.title}"> 
+
+	<center>
+		<crux:promoBanner id="promobanner"
+			largeBannersHeight="312px" smallBannersHeight="200px"
+			autoTransitionInterval="500000" transitionDuration="450" styleName="promoBannerWidth">
+			<crux:banner buttonLabel=""
+				title="${messages_promoBanner.banner1title}" text="${messages_promoBanner.banner1text}"
+				image="${showcaseCoreResources.banner1promo}" styleName="messagePanel" />
+			<crux:banner buttonLabel=""
+				title="${messages_promoBanner.banner2title}" text="${messages_promoBanner.banner2text}"
+				image="${showcaseCoreResources.banner2promo}" />
+			<crux:banner buttonLabel=""
+				title="${messages_promoBanner.banner3title}" text="${messages_promoBanner.banner3text}"
+				image="${showcaseCoreResources.banner3promo}" />
+		</crux:promoBanner>
+
+		<showcase:info title="${messages_promoBanner.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

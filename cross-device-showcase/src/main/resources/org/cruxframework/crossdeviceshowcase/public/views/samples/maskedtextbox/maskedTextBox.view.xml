@@ -1,0 +1,31 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="maskedTextBoxController"
+	onLoad="maskedTextBoxController.onLoad" 
+	useFormatter="maskedDateFormatter" 
+	title="${messages_maskedTextBox.title}">
+
+	<center>
+		<crux:styledPanel id="panel">
+			<gwt:flowPanel id="flowPanel">
+				<gwt:label id="ipLabel" text="${messages_maskedTextBox.ipLabel}"
+					style="margin:10px" />
+				<crux:maskedTextBox id="dateInput" formatter="maskedDateFormatter"
+					styleName="gwt-TextBox crux-MaskedTextBox dateInput smallWidthInput" />
+				<crux:button id="btnParseDate" onSelect="maskedTextBoxController.readDate"
+					text="${messages_maskedTextBox.btnParseDate}" styleName="crux-Button" />
+			</gwt:flowPanel>
+		</crux:styledPanel>
+
+		<showcase:info title="${messages_maskedTextBox.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+	</center>
+
+</v:view>

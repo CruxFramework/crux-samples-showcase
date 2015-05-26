@@ -1,0 +1,30 @@
+<v:view xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="scrollBannerController" 
+	onLoad="scrollBannerController.onLoad"
+	title="${messages_scrollBanner.title}">
+
+	<center>
+		<gwt:verticalPanel id="panel">
+			<crux:scrollBanner id="scrollBanner"
+				messageScrollingPeriod="5000" styleName="crux-ScrollBanner scrollBannerWidth">
+				<crux:message>${messages_scrollBanner.initMessage}</crux:message>
+				<crux:message>${messages_scrollBanner.message1}</crux:message>
+				<crux:message>${messages_scrollBanner.message2}</crux:message>
+				<crux:message>${messages_scrollBanner.message3}</crux:message>
+			</crux:scrollBanner>
+		</gwt:verticalPanel>
+
+		<showcase:info title="${messages_scrollBanner.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

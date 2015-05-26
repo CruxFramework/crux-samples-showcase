@@ -1,0 +1,28 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="topMenuDisposalController" 
+	onLoad="topMenuDisposalController.onLoad"
+	title="${messages_topMenuDisposal.title}">
+
+	<center>
+		<crux:styledPanel id="panel">
+		 	<crux:topMenuDisposal id="menu" defaultView="topViewHome">
+		 	<crux:menuEntry targetView="topViewHome" label="${messages_topMenuDisposal.labelHome}"/>
+		 	<crux:menuEntry targetView="topViewItem1" label="${messages_topMenuDisposal.labelItem1}"/>
+		 	</crux:topMenuDisposal>
+		</crux:styledPanel>
+		
+		<showcase:info title="${messages_topMenuDisposal.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

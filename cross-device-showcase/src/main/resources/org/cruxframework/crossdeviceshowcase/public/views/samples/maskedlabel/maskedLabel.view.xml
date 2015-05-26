@@ -1,0 +1,36 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="maskedLabelController"
+	onActivate="maskedLabelController.setDate" 
+	useFormatter="dateFormatter" 
+	onLoad="maskedLabelController.onLoad"
+	title="${messages_maskedLabel.title}" >
+
+	<center>
+		<crux:styledPanel id="panel">
+			<gwt:flowPanel id="imgPanel" styleName="guilePanel">
+				<crux:formDisplay id="form">
+					<crux:entry label="${messages_maskedLabel.entryCaracter}">
+						<gwt:label id="nameLabel" text="${messages_maskedLabel.nameLabel}"
+							styleName="gwt-Label valueLabel" />
+					</crux:entry>
+					<crux:entry label="${messages_maskedLabel.entryDate}">
+						<crux:maskedLabel id="birthDate" formatter="dateFormatter"
+							styleName="crux-MaskedLabel valueLabel" />
+					</crux:entry>
+				</crux:formDisplay>
+			</gwt:flowPanel>
+		</crux:styledPanel>
+
+		<showcase:info title="${messages_maskedLabel.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+	</center>
+
+</v:view>

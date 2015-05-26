@@ -1,0 +1,23 @@
+<v:view
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	useController="dialogViewContainerController" 
+	title="${messages_dialogSimpleView2.title}"> 
+
+	<center>
+		<crux:styledPanel id="parentPanel">
+			<gwt:HTMLPanel id="panel" width="600px" height="300px" styleName="center">
+				<gwt:label id="labelSimpleView" text="${messages_dialogSimpleView2.title}" styleName="dialogSimpleView2Title"/>
+				<br />
+				<gwt:label id="labelSimpleViewText" text="${messages_dialogSimpleView2.labelSimpleViewText}" styleName="dialogSimpleView2Text"/>
+				<br />
+				<crux:button id="buttonView" text="${messages_dialogSimpleView2.buttonView}" onSelect="dialogViewContainerController.showView1"/>
+			</gwt:HTMLPanel>
+		</crux:styledPanel>
+	</center>
+
+</v:view>

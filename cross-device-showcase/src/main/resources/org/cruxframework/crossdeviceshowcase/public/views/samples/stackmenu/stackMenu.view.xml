@@ -1,0 +1,53 @@
+<v:view xmlns="http://www.w3.org/1999/xhtml" xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="stackMenuController" 
+	onLoad="stackMenuController.onLoad"
+	title="${messages_stackMenu.title}">
+
+	<center>
+		<gwt:HTMLPanel id="panel">
+		 	<crux:stackMenu id="menu" onSelection="stackMenuController.selectedItem" >
+		 		<crux:item label="CD" key="cd">
+		 			<crux:item label="Blues" key="blues"></crux:item>
+		 			<crux:item label="Jass" key="jass"></crux:item>
+		 			<crux:item label="Pop" key="pop"></crux:item>
+		 			<crux:item label="Rock" key="rock"></crux:item>
+		 		</crux:item>
+		 		<crux:item label="DVD" key="dvd">
+		 			<crux:item label="${messages_stackMenu.labelReleases}" key="releases">
+		 				<crux:item label="Blu Ray" key="bluRay"></crux:item>
+		 				<crux:item label="3D" key="3d"></crux:item>
+		 			</crux:item>	
+		 			<crux:item label="${messages_stackMenu.labelSeries}" key="series">
+			 			<crux:item label="Friends" key="friends"></crux:item>
+			 			<crux:item label="House" key="house"></crux:item>
+			 			<crux:item label="Two And A Half Men" key="twoAndAHalfMen"></crux:item>
+		 			</crux:item>	
+		 			<crux:item label="${messages_stackMenu.labelAction}" key="action">
+		 				<crux:item label="Rambo" key="rambo"></crux:item>
+		 				<crux:item label="Spartacus" key="spartacus"></crux:item>
+		 			</crux:item>
+			 		<crux:item label="${messages_stackMenu.labelComedy}" key="comedia">
+			 			<crux:item label="Ace Ventura" key="aceVentura"></crux:item>
+			 			<crux:item label="${messages_stackMenu.labelDespicableMe}" key="despicableMe"></crux:item>
+			 		</crux:item>
+		 		</crux:item>
+		 	</crux:stackMenu>
+		 	<br />
+		 	<gwt:label id="labelItem" text="${messages_stackMenu.labelItem}"/>
+		 	<br />
+		 	<gwt:textBox id="textBoxItem"/>
+		 	<crux:button id="buttonAddItem" text="${messages_stackMenu.buttonAddItem}" onSelect="stackMenuController.addItemMenu"/>
+		 	<crux:button id="buttonRemoveItem" text="${messages_stackMenu.buttonRemoveItem}" onSelect="stackMenuController.removeItemMenu"/>
+		</gwt:HTMLPanel>
+		
+		<showcase:info title="${messages_stackMenu.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

@@ -1,0 +1,35 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	onLoad="messageBoxController.onLoad"
+	useController="messageBoxController" 
+	title="${messages_messageBox.title}"> 
+
+	<center>
+
+		<crux:styledPanel id="styled">
+			<gwt:flowPanel id="flow" width="100%">
+				<crux:button id="showMessageBtnInfo"
+					text="${messages_messageBox.showMessageBtnInfo}" onSelect="messageBoxController.showInfo"/>
+				<crux:button id="showMessageBtnSuccess"
+					text="${messages_messageBox.showMessageBtnSuccess}" onSelect="messageBoxController.showSuccess"/>
+				<crux:button id="showMessageBtnWarn"
+					text="${messages_messageBox.showMessageBtnWarn}" onSelect="messageBoxController.showWarn"/>
+				<crux:button id="showMessageBtnError"
+					text="${messages_messageBox.showMessageBtnError}" onSelect="messageBoxController.showError"/>
+			</gwt:flowPanel>
+		</crux:styledPanel>
+
+		<showcase:info title="${messages_messageBox.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

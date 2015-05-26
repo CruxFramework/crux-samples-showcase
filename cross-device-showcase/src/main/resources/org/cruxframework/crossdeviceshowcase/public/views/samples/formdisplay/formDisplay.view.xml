@@ -1,0 +1,50 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="mainController,formDisplayController" 
+	onLoad="formDisplayController.onLoad" 
+	title="${messages_formDisplay.title}"> 
+
+	<center>
+		<crux:styledPanel id="panel">
+			<crux:formDisplay id="form">
+				<crux:entry label="Framework:">
+					<gwt:textBox id="frameworkTextBox" value="Crux Framework" />
+				</crux:entry>
+				<crux:entry label="${messages_formDisplay.entryVersion}">
+					<gwt:textBox id="versionTextBox" value="5.0" />
+				</crux:entry>
+				<crux:entry label="${messages_formDisplay.entrySubject}">
+					<gwt:textBox id="subjectTextBox"
+						text="${messages_formDisplay.subjectTextBox}" />
+				</crux:entry>
+				<crux:entry label="${messages_formDisplay.entrySupport}">
+					<gwt:horizontalPanel id="supportPanel" spacing="3">
+						<gwt:checkBox id="desktopCheckBox" text="Desktop"
+							checked="true" />
+						<gwt:checkBox id="smartPhoneCheckBox" text="Smart Phone"
+							checked="true" />
+						<gwt:checkBox id="tabletCheckBox" text="Tablet"
+							checked="true" />
+					</gwt:horizontalPanel>
+				</crux:entry>
+				<crux:entry horizontalAlignment="center">
+					<crux:button id="btn" text="${messages_formDisplay.btn}"
+						onSelect="formDisplayController.clearFields" />
+				</crux:entry>
+			</crux:formDisplay>
+		</crux:styledPanel>
+
+
+		<showcase:info title="${messages_formDisplay.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+	</center>
+
+</v:view>

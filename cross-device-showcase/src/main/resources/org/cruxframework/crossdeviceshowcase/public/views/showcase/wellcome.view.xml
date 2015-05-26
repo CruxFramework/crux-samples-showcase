@@ -1,0 +1,22 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	title="${messages_showcase.welcome}"> 
+	
+	<center>
+		<div class="wellcomeText">
+		  <gwt:label id="welcome" text="${messages_showcase.welcome}" styleName="textWelcome"/>
+		  
+		  <gwt:label id="info1" text="${messages_showcase.info1}" styleName="textInfo"/>
+		  
+		  <gwt:label id="info2" text="${messages_showcase.info2}" styleName="textInfo"/>
+		  
+		  <gwt:label id="info3" text="${messages_showcase.info3}" styleName="textInfo"/>
+		</div>
+	</center>		
+	
+</v:view>

@@ -1,0 +1,36 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="timerController" 
+	onLoad="timerController.onLoad" 
+	title="${messages_timer.title}">
+
+	<center>
+		<gwt:HTMLPanel id="panel">
+			<crux:styledPanel id="timerPanel">
+				<crux:timer id="timer" initial="0" start="false" onLoadWidget="timerController.warnTime" />
+			</crux:styledPanel>
+			<br />
+			<gwt:horizontalPanel id="buttonsPanel">
+				<crux:button id="buttonStart" text="${messages_timer.buttonStart}"
+					onSelect="timerController.start" />
+				<crux:button id="buttonStop" text="${messages_timer.buttonStop}"
+					onSelect="timerController.stopAndRestart" />
+				<crux:button id="buttonClear" text="${messages_timer.buttonClear}"
+					onSelect="timerController.clear" />
+			</gwt:horizontalPanel>
+		</gwt:HTMLPanel>
+
+		<showcase:info title="${messages_timer.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

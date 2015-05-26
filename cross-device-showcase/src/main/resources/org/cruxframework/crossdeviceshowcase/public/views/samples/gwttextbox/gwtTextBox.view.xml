@@ -1,0 +1,46 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="gwtTextBoxController" title="${messages_gwtTextBox.title}"
+	onLoad="gwtTextBoxController.onLoad"> 
+
+	<center>
+
+		<crux:styledPanel id="panel1">
+			<gwt:HTMLPanel id="html" styleName="center">
+				<gwt:textBox id="gwtTxtBox" text="${messages_gwtTextBox.gwtTxtBox}"
+					styleName="w200" />
+				<hr />
+				<h4>
+					<gwt:label id="h4" text="${messages_gwtTextBox.h4}" />
+				</h4>
+				<div class="btn-Group">
+					<gwt:radioButton name="color"
+						onChange="gwtTextBoxController.handleDefault" id="radioDefault"
+						text="${messages_gwtTextBox.radioDefault}" checked="true"></gwt:radioButton>
+					<gwt:radioButton name="color"
+						onChange="gwtTextBoxController.handleSuccess" id="radioSuccess"
+						text="${messages_gwtTextBox.radioSuccess}"></gwt:radioButton>
+					<gwt:radioButton name="color"
+						onChange="gwtTextBoxController.handleWarning" id="radioWarning"
+						text="${messages_gwtTextBox.radioWarning}"></gwt:radioButton>
+					<gwt:radioButton name="color"
+						onChange="gwtTextBoxController.handleError" id="radioError"
+						text="${messages_gwtTextBox.radioError}"></gwt:radioButton>
+				</div>
+			</gwt:HTMLPanel>
+		</crux:styledPanel>
+
+		<showcase:info title="${messages_gwtTextBox.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

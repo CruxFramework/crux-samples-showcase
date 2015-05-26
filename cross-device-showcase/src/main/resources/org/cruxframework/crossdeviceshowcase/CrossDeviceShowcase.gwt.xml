@@ -1,0 +1,40 @@
+<module rename-to='crossdeviceshowcase'>
+	<inherits name='org.cruxframework.showcasecore.ShowcaseCore' />
+
+<!-- 	<super-source path="client" /> -->
+<!-- 	<source path="org.cruxframework.showcasecore.client" /> -->
+<!-- 	<super-source path="org.cruxframework.showcasecore.client" /> -->
+	<public path="public" excludes="**/*.crux.xml,**/*.view.xml,**/*.template.xml,**/*.offline.xml" />
+
+    <source path="shared"/>
+    <source path="client"/>
+
+	<!-- To enable super dev mode -->
+	<!--
+	<add-linker name="xsiframe"/>
+	<set-configuration-property name="devModeRedirectEnabled" value="true"/>
+	<set-property name="compiler.useSourceMaps" value="true" />
+    --> 
+    
+    <!-- Compilations -->
+	<!--
+    <set-property name="device.features" value="largeDisplayMouse"/>
+	-->
+	<!--
+	<set-property name="device.features" value="smallDisplayTouch"/>
+	-->
+	
+	<!-- To enable logging -->
+	<inherits name="com.google.gwt.logging.Logging" />
+	<set-property name="gwt.logging.logLevel" value="FINE" />
+	<set-property name="gwt.logging.enabled" value="TRUE" />
+	<set-property name="gwt.logging.consoleHandler" value="ENABLED" />
+	<set-property name="gwt.logging.developmentModeHandler" value="ENABLED" />
+	<set-property name="gwt.logging.firebugHandler" value="ENABLED" />
+	<set-property name="gwt.logging.popupHandler" value="DISABLED" />
+	<set-property name="gwt.logging.hasWidgetsHandler" value="DISABLED" />
+	<set-property name="gwt.logging.systemHandler" value="DISABLED" />
+	<set-property name="gwt.logging.simpleRemoteHandler" value="DISABLED" />
+    <!--
+    -->
+</module>

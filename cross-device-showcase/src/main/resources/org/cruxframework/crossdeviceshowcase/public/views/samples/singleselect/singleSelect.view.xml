@@ -1,0 +1,41 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	useController="singleSelectController"
+	onLoad="singleSelectController.onLoad"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	title="${messages_singleSelect.title}"> 
+
+	<center>
+		
+		<crux:styledPanel id="panel">
+			<gwt:HTMLPanel id="parentPanel">
+				<gwt:label id="labelText" text="${messages_singleSelect.labelText}" />
+				<br />
+					<gwt:HTMLPanel id="panelDepartmentsEmployers" styleName="center">
+						<crux:singleSelect id="singleSelectDepartments"
+							visibleItemCount="3" width="150px"
+							onChange="singleSelectController.selectedItemDepartments">
+							<crux:item label="Contabilidade" selected="false" value="accounting" />
+							<crux:item label="Marketing" selected="false" value="marketing" />
+							<crux:item label="Produção" selected="false" value="production" />
+						</crux:singleSelect>
+						<crux:singleSelect id="singleSelectEmployees"
+							visibleItemCount="3" width="150px"
+							onChange="singleSelectController.selectedItemEmployees" />							
+					</gwt:HTMLPanel>
+			</gwt:HTMLPanel>
+		</crux:styledPanel>
+
+		<showcase:info title="${messages_singleSelect.title}">
+			<showcase:description>			
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+
+	</center>
+
+</v:view>

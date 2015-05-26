@@ -1,0 +1,39 @@
+<v:view 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:v="http://www.cruxframework.org/view"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
+	useController="adaptivegridController"
+	onLoad="adaptivegridController.onLoad"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useDataSource="personDS" 
+	title="${messages_adaptivegrid.title}">
+
+	<center>
+		<crux:adaptiveGrid id="gridSample" width="100%"
+			dataSource="personDS" styleName="grid">
+			<crux:largeColumns>
+				<crux:dataColumn key="name" label="${messages_adaptivegrid.name}"
+					width="110px" />
+				<crux:dataColumn key="age" label="${messages_adaptivegrid.age}"
+					width="110px" />
+				<crux:dataColumn key="status"
+					label="${messages_adaptivegrid.status}" width="150px" />
+				<crux:dataColumn key="birthday"
+					label="${messages_adaptivegrid.dayOfBirth}" width="310px"
+					formatter="dateFormatter" />
+			</crux:largeColumns>
+			<crux:smallColumns>
+				<crux:dataColumn key="name" label="${messages_adaptivegrid.name}"
+					width="110px" />
+			</crux:smallColumns>
+		</crux:adaptiveGrid>
+
+		<showcase:info title="${messages_adaptivegrid.title}">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>
+			</showcase:description>
+		</showcase:info>
+	</center>
+</v:view>
