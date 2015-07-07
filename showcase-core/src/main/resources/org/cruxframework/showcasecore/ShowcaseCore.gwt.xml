@@ -13,6 +13,7 @@
 
     <source path="client"/>
     <source path="shared"/>
+    <source path="public"/>
 	<public path="public" excludes="**/*.crux.xml,**/*.view.xml,**/*.template.xml,**/*.offline.xml" />
 
 	<!-- To enable super dev mode -->
@@ -21,21 +22,5 @@
 	<set-configuration-property name="devModeRedirectEnabled" value="true"/>
 	<set-property name="compiler.useSourceMaps" value="true" />
     -->
-        
-    <!--    <set-property name="device.features" value="largeDisplayMouse"/> -->
-	<!--    <set-property name="device.features" value="largeDisplayArrows"/> -->
-	<!--    <set-property name="device.features" value="smallDisplayTouch"/> -->
-	<!--    <set-property name="device.features" value="smallDisplayArrows"/> -->
-      
-	<!-- To enable logging -->
-	<inherits name="com.google.gwt.logging.Logging" />
-	<set-property name="gwt.logging.logLevel" value="FINE" />
-	<set-property name="gwt.logging.enabled" value="TRUE" />
-	<set-property name="gwt.logging.consoleHandler" value="ENABLED" />
-	<set-property name="gwt.logging.developmentModeHandler" value="ENABLED" />
-	<set-property name="gwt.logging.firebugHandler" value="ENABLED" />
-	<set-property name="gwt.logging.popupHandler" value="DISABLED" />
-	<set-property name="gwt.logging.hasWidgetsHandler" value="DISABLED" />
-	<set-property name="gwt.logging.systemHandler" value="DISABLED" />
-	<set-property name="gwt.logging.simpleRemoteHandler" value="DISABLED" />
+
 </module>
