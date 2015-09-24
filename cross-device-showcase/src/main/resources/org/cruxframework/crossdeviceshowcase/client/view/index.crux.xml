@@ -13,7 +13,7 @@
 	</head>
 	
 	<body>
-		<script type="text/javascript" src="crossdeviceshowcase.nocache.js"></script>
+		<script type="text/javascript" src="../crossdeviceshowcase/crossdeviceshowcase.nocache.js"></script>
 		
 		<c:screen useController="mainController" useView="*" 
 				  smallViewport="user-scalable=no, width=320" 
@@ -99,6 +99,7 @@
 			<crux:menuSection label="${messages_showcase.logicalFeatures}"/>
 			<crux:menuEntry label="I18N" targetView="i18n"/>
 			<crux:menuEntry label="Rest Communication" targetView="rest"/>
+			<crux:menuEntry label="Data GRID" targetView="datagrid"/>
 			
 <!-- 			<crux:menuSection label="${messages_showcase.miscellaneousElements}" />		 -->
 <!-- 			<crux:menuSection label="News" /> -->
