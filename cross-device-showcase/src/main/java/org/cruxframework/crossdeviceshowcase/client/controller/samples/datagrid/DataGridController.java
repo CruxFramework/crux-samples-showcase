@@ -21,7 +21,7 @@ import org.cruxframework.crux.smartfaces.client.grid.DataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.PageableDataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.PageableDataGrid.CellEditor;
 import org.cruxframework.crux.smartfaces.client.label.Label;
-import org.cruxframework.crux.smartfaces.client.pager.ScrollablePager;
+import org.cruxframework.crux.smartfaces.client.pager.PredictivePager;
 import org.cruxframework.crux.widgets.client.datepicker.DatePicker;
 
 import com.google.gwt.core.client.Scheduler;
@@ -115,7 +115,7 @@ public class DataGridController
 	private <T> void loadData()
 	{
 		final EagerPagedDataProvider<Person> dataProvider = new EagerPagedDataProvider<Person>(
-		new org.cruxframework.crux.core.client.dataprovider.DataProvider.DataHandler<Person>() 
+		new org.cruxframework.crux.core.client.dataprovider.DataProvider.EditionDataHandler<Person>() 
 		{
 			public Person clone(Person object)
 			{
@@ -136,7 +136,7 @@ public class DataGridController
 			{
 				return new Label(value.getName());
 			}
-				});
+				}).setHeaderWidget(new Label("column 1"));
 
 		grid.newColumn(new DataFactory<Label, Person>()
 		{
@@ -145,7 +145,7 @@ public class DataGridController
 			{
 				return new Label( String.valueOf(value.getAge() > 2) );
 			}
-		});
+		}).setHeaderWidget(new Label("column 2"));
 
 		grid.newColumn(new DataFactory<Label, Person>()
 				{
@@ -169,7 +169,7 @@ public class DataGridController
 					{
 						value.setName(newValue);
 					}
-						});
+						}).setHeaderWidget(new Label("column 3"));
 
 		grid.newColumn(new DataFactory<Label, Person>()
 				{
@@ -191,7 +191,7 @@ public class DataGridController
 					{
 						value.setName(newValue.toString());
 					}
-						});
+						}).setHeaderWidget(new Label("column 4"));
 
 		Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
 		{
@@ -207,8 +207,8 @@ public class DataGridController
 			}
 		}, 2000);
 
-//		PredictivePager pager = new PredictivePager();
-		ScrollablePager<Person> pager = new ScrollablePager<Person>();
+		PredictivePager<Person> pager = new PredictivePager<Person>();
+//		ScrollablePager<Person> pager = new ScrollablePager<Person>();
 		pager.setDataProvider(dataProvider, false);
 		
 		Button commit = new Button();
