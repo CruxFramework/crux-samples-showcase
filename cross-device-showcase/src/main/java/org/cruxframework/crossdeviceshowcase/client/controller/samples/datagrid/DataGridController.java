@@ -21,7 +21,7 @@ import org.cruxframework.crux.smartfaces.client.grid.DataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.PageableDataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.PageableDataGrid.CellEditor;
 import org.cruxframework.crux.smartfaces.client.label.Label;
-import org.cruxframework.crux.smartfaces.client.pager.PredictivePager;
+import org.cruxframework.crux.smartfaces.client.pager.ScrollablePager;
 import org.cruxframework.crux.widgets.client.datepicker.DatePicker;
 
 import com.google.gwt.core.client.Scheduler;
@@ -207,8 +207,14 @@ public class DataGridController
 			}
 		}, 2000);
 
-		PredictivePager<Person> pager = new PredictivePager<Person>();
-//		ScrollablePager<Person> pager = new ScrollablePager<Person>();
+		FlowPanel fp = new FlowPanel();
+		
+//		PredictivePager<Person> pager = new PredictivePager<Person>();
+//		fp.add(pager);
+
+		ScrollablePager<Person> pager = new ScrollablePager<Person>();
+		grid.setPager(pager);
+		
 		pager.setDataProvider(dataProvider, false);
 		
 		Button commit = new Button();
@@ -233,11 +239,7 @@ public class DataGridController
 			}
 		});
 		
-		FlowPanel fp = new FlowPanel();
-		
 		fp.add(grid);
-		
-		fp.add(pager);
 		fp.add(commit);
 		fp.add(rollback);
 		
