@@ -115,15 +115,15 @@ public class DataGridController
 	private <T> void loadData()
 	{
 		final EagerPagedDataProvider<Person> dataProvider = new EagerPagedDataProvider<Person>(
-		new org.cruxframework.crux.core.client.dataprovider.DataProvider.DataHandler<Person>() {
+		new org.cruxframework.crux.core.client.dataprovider.DataProvider.DataHandler<Person>() 
+		{
 			public Person clone(Person object)
 			{
 				Person clone = new Person();
 				personCloner.copyFrom(object, clone);
 				return clone;
 			}
-		}
-		);
+		});
 		dataProvider.setPageSize(5);
 
 		final DataGrid<Person> grid = new DataGrid<Person>(dataProvider, false);
