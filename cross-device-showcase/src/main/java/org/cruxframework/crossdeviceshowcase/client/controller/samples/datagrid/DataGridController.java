@@ -6,7 +6,6 @@ import java.util.Date;
 
 import org.cruxframework.crossdeviceshowcase.client.controller.samples.grid.GridMessages;
 import org.cruxframework.crux.core.client.bean.BeanCopier;
-import org.cruxframework.crux.core.client.collection.Array;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.dataprovider.EagerPagedDataProvider;
@@ -19,14 +18,11 @@ import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.button.Button;
 import org.cruxframework.crux.smartfaces.client.grid.DataGrid;
-import org.cruxframework.crux.smartfaces.client.grid.PageableDataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.PageableDataGrid.CellEditor;
 import org.cruxframework.crux.smartfaces.client.label.Label;
 import org.cruxframework.crux.smartfaces.client.pager.PredictivePager;
 import org.cruxframework.crux.widgets.client.datepicker.DatePicker;
 
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.core.client.Scheduler.RepeatingCommand;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
@@ -155,7 +151,25 @@ public class DataGridController
 			{
 				return new Label( String.valueOf(value.getAge() > 2) );
 			}
-		}).setHeaderWidget(new Label("column 2"));
+		})
+		.setHeaderWidget(new Label("column 2"))
+		.setComparator(new Comparator<Person>()
+		{
+			public int compare(Person o1, Person o2) 
+			{
+				if(o1.getAge() == o2.getAge())
+				{
+					return 0;
+				} else if(o1.getAge() > o2.getAge())
+				{
+					return 1;
+				} else
+				{
+					return -1;
+				}
+			}
+		})
+		.setSortable(true);
 
 		grid.newColumn(new DataFactory<Label, Person>()
 		{
@@ -170,7 +184,7 @@ public class DataGridController
 			public IsWidget createWidget(Person value)
 			{
 				TextBox textBox = new TextBox();
-				textBox.setText(value.getName());
+				textBox.setText(value.getProfession());
 				return textBox;
 			}
 
@@ -179,7 +193,16 @@ public class DataGridController
 			{
 				value.setName(newValue);
 			}
-		}).setHeaderWidget(new Label("column 3"));
+		})
+		.setHeaderWidget(new Label("column 3"))
+		.setComparator(new Comparator<Person>()
+		{
+			public int compare(Person o1, Person o2) 
+			{
+				return o1.getName().compareTo(o2.getName());
+			}
+		})
+		.setSortable(true);
 
 		grid.newColumn(new DataFactory<Label, Person>()
 		{
@@ -306,30 +329,30 @@ public class DataGridController
 		wrapper.add(commit);
 		wrapper.add(rollback);
 
-		Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
-		{
-			@Override
-			public boolean execute() 
-			{
-				Array<PageableDataGrid<Person>.Row> rows = grid.getRows();
-				for(int i = 0 ; i < rows.size() ; i++)
-				{
-					rows.get(i).edit();
-				}
+//		Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
+//		{
+//			@Override
+//			public boolean execute() 
+//			{
+//				Array<PageableDataGrid<Person>.Row> rows = grid.getRows();
+//				for(int i = 0 ; i < rows.size() ; i++)
+//				{
+//					rows.get(i).edit();
+//				}
 
-				Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
-				{
-					@Override
-					public boolean execute() 
-					{
-						grid.setEnabled(false);
-						return false;
-					}
-				}, 2000);
+//				Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
+//				{
+//					@Override
+//					public boolean execute() 
+//					{
+//						grid.setEnabled(false);
+//						return false;
+//					}
+//				}, 2000);
 
-				return false;
-			}
-		}, 2000);
+//				return false;
+//			}
+//		}, 2000);
 	}
 
 	private ArrayList<Person> mockPersonData(int numItems)
