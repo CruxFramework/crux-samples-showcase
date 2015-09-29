@@ -47,7 +47,7 @@
 					<!-- <style>DETAILED</style> -->
 					<runTarget>index.html</runTarget>
 					<strict>true</strict>
-             		<extraJvmArgs>-Xmx1024M -Xss1024k</extraJvmArgs>
+              		<extraJvmArgs>-Xmx1024M -Xss1024k</extraJvmArgs>
 					<!-- <extraJvmArgs>-Xmx1024M -Xss1024k -Xdebug -Xrunjdwp:transport=dt_socket,address=3331,server=y,suspend=y</extraJvmArgs> -->
 
            		</configuration>	
@@ -86,7 +86,7 @@
 					<!-- </target> -->
 					<!-- </snapshots> -->
 					<module>org.cruxframework.crossdeviceshowcase.CrossDeviceShowcase</module>
-					<viewBaseFolder>client\view</viewBaseFolder>
+<!-- 					<viewBaseFolder>client/view</viewBaseFolder> -->
 				</configuration>
 			</plugin>
 		</plugins>
