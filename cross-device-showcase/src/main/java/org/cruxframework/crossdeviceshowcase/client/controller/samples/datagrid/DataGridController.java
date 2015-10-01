@@ -6,6 +6,7 @@ import java.util.Date;
 
 import org.cruxframework.crossdeviceshowcase.client.controller.samples.grid.GridMessages;
 import org.cruxframework.crux.core.client.bean.BeanCopier;
+import org.cruxframework.crux.core.client.collection.Array;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.dataprovider.EagerPagedDataProvider;
@@ -18,11 +19,14 @@ import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.button.Button;
 import org.cruxframework.crux.smartfaces.client.grid.DataGrid;
+import org.cruxframework.crux.smartfaces.client.grid.PageableDataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.PageableDataGrid.CellEditor;
 import org.cruxframework.crux.smartfaces.client.label.Label;
 import org.cruxframework.crux.smartfaces.client.pager.PredictivePager;
 import org.cruxframework.crux.widgets.client.datepicker.DatePicker;
 
+import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.core.client.Scheduler.RepeatingCommand;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
@@ -124,7 +128,6 @@ public class DataGridController
 		dataProvider.setPageSize(5);
 
 		final DataGrid<Person> grid = new DataGrid<Person>(dataProvider, false);
-		dataProvider.setData(mockPersonData(16));
 
 		grid.newColumn(new DataFactory<Label, Person>() 
 		{
@@ -133,7 +136,7 @@ public class DataGridController
 			{
 				return new Label(value.getName());
 			}
-		})
+		}, "1")
 		.setHeaderWidget(new Label("column 1"))
 		.setComparator(new Comparator<Person>()
 		{
@@ -151,7 +154,7 @@ public class DataGridController
 			{
 				return new Label( String.valueOf(value.getAge() > 2) );
 			}
-		})
+		}, "2")
 		.setHeaderWidget(new Label("column 2"))
 		.setComparator(new Comparator<Person>()
 		{
@@ -178,7 +181,7 @@ public class DataGridController
 			{
 				return new Label(value.getName());
 			}
-		}).setCellEditor(new CellEditor<Person, String>(true)
+		}, "3").setCellEditor(new CellEditor<Person, String>(true)
 		{
 			@Override
 			public IsWidget createWidget(Person value)
@@ -211,7 +214,8 @@ public class DataGridController
 			{
 				return new Label(value.getName());
 			}
-		}).setCellEditor(new CellEditor<Person, Date>(true)
+		}, "4")
+		.setCellEditor(new CellEditor<Person, Date>(true)
 		{
 			@Override
 			public IsWidget createWidget(Person value)
@@ -226,6 +230,70 @@ public class DataGridController
 			}
 		}).setHeaderWidget(new Label("column 4"));
 
+		
+		DataGrid<Person>.ColumnGroup columnGroup1 = grid.newColumGroup(new Label("Column Group 1"));
+		
+//		DataGrid<Person>.ColumnGroup columnGroup2 = columnGroup1.newColumGroup(new Label("Column Group 2"));
+		
+		columnGroup1
+		.addColumn(grid.newColumn(new DataFactory<Label, Person>()
+		{
+			@Override
+			public Label createData(Person value)
+			{
+				return new Label(value.getName());
+			}
+		}, "5")
+			.setCellEditor(new CellEditor<Person, Date>(true)
+		{
+			@Override
+			public IsWidget createWidget(Person value)
+			{
+				return new DatePicker();
+			}
+
+			@Override
+			public void setProperty(Person value, Date newValue)
+			{
+				value.setName(newValue.toString());
+			}
+		})
+		.setHeaderWidget(new Label("column 5"))
+		.setComparator(new Comparator<Person>()
+		{
+			public int compare(Person o1, Person o2) 
+			{
+				return o1.getName().compareTo(o2.getName());
+			}
+		})
+		.setSortable(true)
+		);
+		
+		columnGroup1
+		.addColumn(grid.newColumn(new DataFactory<Label, Person>()
+		{
+			@Override
+			public Label createData(Person value)
+			{
+				return new Label(value.getName());
+			}
+		}, "6")
+		.setCellEditor(new CellEditor<Person, Date>(true)
+		{
+			@Override
+			public IsWidget createWidget(Person value)
+			{
+				return new DatePicker();
+			}
+
+			@Override
+			public void setProperty(Person value, Date newValue)
+			{
+				value.setName(newValue.toString());
+			}
+		})
+		.setHeaderWidget(new Label("column 6")));
+
 		createGridInsideGrid(grid);
 
 		FlowPanel wrapper = new FlowPanel();
@@ -237,10 +305,13 @@ public class DataGridController
 		//		ScrollablePager<Person> pager = new ScrollablePager<Person>();
 		//		grid.setPager(pager);
 
+		
 		pager.setDataProvider(dataProvider, false);
 
 		screen.panel().add(wrapper);
-
+		
+		dataProvider.setData(mockPersonData(16));
+		
 		testGRID(grid, wrapper);
 	}
 
@@ -253,7 +324,7 @@ public class DataGridController
 			{
 				return new Label(value.getName());
 			}
-		}).setCellEditor(new CellEditor<Person, DataGrid<Person>>(true)
+		}, "7").setCellEditor(new CellEditor<Person, DataGrid<Person>>(true)
 		{
 			@Override
 			public IsWidget createWidget(Person value)
@@ -272,7 +343,6 @@ public class DataGridController
 				dataProvider.setPageSize(5);
 
 				final DataGrid<Person> grid = new DataGrid<Person>(dataProvider, false);
-				dataProvider.setData(mockPersonData(2));
 				grid.newColumn(new DataFactory<Label, Person>() 
 				{
 					@Override
@@ -280,7 +350,8 @@ public class DataGridController
 					{
 						return new Label(value.getName());
 					}
-				}).setHeaderWidget(new Label("column 1"));
+				}, "8")
+				.setHeaderWidget(new Label("column 1"));
 
 				grid.newColumn(new DataFactory<Label, Person>()
 				{
@@ -289,8 +360,9 @@ public class DataGridController
 					{
 						return new Label( String.valueOf(value.getAge() > 2) );
 					}
-				}).setHeaderWidget(new Label("column 2"));				
-
+				}, "9")
+				.setHeaderWidget(new Label("column 2"));				
+				dataProvider.setData(mockPersonData(2));
 				return grid;
 			}
 
@@ -299,7 +371,7 @@ public class DataGridController
 			{
 				value.setName(newValue.toString());
 			}
-		}).setHeaderWidget(new Label("column 5"));
+		}).setHeaderWidget(new Label("column GRID"));
 	}
 
 	private void testGRID(final DataGrid<Person> grid, FlowPanel wrapper) 
@@ -329,30 +401,31 @@ public class DataGridController
 		wrapper.add(commit);
 		wrapper.add(rollback);
 
-//		Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
-//		{
-//			@Override
-//			public boolean execute() 
-//			{
-//				Array<PageableDataGrid<Person>.Row> rows = grid.getRows();
-//				for(int i = 0 ; i < rows.size() ; i++)
-//				{
-//					rows.get(i).edit();
-//				}
+		Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
+		{
+			@Override
+			public boolean execute() 
+			{
+				Array<PageableDataGrid<Person>.Row> rows = grid.getRows();
+				for(int i = 0 ; i < rows.size() ; i++)
+				{
+					rows.get(i).edit();
+				}
 
-//				Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
-//				{
-//					@Override
-//					public boolean execute() 
-//					{
-//						grid.setEnabled(false);
-//						return false;
-//					}
-//				}, 2000);
+				//				Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
+				//				{
+				//					@Override
+				//					public boolean execute() 
+				//					{
+				//						grid.setEnabled(false);
+				//						return false;
+				//					}
+				//				}, 2000);
 
-//				return false;
-//			}
-//		}, 2000);
+				return false;
+			}
+		}, 2000);
+
 	}
 
 	private ArrayList<Person> mockPersonData(int numItems)
@@ -369,7 +442,7 @@ public class DataGridController
 
 	private Person mockPerson(int seed)
 	{
-		return new Person("name_" + seed, seed, "professiona_" + seed);
+		return new Person("" + seed, seed, "professiona_" + seed);
 	}
 
 	@BindView("datagrid")
