@@ -25,8 +25,6 @@ import org.cruxframework.crux.smartfaces.client.label.Label;
 import org.cruxframework.crux.smartfaces.client.pager.PredictivePager;
 import org.cruxframework.crux.widgets.client.datepicker.DatePicker;
 
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.core.client.Scheduler.RepeatingCommand;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
@@ -376,6 +374,22 @@ public class DataGridController
 
 	private void testGRID(final DataGrid<Person> grid, FlowPanel wrapper) 
 	{
+		Button editAll = new Button();
+		editAll.setText("Edit All");
+		editAll.addSelectHandler(new SelectHandler() 
+		{
+			@Override
+			public void onSelect(SelectEvent event) 
+			{
+				Array<PageableDataGrid<Person>.Row> rows = grid.getRows();
+				for(int i = 0 ; i < rows.size() ; i++)
+				{
+					rows.get(i).edit();
+				}
+			}
+		});
+		
+		
 		Button commit = new Button();
 		commit.setText("Commit");
 		commit.addSelectHandler(new SelectHandler() 
@@ -398,34 +412,9 @@ public class DataGridController
 			}
 		});
 
+		wrapper.add(editAll);
 		wrapper.add(commit);
 		wrapper.add(rollback);
-
-		Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
-		{
-			@Override
-			public boolean execute() 
-			{
-				Array<PageableDataGrid<Person>.Row> rows = grid.getRows();
-				for(int i = 0 ; i < rows.size() ; i++)
-				{
-					rows.get(i).edit();
-				}
-
-				//				Scheduler.get().scheduleFixedDelay(new RepeatingCommand() 
-				//				{
-				//					@Override
-				//					public boolean execute() 
-				//					{
-				//						grid.setEnabled(false);
-				//						return false;
-				//					}
-				//				}, 2000);
-
-				return false;
-			}
-		}, 2000);
-
 	}
 
 	private ArrayList<Person> mockPersonData(int numItems)
