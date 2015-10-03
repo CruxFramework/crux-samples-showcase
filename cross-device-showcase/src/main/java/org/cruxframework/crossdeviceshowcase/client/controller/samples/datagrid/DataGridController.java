@@ -18,6 +18,7 @@ import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.button.Button;
 import org.cruxframework.crux.smartfaces.client.grid.CellEditor;
+import org.cruxframework.crux.smartfaces.client.grid.ColumnGroup;
 import org.cruxframework.crux.smartfaces.client.grid.DataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.GridDataFactory;
 import org.cruxframework.crux.smartfaces.client.grid.Row;
@@ -257,7 +258,7 @@ public class DataGridController
 
 	private void createGroupColumn(final DataGrid<Person> grid)
 	{
-		DataGrid<Person>.ColumnGroup columnGroup1 = grid.newColumGroup(new Label("Column Group 1"));
+		ColumnGroup<Person> columnGroup1 = grid.newColumGroup(new Label("Column Group 1"));
 				
 		// DataGrid<Person>.ColumnGroup columnGroup2 = columnGroup1.newColumGroup(new Label("Column Group 2"));
 
