@@ -128,6 +128,8 @@ public class DataGridController
 
 		final DataGrid<Person> grid = new DataGrid<Person>(dataProvider, false);
 
+		//grid.setRowSelectStrategy(RowSelectStrategy.multiple);
+		
 		createBunchOfColumns(grid);
 		createGroupColumn(grid);
 		createGridInsideGrid(grid);
