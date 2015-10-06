@@ -126,7 +126,8 @@ public class DataGridController
 			});
 		dataProvider.setPageSize(5);
 
-		final DataGrid<Person> grid = new DataGrid<Person>(dataProvider, false);
+		final DataGrid<Person> grid = new DataGrid<Person>();
+		grid.setDataProvider(dataProvider, false);
 
 		//grid.setRowSelectStrategy(RowSelectStrategy.multiple);
 		
@@ -390,7 +391,8 @@ public class DataGridController
 					});
 				dataProvider.setPageSize(5);
 
-				final DataGrid<Person> grid = new DataGrid<Person>(dataProvider, false);
+				final DataGrid<Person> grid = new DataGrid<Person>();
+				grid.setDataProvider(dataProvider, false);
 				grid.newColumn(new GridDataFactory<Label, Person>() 
 				{
 					@Override
