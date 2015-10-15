@@ -157,7 +157,7 @@ public class DataGridController
 
 	private void createBunchOfColumns(final DataGrid<Person> grid)
 	{
-		grid.newColumn(new GridDataFactory<Label, Person>() 
+		grid.newColumn(new GridDataFactory<Person, Label>() 
 		{
 			@Override
 			public Label createData(Person value, Row<Person> row)
@@ -175,7 +175,7 @@ public class DataGridController
 		})
 		.setSortable(true);
 
-		grid.newColumn(new GridDataFactory<Label, Person>()
+		grid.newColumn(new GridDataFactory<Person, Label>()
 		{
 			@Override
 			public Label createData(Person value, Row<Person> row)
@@ -202,7 +202,7 @@ public class DataGridController
 		})
 		.setSortable(true);
 
-		grid.newColumn(new GridDataFactory<Label, Person>()
+		grid.newColumn(new GridDataFactory<Person, Label>()
 		{
 			@Override
 			public Label createData(Person value, Row<Person> row)
@@ -235,7 +235,7 @@ public class DataGridController
 		})
 		.setSortable(true);
 
-		grid.newColumn(new GridDataFactory<Label, Person>()
+		grid.newColumn(new GridDataFactory<Person, Label>()
 		{
 			@Override
 			public Label createData(Person value, Row<Person> row)
@@ -261,12 +261,12 @@ public class DataGridController
 
 	private void createGroupColumn(final DataGrid<Person> grid)
 	{
-		ColumnGroup<Person> columnGroup1 = grid.newColumGroup(new Label("Column Group 1"));
+		ColumnGroup<Person> columnGroup1 = grid.newColumnGroup("1").setHeaderWidget(new Label("Column Group 1"));
 				
 		// DataGrid<Person>.ColumnGroup columnGroup2 = columnGroup1.newColumGroup(new Label("Column Group 2"));
 
 		columnGroup1
-		.addColumn(grid.newColumn(new GridDataFactory<Label, Person>()
+		.addColumn(grid.newColumn(new GridDataFactory<Person, Label>()
 		{
 			@Override
 			public Label createData(Person value, Row<Person> row)
@@ -300,7 +300,7 @@ public class DataGridController
 		);
 		
 		columnGroup1
-		.addColumn(grid.newColumn(new GridDataFactory<Label, Person>()
+		.addColumn(grid.newColumn(new GridDataFactory<Person, Label>()
 		{
 			@Override
 			public Label createData(Person value, Row<Person> row)
@@ -327,7 +327,7 @@ public class DataGridController
 
 	private void createActionColumn(DataGrid<Person> grid)
 	{
-		grid.newColumn(new GridDataFactory<Button, Person>()
+		grid.newColumn(new GridDataFactory<Person, Button>()
 		{
 			@Override
 			public Button createData(Person value, final Row<Person> row)
@@ -366,7 +366,7 @@ public class DataGridController
 
 	private void createGridInsideGrid(final DataGrid<Person> grid)
 	{
-		grid.newColumn(new GridDataFactory<Label, Person>()
+		grid.newColumn(new GridDataFactory<Person, Label>()
 		{
 			@Override
 			public Label createData(Person value, Row<Person> row)
@@ -393,7 +393,7 @@ public class DataGridController
 
 				final DataGrid<Person> grid = new DataGrid<Person>();
 				grid.setDataProvider(dataProvider, false);
-				grid.newColumn(new GridDataFactory<Label, Person>() 
+				grid.newColumn(new GridDataFactory<Person, Label>() 
 				{
 					@Override
 					public Label createData(Person value, Row<Person> row)
@@ -403,7 +403,7 @@ public class DataGridController
 				}, "8")
 				.setHeaderWidget(new Label("column 1"));
 
-				grid.newColumn(new GridDataFactory<Label, Person>()
+				grid.newColumn(new GridDataFactory<Person, Label>()
 				{
 					@Override
 					public Label createData(Person value, Row<Person> row)
