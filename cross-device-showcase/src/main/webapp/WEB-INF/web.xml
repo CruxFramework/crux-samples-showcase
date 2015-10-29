@@ -27,21 +27,11 @@
 		<servlet-name>restServiceServlet</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>fileUploadServlet</servlet-name>
-		<servlet-class>org.cruxframework.crossdeviceshowcase.server.service.FileUploadServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>fileUploadServlet</servlet-name>
-		<url-pattern>/upload-endpoint</url-pattern>
-	</servlet-mapping>
-  
     <servlet>
         <servlet-name>fileUploadServlet</servlet-name>
         <servlet-class>org.cruxframework.crossdeviceshowcase.server.service.FileUploadServlet</servlet-class>
         <multipart-config>
-<!--             <location>/temp</location> -->
+			<!-- <location>/temp</location> -->
 		    <max-file-size>20848820</max-file-size>
 		    <max-request-size>418018841</max-request-size>
 		    <file-size-threshold>1048576</file-size-threshold>
@@ -51,5 +41,4 @@
         <servlet-name>fileUploadServlet</servlet-name>
         <url-pattern>/upload-endpoint</url-pattern>
     </servlet-mapping>
-  
 </web-app>
