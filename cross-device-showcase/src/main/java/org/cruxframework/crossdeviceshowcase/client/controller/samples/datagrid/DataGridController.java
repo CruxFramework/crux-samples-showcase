@@ -22,6 +22,7 @@ import org.cruxframework.crux.smartfaces.client.grid.ColumnGroup;
 import org.cruxframework.crux.smartfaces.client.grid.DataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.GridDataFactory;
 import org.cruxframework.crux.smartfaces.client.grid.Row;
+import org.cruxframework.crux.smartfaces.client.grid.Type.RowSelectStrategy;
 import org.cruxframework.crux.smartfaces.client.label.Label;
 import org.cruxframework.crux.smartfaces.client.pager.PredictivePager;
 import org.cruxframework.crux.widgets.client.datepicker.DatePicker;
@@ -125,12 +126,12 @@ public class DataGridController
 				}
 			});
 		dataProvider.setPageSize(5);
+		
+//		dataProvider.setSelectionMode(SelectionMode.multiple);
 
-		final DataGrid<Person> grid = new DataGrid<Person>();
+		final DataGrid<Person> grid = new DataGrid<Person>(RowSelectStrategy.checkBox);
 		grid.setDataProvider(dataProvider, false);
 
-		//grid.setRowSelectStrategy(RowSelectStrategy.multiple);
-		
 		createBunchOfColumns(grid);
 		createGroupColumn(grid);
 		createGridInsideGrid(grid);
@@ -209,7 +210,7 @@ public class DataGridController
 			{
 				return new Label(value.getName());
 			}
-		}, "3").setCellEditor(new CellEditor<Person, String>(true)
+		}, "3", true).setCellEditor(new CellEditor<Person, String>(true)
 		{
 			@Override
 			public IsWidget createWidget(Person value)
@@ -242,7 +243,7 @@ public class DataGridController
 			{
 				return new Label(value.getName());
 			}
-		}, "4")
+		}, "4", true)
 		.setCellEditor(new CellEditor<Person, Date>(true)
 		{
 			@Override
@@ -263,8 +264,6 @@ public class DataGridController
 	{
 		ColumnGroup<Person> columnGroup1 = grid.newColumnGroup("1").setHeaderWidget(new Label("Column Group 1"));
 				
-		// DataGrid<Person>.ColumnGroup columnGroup2 = columnGroup1.newColumGroup(new Label("Column Group 2"));
-
 		columnGroup1
 		.addColumn(grid.newColumn(new GridDataFactory<Person, Label>()
 		{
@@ -391,7 +390,7 @@ public class DataGridController
 					});
 				dataProvider.setPageSize(5);
 
-				final DataGrid<Person> grid = new DataGrid<Person>();
+				final DataGrid<Person> grid = new DataGrid<Person>(RowSelectStrategy.checkBox);
 				grid.setDataProvider(dataProvider, false);
 				grid.newColumn(new GridDataFactory<Person, Label>() 
 				{
