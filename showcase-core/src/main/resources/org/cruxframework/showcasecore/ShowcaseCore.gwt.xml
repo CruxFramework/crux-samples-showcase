@@ -9,9 +9,8 @@
 
 	<entry-point class='org.cruxframework.showcasecore.client.ShowcaseCore'/>
 
+	<public path="public"/>
     <source path="client"/>
     <source path="shared"/>
-
-	<public path="public" excludes="**/*.crux.xml,**/*.view.xml,**/*.template.xml,**/*.offline.xml" />
 
 </module>
