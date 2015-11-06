@@ -251,4 +251,7 @@ public interface DescriptionMessages extends Messages
 			+"<p>Este exemplo apresenta uma lista tarefas que podem ser reordenadas de acordo com sua importância. Também é possível realizar "
 			+ "a adição de uma nova tarefa ou remoção de uma tarefa selecionada.</p>")
 	String sortableListDescription();
+	
+	@DefaultMessage("<p>O DataGrid é um componente de listagem de items baseados no data provider.</p>")
+	String dataGridDescription();
 }

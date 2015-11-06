@@ -60,6 +60,12 @@ public interface ShowcaseMessages extends Messages
 	@DefaultMessage("Menus e Listas")
 	String menusAndLists();
 	
+	@DefaultMessage("Containers")
+	String containers();
+
+	@DefaultMessage("Miscelânea")
+	String miscellaneousElements();
+	
 	@DefaultMessage("Funcionalidades Lógicas")
 	String logicalFeatures();
 	

@@ -2,7 +2,7 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.combobox
 
 import org.cruxframework.crux.core.client.dto.DataObject;
 
-@DataObject("person")
+@DataObject("personComboBox")
 public class Person 
 {
 	private String name; 
