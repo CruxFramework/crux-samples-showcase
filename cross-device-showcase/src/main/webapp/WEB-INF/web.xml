@@ -29,7 +29,7 @@
 	</servlet-mapping>
     <servlet>
         <servlet-name>fileUploadServlet</servlet-name>
-        <servlet-class>org.cruxframework.crossdeviceshowcase.server.service.FileUploadServlet</servlet-class>
+        <servlet-class>org.cruxframework.crossdeviceshowcase.server.service.samples.fileuploader.FileUploadServlet</servlet-class>
         <multipart-config>
 			<!-- <location>/temp</location> -->
 		    <max-file-size>20848820</max-file-size>
