@@ -2,7 +2,7 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.datagrid
 
 import java.util.ArrayList;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
+import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.collection.Array;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
@@ -18,6 +18,7 @@ import org.cruxframework.crux.smartfaces.client.grid.DataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.GridDataFactory;
 import org.cruxframework.crux.smartfaces.client.grid.Row;
 import org.cruxframework.crux.smartfaces.client.label.Label;
+
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;

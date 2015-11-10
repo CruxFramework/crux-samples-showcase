@@ -1,6 +1,6 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.progressbox;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
+import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;

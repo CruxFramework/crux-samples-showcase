@@ -1,4 +1,4 @@
-package org.cruxframework.crossdeviceshowcase.client.util;
+package org.cruxframework.crossdeviceshowcase.client.controller.samples.swappanel;
 
 import java.util.Date;
 

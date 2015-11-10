@@ -1,4 +1,4 @@
-package org.cruxframework.crossdeviceshowcase.shared.messages;
+package org.cruxframework.crossdeviceshowcase.client.util.messages;
 
 import org.cruxframework.crux.core.client.i18n.MessageName;
 

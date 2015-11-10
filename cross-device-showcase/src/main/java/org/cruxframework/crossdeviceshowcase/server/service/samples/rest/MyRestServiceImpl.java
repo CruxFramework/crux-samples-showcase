@@ -1,11 +1,11 @@
-package org.cruxframework.crossdeviceshowcase.server.service;
+package org.cruxframework.crossdeviceshowcase.server.service.samples.rest;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.cruxframework.crossdeviceshowcase.shared.dto.MyDTO;
+import org.cruxframework.crossdeviceshowcase.client.controller.samples.rest.MyDTO;
 import org.cruxframework.crux.core.server.rest.annotation.RestService;
 import org.cruxframework.crux.core.shared.rest.annotation.GET;
 import org.cruxframework.crux.core.shared.rest.annotation.POST;

@@ -1,4 +1,4 @@
-package org.cruxframework.crossdeviceshowcase.shared.dto;
+package org.cruxframework.crossdeviceshowcase.client.controller.samples.rest;
 
 import java.io.Serializable;
 
