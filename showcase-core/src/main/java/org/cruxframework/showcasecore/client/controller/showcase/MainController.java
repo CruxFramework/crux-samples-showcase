@@ -10,39 +10,32 @@ import org.cruxframework.crux.core.client.screen.Screen;
 import org.cruxframework.crux.core.client.screen.views.View;
 import org.cruxframework.crux.core.client.screen.views.ViewActivateEvent;
 import org.cruxframework.crux.core.client.screen.views.ViewActivateHandler;
-import org.cruxframework.crux.smartfaces.client.button.Button;
 import org.cruxframework.crux.widgets.client.dialogcontainer.DialogViewContainer;
 import org.cruxframework.crux.widgets.client.disposal.menutabsdisposal.MenuTabsDisposal;
 import org.cruxframework.crux.widgets.client.disposal.panelchoicedisposal.PanelChoiceDisposal;
-import org.cruxframework.crux.widgets.client.event.SelectEvent;
-import org.cruxframework.crux.widgets.client.event.SelectHandler;
 import org.cruxframework.crux.widgets.client.filter.Filter;
 import org.cruxframework.crux.widgets.client.filter.Filterable;
 import org.cruxframework.crux.widgets.client.swappanel.HorizontalSwapPanel.Direction;
-import org.cruxframework.showcasecore.client.remote.showcase.SVNServiceAsync;
+import org.cruxframework.showcasecore.client.proxy.SourceCodeRestProxy;
 import org.cruxframework.showcasecore.client.resource.common.ShowcaseResourcesCommon;
+import org.cruxframework.showcasecore.client.util.LoadingCallback;
 
-import com.gargoylesoftware.htmlunit.protocol.javascript.Handler;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.core.client.Scheduler.ScheduledCommand;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.logical.shared.AttachEvent;
-import com.google.gwt.event.shared.HandlerManager;
-import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 
+@SuppressWarnings("deprecation")
 @Controller("mainController")
 public class MainController 
 {
 	final ShowcaseResourcesCommon bundle = GWT.create(ShowcaseResourcesCommon.class);
 	
 	@Inject
-	public SVNServiceAsync service;
+	public SourceCodeRestProxy service;
 	
 	/////////////////////////////////////////////////////////////////////////toggle language/////////////////////////////////
 
@@ -180,7 +173,7 @@ public class MainController
 	@Expose
 	public void navigateToProject()
 	{
-		Window.open("https://code.google.com/p/crux-framework", "_self", null);
+		Window.open("https://github.com/CruxFramework", "_self", null);
 	}
 	
 	@Expose
@@ -189,16 +182,16 @@ public class MainController
 		MenuTabsDisposal menuDisposal = (MenuTabsDisposal) Screen.get("menuDisposal");
 		String viewId = menuDisposal.getCurrentView();
 		
-		service.listSourceFilesForView(viewId, new Callback<List<String>>()
+		service.listSourceFilesForView(viewId, new LoadingCallback<ArrayList<String>>()
 		{
 			@Override
-			public void applyResult(List<String> result)
+			public void onComplete(ArrayList<String> result)
 			{
 				if(result.size() > 0)
 				{
 					showSourcesDialog(result);
 				}
-			}			
+			}
 		});
 	}
 
@@ -253,10 +246,10 @@ public class MainController
 				{
 					loaded = true;
 					
-					service.getSourceFile(path, new Callback<String>()
+					service.getSourceFile(path, new LoadingCallback<String>()
 					{
 						@Override
-						public void applyResult(String source)
+						public void onComplete(String source)
 						{
 							View view = View.getView(fileName);
 							Widget sourceEditor = view.getWidget("sourceEditor");
@@ -284,4 +277,9 @@ public class MainController
 	public native void syntaxHighlight()/*-{
 		$wnd.Prism.highlightAll();
 	}-*/;
+	
+	public void setService(SourceCodeRestProxy service)
+	{
+		this.service = service;
+	}
 }

@@ -1,4 +1,4 @@
-package org.cruxframework.crossdeviceshowcase.server.service;
+package org.cruxframework.crossdeviceshowcase.server.service.samples.fileuploader;
 
 import java.io.File;
 import java.io.FileNotFoundException;

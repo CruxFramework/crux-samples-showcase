@@ -8,6 +8,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<cruxVersion>5.4-SNAPSHOT</cruxVersion>
+		<smartfacesVersion>1.3-SNAPSHOT</smartfacesVersion>
+		<widgetsVersion>5.4-SNAPSHOT</widgetsVersion>
 		<java.source.version>1.7</java.source.version>
 		<java.target.version>1.7</java.target.version>
 	</properties>
@@ -54,12 +56,18 @@
 		<dependency>
 			<groupId>org.cruxframework</groupId>
 			<artifactId>crux-widgets</artifactId>
-			<version>5.4-SNAPSHOT</version>
+			<version>${widgetsVersion}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.cruxframework</groupId>
 			<artifactId>crux-smart-faces</artifactId>
-			<version>1.3-SNAPSHOT</version>
+			<version>${smartfacesVersion}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.cruxframework.plugin</groupId>
+			<artifactId>crux-maven-plugin</artifactId>
+			<version>${cruxVersion}</version>
+		</dependency>
+		
 	</dependencies>
 </project>

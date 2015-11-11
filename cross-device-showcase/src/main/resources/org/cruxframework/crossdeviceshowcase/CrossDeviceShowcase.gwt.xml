@@ -28,8 +28,7 @@
 	
 	<!-- ******* Application paths ******* -->
 	
-	<public path="public" excludes="**/*.crux.xml,**/*.view.xml,**/*.template.xml,**/*.offline.xml" />
-
+	<public path="public"/>
     <source path="shared"/>
     <source path="client"/>    
 	

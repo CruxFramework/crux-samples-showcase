@@ -19,4 +19,7 @@ public interface ShowcaseCoreMessages extends Messages
 	
 	@DefaultMessage("Ver Código Fonte")
 	String viewSourceCode();
+	
+	@DefaultMessage("Carregando")
+	String loading();
 }

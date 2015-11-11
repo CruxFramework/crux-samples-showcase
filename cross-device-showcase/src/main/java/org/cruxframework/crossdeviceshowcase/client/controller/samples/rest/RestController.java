@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.rest;
 
-import org.cruxframework.crossdeviceshowcase.shared.dto.MyDTO;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -22,8 +21,8 @@ public class RestController
 	  /**
 		 * Create a Rest proxy to talk to the server-side.
 		 */
-	@Inject
-	private MyRestProxy myRestProxy; 
+//	@Inject
+//	private MyRestProxy myRestProxy; 
 	
 	private String name;
 	private String password;
@@ -34,22 +33,22 @@ public class RestController
 	{
 		if(checkRequiredFields())
 		{
-			myRestProxy.save(name, password, new Callback<Void>()
-				{
-					@Override
-					public void onSuccess(Void result) 
-					{
-						setState(1);
-						FlatMessageBox.show("Usuário criado com sucesso!", MessageType.SUCCESS);
-					}
-
-					@Override
-					public void onError(Exception e) 
-					{
-						FlatMessageBox.show("Error in REST communication", MessageType.ERROR);
-					}
-			
-				});
+//			myRestProxy.save(name, password, new Callback<Void>()
+//				{
+//					@Override
+//					public void onSuccess(Void result) 
+//					{
+//						setState(1);
+//						FlatMessageBox.show("Usuário criado com sucesso!", MessageType.SUCCESS);
+//					}
+//
+//					@Override
+//					public void onError(Exception e) 
+//					{
+//						FlatMessageBox.show("Error in REST communication", MessageType.ERROR);
+//					}
+//			
+//				});
 		}
 		else
 		{
@@ -62,29 +61,29 @@ public class RestController
     {
     	if(checkRequiredFields())
     	{
-    		myRestProxy.validate(name, password, new Callback<MyDTO>() 
-    			{
-					@Override
-					public void onSuccess(MyDTO result) 
-					{
-						if(result!=null)
-						{
-							setState(0);
-							FlatMessageBox.show("Welcome, "+result.getName()+"!", MessageType.SUCCESS);
-						}
-						else
-						{
-							FlatMessageBox.show("Username or password is invalid.", MessageType.ERROR);
-						}
-					}
-					
-					//Show the Rest error message to the user
-					@Override
-					public void onError(Exception e) 
-					{
-						FlatMessageBox.show("Error in REST communication", MessageType.ERROR);
-					}
-				});
+//    		myRestProxy.validate(name, password, new Callback<MyDTO>() 
+//    			{
+//					@Override
+//					public void onSuccess(MyDTO result) 
+//					{
+//						if(result!=null)
+//						{
+//							setState(0);
+//							FlatMessageBox.show("Welcome, "+result.getName()+"!", MessageType.SUCCESS);
+//						}
+//						else
+//						{
+//							FlatMessageBox.show("Username or password is invalid.", MessageType.ERROR);
+//						}
+//					}
+//					
+//					//Show the Rest error message to the user
+//					@Override
+//					public void onError(Exception e) 
+//					{
+//						FlatMessageBox.show("Error in REST communication", MessageType.ERROR);
+//					}
+//				});
     	}
     	else
 		{
@@ -137,8 +136,8 @@ public class RestController
 		this.myWidgetAccessor = myWidgetAccessor;
 	}
 
-	public void setMyRestProxy(MyRestProxy myRestProxy) 
-	{
-		this.myRestProxy = myRestProxy;
-	}
+//	public void setMyRestProxy(MyRestProxy myRestProxy) 
+//	{
+//		this.myRestProxy = myRestProxy;
+//	}
 }
