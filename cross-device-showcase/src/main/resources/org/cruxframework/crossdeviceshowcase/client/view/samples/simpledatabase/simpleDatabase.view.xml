@@ -25,7 +25,16 @@
 			</gwt:flowPanel>
 		</crux:styledPanel>		
 
-		<showcase:info title="Database">
+		<showcase:info 
+			title="Database"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			library="Core"
+			edge-visible="true" ie-visible="true" 
+			ie-version="9+" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
 			<showcase:description>
 				<p>
 					O Crux oferece suporte a banco de dados para o lado cliente da aplicação. Cadastre novas pessoas na listagem acima, clicando no botão adicionar. 

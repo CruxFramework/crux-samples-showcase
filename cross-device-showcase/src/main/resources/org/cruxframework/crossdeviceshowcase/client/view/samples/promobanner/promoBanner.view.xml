@@ -28,7 +28,16 @@
 		</crux:promoBanner>
 
 		<!-- 		Component description -->
-		<showcase:info title="PromoBanner" library="Widgets" ie-version="8+">
+		<showcase:info 
+			title="PromoBanner" 
+			library="Widgets" 
+			ie-version="8+"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			edge-visible="true" ie-visible="true" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
 			<showcase:description>
 				<gwt:HTML id="componentDescription"/>
 			</showcase:description>

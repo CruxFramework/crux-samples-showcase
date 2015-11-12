@@ -1,4 +1,4 @@
-package org.cruxframework.crossdeviceshowcase.client.controller.samples.widgetlist;
+package org.cruxframework.crossdeviceshowcase.client.controller.samples.carousel;
 
 import java.util.ArrayList;
 
@@ -12,10 +12,9 @@ import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 
 import com.google.gwt.user.client.ui.HTML;
 
-@Controller("widgetListController")
-public class WidgetListController 
+@Controller("carouselController")
+public class CarouselController 
 {
-	
 	@Inject
 	private DescriptionMessages messages;
 
@@ -52,7 +51,7 @@ public class WidgetListController
 		myWidgetAccessor.componentDescription().setHTML(messages.widgetListDescription());		
 	}
 	
-	@BindView("widgetList")
+	@BindView("carousel")
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{
 		HTML componentDescription();

@@ -27,8 +27,7 @@
 					
 						<gwt:flowPanel id="filterPanel"> 
 							<crux:filter id="filter" text="Search here" animationEnabled="true" 
-								autoSelectEnabled="true" focus="true" width="200px" height="29px" style="margin-right: 350px; margin-top: 1px;"  limit="2">
-							</crux:filter>
+								autoSelectEnabled="true" focus="true" width="200px" height="29px" style="margin-right: 350px; margin-top: 1px;"  limit="2"/>
 						</gwt:flowPanel>
 				
 						<gwt:flowPanel id="topBarpanel">
@@ -62,7 +61,6 @@
 			
 			<crux:menuSection label="${messages_showcase.menusAndLists}" />
 			<crux:menuEntry label="Menu" targetView="menu"/>
-			<crux:menuEntry label="StackMenu" targetView="stackMenu"/>
 			<crux:menuEntry label="SideMenuDisposal" targetView="sideMenuDisposal"/>
 			<crux:menuEntry label="TopMenuDisposal" targetView="topMenuDisposal"/>			
 			<crux:menuEntry label="Filter" targetView="filter"/>
@@ -70,16 +68,15 @@
 			<crux:menuEntry label="SortableList" targetView="sortableList"/>
 			
 			<crux:menuSection label="${messages_showcase.dataElements}" />
-			<crux:menuEntry label="Data GRID" targetView="datagrid"/>
-			<!-- new Widget List -->
-			<!-- new ComboBox -->
-			<crux:menuEntry label="RandomPager" targetView="randomPager"/>
-			<crux:menuEntry label="SequentialPager" targetView="sequentialPager"/>
+			<crux:menuEntry label="DataGRID" targetView="datagrid"/>
+			<crux:menuEntry label="WidgetList" targetView="widgetList"/>
+			<crux:menuEntry label="ComboBox" targetView="comboBox"/>
+			<crux:menuEntry label="Carousel" targetView="carousel"/>
+			<!-- TODO: new Pagers -->
 			
 			<crux:menuSection label="${messages_showcase.layoutsAndPanels}"/>
 			<crux:menuEntry label="FormDisplay" targetView="formDisplay" />
 			<crux:menuEntry label="RollingPanel" targetView="rollingPanel"/>
-			<crux:menuEntry label="Slider" targetView="slider"/>
 			<crux:menuEntry label="StoryBoard" targetView="storyBoard"/>
 			<crux:menuEntry label="StyledPanel" targetView="styledPanel"/>
 			
@@ -99,20 +96,20 @@
 			<crux:menuEntry label="Timer" targetView="timer"/>
 			
 			<crux:menuSection label="${messages_showcase.miscellaneousElements}" />		
-			<crux:menuSection label="News" />
 			<crux:menuEntry label="SwapPanel" targetView="swapPanel"/>
-			<crux:menuEntry label="Horizontal Swap Panel" targetView="horizontalSwapPanel"/>
 			<crux:menuEntry label="Download Button" targetView="downloadButton"/>
+			<!-- Implement it! -->
 			<crux:menuEntry label="Date Picker" targetView="datePicker"/>
+			<!-- Implement it! -->
 			<crux:menuEntry label="Selectable Panel" targetView="selectablePanel"/>
 
 			<crux:menuSection label="${messages_showcase.containers}"/>
-			<!-- <crux:menuEntry label="menuProblema" targetView="menuTabsDisposal"/> -->
+			<!-- Substituir pelo TabPanel! -->
 			<crux:menuEntry label="Rolling Tab Panel" targetView="rollingTabPanel"/>
+			
 			<crux:menuEntry label="Tab View Container" targetView="tabViewContainer"/>
 			<crux:menuEntry label="SwapViewContainer" targetView="swapViewContainer"/>
 			<crux:menuEntry label="Simple View Container" targetView="simpleViewContainer"/>
-			<crux:menuEntry label="Horizontal Swap View Container" targetView="horizontalSwapViewContainer"/>
 
 			<crux:menuSection label="${messages_showcase.logicalFeatures}"/>
 			<crux:menuEntry label="I18N" targetView="i18n"/>

@@ -3,13 +3,13 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.dialogbo
 import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
+import org.cruxframework.crux.core.client.event.SelectEvent;
+import org.cruxframework.crux.core.client.event.SelectHandler;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-import org.cruxframework.crux.widgets.client.button.Button;
-import org.cruxframework.crux.widgets.client.dialog.DialogBox;
-import org.cruxframework.crux.widgets.client.event.SelectEvent;
-import org.cruxframework.crux.widgets.client.event.SelectHandler;
+import org.cruxframework.crux.smartfaces.client.button.Button;
+import org.cruxframework.crux.smartfaces.client.dialog.DialogBox;
 
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
@@ -54,7 +54,6 @@ public class DialogBoxController
 	public void openDialog()
 	{		
 		dialogBox.setTitle("DialogBox");
-		dialogBox.setModal(true);
 		dialogBox.show();
 		dialogBox.center();	
 	}

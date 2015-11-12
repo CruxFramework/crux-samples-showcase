@@ -1,4 +1,4 @@
-package org.cruxframework.crossdeviceshowcase.client.controller.samples.adaptivegrid;
+package org.cruxframework.crossdeviceshowcase.client.controller.samples.swappanel;
 
 import java.io.Serializable;
 import java.util.Date;

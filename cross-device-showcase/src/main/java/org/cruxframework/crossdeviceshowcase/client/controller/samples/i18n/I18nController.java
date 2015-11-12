@@ -1,15 +1,11 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.i18n;
 
-import java.util.Locale;
-
 import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
-import org.cruxframework.crux.core.client.screen.Screen;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-import org.cruxframework.crux.widgets.client.disposal.menutabsdisposal.MenuTabsDisposal;
 import org.cruxframework.crux.widgets.client.swapcontainer.HorizontalSwapContainer;
 
 import com.google.gwt.user.client.Window;

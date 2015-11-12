@@ -8,20 +8,22 @@ import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 public class GitExplorer
 {
+	private static final String SLASH = "/";
+	private final static Logger LOGGER = Logger.getLogger(GitExplorer.class.getName()); 
 	private static final String ENCODING = "UTF-8";
-	private static final String RECURSIVE = "?recursive=1";
-	private static final String BASE_URL = "https://api.github.com/repos/CruxFramework/crux-samples-showcase/git/trees/";
-	private static final String CONTROLLER_HASH = "2c3b6759399f045cd49a9e8a3c8bcd1d5861c60c"; //src\main\java\org\cruxframework\crossdeviceshowcase\client\controller\samples
-	private static final String VIEW_HASH = "1c494cf4e1ee22c4ad5e846317b2b04bf5e29a0b"; //src\main\resources\org\cruxframework\crossdeviceshowcase\client\view\samples
-	private static final String SERVER_HASH = ""; //src\main\java\org\cruxframework\showcasecore\server\samples
+	private static final String BRANCH = "?ref=master";
+	private static final String BASE_URL = "https://api.github.com/repos/CruxFramework/crux-samples-showcase/contents/cross-device-showcase/";
+	private static final String CONTROLLER_PATH = "src/main/java/org/cruxframework/crossdeviceshowcase/client/controller/samples/";
+	private static final String VIEW_PATH = "src/main/resources/org/cruxframework/crossdeviceshowcase/client/view/samples/";
+	private static final String SERVER_PATH = "src/main/java/org/cruxframework/showcasecore/server/samples/";
 	private static final String RAWPATH = "https://raw.githubusercontent.com/CruxFramework/crux-samples-showcase/master/cross-device-showcase/";
 
 	private static String readAll(Reader rd) throws IOException
@@ -35,17 +37,39 @@ public class GitExplorer
 		return sb.toString();
 	}
 
-	private static JSONObject readJsonFromUrl(String url) throws IOException, JSONException 
+	private static JSONArray readJsonFromUrl(String url) 
 	{
-		InputStream is = new URL(url).openStream();
-		try {
+		InputStream is = null;
+		try 
+		{
+			is = new URL(url).openStream();
 			BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName(ENCODING)));
 			String jsonText = readAll(rd);
-			JSONObject json = new JSONObject(jsonText);
+			JSONArray json = new JSONArray(jsonText);
 			return json;
-		} finally {
-			is.close();
+		} catch (IOException e) 
+		{
+			//the file was not found on the server. We don't have to log here.
+			//LOGGER.log(Level.SEVERE, "The response could not be deserialized.", e);
+		} catch (JSONException e)
+		{
+			LOGGER.log(Level.SEVERE, "The JSON is not in a parsable format.");
 		}
+		finally 
+		{
+			if(is != null)
+			{
+				try
+				{
+					is.close();
+				}
+				catch (IOException e)
+				{
+					LOGGER.log(Level.SEVERE, "The buffer could not be closed.", e);
+				}
+			}
+		}
+		return null;
 	}
 
 	public static String getSourceFile(String path) throws IOException, JSONException
@@ -60,31 +84,41 @@ public class GitExplorer
 	{
 		ArrayList<String> files = new ArrayList<String>();
 		
-		files.addAll(getSourceFilesForView("src/main/java/org/cruxframework/crossdeviceshowcase/client/controller/samples/", CONTROLLER_HASH, viewName));
-		files.addAll(getSourceFilesForView("src/main/resources/org/cruxframework/crossdeviceshowcase/client/view/samples/", VIEW_HASH, viewName));
+		ArrayList<String> sourceControllerFiles = getSourceFilesForView(CONTROLLER_PATH, viewName);
+		if(sourceControllerFiles != null)
+		{
+			files.addAll(sourceControllerFiles);
+		}
+		
+		ArrayList<String> sourceViewFiles = getSourceFilesForView(VIEW_PATH, viewName);
+		if(sourceViewFiles != null)
+		{
+			files.addAll(sourceViewFiles);
+		}
+		
+		ArrayList<String> sourceServerFiles = getSourceFilesForView(SERVER_PATH, viewName);
+		if(sourceServerFiles != null)
+		{
+			files.addAll(sourceServerFiles);
+		}
 
 		return files;
 	}
 	
-	private static ArrayList<String> getSourceFilesForView(String urlPrefix, String hash, String viewName) throws IOException, JSONException 
+	private static ArrayList<String> getSourceFilesForView(String path, String viewName) throws IOException, JSONException 
 	{
-		ArrayList<String> files = new ArrayList<String>();
-		
-		JSONObject json = readJsonFromUrl(BASE_URL + hash + RECURSIVE);
-		JSONArray list = (JSONArray) json.get("tree");
-		for(int i=0; i<list.length(); i++)
+		JSONArray json = readJsonFromUrl(BASE_URL + path + viewName + BRANCH);
+		if(json != null)
 		{
-			String path = (String) list.getJSONObject(i).get("path");
-			if(
-				!StringUtils.isEmpty(path) 
-				&& path.contains("/")
-				&& ((path.split("/")[0]).trim()).equals(viewName.toLowerCase())
-				)
+			ArrayList<String> files = new ArrayList<String>();
+			for(int i=0; i<json.length(); i++)
 			{
-				files.add(urlPrefix + path);
+				String name = (String) json.getJSONObject(i).get("name");
+				files.add(path + viewName + SLASH + name);
 			}
+			return files;
 		}
 		
-		return files;
+		return null;
 	}
 }

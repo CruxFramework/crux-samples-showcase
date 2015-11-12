@@ -22,7 +22,6 @@ import org.cruxframework.crux.smartfaces.client.label.Label;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
-import com.google.gwt.user.client.ui.TextBox;
 
 @Controller("dataGridController")
 public class DataGridController
@@ -40,7 +39,6 @@ public class DataGridController
 	public void onLoad()
 	{
 		view.componentDescription().setHTML(messages.dataGridDescription());
-		makeColumnNameEditable();
 		createActionColumn(view.grid());
 		addDataInterationButtons(view.grid());
 		view.grid().redraw();
@@ -84,7 +82,6 @@ public class DataGridController
 				}
 			}
 		});
-		
 		
 		Button commit = new Button();
 		commit.setText(dataGridMessages.commit());
@@ -173,27 +170,6 @@ public class DataGridController
 			}
 		})
 		.setHeaderWidget(new Label(dataGridMessages.action()));
-	}
-
-	private void makeColumnNameEditable()
-	{
-		view.grid().getColumn("name").setCellEditor(new CellEditor<Person, String>()
-		{
-			@Override
-			public IsWidget createData(Person value, Row<Person> row)
-			{
-				TextBox textBox = new TextBox();
-				textBox.setValue(value.getName());
-				textBox.setVisibleLength(8);
-				return textBox;
-			}
-
-			@Override
-			public void setProperty(Person dataObject, String object)
-			{
-				dataObject.setName(object);
-			}
-		});
 	}
 
 	private Person mockPerson(int seed)
