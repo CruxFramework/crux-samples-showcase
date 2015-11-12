@@ -37,11 +37,14 @@ public interface ShowcaseResourcesCommon extends ClientBundle
 	@Source("prism.css")
 	CssResource cssPrism();
 	
-	
 //	Browsers
 	@Source("browsers/ie.png")
 	@ImageOptions(repeatStyle=RepeatStyle.Both)
 	ImageResource ie9();
+	
+	@Source("browsers/edge.png")
+	@ImageOptions(repeatStyle=RepeatStyle.Both)
+	ImageResource edge();
 	
 	@Source("browsers/chrome.png")
 	@ImageOptions(repeatStyle=RepeatStyle.Both)
@@ -55,61 +58,104 @@ public interface ShowcaseResourcesCommon extends ClientBundle
 	@ImageOptions(repeatStyle=RepeatStyle.Both)
 	ImageResource firefox();
 	
+// WidgetList
 	
-//	RandomPager
+	@Source("logos/audi.png")
+	ImageResource carBrand1();
+	
+	@Source("logos/bmw.png")
+	ImageResource carBrand2();
+	
+	@Source("logos/chevrolet.png")
+	ImageResource carBrand3();
+	
+	@Source("logos/ford.png")
+	ImageResource carBrand4();
+	
+	@Source("logos/gmc.png")
+	ImageResource carBrand5();
+	
+	@Source("logos/hondaCar.png")
+	ImageResource carBrand6();
+	
+	@Source("logos/hyundai.png")
+	ImageResource carBrand7();
+	
+	@Source("logos/mercedes.png")
+	ImageResource carBrand8();
+	
+	@Source("logos/peterbilt.png")
+	ImageResource carBrand9();
+	
+	@Source("logos/scania.png")
+	ImageResource carBrand10();
+	
+	@Source("logos/volkswagen.png")
+	ImageResource carBrand11();
+	
+	@Source("logos/volvo.png")
+	ImageResource carBrand12();
+	
+	@Source("logos/yamaha.png")
+	ImageResource carBrand13();
+	
+	@Source("logos/honda.png")
+	ImageResource carBrand14();
+	
+	@Source("logos/mitsubishi.png")
+	ImageResource carBrand15();
+	
+//	ComboBox
 	@Source("countries/algeria.jpg")
-	ImageResource algeria();
+	ImageResource flag1();
 	
 	@Source("countries/argentina.jpg")
-	ImageResource argentina();
+	ImageResource flag2();
 	
 	@Source("countries/australia.jpg")
-	ImageResource australia();
+	ImageResource flag3();
 	
 	@Source("countries/brazil.jpg")
-	ImageResource brazil();
+	ImageResource flag4();
 	
 	@Source("countries/canada.jpg")
-	ImageResource canada();
+	ImageResource flag5();
 	
 	@Source("countries/chile.jpg")
-	ImageResource chile();
+	ImageResource flag6();
 	
 	@Source("countries/china.jpg")
-	ImageResource china();
+	ImageResource flag7();
 	
 	@Source("countries/costaRica.jpg")
-	ImageResource costaRica();
+	ImageResource flag8();
 	
 	@Source("countries/france.jpg")
-	ImageResource france();
+	ImageResource flag9();
 	
 	@Source("countries/germany.jpg")
-	ImageResource germany();
+	ImageResource flag10();
 	
 	@Source("countries/italy.jpg")
-	ImageResource italy();
+	ImageResource flag11();
 	
 	@Source("countries/japan.jpg")
-	ImageResource japan();
+	ImageResource flag12();
 	
 	@Source("countries/mexico.jpg")
-	ImageResource mexico();
+	ImageResource flag13();
 	
 	@Source("countries/morocco.jpg")
-	ImageResource morocco();
+	ImageResource flag14();
 	
 	@Source("countries/southAfrica.jpg")
-	ImageResource southAfrica();
+	ImageResource flag15();
 	
 	@Source("countries/southKorea.jpg")
-	ImageResource southKorea();
+	ImageResource flag16();
 	
 	@Source("countries/usa.jpg")
-	ImageResource spain();
-	
-	@Source("countries/usa.jpg")
-	ImageResource usa();
+	ImageResource flag17();
 	
 //	Menu
 	@Source("logos/audi.png")
