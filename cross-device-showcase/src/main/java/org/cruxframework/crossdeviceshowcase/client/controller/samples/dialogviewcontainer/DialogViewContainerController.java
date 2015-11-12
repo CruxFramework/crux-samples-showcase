@@ -6,7 +6,7 @@ import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-import org.cruxframework.crux.widgets.client.dialogcontainer.DialogViewContainer;
+import org.cruxframework.crux.smartfaces.client.dialog.DialogViewContainer;
 
 import com.google.gwt.user.client.ui.HTML;
 
@@ -30,7 +30,7 @@ public class DialogViewContainerController
 	public void openDialog()
 	{	
 		viewDialog.dialogViewContainer().loadView("viewRegister", true);
-		viewDialog.dialogViewContainer().openDialog();
+		viewDialog.dialogViewContainer().show();
 		viewDialog.dialogViewContainer().center();
 	}
 	

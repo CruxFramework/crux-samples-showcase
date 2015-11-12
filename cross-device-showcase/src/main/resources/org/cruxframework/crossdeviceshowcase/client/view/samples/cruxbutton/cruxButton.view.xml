@@ -10,15 +10,30 @@
 	onLoad="cruxButtonController.onLoad"
 	title="Button"> 
 
+	<style>
+		.success
+		{
+			background: #6d991a;
+		}
+		
+		.warn
+		{
+			background: #d58512;
+		}
+		
+		.error
+		{
+			background: #ac2925;
+		}
+	</style>
+
 	<center>
 		<!-- Component use sample -->
 		<crux:styledPanel id="panel1">
 			<gwt:HTMLPanel id="html" styleName="center">
 				<faces:button id="cruxBtn" text="I am a button"/>
 				<hr />
-				<h4>
-					<faces:label id="h4" text="States" />
-				</h4>
+				<faces:label id="h4" text="States" />
 				<div class="btn-Group">
 					<gwt:radioButton name="color" onChange="cruxButtonController.setStateDefault" id="radioDefault" text="Default" checked="true"/>
 					<gwt:radioButton name="color" onChange="cruxButtonController.setStateSuccess" id="radioSuccess" text="Success"/>
@@ -29,7 +44,16 @@
 		</crux:styledPanel>
 
 		<!-- Component description -->
-		<showcase:info title="Button" library="SmartFaces" ie-version="10+">
+		<showcase:info 
+			title="Button" 
+			library="SmartFaces" 
+			ie-version="10+"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			edge-visible="true" ie-visible="true" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
 			<showcase:description>
 				<gwt:HTML id="componentDescription" />
 			</showcase:description>

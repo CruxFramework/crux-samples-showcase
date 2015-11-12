@@ -18,13 +18,14 @@
 			 <f:dataGrid id="grid" itemVar="personGrid" dataProvider="dataProviderPerson" rowSelectStrategy="radioButton">
 				<f:columnGroup key="nameLastName" header="${datagrid_messages.basicinfo}">
 					<f:column key="name" header="${datagrid_messages.name}" property="@{personGrid.name}" sortable="true"/>
-<!-- 		    		<f:editor> -->
-<!-- 		    			<f:widget><g:textBox id="name" value="@{personGrid.name}"/></f:widget> -->
-<!-- 		    		</f:editor> -->
 					<f:column key="lastName" header="${datagrid_messages.lastName}" property="@{personGrid.lastName}" sortable="true"/>
 				</f:columnGroup>
 		    	<f:column key="age" header="${datagrid_messages.age}" property="@{personGrid.age:integerString}" sortable="true"/>
-		    	<f:column key="profession" header="${datagrid_messages.profession}" property="@{personGrid.profession}" sortable="true" detailOnSize="small"/>
+		    	<f:column key="profession" header="${datagrid_messages.profession}" property="@{personGrid.profession}" sortable="true" detailOnSize="small">
+		    		<f:editor>
+		    			<f:widget><g:textBox id="profession" value="@{personGrid.profession}" width="80px"/></f:widget>
+		    		</f:editor>
+		    	</f:column>
 		    </f:dataGrid>
 		    
 		    <f:sequentialPager id="pagerGridPerson" dataProvider="dataProviderPerson" visible="true" />
@@ -35,7 +36,7 @@
 			libraryPanel-visible="true"
 			browserPanel-visible="true" 
 			library="SmartFaces"
-			ie-visible="true" 
+			edge-visible="true" ie-visible="true" 
 			ie-version="9+" 
 			chrome-visible="true" 
 			firefox-visible="true" 

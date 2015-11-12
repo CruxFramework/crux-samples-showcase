@@ -5,8 +5,8 @@ import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.View;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 
 import com.google.gwt.user.client.ui.HTML;
 
@@ -54,7 +54,7 @@ public class MessageBoxController
 	
 	private void showMessage(MessageType type)
 	{
-		FlatMessageBox.show(MESSAGE_TYPE + type.name(), type);
+		MessageBox.show(MESSAGE_TYPE + type.name(), type);
 	}
 	
 	public void setComponentDescription(DescriptionMessages componentDescription) {

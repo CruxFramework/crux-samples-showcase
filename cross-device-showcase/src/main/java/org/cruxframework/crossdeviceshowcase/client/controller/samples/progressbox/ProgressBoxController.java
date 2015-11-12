@@ -5,7 +5,7 @@ import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.View;
-import org.cruxframework.crux.widgets.client.dialog.ProgressBox;
+import org.cruxframework.crux.smartfaces.client.dialog.ProgressBox;
 
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.HTML;

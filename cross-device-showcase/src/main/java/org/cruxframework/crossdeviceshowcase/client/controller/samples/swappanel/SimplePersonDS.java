@@ -2,7 +2,6 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.swappane
 
 import java.util.List;
 
-import org.cruxframework.crossdeviceshowcase.client.controller.samples.adaptivegrid.PersonDTO;
 import org.cruxframework.crux.core.client.datasource.LocalPagedDataSource;
 import org.cruxframework.crux.core.client.datasource.annotation.DataSource;
 import org.cruxframework.crux.core.client.datasource.annotation.DataSourceRecordIdentifier;

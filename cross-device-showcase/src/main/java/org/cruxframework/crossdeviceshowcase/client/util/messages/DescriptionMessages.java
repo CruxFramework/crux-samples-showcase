@@ -196,6 +196,15 @@ public interface DescriptionMessages extends Messages
 	        + "visualização e usabilidade.</p>")
 	String menuDescription();
 	
+	@DefaultMessage("<p>O ComboBox é um componente cross-device para a seleção de um elemento dentre uma lista de elementos."
+        +"</p>")
+	String comboBoxDescription();
+	
+	@DefaultMessage("<p>O WidgetList é um componente que trabalha juntamente com o Data Provider, ele permite a criação de lista"
+		+ "de Widgets."
+        +"Neste exemplo a lista de elementos foi construída na view.</p>")
+	String widgetListDescription();
+	
 	@DefaultMessage("<p>Este é um componente cross-device que além de ser um menu, também define o layout completo de uma página. "
 			+ "Para tanto, este renderiza automaticamente um menu, um viewContainer, um cabeçalho e um rodapé. "
 			+ "Desta forma, basta definir valores para os atributos do layout e a página estará pronta. Inclusive a ligação entre o "

@@ -23,7 +23,7 @@
 				
 				<crux:tab tabEnabled="true">
 					<crux:tabHtml>
-						<img src="img/pageTwo.png" width="120px" height="25px"/>
+						<img src="img/pageTwo.png" width="120" height="25"/>
 					</crux:tabHtml>
 					<crux:panelContent>
 						<crux:formDisplay id="formPerson" width="500px">
@@ -65,7 +65,16 @@
 			</crux:rollingTabPanel>
 		</crux:styledPanel>
 
-		<showcase:info title="${messages_rollingTabPanel.title}">
+		<showcase:info 
+			title="${messages_rollingTabPanel.title}"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			library="Widgets"
+			edge-visible="true" ie-visible="true" 
+			ie-version="9+" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
 			<showcase:description>
 				<gwt:HTML id="htmlDescText"/>		
 			</showcase:description>

@@ -37,32 +37,42 @@ public class FileUploadServlet extends HttpServlet
 					throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 
+		//if you want to process the data uncomment this
+		//processFile(request, response);
+	}
+
+	@SuppressWarnings("unused")
+	private void processFile(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
+	{
 		// Create path components to save the file
 		final Part filePart = request.getPart("file");
 
-		//Comentar daqui para baixo quando o showcase for para a appengine
-		final String path = "c:\\temp\\";
+		final String path = System.getProperty("java.io.tmpdir");
 		final String fileName = getFileName(filePart);
 
 		OutputStream out = null;
 		InputStream filecontent = null;
 		final PrintWriter writer = response.getWriter();
 
-		try {
-			out = new FileOutputStream(new File(path + File.separator
-					+ fileName));
+		File file = new File(path + File.separator + fileName);
+		try 
+		{
+			out = new FileOutputStream(file);
 			filecontent = filePart.getInputStream();
 
 			int read = 0;
 			final byte[] bytes = new byte[1024];
 
-			while ((read = filecontent.read(bytes)) != -1) {
+			while ((read = filecontent.read(bytes)) != -1) 
+			{
 				out.write(bytes, 0, read);
 			}
+			
 			writer.println("New file " + fileName + " created at " + path);
-			LOGGER.log(Level.INFO, "File{0}being uploaded to {1}", 
-					new Object[]{fileName, path});
-		} catch (FileNotFoundException fne) {
+			
+			LOGGER.log(Level.INFO, "File{0}being uploaded to {1}", new Object[]{fileName, path});
+		} catch (FileNotFoundException fne) 
+		{
 			writer.println("You either did not specify a file to upload or are "
 					+ "trying to upload a file to a protected or nonexistent "
 					+ "location.");
@@ -70,26 +80,32 @@ public class FileUploadServlet extends HttpServlet
 
 			LOGGER.log(Level.SEVERE, "Problems during file upload. Error: {0}", 
 					new Object[]{fne.getMessage()});
-		} finally {
-			if (out != null) {
+		} finally 
+		{
+			if (out != null) 
+			{
 				out.close();
 			}
-			if (filecontent != null) {
+			if (filecontent != null) 
+			{
 				filecontent.close();
 			}
-			if (writer != null) {
+			if (writer != null) 
+			{
 				writer.close();
 			}
 		}
 	}
 
-	private String getFileName(final Part part) {
+	private String getFileName(final Part part) 
+	{
 		final String partHeader = part.getHeader("content-disposition");
 		LOGGER.log(Level.INFO, "Part Header = {0}", partHeader);
-		for (String content : part.getHeader("content-disposition").split(";")) {
-			if (content.trim().startsWith("filename")) {
-				return content.substring(
-						content.indexOf('=') + 1).trim().replace("\"", "");
+		for (String content : part.getHeader("content-disposition").split(";")) 
+		{
+			if (content.trim().startsWith("filename")) 
+			{
+				return content.substring(content.indexOf('=') + 1).trim().replace("\"", "");
 			}
 		}
 		return null;
