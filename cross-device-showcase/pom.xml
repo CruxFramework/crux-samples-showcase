@@ -47,6 +47,7 @@
 					<module>org.cruxframework.crossdeviceshowcase.CrossDeviceShowcase</module>
 					<!-- <style>DETAILED</style> -->
 					<runTarget>index.html</runTarget>
+					<noServer>true</noServer>
 					<strict>true</strict>
               		<extraJvmArgs>-Xmx1024M -Xss1024k</extraJvmArgs>
 					<!-- <extraJvmArgs>-Xmx1024M -Xss1024k -Xdebug -Xrunjdwp:transport=dt_socket,address=3331,server=y,suspend=y</extraJvmArgs> -->
