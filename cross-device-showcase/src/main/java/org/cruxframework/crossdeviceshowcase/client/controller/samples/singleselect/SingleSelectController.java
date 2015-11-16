@@ -6,8 +6,8 @@ import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.select.SingleSelect;
 
 import com.google.gwt.user.client.ui.HTML;
@@ -82,7 +82,7 @@ public class SingleSelectController
 			if (indexEmployee >= 0)
 			{
 				String itemEmployee = myWidgetAccessor.singleSelectEmployees().getItemText(indexEmployee);
-				FlatMessageBox.show("You selected the employee " + itemEmployee + " of the " + itemDepartment+" department.", MessageType.INFO);
+				MessageBox.show("You selected the employee " + itemEmployee + " of the " + itemDepartment+" department.", MessageType.INFO);
 			}
 		}				
 	}

@@ -16,7 +16,7 @@
 			<gwt:HTMLPanel id="mainPanel" styleName="center">
 				<faces:label id="labelText" text="Enter a number"/>
 				<br />
-				<crux:numberTextBox id="boxNumber" maxLength="5" value="44" />
+				<faces:numberBox id="boxNumber" value="44" />
 				<hr />
 				<faces:label id="labelMaxlength" text="Choose the limit for entering the numbers"/>
 				<br />

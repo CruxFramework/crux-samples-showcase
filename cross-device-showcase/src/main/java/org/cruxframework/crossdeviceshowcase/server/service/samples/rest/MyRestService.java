@@ -14,10 +14,10 @@ import org.cruxframework.crux.core.shared.rest.annotation.QueryParam;
 
 @RestService("myRestService")
 @Path("/users")
-public class MyRestServiceImpl
+public class MyRestService
 {
 	private static List<MyDTO> mockUsers;
-	private static final Log LOG = LogFactory.getLog(MyRestServiceImpl.class);
+	private static final Log LOG = LogFactory.getLog(MyRestService.class);
 	
 	static
 	{
@@ -35,7 +35,7 @@ public class MyRestServiceImpl
 	@Path("users")
 	public MyDTO validate(@QueryParam("name") String name, @QueryParam("password") String password)
 	{
-		LOG.info("Calling REST service");
+		LOG.info("Validation if user can log in");
 		
 		for (MyDTO myDTO : mockUsers) 
 		{
@@ -51,7 +51,13 @@ public class MyRestServiceImpl
 	@Path("add")
 	public void save(@QueryParam("name") String name, @QueryParam("password") String password)
 	{
-		LOG.info("Add user");
+		LOG.info("Adding an user");
+		
+		if(mockUsers.size() > 1000)
+		{
+			mockUsers.clear();
+		}
+		
 		if(name!=null && !name.equals("") && password!=null && !password.equals(""))
 		{
 			MyDTO myDTO = new MyDTO(name, password);

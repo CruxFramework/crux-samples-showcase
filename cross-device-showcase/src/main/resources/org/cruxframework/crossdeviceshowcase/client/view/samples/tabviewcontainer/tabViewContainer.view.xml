@@ -3,6 +3,7 @@
 	xmlns:v="http://www.cruxframework.org/view"
 	xmlns:core="http://www.cruxframework.org/crux" 
 	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	onLoad="tabViewContainerController.onLoad"
@@ -11,9 +12,9 @@
 
 	<center>
 		<gwt:HTMLPanel id="panel">
-			<crux:tabViewContainer id="tabView" width="700px" height="300px">
-				<crux:view name="simpleViewTab1" closeable="true"/>
-			</crux:tabViewContainer>
+			<faces:tabViewContainer id="tabView" width="700px" height="300px">
+				<faces:view name="simpleViewTab1" closeable="true"/>
+			</faces:tabViewContainer>
 			<br/>
 			<gwt:horizontalPanel id="buttonPanel">
 				<gwt:textBox id="textBoxUrl" text="http://blog.cruxframework.org" width="250px" readOnly="true"/>

@@ -1,13 +1,13 @@
-package org.cruxframework.crossdeviceshowcase.client.controller.samples.rollingtabpanel;
+package org.cruxframework.crossdeviceshowcase.client.controller.samples.tabpanel;
 
 import org.cruxframework.crux.core.client.i18n.MessageName;
 
 import com.google.gwt.i18n.client.Messages;
 
-@MessageName("messages_rollingTabPanel")
-public interface RollingTabPanelMessages extends Messages
+@MessageName("messages_tabPanel")
+public interface TabPanelMessages extends Messages
 {
-	@DefaultMessage("RollingTabPanel")
+	@DefaultMessage("TabPanel")
 	String title();
 	
 	@DefaultMessage("Esta aba contém apenas o componente botão.")
@@ -43,7 +43,7 @@ public interface RollingTabPanelMessages extends Messages
 	@DefaultMessage("Botão 2")
 	String button2();
 	
-	@DefaultMessage("<p>RollingTabPanel é um painel onde é possível apresentar várias páginas no mesmo espaço, "
+	@DefaultMessage("<p>TabPanel é um painel onde é possível apresentar várias páginas no mesmo espaço, "
 			+ "sendo que a troca do conteúdo a ser visualizado é feita através de abas.</p>"
 			+ "<p>Este componente possui uma animação para a transição das páginas que pode ser ativada ou não. "
 			+ "Cada aba do componente pode váriar entre opções de título (da aba) e conteúdo. As abas podem conter "

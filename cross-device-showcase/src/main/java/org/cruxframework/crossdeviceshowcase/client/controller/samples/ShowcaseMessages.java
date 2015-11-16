@@ -71,5 +71,7 @@ public interface ShowcaseMessages extends Messages
 	
 	@DefaultMessage("Database não suportada")
 	String databaseNotSupportedError();
-	
+
+	@DefaultMessage("Carregando")
+	String loading();
 }

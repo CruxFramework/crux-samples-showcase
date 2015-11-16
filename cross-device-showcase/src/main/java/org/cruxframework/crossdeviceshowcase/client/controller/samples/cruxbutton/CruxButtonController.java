@@ -14,7 +14,6 @@ import com.google.gwt.user.client.ui.HTML;
 @Controller("cruxButtonController")
 public class CruxButtonController
 {
-
 	@Inject
 	private MyWidgets myWidgets;
 	

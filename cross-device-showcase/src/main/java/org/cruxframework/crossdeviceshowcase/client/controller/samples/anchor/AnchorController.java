@@ -6,10 +6,9 @@ import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.anchor.Anchor;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
-
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.TextBox;
 
@@ -45,13 +44,13 @@ public class AnchorController
 	@Expose
 	public void pgEnd()
 	{
-		FlatMessageBox.show("Going to the Bottom of page", MessageType.INFO);
+		MessageBox.show("Going to the Bottom of page", MessageType.INFO);
 	}
 	
 	@Expose
 	public void pgHome()
 	{
-		FlatMessageBox.show("Going to the Top of page", MessageType.INFO);
+		MessageBox.show("Going to the Top of page", MessageType.INFO);
 	}
 
 	@BindView("anchor")

@@ -1,0 +1,45 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	useResource="showcaseCoreResources"
+	useController="tabPanelController"
+	onLoad="tabPanelController.onLoad"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	title="${messages_tabPanel.title}"> 
+
+	<center>
+		<crux:styledPanel id="mainPanel">
+			<faces:tabPanel id="tabPanel">
+				<faces:tab>
+					<faces:tabWidget>
+						<gwt:label id="label1" text="1" />
+					</faces:tabWidget>
+					<faces:panelContent>
+						<gwt:label id="label1" text="Content" />
+					</faces:panelContent>
+				</faces:tab>
+			</faces:tabPanel>
+		</crux:styledPanel>
+
+		<showcase:info 
+			title="${messages_tabPanel.title}"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			library="Widgets"
+			edge-visible="true" ie-visible="true" 
+			ie-version="9+" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
+			<showcase:description>
+				<gwt:HTML id="htmlDescText"/>		
+			</showcase:description>
+		</showcase:info>
+		
+	</center>		
+	
+</v:view>
