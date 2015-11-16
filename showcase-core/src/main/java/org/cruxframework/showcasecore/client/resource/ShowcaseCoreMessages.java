@@ -22,4 +22,10 @@ public interface ShowcaseCoreMessages extends Messages
 	
 	@DefaultMessage("Carregando")
 	String loading();
+
+	@DefaultMessage("Enable Log")
+	String enableLog();
+
+	@DefaultMessage("X")
+	String disableLog();
 }
