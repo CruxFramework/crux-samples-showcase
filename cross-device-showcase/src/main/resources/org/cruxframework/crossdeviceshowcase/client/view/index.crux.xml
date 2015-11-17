@@ -49,8 +49,10 @@
 			
 			<crux:menuSection label="${messages_showcase.formElements}"/>
 			<crux:menuEntry label="Button" targetView="cruxButton"/>
+			<crux:menuEntry label="Anchor" targetView="anchor"/>
+			<crux:menuEntry label="Label" targetView="cruxLabel"/>
 			<crux:menuEntry label="ColorPicker" targetView="colorPickerDialog"/>
-			<crux:menuEntry label="DateBox" targetView="dateBox"/>
+			<crux:menuEntry label="Date" targetView="date"/>
 			<crux:menuEntry label="FileUploader" targetView="fileUploader"/>
 			<crux:menuEntry label="MaskedLabel" targetView="maskedLabel"/>
 			<crux:menuEntry label="MaskedTextBox" targetView="maskedTextBox"/>
@@ -58,6 +60,8 @@
 			<crux:menuEntry label="TextArea" targetView="textArea"/>
 			<crux:menuEntry label="TextBox" targetView="gwtTextBox"/>
 			<crux:menuEntry label="SingleSelect" targetView="singleSelect"/>
+			<crux:menuEntry label="Selectable Panel" targetView="selectablePanel"/>
+			<crux:menuEntry label="Tab Panel" targetView="tabPanel"/>
 			
 			<crux:menuSection label="${messages_showcase.menusAndLists}" />
 			<crux:menuEntry label="Menu" targetView="menu"/>
@@ -66,13 +70,14 @@
 			<crux:menuEntry label="Filter" targetView="filter"/>
 			<crux:menuEntry label="ListShuttle" targetView="listShuttle"/>			
 			<crux:menuEntry label="SortableList" targetView="sortableList"/>
+			<crux:menuEntry label="Breadcrumb" targetView="breadcrumb"/>
 			
 			<crux:menuSection label="${messages_showcase.dataElements}" />
 			<crux:menuEntry label="DataGRID" targetView="datagrid"/>
 			<crux:menuEntry label="WidgetList" targetView="widgetList"/>
 			<crux:menuEntry label="ComboBox" targetView="comboBox"/>
 			<crux:menuEntry label="Carousel" targetView="carousel"/>
-			<!-- TODO: new Pagers -->
+			<crux:menuEntry label="Pagers" targetView="pagers"/>
 			
 			<crux:menuSection label="${messages_showcase.layoutsAndPanels}"/>
 			<crux:menuEntry label="FormDisplay" targetView="formDisplay" />
@@ -91,31 +96,23 @@
 			<crux:menuEntry label="Image" targetView="image"/>
 			<crux:menuEntry label="PromoBanner" targetView="promoBanner"/>
 			<crux:menuEntry label="SlideShow" targetView="slideshow"/>
-			<crux:menuEntry label="Anchor" targetView="anchor"/>
 			<crux:menuEntry label="ScrollBanner" targetView="scrollBanner"/>
-			<crux:menuEntry label="Timer" targetView="timer"/>
-			
-			<crux:menuSection label="${messages_showcase.miscellaneousElements}" />		
 			<crux:menuEntry label="SwapPanel" targetView="swapPanel"/>
-			<crux:menuEntry label="Download Button" targetView="downloadButton"/>
-			<!-- Implement it! -->
-			<crux:menuEntry label="Date Picker" targetView="datePicker"/>
-			<!-- Implement it! -->
-			<crux:menuEntry label="Selectable Panel" targetView="selectablePanel"/>
-
-			<crux:menuSection label="${messages_showcase.containers}"/>
-			<!-- Substituir pelo TabPanel! -->
-			<crux:menuEntry label="Rolling Tab Panel" targetView="rollingTabPanel"/>
 			
+			<crux:menuSection label="${messages_showcase.containers}"/>
 			<crux:menuEntry label="Tab View Container" targetView="tabViewContainer"/>
 			<crux:menuEntry label="SwapViewContainer" targetView="swapViewContainer"/>
 			<crux:menuEntry label="Simple View Container" targetView="simpleViewContainer"/>
 
 			<crux:menuSection label="${messages_showcase.logicalFeatures}"/>
-			<crux:menuEntry label="I18N" targetView="i18n"/>
+			<crux:menuEntry label="Binding" targetView="binding"/>
 			<crux:menuEntry label="Rest Communication" targetView="rest"/>
+			<crux:menuEntry label="Object Cloner" targetView="objectcloner"/>
 			<crux:menuEntry label="Simple Database" targetView="simpleDatabase"/>
-			
+		
+			<crux:menuSection label="${messages_showcase.miscellaneousElements}" />		
+			<crux:menuEntry label="Timer" targetView="timer"/>
+
 		</crux:menuTabsDisposal>
 		
 	</body>

@@ -1,5 +1,6 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.rest;
 
+import org.cruxframework.crossdeviceshowcase.client.controller.samples.ShowcaseMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -7,23 +8,30 @@ import org.cruxframework.crux.core.client.rest.Callback;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.button.Button;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
-
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
+import org.cruxframework.crux.smartfaces.client.dialog.WaitBox;
+import org.cruxframework.crux.smartfaces.client.label.Label;
+import org.cruxframework.crux.smartfaces.client.util.animation.InOutAnimation;
 import com.google.gwt.user.client.ui.TextBox;
 
 @Controller("restController")
 public class RestController 
 {
+	private WaitBox loadingBox = new WaitBox();
+	
+	  @Inject
+	private ShowcaseMessages messages; 
+
+	/**
+	 * Create a Rest proxy to talk to the server-side.
+	 */
+	@Inject
+	private MyRestProxy myRestProxy; 
+	
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
-	
-	  /**
-		 * Create a Rest proxy to talk to the server-side.
-		 */
-//	@Inject
-//	private MyRestProxy myRestProxy; 
-	
+
 	private String name;
 	private String password;
 	private int state;
@@ -33,27 +41,52 @@ public class RestController
 	{
 		if(checkRequiredFields())
 		{
-//			myRestProxy.save(name, password, new Callback<Void>()
-//				{
-//					@Override
-//					public void onSuccess(Void result) 
-//					{
-//						setState(1);
-//						FlatMessageBox.show("Usuário criado com sucesso!", MessageType.SUCCESS);
-//					}
-//
-//					@Override
-//					public void onError(Exception e) 
-//					{
-//						FlatMessageBox.show("Error in REST communication", MessageType.ERROR);
-//					}
-//			
-//				});
+			loadingBox.center();
+			myRestProxy.save(name, password, new Callback<Void>()
+				{
+					@Override
+					public void onError(Exception e) 
+					{
+						loadingBox.hide();
+						MessageBox.show("Error in REST communication", MessageType.ERROR);
+					}
+
+					@Override
+					public void onSuccess(Void result) 
+					{
+						loadingBox.hide();
+						setState(1);
+						MessageBox.show("Usuário criado com sucesso!", MessageType.SUCCESS);
+					}
+			
+				});
 		}
 		else
 		{
-			FlatMessageBox.show("Preencha todos os campos", MessageType.WARN);
+			MessageBox.show("Preencha todos os campos", MessageType.WARN);
 		}
+	}
+	
+	
+	@Expose
+	public void onLoad()
+	{
+//		loadingBox.setAnimation(InOutAnimation.fade);
+	}
+	
+	public void setMessages(ShowcaseMessages messages)
+	{
+		this.messages = messages;
+	}
+    
+    public void setMyRestProxy(MyRestProxy myRestProxy) 
+	{
+		this.myRestProxy = myRestProxy;
+	}  
+    
+    public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
+	{
+		this.myWidgetAccessor = myWidgetAccessor;
 	}
     
     @Expose   
@@ -61,35 +94,38 @@ public class RestController
     {
     	if(checkRequiredFields())
     	{
-//    		myRestProxy.validate(name, password, new Callback<MyDTO>() 
-//    			{
-//					@Override
-//					public void onSuccess(MyDTO result) 
-//					{
-//						if(result!=null)
-//						{
-//							setState(0);
-//							FlatMessageBox.show("Welcome, "+result.getName()+"!", MessageType.SUCCESS);
-//						}
-//						else
-//						{
-//							FlatMessageBox.show("Username or password is invalid.", MessageType.ERROR);
-//						}
-//					}
-//					
-//					//Show the Rest error message to the user
-//					@Override
-//					public void onError(Exception e) 
-//					{
-//						FlatMessageBox.show("Error in REST communication", MessageType.ERROR);
-//					}
-//				});
+    		loadingBox.center();
+    		myRestProxy.validate(name, password, new Callback<MyDTO>() 
+    			{
+					//Show the Rest error message to the user
+					@Override
+					public void onError(Exception e) 
+					{
+						loadingBox.hide();
+						MessageBox.show("Error in REST communication", MessageType.ERROR);
+					}
+					
+					@Override
+					public void onSuccess(MyDTO result) 
+					{
+						loadingBox.hide();
+						if(result!=null)
+						{
+							setState(0);
+							MessageBox.show("Welcome, "+result.getName()+"!", MessageType.SUCCESS);
+						}
+						else
+						{
+							MessageBox.show("Username or password is invalid.", MessageType.ERROR);
+						}
+					}
+				});
     	}
     	else
 		{
-			FlatMessageBox.show("Preencha todos os campos", MessageType.WARN);
+			MessageBox.show("Preencha todos os campos", MessageType.WARN);
 		} 	
-    }  
+    }
     
     private boolean checkRequiredFields()
     {
@@ -102,8 +138,8 @@ public class RestController
 		}
 		return false;
     }
-    
-    private void setState(int value)
+
+	private void setState(int value)
     {
     	state = value;
     	
@@ -121,23 +157,13 @@ public class RestController
     		myWidgetAccessor.btnLogin().setVisible(true);
     	}
     }
-    
-    @BindView("rest")
+
+	@BindView("rest")
     public static interface MyWidgetAccessor extends WidgetAccessor
     {
-        TextBox txtLogin();
-        TextBox txtPassword();
         Button btnCreate();
         Button btnLogin();
+        TextBox txtLogin();
+        TextBox txtPassword();
     }
-
-	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
-	{
-		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-//	public void setMyRestProxy(MyRestProxy myRestProxy) 
-//	{
-//		this.myRestProxy = myRestProxy;
-//	}
 }

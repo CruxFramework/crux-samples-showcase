@@ -6,16 +6,19 @@
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
-	useController="dateBoxController" 
-	onLoad="dateBoxController.onLoad" 
+	useController="dateController" 
+	onLoad="dateController.onLoad" 
 	title="DateBox">
 
 	<center>
 		<!-- Component use sample -->
 		<crux:styledPanel id="panel1">
 			<gwt:HTMLPanel id="html" styleName="center">
+				<faces:label id="labelDatePicker" text="Date Picker"/>
+				<crux:datePicker id="datePicker" />
+				<br/>
+				<faces:label id="labelDateBox" text="Date Box"/>
 				<crux:dateBox id="dateBox" pattern="dd/MM/yyyy" />
-				<faces:button id="buttonValueDateBox" onSelect="dateBoxController.onClickButtonValueTextBox" text="Print Value" />
 			</gwt:HTMLPanel>
 		</crux:styledPanel>
 

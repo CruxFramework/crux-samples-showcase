@@ -1,4 +1,4 @@
-package org.cruxframework.crossdeviceshowcase.client.controller.samples.cruxbutton;
+package org.cruxframework.crossdeviceshowcase.client.controller.samples.selectablePanel;
 
 import org.cruxframework.crossdeviceshowcase.client.util.StyleHelper;
 import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
@@ -7,12 +7,12 @@ import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-import org.cruxframework.crux.smartfaces.client.button.Button;
+import org.cruxframework.crux.smartfaces.client.panel.SelectablePanel;
 
 import com.google.gwt.user.client.ui.HTML;
 
-@Controller("cruxButtonController")
-public class CruxButtonController
+@Controller("selectablePanelController")
+public class SelectablePanelController
 {
 	@Inject
 	private MyWidgets myWidgets;
@@ -27,16 +27,16 @@ public class CruxButtonController
 		myWidgets.componentDescription().setHTML(componentDescription.buttonDescription());
 	}
 	
-	@BindView("cruxButton")
+	@BindView("selectablePanel")
 	public interface MyWidgets extends WidgetAccessor
 	{
-		Button cruxBtn();
+		SelectablePanel selectablePanel();
 		HTML componentDescription();
 	}
 
 	private void handleStates(String state)
 	{
-		StyleHelper.getInstance().changeWidgetState(myWidgets.cruxBtn(), state);
+		StyleHelper.getInstance().changeWidgetState(myWidgets.selectablePanel(), state);
 	}
 
 	@Expose
@@ -68,8 +68,8 @@ public class CruxButtonController
 		this.myWidgets = myWidgets;
 	}
 
-	public void setComponentDescription(DescriptionMessages componentDescription) {
+	public void setComponentDescription(DescriptionMessages componentDescription) 
+	{
 		this.componentDescription = componentDescription;
 	}
-
 }

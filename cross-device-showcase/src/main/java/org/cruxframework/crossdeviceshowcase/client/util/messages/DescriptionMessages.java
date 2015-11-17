@@ -28,6 +28,10 @@ public interface DescriptionMessages extends Messages
 			+"dispositivos de toque, tratando os eventos de forma diferenciada em um smartphone ou tablet, por exemplo.</p>")
 	String buttonDescription();
 	
+	@DefaultMessage("<p>Labels são elementos que disparam ações quando clicados, este componente foi feito pensando também em " 
+		+"dispositivos de toque, tratando os eventos de forma diferenciada em um smartphone ou tablet, por exemplo.</p>")
+	String labelDescription();
+	
 	@DefaultMessage("<p>O componente DateBox permite selecionar datas que serão atribuídas para um "
 			+ "textBox. Este componente utiliza o componente DatePicker.</p>")
 	String dateBoxDescription();

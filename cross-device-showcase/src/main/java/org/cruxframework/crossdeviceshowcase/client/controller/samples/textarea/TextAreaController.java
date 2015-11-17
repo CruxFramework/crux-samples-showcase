@@ -6,8 +6,8 @@ import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.textarea.TextArea;
 
 import com.google.gwt.user.client.ui.HTML;
@@ -51,11 +51,11 @@ public class TextAreaController
 		}
 		catch (NumberFormatException e)
 		{
-			FlatMessageBox.show(MESSAGE_INVALID_NUMBER, MessageType.ERROR);
+			MessageBox.show(MESSAGE_INVALID_NUMBER, MessageType.ERROR);
 		}
 		catch (IllegalArgumentException e1)
 		{
-			FlatMessageBox.show(MESSAGE_NEGATIVE_NUMBER, MessageType.ERROR);
+			MessageBox.show(MESSAGE_NEGATIVE_NUMBER, MessageType.ERROR);
 		}
 	}
 

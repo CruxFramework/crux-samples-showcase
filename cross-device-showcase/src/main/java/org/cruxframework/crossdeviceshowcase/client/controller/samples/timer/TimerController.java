@@ -7,8 +7,8 @@ import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.button.Button;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.event.timeout.TimeoutEvent;
 import org.cruxframework.crux.widgets.client.event.timeout.TimeoutHandler;
 import org.cruxframework.crux.widgets.client.timer.Timer;
@@ -52,7 +52,7 @@ public class TimerController
 			@Override
 			public void onTimeout(TimeoutEvent event) 
 			{
-				FlatMessageBox.show("We get 5 seconds", MessageType.ERROR);
+				MessageBox.show("We get 5 seconds", MessageType.ERROR);
 			}
 			
 			@Override

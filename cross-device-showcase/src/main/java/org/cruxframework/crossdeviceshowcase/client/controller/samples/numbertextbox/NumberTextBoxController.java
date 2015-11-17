@@ -6,8 +6,8 @@ import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
+import org.cruxframework.crux.smartfaces.client.input.NumberBox;
 import org.cruxframework.crux.widgets.client.storyboard.Storyboard;
-import org.cruxframework.crux.widgets.client.textbox.NumberTextBox;
 
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RadioButton;
@@ -35,21 +35,24 @@ public class NumberTextBoxController
 	public void maxLength()
 	{
 		myWidgetAccessor.boxNumber().setValue(null);
-		myWidgetAccessor.boxNumber().setMaxLength(valueMaxLength());
+		myWidgetAccessor.boxNumber().setMaxValue(valueMaxLength());
 	}
 	
 	private int valueMaxLength()
 	{
 		if (myWidgetAccessor.radioButton09().getValue())
 		{
-			return 1;
-		} else if(myWidgetAccessor.radioButton099().getValue())
+			return 9;
+		} 
+		else if(myWidgetAccessor.radioButton099().getValue())
 		{
-			return 2;
-		}else if(myWidgetAccessor.radioButton0999().getValue())
+			return 99;
+		}
+		else if(myWidgetAccessor.radioButton0999().getValue())
 		{
-			return 3;
-		}else
+			return 999;
+		}
+		else
 		{
 			return Integer.MAX_VALUE;
 		}
@@ -59,7 +62,7 @@ public class NumberTextBoxController
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{
 		Storyboard radios();
-		NumberTextBox boxNumber();
+		NumberBox boxNumber();
 		HTML componentDescription();
 		
 		RadioButton radioButton09();

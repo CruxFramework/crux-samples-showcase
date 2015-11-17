@@ -10,7 +10,6 @@ import org.cruxframework.crux.smartfaces.client.label.Label;
 import org.cruxframework.crux.widgets.client.sortablelist.SortableList;
 import org.cruxframework.crux.widgets.client.sortablelist.SortableList.BeanRenderer;
 
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
