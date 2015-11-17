@@ -168,7 +168,15 @@ public class VisualBoxLogHandler extends Handler
 			return;
 		}
 
-		while(logEntries.getWidgetCount() > 5)
+		int maxEntries = 5;
+		if(Screen.getCurrentDevice().equals(Device.smallDisplayArrows)
+			||
+			Screen.getCurrentDevice().equals(Device.smallDisplayTouch))
+		{
+			maxEntries = 3;
+		}
+		
+		while(logEntries.getWidgetCount() > maxEntries)
 		{
 			logEntries.remove(0);
 		}

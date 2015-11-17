@@ -3,9 +3,9 @@
 	xmlns:t="http://www.cruxframework.org/templates" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	library="showcase"
 	useResource="showcaseCoreResources"
 	useController="mainController"> 
@@ -36,7 +36,7 @@
 			<t:section name="description"/>
 		</gwt:HTMLPanel>
 		<center>
-			<crux:button id="buttonShowCode" onSelect="mainController.viewSourceCode" text="${messages_core.viewSourceCode}" style="margin:10px"/>
+			<faces:button id="buttonShowCode" onSelect="mainController.viewSourceCode" text="${messages_core.viewSourceCode}" style="margin:10px"/>
 		</center>
 	</div>
 </t:template>

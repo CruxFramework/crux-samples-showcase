@@ -196,12 +196,11 @@ pre code *, pre code span
     -ms-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    right: -30px;
     top: 0;
     bottom: 0;
-    margin: auto;
-    height: 32px;
+    margin: auto !important;
 }
+
 .logEntry 
 {
 	background: white;

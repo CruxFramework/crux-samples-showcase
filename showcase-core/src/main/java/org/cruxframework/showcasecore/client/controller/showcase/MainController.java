@@ -91,6 +91,10 @@ public class MainController
 				menuDisposal.showView("wellcome", Direction.FORWARD);
 			}
 		}
+		else
+		{
+			menuDisposal.showView("wellcome", Direction.FORWARD);			
+		}
 
 		//Call method to verify browser language
 		languageManager.verifyAndToggleLanguage();
@@ -111,7 +115,7 @@ public class MainController
 				List<FilterResult<String>> widgetList = new ArrayList<FilterResult<String>>();
 				widgetList.add(new FilterResult<String>("cruxButton", "Button", "cruxButton"));
 				widgetList.add(new FilterResult<String>("anchor", "Anchor", "anchor"));
-				widgetList.add(new FilterResult<String>("cruxLbl", "Label", "cruxLbl"));
+				widgetList.add(new FilterResult<String>("cruxLabel", "Label", "cruxLabel"));
 				widgetList.add(new FilterResult<String>("colorPickerDialog", "ColorPicker", "colorPickerDialog"));
 				widgetList.add(new FilterResult<String>("date", "Date", "date"));
 				widgetList.add(new FilterResult<String>("fileUploader", "FileUploader", "fileUploader"));
