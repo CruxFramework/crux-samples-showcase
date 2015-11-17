@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.colorpickerdialog;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -15,7 +14,6 @@ import org.cruxframework.crux.widgets.client.colorpicker.ColorPickerDialog;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.user.client.History;
-import com.google.gwt.user.client.ui.HTML;
 
 @Controller("colorPickerDialogController")
 public class ColorPickerDialogController 
@@ -23,15 +21,9 @@ public class ColorPickerDialogController
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
-	@Inject
-	private DescriptionMessages componentDescription;
-
 	@Expose
 	public void onLoad()
 	{
-		 /* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.colorPickerDialogDescription());
-
 		myWidgetAccessor.labelClickButton().getElement().getStyle().setColor("#1c5994");
 		myWidgetAccessor.labelColorValue().setText("Chosen color: "+" #1c5994");
 		
@@ -88,15 +80,10 @@ public class ColorPickerDialogController
 		ColorPickerDialog colorPicker();
 		Label labelClickButton();
 		Label labelColorValue();
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-	
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

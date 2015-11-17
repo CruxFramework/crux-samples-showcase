@@ -2,7 +2,6 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.datagrid
 
 import java.util.ArrayList;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.collection.Array;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
@@ -20,7 +19,6 @@ import org.cruxframework.crux.smartfaces.client.grid.Row;
 import org.cruxframework.crux.smartfaces.client.label.Label;
 
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
 
 @Controller("dataGridController")
@@ -28,9 +26,6 @@ public class DataGridController
 {
 	@Inject
 	private DataGridMessages dataGridMessages;
-	
-	@Inject
-	private DescriptionMessages messages;
 
 	@Inject
 	private Widgets view;
@@ -38,9 +33,7 @@ public class DataGridController
 	@Expose
 	public void onLoad()
 	{
-		view.componentDescription().setHTML(messages.dataGridDescription());
 		createActionColumn(view.grid());
-		addDataInterationButtons(view.grid());
 		view.grid().redraw();
 	}
 
@@ -55,60 +48,31 @@ public class DataGridController
 		this.dataGridMessages = dataGridMessages;
 	}
 
-	public void setMessages(DescriptionMessages messages)
-	{
-		this.messages = messages;
-	}
-
 	public void setView(Widgets view)
 	{
 		this.view = view;
 	}
 
-	private void addDataInterationButtons(final DataGrid<Person> grid) 
+	@Expose
+	public void onSelectEditAll()
 	{
-		FlowPanel wrapper = new FlowPanel();
-		Button editAll = new Button();
-		editAll.setText(dataGridMessages.editAll());
-		editAll.addSelectHandler(new SelectHandler() 
+		Array<Row<Person>> rows = view.grid().getCurrentPageRows();
+		for(int i = 0 ; i < rows.size() ; i++)
 		{
-			@Override
-			public void onSelect(SelectEvent event) 
-			{
-				Array<Row<Person>> rows = grid.getCurrentPageRows();
-				for(int i = 0 ; i < rows.size() ; i++)
-				{
-					rows.get(i).edit();
-				}
-			}
-		});
-		
-		Button commit = new Button();
-		commit.setText(dataGridMessages.commit());
-		commit.addSelectHandler(new SelectHandler() 
-		{
-			@Override
-			public void onSelect(SelectEvent event) 
-			{
-				grid.commit();
-			}
-		});
-
-		Button rollback = new Button();
-		rollback.setText(dataGridMessages.rollback());
-		rollback.addSelectHandler(new SelectHandler() 
-		{
-			@Override
-			public void onSelect(SelectEvent event) 
-			{
-				grid.rollback();
-			}
-		});
-
-		wrapper.add(editAll);
-		wrapper.add(commit);
-		wrapper.add(rollback);
-		view.panel().add(wrapper);
+			rows.get(i).edit();
+		}
+	}
+	
+	@Expose
+	public void onSelectCommit()
+	{
+		view.grid().commit();
+	}
+	
+	@Expose
+	public void onSelectRollback()
+	{
+		view.grid().rollback();
 	}
 
 	private void createActionColumn(DataGrid<Person> grid)
@@ -192,8 +156,6 @@ public class DataGridController
 	@BindView("datagrid")
 	public static interface Widgets extends WidgetAccessor
 	{
-		HTML componentDescription();
 		DataGrid<Person> grid();
-		FlowPanel panel();
 	}
 }

@@ -24,9 +24,6 @@ public class TabViewContainerController
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.htmlDescText().setHTML(messages.htmlDescText());
-		
 		myWidgetAccessor.tabView().showView("simpleViewTab2");
 		myWidgetAccessor.tabView().focusView("simpleViewTab1");
 	}

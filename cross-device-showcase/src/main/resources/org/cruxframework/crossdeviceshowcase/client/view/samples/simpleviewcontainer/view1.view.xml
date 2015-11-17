@@ -2,17 +2,19 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	title="Simple View 1"> 
 	
 	<center>
-		<crux:styledPanel id="parentPanel" width="600px" height="400px">
+		<widgets:styledPanel id="parentPanel" width="600px" height="400px">
 			<gwt:HTMLPanel id="panel">
 				<gwt:label id="labelViewTitle" text="${messages_view1.title}" />
 				<br />
 				<gwt:label id="labelViewText" text="${messages_view1.labelTextView}"/>
 			</gwt:HTMLPanel>
-		</crux:styledPanel>
+		</widgets:styledPanel>
 	</center>	
 </v:view>

@@ -2,10 +2,10 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
-	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="viewRegisterController" 
 	title="Register"> 
 
@@ -17,23 +17,23 @@
 					<faces:label id="errorMessage" text="Fill out all fields." styleName="errorMessage"/>
 				</gwt:HTMLPanel>
 				
-				<crux:styledPanel id="formPanel">
-					<crux:formDisplay id="formRegister">
-						<crux:entry label="Name:">
+				<widgets:styledPanel id="formPanel">
+					<widgets:formDisplay id="formRegister">
+						<widgets:entry label="Name:">
 							<gwt:textBox id="txtName" maxLength="40"/>
-						</crux:entry>
-						<crux:entry label="E-mail:">
+						</widgets:entry>
+						<widgets:entry label="E-mail:">
 							<gwt:textBox id="txtEmail" maxLength="20"/>
-						</crux:entry>
-						<crux:entry label="Address:">
+						</widgets:entry>
+						<widgets:entry label="Address:">
 							<gwt:textBox id="txtAddress" maxLength="60"/>
-						</crux:entry>
-						<crux:entry horizontalAlignment="center">
+						</widgets:entry>
+						<widgets:entry horizontalAlignment="center">
 							<faces:button id="btnRegister" text="Confirm"
 								onSelect="viewRegisterController.showResult"/>
-						</crux:entry>
-					</crux:formDisplay>
-				</crux:styledPanel>
+						</widgets:entry>
+					</widgets:formDisplay>
+				</widgets:styledPanel>
 
 				<gwt:HTMLPanel id="panelResult" visible="false" styleName="dialogViewContainerResult">
 					<faces:label id="labelResult" text="register completed!" styleName="successMessage"/>

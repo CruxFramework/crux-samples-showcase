@@ -2,34 +2,33 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
-	useController="singleSelectController"
-	onLoad="singleSelectController.onLoad"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="singleSelectController"
 	title="SingleSelect"> 
 
 	<center>
 		<!-- 		Component use sample  -->
-		<crux:styledPanel id="panel">
+		<widgets:styledPanel id="panel">
 			<gwt:HTMLPanel styleName="center" id="parentPanel">
 				<faces:label id="labelText" text="Choose one of the departments and then select one of the listed employees." />
 				<br />
 					<gwt:HTMLPanel id="panelDepartmentsEmployers">
-						<crux:singleSelect id="singleSelectDepartments"
+						<widgets:singleSelect id="singleSelectDepartments"
 							visibleItemCount="6" width="150px"
 							onChange="singleSelectController.selectedItemDepartments">
-							<crux:item label="Accounting" selected="false" value="accounting" />
-							<crux:item label="Marketing" selected="false" value="marketing" />
-							<crux:item label="Production" selected="false" value="production" />
-						</crux:singleSelect>
-						<crux:singleSelect id="singleSelectEmployees"
+							<widgets:item label="Accounting" selected="false" value="accounting" />
+							<widgets:item label="Marketing" selected="false" value="marketing" />
+							<widgets:item label="Production" selected="false" value="production" />
+						</widgets:singleSelect>
+						<widgets:singleSelect id="singleSelectEmployees"
 							visibleItemCount="6" width="150px"
 							onChange="singleSelectController.selectedItemEmployees" />							
 					</gwt:HTMLPanel>
 			</gwt:HTMLPanel>
-		</crux:styledPanel>
+		</widgets:styledPanel>
 
 		<!-- 		Component description -->
 		<showcase:info 
@@ -43,7 +42,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>			
-				<gwt:HTML id="componentDescription"/>
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.singleSelectDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 

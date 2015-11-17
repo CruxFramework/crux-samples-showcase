@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.scrollbanner;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -17,15 +16,9 @@ public class ScrollBannerController
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
-	@Inject
-	private DescriptionMessages componentDescription;
-
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.scrollBannerDescription());
-		
 		addMessages();
 	}
 
@@ -39,15 +32,10 @@ public class ScrollBannerController
 	{
 		ScrollBanner scrollBanner();
 		Button next();
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-	
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

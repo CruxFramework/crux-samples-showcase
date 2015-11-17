@@ -2,12 +2,11 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="cruxButtonController" 
-	onLoad="cruxButtonController.onLoad"
 	title="Button"> 
 
 	<style>
@@ -29,7 +28,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<crux:styledPanel id="panel1">
+		<widgets:styledPanel id="panel1">
 			<gwt:HTMLPanel id="html" styleName="center">
 				<faces:button id="cruxBtn" text="I am a button"/>
 				<hr />
@@ -41,7 +40,7 @@
 					<gwt:radioButton name="color" onChange="cruxButtonController.setStateError" id="radioError" text="Error"/>
 				</div>
 			</gwt:HTMLPanel>
-		</crux:styledPanel>
+		</widgets:styledPanel>
 
 		<!-- Component description -->
 		<showcase:info 
@@ -55,7 +54,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.buttonDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 		

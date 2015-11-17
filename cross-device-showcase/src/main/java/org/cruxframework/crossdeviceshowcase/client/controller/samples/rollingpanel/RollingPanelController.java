@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.rollingpanel;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -13,11 +12,8 @@ import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 
 @Controller("rollingPanelController")
-public class RollingPanelController {
-	
-	@Inject
-	private DescriptionMessages componentDescription;
-
+public class RollingPanelController 
+{
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
@@ -28,9 +24,6 @@ public class RollingPanelController {
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.rollingPanelDescription());	
-		
 		loadSaleItems();
 	}
 	
@@ -54,7 +47,6 @@ public class RollingPanelController {
 	{
 		FlowPanel innerPanel();
 		RollingPanel rollingPanelCustomizedWidget();
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
@@ -62,11 +54,8 @@ public class RollingPanelController {
 		this.myWidgetAccessor = myWidgetAccessor;
 	}
 
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
-	}
-
-	public void setResources(ShowcaseResourcesCommon resources) {
+	public void setResources(ShowcaseResourcesCommon resources) 
+	{
 		this.resources = resources;
 	}
 }

@@ -2,24 +2,23 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
-	onLoad="messageBoxController.onLoad"
 	useController="messageBoxController" 
 	title="MessageBox"> 
 
 	<center>
 		<!-- Component use sample -->
-		<crux:styledPanel id="styled">
+		<widgets:styledPanel id="styled">
 			<gwt:flowPanel id="flow" width="100%">
 				<faces:button id="showMessageBtnInfo" text="Show Info" styleName="faces-Button messageBox-Button" onSelect="messageBoxController.showInfo" />
 				<faces:button id="showMessageBtnSuccess" text="Show Success" styleName="faces-Button messageBox-Button" onSelect="messageBoxController.showSuccess" />
 				<faces:button id="showMessageBtnWarn" text="Show warn" styleName="faces-Button messageBox-Button" onSelect="messageBoxController.showWarn" />
 				<faces:button id="showMessageBtnError" text="Show Error" styleName="faces-Button messageBox-Button" onSelect="messageBoxController.showError" />
 			</gwt:flowPanel>
-		</crux:styledPanel>
+		</widgets:styledPanel>
 
 		<!-- Component description -->
 		<showcase:info 
@@ -33,7 +32,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.messageBoxDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 

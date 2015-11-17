@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.image;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -17,9 +16,6 @@ public class ImageController
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
-	@Inject
-	private DescriptionMessages componentDescription;
-	
 	private String MESSAGE_COLOSSEUM_TEXT;
 	private String MESSAGE_COLOSSEUM_TITLE;
 	private String MESSAGE_STATUE_TEXT;
@@ -30,9 +26,6 @@ public class ImageController
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.imageDescription());
-		
 		MESSAGE_COLOSSEUM_TITLE = "Colosseum - Italy";
 		
 		MESSAGE_COLOSSEUM_TEXT = "Coliseum is an amphitheater built in the period of ancient Rome. "
@@ -87,14 +80,10 @@ public class ImageController
 		Image statue();
 		Label labelTitleImage();
 		Label labelInformImage();
-		HTML componentDescription();
 	}
 
-	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) {
+	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
+	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

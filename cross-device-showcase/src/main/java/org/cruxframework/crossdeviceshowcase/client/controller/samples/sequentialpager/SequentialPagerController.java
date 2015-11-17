@@ -11,8 +11,6 @@ import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.widgets.client.deviceadaptivegrid.DeviceAdaptiveGrid;
 
-import com.google.gwt.user.client.ui.HTML;
-
 /**
  * @author flavia.jesus
  */
@@ -29,9 +27,6 @@ public class SequentialPagerController
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.sequentialPagerDescription());
-		
 		loadData();
 	}
 	
@@ -78,7 +73,6 @@ public class SequentialPagerController
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{
 		DeviceAdaptiveGrid grid();
-		HTML componentDescription();
 	}
 
 	/** @param myWidgetAccessor the myWidgetAccessor to set */

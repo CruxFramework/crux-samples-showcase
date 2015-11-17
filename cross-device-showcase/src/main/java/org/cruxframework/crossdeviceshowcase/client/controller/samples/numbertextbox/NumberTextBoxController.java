@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.numbertextbox;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -18,15 +17,9 @@ public class NumberTextBoxController
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
-	@Inject
-	private DescriptionMessages componentDescription;
-	
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.numberTextBoxDescription());
-		
 		maxLength();
 		myWidgetAccessor.boxNumber().setValue(225);
 	}
@@ -63,18 +56,14 @@ public class NumberTextBoxController
 	{
 		Storyboard radios();
 		NumberBox boxNumber();
-		HTML componentDescription();
 		
 		RadioButton radioButton09();
 		RadioButton radioButton099();
 		RadioButton radioButton0999();
 	}
 
-	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) {
+	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
+	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

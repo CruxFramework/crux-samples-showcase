@@ -1,8 +1,6 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.datebox;
 
 import java.util.Date;
-
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -12,10 +10,8 @@ import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
 import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.datebox.DateBox;
 import org.cruxframework.crux.widgets.client.datepicker.DatePicker;
-
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
-import com.google.gwt.user.client.ui.HTML;
 
 @Controller("dateController")
 public class DateController 
@@ -23,14 +19,9 @@ public class DateController
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
-	@Inject
-	private DescriptionMessages componentDescription;
-
 	@Expose
 	public void onLoad()
 	{
-		// Insert the component description
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.dateBoxDescription());
 		addValueChangeHandlers();
 	}
 
@@ -67,16 +58,10 @@ public class DateController
 	{
 		DateBox dateBox();
 		DatePicker datePicker();
-		HTML componentDescription();
 	}
 	
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) 
-	{
-		this.componentDescription = componentDescription;
 	}
 }

@@ -1,13 +1,12 @@
 <v:view 
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:v="http://www.cruxframework.org/view"
-	xmlns:c="http://www.cruxframework.org/crux"
-	xmlns:g="http://www.cruxframework.org/crux/gwt"
-	xmlns:w="http://www.cruxframework.org/crux/widgets"
-	xmlns:f="http://www.cruxframework.org/crux/smart-faces"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="widgetListController" 
-	onLoad="widgetListController.onLoad" 
 	title="Widget List"> 
 
 	<style>
@@ -17,22 +16,22 @@
 		}
 	</style>
 
-	<c:dataProvider id="dataProvider" dataObject="carWidgetList" onLoadData="widgetListController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+	<core:dataProvider id="dataProvider" dataObject="carWidgetList" onLoadData="widgetListController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 	
 	<center>
 		<!-- Component use sample -->
-		<g:flowPanel id="panel">
-			<f:widgetList id="widgetList" itemVar="car" dataProvider="dataProvider">
-				<f:widget>
-					<g:flowPanel id="wrapper" styleName="line">
-						<f:image id="imageFlag" url="${showcaseCoreResources.carBrand}@{car.id:integerString}" />
-						<f:label id="lblInfo" text="@{car.brand} - @{car.source} - @{car.year:integerString}"/>
-					</g:flowPanel>
-				</f:widget>
-			</f:widgetList>
+		<gwt:flowPanel id="panel">
+			<faces:widgetList id="widgetList" itemVar="car" dataProvider="dataProvider">
+				<faces:widget>
+					<gwt:flowPanel id="wrapper" styleName="line">
+						<faces:image id="imageFlag" url="${showcaseCoreResources.carBrand}@{car.id:integerString}" />
+						<faces:label id="lblInfo" text="@{car.brand} - @{car.source} - @{car.year:integerString}"/>
+					</gwt:flowPanel>
+				</faces:widget>
+			</faces:widgetList>
 				    
-		    <f:sequentialPager id="pagerWidgetList" dataProvider="dataProvider" visible="true" />
-		</g:flowPanel>
+		    <faces:sequentialPager id="pagerWidgetList" dataProvider="dataProvider" visible="true" />
+		</gwt:flowPanel>
 
 		<!-- Component description -->
 		<showcase:info title="Data Grid"
@@ -46,7 +45,9 @@
 			safari-visible="true"
 			>
 			<showcase:description>
-				<g:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.widgetListDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 		

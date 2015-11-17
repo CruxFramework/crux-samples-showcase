@@ -2,17 +2,17 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
-	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="sideMenuDisposalController"
 	useResource="showcaseCoreResources"
 	onLoad="sideMenuDisposalController.onLoad"
 	title="SideMenuDisposal"> 
 
 	<center>	
-		<crux:styledPanel id="mainPanel">
+		<widgets:styledPanel id="mainPanel">
 			<gwt:flowPanel id="innerPanel">			
 <!-- 				panel to change menu type for sideMenuDisposal				 -->
 				<gwt:flowPanel id="typeMenuPanel" visible="true" style="margin-bottom: 10px; text-align: center;">
@@ -60,7 +60,7 @@
 				</gwt:flowPanel>
 				
 			</gwt:flowPanel>
-		</crux:styledPanel>
+		</widgets:styledPanel>
 		
 <!-- 		Component description -->
 		<showcase:info 
@@ -74,7 +74,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.sideMenuDisposalDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 

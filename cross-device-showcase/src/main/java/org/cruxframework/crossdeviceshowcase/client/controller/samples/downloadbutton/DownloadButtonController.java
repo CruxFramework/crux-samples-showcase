@@ -15,31 +15,23 @@ import com.google.gwt.user.client.ui.HTML;
 public class DownloadButtonController
 {
 	@Inject
-	private DownloadButtonMessages messages;
-
-	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 
 	@Expose
-	public void onLoad()
-	{
-		/* Insert the component description*/
-		myWidgetAccessor.htmlDescText().setHTML(messages.htmlDescText());		
-	}
-	
-	@Expose
 	public void download()
 	{
-		myWidgetAccessor.downloadButton().fireDownload(new DownloadInfo() {
-			
+		myWidgetAccessor.downloadButton().fireDownload(new DownloadInfo() 
+		{
 			@Override
-			public String getFilename() {
+			public String getFilename() 
+			{
 				String filename = "downloadTest.txt";
 				return filename;
 			}
 			
 			@Override
-			public String getBase64Data() {
+			public String getBase64Data() 
+			{
 				String base64Data = Base64.encode(new String("Texto para teste do download"));
 				return base64Data;
 			}
@@ -56,10 +48,5 @@ public class DownloadButtonController
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-	public void setMessages(DownloadButtonMessages messages) 
-	{
-		this.messages = messages;
 	}
 }

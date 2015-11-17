@@ -22,13 +22,6 @@ public class SimpleViewContainerController
 	private SimpleViewContainerMessages messages;
 
 	@Expose
-	public void onLoad()
-	{
-		/* Insert the component description*/
-		myWidgetAccessor.htmlDescText().setHTML(messages.htmlDescText());
-	}
-	
-	@Expose
 	public void swapView()
 	{
 		//myWidgetAccessor.viewContainer().showView("view2");

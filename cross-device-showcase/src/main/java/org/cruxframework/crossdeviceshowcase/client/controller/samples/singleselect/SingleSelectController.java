@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.singleselect;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -10,23 +9,11 @@ import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
 import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.select.SingleSelect;
 
-import com.google.gwt.user.client.ui.HTML;
-
 @Controller("singleSelectController")
 public class SingleSelectController
 {
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
-	
-	@Inject
-	private DescriptionMessages componentDescription;
-	
-	@Expose
-	public void onLoad()
-	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.singleSelectDescription());
-	}
 	
 	@Expose
 	public void selectedItemDepartments()
@@ -51,14 +38,16 @@ public class SingleSelectController
 			myWidgetAccessor.singleSelectEmployees().insertItem("Michael Patel", "michaelpatel", 3);
 			myWidgetAccessor.singleSelectEmployees().insertItem("Alice Hill", "alicehill", 4);
 			myWidgetAccessor.singleSelectEmployees().insertItem("Andrea Cooper", "andreacooper", 5);	
-		}else if(department.equals("marketing"))
+		}
+		else if(department.equals("marketing"))
 		{
 			myWidgetAccessor.singleSelectEmployees().insertItem("Frank Walker", "frankwalker", 0);
 			myWidgetAccessor.singleSelectEmployees().insertItem("Davi Smith", "davismith", 1);
 			myWidgetAccessor.singleSelectEmployees().insertItem("Brenda Moore", "brendamoore", 2);
 			myWidgetAccessor.singleSelectEmployees().insertItem("Carol Clark", "carolclark", 3);
 			myWidgetAccessor.singleSelectEmployees().insertItem("Victor Hall", "victorhall", 4);
-		}else
+		}
+		else
 		{
 			myWidgetAccessor.singleSelectEmployees().insertItem("Alex Johnson", "alexjohnson", 0);
 			myWidgetAccessor.singleSelectEmployees().insertItem("Tony White", "tonywhite", 1);
@@ -92,17 +81,10 @@ public class SingleSelectController
 	{
 		SingleSelect singleSelectDepartments();
 		SingleSelect singleSelectEmployees();
-		HTML componentDescription();
-
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
 	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
-	}
-	
 }

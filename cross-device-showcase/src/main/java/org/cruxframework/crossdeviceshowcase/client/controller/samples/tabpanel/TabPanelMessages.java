@@ -42,12 +42,5 @@ public interface TabPanelMessages extends Messages
 	
 	@DefaultMessage("Botão 2")
 	String button2();
-	
-	@DefaultMessage("<p>TabPanel é um painel onde é possível apresentar várias páginas no mesmo espaço, "
-			+ "sendo que a troca do conteúdo a ser visualizado é feita através de abas.</p>"
-			+ "<p>Este componente possui uma animação para a transição das páginas que pode ser ativada ou não. "
-			+ "Cada aba do componente pode váriar entre opções de título (da aba) e conteúdo. As abas podem conter "
-			+ "qualquer componente válido, desde um simples botão até um painel completo como no exemplo da página 3.</p>")
-	String htmlDescText();
 }
 

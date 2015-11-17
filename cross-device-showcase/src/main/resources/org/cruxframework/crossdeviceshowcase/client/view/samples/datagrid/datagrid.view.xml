@@ -1,35 +1,42 @@
 <v:view 
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:v="http://www.cruxframework.org/view"
-	xmlns:c="http://www.cruxframework.org/crux"
-	xmlns:g="http://www.cruxframework.org/crux/gwt"
-	xmlns:w="http://www.cruxframework.org/crux/widgets"
-	xmlns:f="http://www.cruxframework.org/crux/smart-faces"
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="dataGridController" 
 	onLoad="dataGridController.onLoad" 
 	title="Data Grid"> 
 
-	<c:dataProvider id="dataProviderPerson" dataObject="personGrid" onLoadData="dataGridController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+	<core:dataProvider id="dataProviderPerson" dataObject="personGrid" onLoadData="dataGridController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 
 	<center>
 		<!-- Component use sample -->
-		<g:flowPanel id="panel">
-			 <f:dataGrid id="grid" itemVar="personGrid" dataProvider="dataProviderPerson" rowSelectStrategy="radioButton">
-				<f:columnGroup key="nameLastName" header="${datagrid_messages.basicinfo}">
-					<f:column key="name" header="${datagrid_messages.name}" property="@{personGrid.name}" sortable="true"/>
-					<f:column key="lastName" header="${datagrid_messages.lastName}" property="@{personGrid.lastName}" sortable="true"/>
-				</f:columnGroup>
-		    	<f:column key="age" header="${datagrid_messages.age}" property="@{personGrid.age:integerString}" sortable="true"/>
-		    	<f:column key="profession" header="${datagrid_messages.profession}" property="@{personGrid.profession}" sortable="true" detailOnSize="small">
-		    		<f:editor>
-		    			<f:widget><g:textBox id="profession" value="@{personGrid.profession}" width="80px"/></f:widget>
-		    		</f:editor>
-		    	</f:column>
-		    </f:dataGrid>
+		<gwt:flowPanel id="panel">
+			 <faces:dataGrid id="grid" itemVar="personGrid" dataProvider="dataProviderPerson" rowSelectStrategy="radioButton">
+				<faces:columnGroup key="nameLastName" header="${datagrid_messages.basicinfo}">
+					<faces:column key="name" header="${datagrid_messages.name}" property="@{personGrid.name}" sortable="true"/>
+					<faces:column key="lastName" header="${datagrid_messages.lastName}" property="@{personGrid.lastName}" sortable="true"/>
+				</faces:columnGroup>
+		    	<faces:column key="age" header="${datagrid_messages.age}" property="@{personGrid.age:integerString}" sortable="true"/>
+		    	<faces:column key="profession" header="${datagrid_messages.profession}" property="@{personGrid.profession}" sortable="true" detailOnSize="small">
+		    		<faces:editor>
+		    			<faces:widget><gwt:textBox id="profession" value="@{personGrid.profession}" width="80px"/></faces:widget>
+		    		</faces:editor>
+		    	</faces:column>
+		    </faces:dataGrid>
 		    
-		    <f:sequentialPager id="pagerGridPerson" dataProvider="dataProviderPerson" visible="true" />
-		</g:flowPanel>
+		    <faces:sequentialPager id="pagerGridPerson" dataProvider="dataProviderPerson" visible="true" />
+		    
+		    <gwt:flowPanel id="wrapper">
+				<faces:button id="btnEditAll" text="${datagrid_messages.editAll}" onSelect="dataGridController.onSelectEditAll"/>
+				<faces:button id="btnCommit" text="${datagrid_messages.commit}" onSelect="dataGridController.onSelectCommit"/>
+				<faces:button id="btnRollback" text="${datagrid_messages.rollback}" onSelect="dataGridController.onSelectRollback"/>
+		    </gwt:flowPanel>
+		</gwt:flowPanel>
+		
 
 		<!-- Component description -->
 		<showcase:info title="Data Grid"
@@ -43,7 +50,9 @@
 			safari-visible="true"
 			>
 			<showcase:description>
-				<g:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.dataGridDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 		

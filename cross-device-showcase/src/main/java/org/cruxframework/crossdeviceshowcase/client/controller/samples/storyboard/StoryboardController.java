@@ -3,7 +3,6 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.storyboa
 import java.util.ArrayList;
 import java.util.List;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -11,31 +10,19 @@ import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.widgets.client.storyboard.Storyboard;
 
-import com.google.gwt.user.client.ui.HTML;
-
 @Controller("storyboardController")
 public class StoryboardController
 {
-	private String CLICKED;
-	private String PRODUCT;
-	private String ADD_TO_CART;
+	private static final String CLICKED = "You clicked Add to cart!";
+	private static final String PRODUCT = "Product";
+	private static final String ADD_TO_CART = "Add to Cart";
 	
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
-	@Inject
-	private DescriptionMessages componentDescription;
-
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.storyBoardDescription());
-		
-		CLICKED = "You clicked Add to cart!";
-		PRODUCT = "Product";
-		ADD_TO_CART = "Add to Cart";
-		
 		loadItens();
 	}
 
@@ -61,15 +48,10 @@ public class StoryboardController
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{
 		Storyboard storyboard();
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

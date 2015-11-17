@@ -2,42 +2,42 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="sortableListController" 
 	onLoad="sortableListController.onLoad"
 	title="SortableList"> 
 
 	<center>
-		<crux:styledPanel id="panel">
+		<widgets:styledPanel id="panel">
 			<gwt:HTMLPanel id="innerPanel" styleName="center">
 				<faces:label id="labelTitleText" text="Use the component sort buttons to reorder its tasks" styleName="faces-Label sortableList-item heading" />
-				<crux:sortableList id="sortableList" header="Tasks for the day">
-					<crux:itemWidget>
+				<widgets:sortableList id="sortableList" header="Tasks for the day">
+					<widgets:itemWidget>
 						<faces:label id="label1" text="Check emails." styleName="faces-Label sortableList-item"/>
-					</crux:itemWidget>
-					<crux:itemWidget>
+					</widgets:itemWidget>
+					<widgets:itemWidget>
 						<faces:label id="label2" text="Schedule meeting to budget revision." styleName="faces-Label sortableList-item" />
-					</crux:itemWidget>
-					<crux:itemWidget>
+					</widgets:itemWidget>
+					<widgets:itemWidget>
 						<faces:label id="label3" text="Reviewing the report  and forward to accounting." styleName="faces-Label sortableList-item" />
-					</crux:itemWidget>
-					<crux:itemWidget>
+					</widgets:itemWidget>
+					<widgets:itemWidget>
 						<faces:label id="label4" text="Prepare meeting with ivestidores." styleName="faces-Label sortableList-item" />
-					</crux:itemWidget>
-					<crux:itemWidget>
+					</widgets:itemWidget>
+					<widgets:itemWidget>
 						<faces:label id="label5" text="Examine the quality report." styleName="faces-Label sortableList-item" />
-					</crux:itemWidget>
-				</crux:sortableList>
+					</widgets:itemWidget>
+				</widgets:sortableList>
 				<hr />
 				<faces:label id="labelActions" text="Add or remove a new activity" styleName="faces-Label sortableList-item" />
 				<gwt:textBox id="textBoxActivity" styleName="gwt-TextBox sortableList-input" />
 				<faces:button id="btnAddActivity" text="Add" onSelect="sortableListController.addActivity" />
 				<faces:button id="btnRemoveActivity" text="Remove" onSelect="sortableListController.removeActivity" />
 			</gwt:HTMLPanel>
-		</crux:styledPanel>
+		</widgets:styledPanel>
 
 		<!-- Component description -->
 		<showcase:info 
@@ -51,7 +51,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.sortableListDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 	</center>
