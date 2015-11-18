@@ -7,6 +7,7 @@
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="restController"
+	onLoad="restController.onLoad"
 	title="Rest Service"> 
 	
 	<core:dataProvider id="dataProviderPerson" dataObject="personRest" onLoadData="restController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
@@ -24,7 +25,7 @@
 		    
 		    <widgets:formDisplay id="entity">
 		    	<widgets:entry label="${rest_messages.id}">
-		    		<gwt:textBox id="textBoxId" value="@{personRest.id:integerString}" />
+		    		<gwt:textBox id="textBoxId" value="@{personRest.id:integerString}" enabled="false" />
 		    	</widgets:entry>
 		    	<widgets:entry label="${rest_messages.name}">
 		    		<gwt:textBox id="textBoxName" value="@{personRest.name}" />

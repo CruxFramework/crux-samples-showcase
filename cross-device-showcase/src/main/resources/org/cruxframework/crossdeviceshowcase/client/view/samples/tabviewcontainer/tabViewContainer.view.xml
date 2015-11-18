@@ -12,12 +12,12 @@
 
 	<center>
 		<gwt:HTMLPanel id="panel">
-			<faces:tabViewContainer id="tabView" width="700px" height="300px">
+			<faces:tabViewContainer id="tabView">
 				<faces:view name="simpleViewTab1" closeable="true"/>
 			</faces:tabViewContainer>
 			<br/>
 			<gwt:horizontalPanel id="buttonPanel">
-				<gwt:textBox id="textBoxUrl" text="http://blog.cruxframework.org" width="250px" readOnly="true"/>
+				<gwt:textBox id="textBoxUrl" text="http://www.w3schools.com/" width="250px" readOnly="true"/>
 				<widgets:button id="buttonAddUrl"
 				text="${messages_tabViewContainer.buttonAddUrl}" onSelect="tabViewContainerController.add" />
 				<widgets:button id="buttonRemove"

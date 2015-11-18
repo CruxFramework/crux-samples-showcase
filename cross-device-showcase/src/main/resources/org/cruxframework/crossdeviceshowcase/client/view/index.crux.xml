@@ -88,7 +88,6 @@
 			<widgets:menuSection label="${messages_showcase.dialogBoxes}"/>
 			<widgets:menuEntry label="Confirm" targetView="confirm"/>
 			<widgets:menuEntry label="DialogBox" targetView="dialogBox"/>
-			<widgets:menuEntry label="DialogViewContainer" targetView="dialogViewContainer"/>
 			<widgets:menuEntry label="MessageBox" targetView="messageBox"/>
 			<widgets:menuEntry label="ProgressBox" targetView="progressBox"/>
 			
@@ -103,14 +102,18 @@
 			<widgets:menuEntry label="Tab View Container" targetView="tabViewContainer"/>
 			<widgets:menuEntry label="SwapViewContainer" targetView="swapViewContainer"/>
 			<widgets:menuEntry label="Simple View Container" targetView="simpleViewContainer"/>
+			<widgets:menuEntry label="DialogViewContainer" targetView="dialogViewContainer"/>
 
 			<widgets:menuSection label="${messages_showcase.logicalFeatures}"/>
-			<widgets:menuEntry label="Binding" targetView="binding"/>
+			<!-- Implement it later... -->
+			<!-- <widgets:menuEntry label="Binding" targetView="binding"/> -->
 			<widgets:menuEntry label="Rest Communication" targetView="rest"/>
-			<widgets:menuEntry label="Object Cloner" targetView="objectcloner"/>
-			<widgets:menuEntry label="Simple Database" targetView="simpleDatabase"/>
+			<!-- Implement it later... -->
+			<!-- <widgets:menuEntry label="Object Cloner" targetView="objectcloner"/> -->
+			<!-- Implement it later... -->
+			<!-- <widgets:menuEntry label="Simple Database" targetView="simpleDatabase"/> -->
 		
-			<widgets:menuSection label="${messages_showcase.miscellaneousElements}" />		
+			<widgets:menuSection label="${messages_showcase.miscellaneousElements}" />
 			<widgets:menuEntry label="Timer" targetView="timer"/>
 
 		</widgets:menuTabsDisposal>

@@ -34,7 +34,7 @@ public class DataGridController
 	public void onLoad()
 	{
 		createActionColumn(view.grid());
-		view.grid().redraw();
+		view.grid().refresh();
 	}
 
 	@Expose

@@ -2,7 +2,6 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.rest;
 
 import java.util.ArrayList;
 
-import org.cruxframework.crossdeviceshowcase.client.controller.samples.datagrid.Person;
 import org.cruxframework.crux.core.client.collection.Array;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
@@ -33,6 +32,8 @@ public class RestController
 	@Expose
 	public void onLoadData(final EagerLoadEvent<PersonDTO> event)
 	{
+		clearFields();
+		
 		personRestProxy.search(new RestCallback<ArrayList<PersonDTO>>()
 		{
 			@Override
@@ -55,21 +56,22 @@ public class RestController
 			public void onDataSelection(DataSelectionEvent<PersonDTO> event)
 			{
 				Array<DataProviderRecord<PersonDTO>> changedRecords = event.getChangedRecords();
-				if(changedRecords.get(0) != null)
+				for(int i = 0; i<changedRecords.size(); i++)
 				{
-					DataProviderRecord<PersonDTO> dataProviderRecord = changedRecords.get(0);
+					DataProviderRecord<PersonDTO> dataProviderRecord = changedRecords.get(i);
 					
-					if(dataProviderRecord != null && dataProviderRecord.getRecordObject() != null)
+					if(dataProviderRecord.isSelected())
 					{
 						personRestProxy.get(dataProviderRecord.getRecordObject().getId(), new RestCallback<PersonDTO>()
 						{
 							@Override
 							public void onComplete(PersonDTO result)
 							{
-								View.of(this).write(result);			
+								View.of(RestController.this).write(result);			
 							}
 						});	
 					}
+					
 				}
 			}
 		});
@@ -77,6 +79,11 @@ public class RestController
 
 	@Expose
 	public void onSelectCreate()
+	{
+		clearFields();
+	}
+	
+	private void clearFields()
 	{
 		View.of(this).write(new PersonDTO());
 	}
@@ -93,6 +100,8 @@ public class RestController
 				@Override
 				public void onComplete(Void result)
 				{
+					view.grid().getDataProvider().remove(view.grid().getDataProvider().indexOf(person));
+					view.grid().getDataProvider().add(person);
 					MessageBox.show(messages.successUpdate(), MessageType.INFO);
 				}
 			});
@@ -105,6 +114,8 @@ public class RestController
 				public void onComplete(Integer id)
 				{
 					person.setId(id);
+					View.of(RestController.this).write(person);
+					view.grid().getDataProvider().add(person);
 					MessageBox.show(messages.successSave(), MessageType.INFO);
 				}
 			});
@@ -114,12 +125,21 @@ public class RestController
 	@Expose
 	public void onSelectRemove()
 	{
-		PersonDTO person = View.of(this).read(PersonDTO.class);
+		final PersonDTO person = View.of(this).read(PersonDTO.class);
+		
+		if(person.getId() == null)
+		{
+			MessageBox.show(messages.selectPerson(), MessageType.INFO);
+			return;
+		}
+		
 		personRestProxy.remove(person.getId(), new RestCallback<Void>()
 		{
 			@Override
 			public void onComplete(Void result)
 			{
+				view.grid().getDataProvider().remove(view.grid().getDataProvider().indexOf(person));
+				clearFields();
 				MessageBox.show(messages.successRemove(), MessageType.INFO);
 			}
 		});
@@ -140,7 +160,7 @@ public class RestController
 		this.view = view;
 	}
 	
-	@BindView("datagrid")
+	@BindView("rest")
 	public static interface Widgets extends WidgetAccessor
 	{
 		DataGrid<PersonDTO> grid();

@@ -3,7 +3,6 @@ package org.cruxframework.crossdeviceshowcase.client.util.messages;
 import org.cruxframework.crux.core.client.i18n.MessageName;
 
 import com.google.gwt.i18n.client.Messages;
-import com.google.gwt.i18n.client.Messages.DefaultMessage;
 
 @MessageName("description_messages")
 public interface DescriptionMessages extends Messages
@@ -37,6 +36,9 @@ public interface DescriptionMessages extends Messages
 	
 	@DefaultMessage("<p>O DownloadButton ...</p>")
 	String downloadButtonDescription();
+	
+	@DefaultMessage("<p>Os pagers ...</p>")
+	String pagersDescription();
 	
 	@DefaultMessage("<p>Labels são elementos que disparam ações quando clicados, este componente foi feito pensando também em " 
 		+"dispositivos de toque, tratando os eventos de forma diferenciada em um smartphone ou tablet, por exemplo.</p>")

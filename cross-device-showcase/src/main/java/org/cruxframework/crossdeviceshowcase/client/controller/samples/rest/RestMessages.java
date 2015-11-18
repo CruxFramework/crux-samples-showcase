@@ -36,4 +36,7 @@ public interface RestMessages extends Messages
 
 	@DefaultMessage("Registro removido com sucesso.")
 	String successRemove();
+
+	@DefaultMessage("Por favor, selecione uma pessoa para continuar.")
+	String selectPerson();
 }

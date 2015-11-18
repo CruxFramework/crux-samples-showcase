@@ -1,9 +1,8 @@
 package org.cruxframework.crossdeviceshowcase.server.service.samples.rest;
 
 import java.util.ArrayList;
+import java.util.Random;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.cruxframework.crossdeviceshowcase.client.controller.samples.rest.PersonDTO;
 import org.cruxframework.crux.core.server.rest.annotation.RestService;
 import org.cruxframework.crux.core.shared.rest.annotation.DELETE;
@@ -17,7 +16,8 @@ import org.cruxframework.crux.core.shared.rest.annotation.PathParam;
 @Path("/person")
 public class PersonRestService
 {
-	private static final Log LOG = LogFactory.getLog(PersonRestService.class);
+	private static final int MAX_PERSON_TO_SAVE = 100;
+	private static Random random = new Random();
 	private static ArrayList<PersonDTO> persons = new ArrayList<PersonDTO>();
 	
 	static
@@ -28,9 +28,9 @@ public class PersonRestService
 	private static void mockMapFill()
 	{
 		persons = new ArrayList<PersonDTO>();
-		persons.add(new PersonDTO("John", "Nash"));
-		persons.add(new PersonDTO("Paul", "McCartney"));
-		persons.add(new PersonDTO("Ravi", "Shankar"));
+		persons.add(new PersonDTO(random.nextInt(), "John", "Nash"));
+		persons.add(new PersonDTO(random.nextInt(), "Paul", "McCartney"));
+		persons.add(new PersonDTO(random.nextInt(), "Ravi", "Shankar"));
 	}
 	
 	@DELETE
@@ -42,7 +42,7 @@ public class PersonRestService
 			PersonDTO personToRemove = null;
 			for(PersonDTO person : persons)
 			{
-				if(person.getId() != null && person.getId().equals(person.getId()))
+				if(person.getId() != null && person.getId().equals(id))
 				{
 					personToRemove = person;
 				}
@@ -59,9 +59,9 @@ public class PersonRestService
 	@Path("add")
 	public Integer save(PersonDTO person)
 	{
-		int id = persons.size()+1;
+		int id = random.nextInt();
 		person.setId(id);
-		persons.add(person);
+		addPerson(person);
 		return id;
 	}
 	
@@ -74,7 +74,7 @@ public class PersonRestService
 			PersonDTO personToRemove = null;
 			for(PersonDTO person : persons)
 			{
-				if(person.getId() != null && person.getId().equals(person.getId()))
+				if(person.getId() != null && person.getId().equals(id))
 				{
 					personToRemove = person;
 				}
@@ -83,7 +83,7 @@ public class PersonRestService
 			if(personToRemove != null)
 			{
 				persons.remove(personToRemove);
-				persons.add(personToSave);
+				addPerson(personToSave);
 			}
 		}
 	}
@@ -96,7 +96,7 @@ public class PersonRestService
 		{
 			for(PersonDTO person : persons)
 			{
-				if(person.getId() != null && person.getId().equals(person.getId()))
+				if(person.getId() != null && person.getId().equals(id))
 				{
 					return person;
 				}
@@ -110,5 +110,14 @@ public class PersonRestService
 	public ArrayList<PersonDTO> search()
 	{
 		return persons;
+	}
+	
+	private static void addPerson(PersonDTO person)
+	{
+		if(persons == null || persons.size() > MAX_PERSON_TO_SAVE)
+		{
+			persons = new ArrayList<PersonDTO>();			
+		}
+		persons.add(person);
 	}
 }

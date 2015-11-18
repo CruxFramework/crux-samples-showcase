@@ -9,7 +9,7 @@
 	useController="simpleDatabaseController"
 	useDataSource="peopleDataSource" 
 	onActivate="simpleDatabaseController.onActivate"  
-	title="CRUD Simples"> 
+	title="Offline Database"> 
 	
 	<center>
 		<widgets:styledPanel id="panel">
