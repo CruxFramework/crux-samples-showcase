@@ -2,23 +2,22 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
-	useController="slideshowController" title="Slideshow"
-	onLoad="slideshowController.onLoad"> 
+	title="Slideshow"> 
 	
 	<center>
 	<!-- 		Component use sample  -->
-		<crux:slideshow id="slideshow" layout="classic" width="100%" height="750px" loadOnStartup="true" >
-			<crux:service name="picasa">
-				<crux:param name="userID" value="114650528804514463329" />
-				<crux:param name="albumID" value="5951409748461918465" />
-				<crux:param name="imagesSize" value="400" />
-				<crux:param name="thumbnailsSize" value="48"/>
-			</crux:service>
-		</crux:slideshow>
+		<widgets:slideshow id="slideshow" layout="classic" width="100%" height="750px" loadOnStartup="true" >
+			<widgets:service name="picasa">
+				<widgets:param name="userID" value="114650528804514463329" />
+				<widgets:param name="albumID" value="5951409748461918465" />
+				<widgets:param name="imagesSize" value="400" />
+				<widgets:param name="thumbnailsSize" value="48"/>
+			</widgets:service>
+		</widgets:slideshow>
 		
 		<!-- 		Component description -->
 		<showcase:info 
@@ -32,7 +31,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription"/>
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.slideShowDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 

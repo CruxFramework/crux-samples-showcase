@@ -7,39 +7,39 @@ import com.google.gwt.i18n.client.Messages;
 @MessageName("datagrid_messages")
 public interface DataGridMessages extends Messages
 {	
-	@DefaultMessage("Name")
+	@DefaultMessage("Nome")
 	String name();
 	
-	@DefaultMessage("LastName")
+	@DefaultMessage("Último Name")
 	String lastName();
 	
-	@DefaultMessage("Basic Info")
+	@DefaultMessage("Informações básicas")
 	String basicinfo();
 	
-	@DefaultMessage("Age")
+	@DefaultMessage("Idade")
 	String age();
 	
-	@DefaultMessage("Profession")
+	@DefaultMessage("Profissão")
 	String profession();
 
-	@DefaultMessage("edit")
+	@DefaultMessage("editar")
 	String edit();
 
-	@DefaultMessage("back")
+	@DefaultMessage("voltar")
 	String back();
 
 	@DefaultMessage("ok")
 	String ok();
 
-	@DefaultMessage("Action")
+	@DefaultMessage("Ação")
 	String action();
 
-	@DefaultMessage("Edit All")
+	@DefaultMessage("Editar todos")
 	String editAll();
 
-	@DefaultMessage("Commit Changes")
+	@DefaultMessage("Consolidar alterações")
 	String commit();
 
-	@DefaultMessage("Rollback Changes")
+	@DefaultMessage("Desfazer alterações")
 	String rollback();
 }

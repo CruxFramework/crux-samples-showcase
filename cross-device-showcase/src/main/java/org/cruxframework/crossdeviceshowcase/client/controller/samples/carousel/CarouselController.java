@@ -2,25 +2,13 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.carousel
 
 import java.util.ArrayList;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.dataprovider.EagerLoadEvent;
-import org.cruxframework.crux.core.client.ioc.Inject;
-import org.cruxframework.crux.core.client.screen.views.BindView;
-import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-
-import com.google.gwt.user.client.ui.HTML;
 
 @Controller("carouselController")
 public class CarouselController 
 {
-	@Inject
-	private DescriptionMessages messages;
-
-	@Inject
-	private MyWidgetAccessor myWidgetAccessor;
-	
 	@Expose
 	public void onLoadData(EagerLoadEvent<Car> event)
 	{
@@ -42,28 +30,5 @@ public class CarouselController
 		cars.add(new Car("Mitsubishi", "Japan", 1970));
 		
 		event.getSource().setData(cars);
-	}
-	
-	@Expose
-	public void onLoad()
-	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(messages.widgetListDescription());		
-	}
-	
-	@BindView("carousel")
-	public static interface MyWidgetAccessor extends WidgetAccessor
-	{
-		HTML componentDescription();
-	}
-
-	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
-	{
-		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-	public void setMessages(DescriptionMessages messages) 
-	{
-		this.messages = messages;
 	}
 }

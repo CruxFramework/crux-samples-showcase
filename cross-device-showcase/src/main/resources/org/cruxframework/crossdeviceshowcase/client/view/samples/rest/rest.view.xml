@@ -2,31 +2,46 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="restController"
+	onLoad="restController.onLoad"
 	title="Rest Service"> 
 	
+	<core:dataProvider id="dataProviderPerson" dataObject="personRest" onLoadData="restController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+
 	<center>
-	<!-- 		Component use sample  -->
-		<crux:styledPanel id="createPanel">
-			<crux:formDisplay id="form">
-       	<crux:entry label="Login:">
-       		<gwt:textBox id="txtLogin"/>
-       	</crux:entry>
-	      <crux:entry label="Password:">
-					<gwt:textBox id="txtPassword"/>	        		
-	      </crux:entry>
-       	<crux:entry horizontalAlignment="center">
-       		<gwt:flowPanel id="buttons">
-       			<faces:button id="btnLogin" text="Login" width="200px" onSelect="restController.validateUser" visible="false"/>
-       			<faces:button id="btnCreate" text="Create User" width="200px" onSelect="restController.createUser"/>
-       		</gwt:flowPanel>
-       	</crux:entry>
-	    </crux:formDisplay>
-		</crux:styledPanel>		
+		<!-- Component use sample -->
+		<gwt:flowPanel id="panel">
+			 <faces:dataGrid id="grid" itemVar="personRest" dataProvider="dataProviderPerson" rowSelectStrategy="row">
+			 	<faces:column key="id" header="${rest_messages.id}" property="@{personRest.id:integerString}" sortable="true"/>
+				<faces:column key="name" header="${rest_messages.name}" property="@{personRest.name}" sortable="true"/>
+				<faces:column key="lastName" header="${rest_messages.lastName}" property="@{personRest.lastName}" sortable="true"/>
+		    </faces:dataGrid>
+
+		    <faces:sequentialPager id="pagerGridPerson" dataProvider="dataProviderPerson" visible="true" />
+		    
+		    <widgets:formDisplay id="entity">
+		    	<widgets:entry label="${rest_messages.id}">
+		    		<gwt:textBox id="textBoxId" value="@{personRest.id:integerString}" enabled="false" />
+		    	</widgets:entry>
+		    	<widgets:entry label="${rest_messages.name}">
+		    		<gwt:textBox id="textBoxName" value="@{personRest.name}" />
+		    	</widgets:entry>
+		    	<widgets:entry label="${rest_messages.lastName}">
+		    		<gwt:textBox id="textBoxLastName" value="@{personRest.lastName}" />
+		    	</widgets:entry>
+		    </widgets:formDisplay>
+		    
+		    <gwt:flowPanel id="wrapperActionButtons">
+				<faces:button id="btnSave" text="${rest_messages.save}" onSelect="restController.onSelectSave"/>
+				<faces:button id="btnRemove" text="${rest_messages.remove}" onSelect="restController.onSelectRemove"/>
+				<faces:button id="btnCreate" text="${rest_messages.create}" onSelect="restController.onSelectCreate"/>
+		    </gwt:flowPanel>
+		    
+		</gwt:flowPanel>
 
 		<!-- 		Component description -->
 		<showcase:info 
@@ -40,7 +55,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription"/>
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.restDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 	</center>	

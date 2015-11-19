@@ -2,10 +2,10 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
-	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useResource="showcaseCoreResources"
 	useController="swapPanelController"
 	useDataSource="simplePersonDS"
@@ -13,37 +13,37 @@
 	title="SwapPanel"> 
 
 	<center>
-		<crux:styledPanel id="mainPanel">
+		<widgets:styledPanel id="mainPanel">
 			<gwt:flowPanel id="innerPanel">
 				<faces:swapPanel id="swapPanel" styleName="faces-SwapPanel" animation="bounce" onSwap="swapPanelController.showMessage">
-					<crux:formDisplay id="form" visible="true" height="300px" width="300px">
-						<crux:entry label="Name: ">
+					<widgets:formDisplay id="form" visible="true" height="300px" width="300px">
+						<widgets:entry label="Name: ">
 							<gwt:textBox id="txtName"/>
-						</crux:entry>
-						<crux:entry label="Age: ">
-							<crux:numberTextBox id="numberAge"/>
-						</crux:entry>			
-						<crux:entry label="profession: ">
+						</widgets:entry>
+						<widgets:entry label="Age: ">
+							<widgets:numberTextBox id="numberAge"/>
+						</widgets:entry>			
+						<widgets:entry label="profession: ">
 							<gwt:textBox id="txtProfession"/>
-						</crux:entry>
-						<crux:entry>
+						</widgets:entry>
+						<widgets:entry>
 							<faces:button id="btn" text="Send Data"/>
-						</crux:entry>
-					</crux:formDisplay>
+						</widgets:entry>
+					</widgets:formDisplay>
 				</faces:swapPanel>
 								
 				<!-- 	DeviceAdaptiveGrid widget to swap in panel 	-->	
-				<crux:adaptiveGrid id="grid" dataSource="simplePersonDS"  width="100%"  styleName="grid" pageSize="5" visible="false">
-					<crux:largeColumns>
-						<crux:dataColumn key="name" label="Name" width="40%"/>
-						<crux:dataColumn key="age" label="Age" width="10%" />
-<!-- 						<crux:dataColumn key="status" label="Status" width="90px"/> -->
-						<crux:dataColumn key="birthday" label="Day of Birth" width="40%" formatter="dateFormatter" />
-					</crux:largeColumns>
-					<crux:smallColumns>
-						<crux:dataColumn key="name" label="Name" width="80px"/>
-					</crux:smallColumns>
-				</crux:adaptiveGrid>
+				<widgets:adaptiveGrid id="grid" dataSource="simplePersonDS"  width="100%"  styleName="grid" pageSize="5" visible="false">
+					<widgets:largeColumns>
+						<widgets:dataColumn key="name" label="Name" width="40%"/>
+						<widgets:dataColumn key="age" label="Age" width="10%" />
+<!-- 						<widgets:dataColumn key="status" label="Status" width="90px"/> -->
+						<widgets:dataColumn key="birthday" label="Day of Birth" width="40%" formatter="dateFormatter" />
+					</widgets:largeColumns>
+					<widgets:smallColumns>
+						<widgets:dataColumn key="name" label="Name" width="80px"/>
+					</widgets:smallColumns>
+				</widgets:adaptiveGrid>
 				
 				<!--	 Button to call widget transition method and ListBox to choice animation	-->
 				<gwt:flowPanel id="actionPanel">
@@ -60,7 +60,7 @@
 					<faces:button id="btnSwapWidget" text="Swap Widget" styleName="faces-Button sp-button-margin" onSelect="swapPanelController.swapPanel"/>
 				</gwt:flowPanel>
 			</gwt:flowPanel>	
-		</crux:styledPanel>	
+		</widgets:styledPanel>	
 
 <!-- 		Component description -->
 		<showcase:info 
@@ -74,7 +74,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.swapPanelDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 	</center>

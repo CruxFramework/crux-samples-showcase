@@ -2,12 +2,11 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
-	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="comboBoxController"
-	onLoad="comboBoxController.onLoad"
 	title="ComboBox"> 
 
 	<style>
@@ -20,7 +19,7 @@
 	<core:dataProvider id="dataProvider" dataObject="countryComboBox" onLoadData="comboBoxController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 
 	<center>
-		<crux:styledPanel id="mainPanel">
+		<widgets:styledPanel id="mainPanel">
 			<gwt:flowPanel id="innerPanel">
 				<faces:comboBox id="comboBox" dataProvider="dataProvider" itemVar="country">
 				<faces:options value="@{country.id:integerString}" text="@{country.name}">
@@ -33,7 +32,7 @@
 				</faces:options>
 				</faces:comboBox>
 			</gwt:flowPanel>
-		</crux:styledPanel>
+		</widgets:styledPanel>
 		
 		<!-- Component description -->
 		<showcase:info 
@@ -47,7 +46,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+					${description_messages.comboBoxDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 

@@ -21,13 +21,6 @@ public interface TabViewContainerMessages extends Messages
 	
 	@DefaultMessage("Não há aba para ser removida.")
 	String alert();
-	
-	@DefaultMessage("<p>O componente TabViewContainer permite que várias views compartilhem o mesmo espaço. "
-			+"Uma aba pode ser selecionada para visualização clicando-se sobre seu nome na parte superior ou pode ser fechada " 
-			+"através de um clique no botão fechar (x).</p>"
-			+"<p>No exemplo apresentado é possível remover uma aba clicando no botão Remover aba selecionada e também é "
-			+"possível adicionar uma nova aba clicando no botão 'Adicionar Url'.</p>")
-	String htmlDescText();
 }
  
  

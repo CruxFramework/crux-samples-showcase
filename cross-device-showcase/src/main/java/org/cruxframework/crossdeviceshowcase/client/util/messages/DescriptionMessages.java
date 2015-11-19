@@ -19,6 +19,16 @@ public interface DescriptionMessages extends Messages
 			+ "do clique no componente, como o pop-up informativo que aparece ao clicar no primeiro exemplo.</p>")
 	String anchorDescription();
 	
+	@DefaultMessage("<p>O componente Breadcrumb permite construir um estado entre as suas transições. Ele controla um container"
+		+ "de views e o histórico da página. Dessa forma, ao alterar entre seus estados, o histórico da página será alterado,"
+		+ "bem como a view corrente. Além disso, ele funciona como uma pilha, onde podemos determinar o fluxo de navegação"
+		+ "do usuário e empilhar ou desempilhar os próximos passos do usuário, na medida que ele for navegar.</p>")
+	String breadcrumbDescription();
+	
+	@DefaultMessage("<p>O Selectable Panel é um painel de seleção que foi construído pensando também em " 
+			+"dispositivos de toque, tratando os eventos de forma diferenciada em um smartphone ou tablet, por exemplo.</p>")
+	String selectablePanelDescription();
+	
 	@DefaultMessage("<p>O ColorPicker é um componente que permite que o usuário selecione uma cor do espectro de "
 			+"cores e aplique-a em um determinado elemento. A funcionalidade é semelhante selecionadores " 
 			+"de cores encontrados em softwares desktop.</p>")
@@ -27,6 +37,26 @@ public interface DescriptionMessages extends Messages
 	@DefaultMessage("<p>Buttons são elementos que disparam ações quando clicados, este componente foi feito pensando também em " 
 			+"dispositivos de toque, tratando os eventos de forma diferenciada em um smartphone ou tablet, por exemplo.</p>")
 	String buttonDescription();
+	
+	@DefaultMessage("<p>O DownloadButton permite dispararmos o salvamento de arquivos em nossa máquina da melhor forma possível,"
+		+ "os tratando como se fossem links ou mesmo um conteúdo estático em base 64. Em ambos os casos, existem particularidades"
+		+ "no salvamento destes arquivos, onde muitas foram resolvidas através da propriedade <code>download</code> do HTML5. Entretanto,"
+		+ "em navegadores antigos, esta propriedade não existe, então este componente é capaz de identificar o cenário do navegador"
+		+ "e tratar o salvamento da forma adequada.</p>")
+	String downloadButtonDescription();
+	
+	@DefaultMessage("<p>Os pagers são elementos que interagem com o Data Provider. Através deles, podemos avançar ou retroceder uma"
+		+ "página. Existem 2 tipos de data providers: o que precisa ir no servidor recuperar novos dados quando trocamos de página e"
+		+ "o que considera que a página os dados já foram previamente trazidos pelo servidor. Em ambos os casos, existem 5 tipos de"
+		+ "paginadores que podemos utilizar:</p>"
+		+ "<ul>"
+		+ "<li><code>Sequential Pager</code>: Pager que desconhece o tamanho dos dados e consiste em botões de avanço e retrocesso.</li>"
+		+ "<li><code>Bullets Pager</code>: Pager que conhece o tamanho dos dados, representa as páginas como bullets.</li>"
+		+ "<li><code>Predictive Pager</code>: Pager que conhece o tamanho dos dados, representa as páginas em um list box e possui botões de avanço e retrocesso.</li>"
+		+ "<li><code>Swap Pager</code>: Pager que desconhece o tamanho dos dados, permite a transição das páginas através de animações.</li>"
+		+ "<li><code>Scrollable Pager</code>: Pager que desconhece o tamanho dos dados, e permite trazer novos dados na medida que o evento de scroll acontece.</li>"
+		+ "</ul>")
+	String pagersDescription();
 	
 	@DefaultMessage("<p>Labels são elementos que disparam ações quando clicados, este componente foi feito pensando também em " 
 		+"dispositivos de toque, tratando os eventos de forma diferenciada em um smartphone ou tablet, por exemplo.</p>")
@@ -43,6 +73,25 @@ public interface DescriptionMessages extends Messages
 			+ "desde um simples botão até um painel.</p>")
 	String dialogBoxDescription();
 
+	@DefaultMessage("<p>TabPanel é um painel onde é possível apresentar várias páginas no mesmo espaço, "
+		+ "sendo que a troca do conteúdo a ser visualizado é feita através de abas.</p>"
+		+ "<p>Este componente possui uma animação para a transição das páginas que pode ser ativada ou não. "
+		+ "Cada aba do componente pode váriar entre opções de título (da aba) e conteúdo. As abas podem conter "
+		+ "qualquer componente válido, desde um simples botão até um painel completo como no exemplo da página 3.</p>")
+	String tabPanelDescription();
+	
+	@DefaultMessage("<p>O componente TabViewContainer permite que várias views compartilhem o mesmo espaço. "
+		+"Uma aba pode ser selecionada para visualização clicando-se sobre seu nome na parte superior ou pode ser fechada " 
+		+"através de um clique no botão fechar (x).</p>"
+		+"<p>No exemplo apresentado é possível remover uma aba clicando no botão Remover aba selecionada e também é "
+		+"possível adicionar uma nova aba clicando no botão 'Adicionar Url'.</p>")
+	String tabViewContainerDescription();
+	
+	@DefaultMessage("<p>Rest a comunicação com um servidor através da arquitetura RESTFUL. Através desta funcionalidade,"
+		+ "podemos mapear nossa chamada Rest através de anotações condizentes com o padrão JAX-WS 1.x. O Crux"
+		+ "se encarregará da serialização e desserialização dos dados.</p>")
+	String restDescription();
+	
 	@DefaultMessage("<p>DialogViewContainer é um container de views que utiliza uma caixa de diálogo "
 			+ "flutuante para apresentá-las, possibilitando utilizar os benefícios de uma janela "
 			+ "flutuante para views completas. </p> <p>No exemplo apresentado o container carrega uma view "
@@ -94,6 +143,15 @@ public interface DescriptionMessages extends Messages
 			+"<p> Neste exemplo associamos o MaskedLabel a um formatador de data, para exibirmos "
 			+"a data de nascimento do personagem.</p>")
 	String maskedLabelDescription();
+	
+	@DefaultMessage("<p>O Crux oferece suporte a banco de dados para o lado cliente da aplicação. Cadastre novas pessoas na listagem acima, "
+		+ "clicando no botão adicionar. O banco pode ser webSQL ou IndexedDB, o Crux chaveará entre uma ou outra implementação dependendo do suporte do seu"
+		+ "navegador.</p>")
+	String simpleDatabaseDescription();
+	
+	@DefaultMessage("<p>O SimpleViewContainer é um componente que permite a gestão das views da nossa aplicação. Ele gerencia"
+		+ "o ciclo de vida de uma view, permitindo o carregamento e o descarregamento adequeado da mesma.</p>")
+	String simpleViewContainerDescription();
 	
 	@DefaultMessage("<p>MaskedTextBox é um componente de entrada de informações que tem a capacidade de ser associado "
 			+"a um Formatter para guiar o usuário durante o preenchimento e garantir a conversão dessas informações " 
@@ -200,14 +258,19 @@ public interface DescriptionMessages extends Messages
 	        + "visualização e usabilidade.</p>")
 	String menuDescription();
 	
-	@DefaultMessage("<p>O ComboBox é um componente cross-device para a seleção de um elemento dentre uma lista de elementos."
+	@DefaultMessage("<p>O ComboBox é um componente cross-device para a seleção de um elemento dentre uma lista de elementos. Ele permite que estes elementos"
+		+ "sejam widgets, oferecendo um maior grau de customização para a aplicação."
         +"</p>")
 	String comboBoxDescription();
 	
 	@DefaultMessage("<p>O WidgetList é um componente que trabalha juntamente com o Data Provider, ele permite a criação de lista"
-		+ "de Widgets."
-        +"Neste exemplo a lista de elementos foi construída na view.</p>")
+		+ "de Widgets e a seleção de cada item da lista."
+        +"</p>")
 	String widgetListDescription();
+	
+	@DefaultMessage("<p>O Carousel é um componente que trabalha juntamente com o Data Provider, ele permite a criação de um carousel"
+		+ "de widgets.</p>")
+	String carouselDescription();
 	
 	@DefaultMessage("<p>Este é um componente cross-device que além de ser um menu, também define o layout completo de uma página. "
 			+ "Para tanto, este renderiza automaticamente um menu, um viewContainer, um cabeçalho e um rodapé. "
@@ -265,6 +328,8 @@ public interface DescriptionMessages extends Messages
 			+ "a adição de uma nova tarefa ou remoção de uma tarefa selecionada.</p>")
 	String sortableListDescription();
 	
-	@DefaultMessage("<p>O DataGrid é um componente de listagem de items baseados no data provider.</p>")
+	@DefaultMessage("<p>O DataGrid é um componente que trabalha juntamente com o Data Provider. Ele cria uma tabela 100% tabless,"
+		+ "e permite funções como a ordenação de colunas, edição de linhas, seleção (única ou múltipla), etc."
+		+ "</p>")
 	String dataGridDescription();
 }

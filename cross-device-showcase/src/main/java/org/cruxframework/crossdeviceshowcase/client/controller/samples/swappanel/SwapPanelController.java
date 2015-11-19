@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -19,7 +18,6 @@ import org.cruxframework.crux.widgets.client.formdisplay.FormDisplay;
 import org.cruxframework.crux.widgets.client.image.Image;
 import org.cruxframework.showcasecore.client.resource.common.ShowcaseResourcesCommon;
 
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.ListBox;
 
 /**
@@ -33,9 +31,6 @@ public class SwapPanelController
 	private final String MESSAGE = "Swaped Widget";
 	
 	@Inject
-	private DescriptionMessages componentDescription;
-
-	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
 	@Inject
@@ -45,9 +40,6 @@ public class SwapPanelController
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.swapPanelDescription());
-		
 		loadData();
 	}
 	
@@ -150,19 +142,12 @@ public class SwapPanelController
 		FormDisplay form();
 		ListBox listAnimation();
 		SwapPanel swapPanel();
-		HTML componentDescription();
 	}
 
 	/** @param myWidgetAccessor the myWidgetAccessor to set */
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-	
-	/** @param componentDescription the componentDescription to set */
-	public void setComponentDescription(DescriptionMessages componentDescription) 
-	{
-		this.componentDescription = componentDescription;
 	}
 	
 	/** @param showcaseResourcesCommon the showcaseResourcesCommon to set*/

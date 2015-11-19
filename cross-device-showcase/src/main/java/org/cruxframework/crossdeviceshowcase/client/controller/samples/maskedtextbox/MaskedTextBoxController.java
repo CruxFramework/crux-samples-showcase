@@ -2,41 +2,21 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.maskedte
 
 import java.util.Date;
 
-import org.cruxframework.crossdeviceshowcase.client.util.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
-import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.View;
 import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
 import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.maskedtextbox.MaskedTextBox;
-
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
 
 @Controller("maskedTextBoxController")
 public class MaskedTextBoxController 
 {
-	@Inject
-	private DescriptionMessages componentDescription;
-	
-	private String MESSAGE_EMPTY_FIELD;
-	private String MESSAGE_WRONG_FORMAT;
-	private String MESSAGE_DATE;
-	private String MESSAGE_INVALID_DATE;
-	
-	@Expose
-	public void onLoad()
-	{
-		/* Insert the component description*/
-		HTML widgetHtml= View.of(this).getWidget("componentDescription", HTML.class);
-		widgetHtml.setHTML(componentDescription.maskedTextBoxDescription());
-		
-		MESSAGE_EMPTY_FIELD = "Please fill in the empty field.";
-		MESSAGE_WRONG_FORMAT = "Please enter a valid date as dd / mm / yyyy";
-		MESSAGE_DATE = "The date entered was:";
-		MESSAGE_INVALID_DATE = "You entered an invalid date, please try again.";
-	}
+	private String MESSAGE_EMPTY_FIELD = "Please fill in the empty field.";
+	private String MESSAGE_WRONG_FORMAT = "Please enter a valid date as dd / mm / yyyy";
+	private String MESSAGE_DATE = "The date entered was:";
+	private String MESSAGE_INVALID_DATE = "You entered an invalid date, please try again.";
 	
 	private MaskedTextBox getDateInput()
 	{
@@ -68,11 +48,14 @@ public class MaskedTextBoxController
         }
         else
         {
-			try{
+			try
+			{
 				Date date = (Date) widget.getUnformattedValue();
 				this.changeState(null);
 				MessageBox.show(MESSAGE_DATE + date, MessageType.INFO);
-			}catch(Exception e){
+			}
+			catch(Exception e)
+			{
 				this.changeState("warn");
 				MessageBox.show(MESSAGE_INVALID_DATE, MessageType.WARN);
 			} 	
@@ -94,9 +77,5 @@ public class MaskedTextBoxController
 		
 		widget.setStyleName(type, true);
 		button.setStyleName(type, true);
-	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

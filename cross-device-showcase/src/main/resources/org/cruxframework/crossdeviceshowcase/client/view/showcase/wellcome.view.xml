@@ -2,9 +2,9 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	title="${messages_showcase.welcome}"> 
 	
@@ -19,12 +19,12 @@
 			<div class="wellcomeText box-library tc wellcome-mg-bt">	
 		   		<faces:label id="faces" text="SmartFaces" styleName="textInfo tc doc-title"/>
 		   		<faces:label id="facesText" text="${messages_showcase.facesText}" styleName="textInfo"/>
-            	<crux:anchor id="faces-btn" styleName="faces-Button btn-link" href="http://files.cruxframework.org/components/smartfaces/index.html" text="SmartFaces"/>
+            	<widgets:anchor id="faces-btn" styleName="faces-Button btn-link" href="http://files.cruxframework.org/components/smartfaces/index.html" text="SmartFaces"/>
 	        </div>   
 	        <div class="wellcomeText box-library fl-right tc">
 		   		<faces:label id="widget" text="Widgets" styleName="textInfo tc doc-title"/>
 		   		<faces:label id="widgetText" text="${messages_showcase.widgetText}" styleName="textInfo"/>
-            	<crux:anchor id="widget-btn" styleName="faces-Button btn-link" href="http://files.cruxframework.org/components/widgets/index.html" text="Widgets"/>
+            	<widgets:anchor id="widget-btn" styleName="faces-Button btn-link" href="http://files.cruxframework.org/components/widgets/index.html" text="Widgets"/>
 			</div>
 		</div>
 	</center>		

@@ -3,7 +3,7 @@
  */
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.simpledatabase;
 
-import org.cruxframework.crossdeviceshowcase.client.controller.samples.ShowcaseMessages;
+import org.cruxframework.crossdeviceshowcase.client.util.messages.ShowcaseMessages;
 import org.cruxframework.crux.core.client.Crux;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;

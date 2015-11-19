@@ -2,20 +2,19 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="progressBoxController" 
-	onLoad="progressBoxController.onLoad" 
 	title="ProgressBox"> 
 
 	<center>
 	<!-- 		Component use sample  -->
-		<crux:styledPanel id="panel1">
+		<widgets:styledPanel id="panel1">
 			<faces:button id="showProgressBtn" text="Show ProgressBox"
 				onSelect="progressBoxController.showProgress" />
-		</crux:styledPanel>
+		</widgets:styledPanel>
 
 		<!-- 		Component description -->
 		<showcase:info 
@@ -29,7 +28,9 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription"/>
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.progressBoxDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 

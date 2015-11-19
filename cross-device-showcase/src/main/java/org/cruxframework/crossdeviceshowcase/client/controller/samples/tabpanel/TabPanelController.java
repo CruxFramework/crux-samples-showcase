@@ -9,8 +9,6 @@ import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
 import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.rollingtabs.RollingTabPanel;
 
-import com.google.gwt.user.client.ui.HTML;
-
 @Controller("tabPanelController")
 public class TabPanelController 
 {
@@ -20,13 +18,6 @@ public class TabPanelController
 	@Inject
 	private TabPanelMessages messages;
 
-	@Expose
-	public void onLoad()
-	{
-		/* Insert the component description*/
-		myWidgetAccessor.htmlDescText().setHTML(messages.htmlDescText());
-	}
-	
 	@Expose
 	public void onClickButton()
 	{
@@ -49,7 +40,6 @@ public class TabPanelController
 	public interface MyWidgetAccessor extends WidgetAccessor
 	{
 		RollingTabPanel rollingTabPanel();
-		HTML htmlDescText();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 

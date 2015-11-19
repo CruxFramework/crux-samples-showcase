@@ -1,10 +1,10 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
-	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	onLoad="tabViewContainerController.onLoad"
 	useController="tabViewContainerController"
@@ -12,15 +12,15 @@
 
 	<center>
 		<gwt:HTMLPanel id="panel">
-			<faces:tabViewContainer id="tabView" width="700px" height="300px">
+			<faces:tabViewContainer id="tabView">
 				<faces:view name="simpleViewTab1" closeable="true"/>
 			</faces:tabViewContainer>
 			<br/>
 			<gwt:horizontalPanel id="buttonPanel">
-				<gwt:textBox id="textBoxUrl" text="http://blog.cruxframework.org" width="250px" readOnly="true"/>
-				<crux:button id="buttonAddUrl"
+				<gwt:textBox id="textBoxUrl" text="http://www.w3schools.com/" width="250px" readOnly="true"/>
+				<widgets:button id="buttonAddUrl"
 				text="${messages_tabViewContainer.buttonAddUrl}" onSelect="tabViewContainerController.add" />
-				<crux:button id="buttonRemove"
+				<widgets:button id="buttonRemove"
 				text="${messages_tabViewContainer.buttonRemove}" onSelect="tabViewContainerController.remove" />
 			</gwt:horizontalPanel>
 		</gwt:HTMLPanel>
@@ -36,7 +36,10 @@
 			firefox-visible="true" 
 			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="htmlDescText"/>
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.tabViewContainerDescription}
+				</faces:HTML>
+
 			</showcase:description>
 		</showcase:info>
 

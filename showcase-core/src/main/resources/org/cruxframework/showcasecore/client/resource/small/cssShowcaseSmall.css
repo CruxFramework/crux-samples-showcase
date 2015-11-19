@@ -1147,3 +1147,9 @@ body
 {
 	max-width: 80px;
 }
+
+.openLogButton
+{
+	right: -144px;
+    height: 38px;
+}
