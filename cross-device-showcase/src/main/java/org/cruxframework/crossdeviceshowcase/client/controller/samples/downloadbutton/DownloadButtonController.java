@@ -32,7 +32,7 @@ public class DownloadButtonController
 			@Override
 			public String getBase64Data() 
 			{
-				String base64Data = Base64.encode(new String("Texto para teste do download"));
+				String base64Data = "data:text/plain;base64," + Base64.encode(new String("This is a sample text!"));
 				return base64Data;
 			}
 		});

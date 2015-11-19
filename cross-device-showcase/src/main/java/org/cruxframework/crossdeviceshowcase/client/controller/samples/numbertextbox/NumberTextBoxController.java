@@ -8,7 +8,6 @@ import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.input.NumberBox;
 import org.cruxframework.crux.widgets.client.storyboard.Storyboard;
 
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RadioButton;
 
 @Controller("numberTextBoxController")

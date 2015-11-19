@@ -9,7 +9,6 @@ import org.cruxframework.crux.smartfaces.client.rollingpanel.RollingPanel;
 import org.cruxframework.showcasecore.client.resource.common.ShowcaseResourcesCommon;
 
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HTML;
 
 @Controller("rollingPanelController")
 public class RollingPanelController 

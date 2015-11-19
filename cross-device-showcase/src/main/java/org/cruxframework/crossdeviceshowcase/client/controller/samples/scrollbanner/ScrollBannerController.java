@@ -8,8 +8,6 @@ import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.button.Button;
 import org.cruxframework.crux.widgets.client.scrollbanner.ScrollBanner;
 
-import com.google.gwt.user.client.ui.HTML;
-
 @Controller("scrollBannerController")
 public class ScrollBannerController 
 {

@@ -8,8 +8,6 @@ import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.image.Image;
 import org.cruxframework.crux.smartfaces.client.label.Label;
 
-import com.google.gwt.user.client.ui.HTML;
-
 @Controller("imageController")
 public class ImageController
 {

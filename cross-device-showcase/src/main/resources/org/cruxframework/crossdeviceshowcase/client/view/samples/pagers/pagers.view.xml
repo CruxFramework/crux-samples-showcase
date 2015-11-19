@@ -26,33 +26,77 @@
 		{
 			background: blue;
 		}
+		
+		.dataProviderWrapper, .lazyDataProviderWrapper
+		{
+			display: inline-block;
+		}
+		
+		.commonPagerWrapper, .swapPagerWrapper, .scrollablePagerWrapper
+		{
+			float: left;
+		}
+		
 	</style>
 
 	<core:dataProvider id="dataProvider" dataObject="personPagers" onLoadData="pagersController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+	<core:lazyDataProvider id="lazyDataProvider" dataObject="personPagers" onFetchData="pagersController.onFetchData" onMeasureData="pagersController.onMeasureData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 
 	<center>
 		<!-- Component use sample -->
 		<widgets:styledPanel id="wrapper">
-			<gwt:flowPanel id="sampleWrapper">
-				<faces:widgetList id="widgetList" itemVar="person" dataProvider="dataProvider">
-					<faces:widget>
-						<faces:label id="lblPerson" text="@{person.name} - @{person.lastName}"/>
-					</faces:widget>
-				</faces:widgetList>
+			<gwt:flowPanel id="pagerWrapper" styleName="pagerWrapper">
+				<gwt:flowPanel id="dataProviderWrapper" styleName="dataProviderWrapper">
 				
-				
-				<gwt:label id="lblSequentialPager" text="Sequential Pager"/>
-				
-			    <faces:sequentialPager id="sequentialPager" dataProvider="dataProvider" visible="true" />
-			    
-			    <gwt:label id="lblBulletsPager" text="Bullets Pager"/>
-			    
-			    <faces:bulletsPager id="bulletsPager" dataProvider="dataProvider" visible="true" />
-			    
-			    <gwt:label id="lblPredictivePager" text="Predictive Pager"/>
-			    
-			    <faces:predictivePager id="predictivePager" dataProvider="dataProvider" visible="true" />
-		    </gwt:flowPanel>
+					<gwt:flowPanel id="commonPagerWrapper" styleName="commonPagerWrapper">
+						<gwt:label id="lblDataProviderWrapper" text="Data Provider"/>
+						
+						<faces:widgetList id="widgetList" itemVar="person" dataProvider="dataProvider">
+							<faces:widget>
+								<faces:label id="lblPerson" text="@{person.name} - @{person.lastName}"/>
+							</faces:widget>
+						</faces:widgetList>
+						
+						<gwt:label id="lblSequentialPager" text="Sequential Pager"/>
+						
+					    <faces:sequentialPager id="sequentialPager" dataProvider="dataProvider" visible="true" />
+					    
+					    <gwt:label id="lblBulletsPager" text="Bullets Pager"/>
+					    
+					    <faces:bulletsPager id="bulletsPager" dataProvider="dataProvider" visible="true" />
+					    
+					    <gwt:label id="lblPredictivePager" text="Predictive Pager"/>
+					    
+					    <faces:predictivePager id="predictivePager" dataProvider="dataProvider" visible="true" />
+					</gwt:flowPanel>
+				    
+				    <gwt:flowPanel id="swapPagerWrapper" styleName="swapPagerWrapper">
+					    <gwt:label id="lblSwapPager" text="Swap Pager"/>
+					    
+					    <faces:widgetList id="widgetListSwap" itemVar="person" dataProvider="dataProvider">
+							<faces:widget>
+								<faces:label id="lblPerson" text="@{person.name} - @{person.lastName}"/>
+							</faces:widget>
+						</faces:widgetList>
+					    
+					    <faces:swapPager pageable="widgetListSwap" id="swapPager"/>
+				    </gwt:flowPanel>
+				    
+   				    <gwt:flowPanel id="scrollablePagerWrapper" styleName="scrollablePagerWrapper">
+   				    	<gwt:label id="lblScrollablePager" text="Scrollable Pager"/>
+   				    	
+					    <faces:widgetList id="widgetListScrollable" itemVar="person" dataProvider="dataProvider">
+							<faces:widget>
+								<faces:label id="lblPerson" text="@{person.name} - @{person.lastName}"/>
+							</faces:widget>
+						</faces:widgetList>
+					    
+					    <faces:scrollablePager pageable="widgetListScrollable" id="scrollablePager"/>
+				    </gwt:flowPanel>
+				    
+			    </gwt:flowPanel>
+			</gwt:flowPanel>
+			
 		</widgets:styledPanel>
 
 	<!-- Component description -->

@@ -54,6 +54,7 @@
 			<widgets:menuEntry label="ColorPicker" targetView="colorPickerDialog"/>
 			<widgets:menuEntry label="Date" targetView="date"/>
 			<widgets:menuEntry label="FileUploader" targetView="fileUploader"/>
+			<widgets:menuEntry label="DownloadButton" targetView="downloadButton"/>
 			<widgets:menuEntry label="MaskedLabel" targetView="maskedLabel"/>
 			<widgets:menuEntry label="MaskedTextBox" targetView="maskedTextBox"/>
 			<widgets:menuEntry label="NumberTextBox" targetView="numberTextBox"/>

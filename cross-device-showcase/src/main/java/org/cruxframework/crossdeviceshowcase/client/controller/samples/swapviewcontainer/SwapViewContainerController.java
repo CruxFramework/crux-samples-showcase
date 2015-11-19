@@ -8,7 +8,7 @@ import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.button.Button;
 import org.cruxframework.crux.smartfaces.client.swappanel.SwapAnimation;
 import org.cruxframework.crux.smartfaces.client.swappanel.SwapViewContainer;
-import com.google.gwt.user.client.ui.HTML;
+
 import com.google.gwt.user.client.ui.ListBox;
 
 /**
