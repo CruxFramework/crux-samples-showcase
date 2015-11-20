@@ -1,21 +1,20 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
-	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="timerController" 
-	onLoad="timerController.onLoad" 
 	title="Timer">
 
 	<center>
 		<!-- Component use sample -->
-		<crux:styledPanel id="wrapper">
+		<widgets:styledPanel id="wrapper">
 			<gwt:HTMLPanel id="parentPanel">
 				<gwt:HTMLPanel id="timerPanel" styleName="timerPanel">
-					<crux:timer id="timer" initial="0" start="false"/>
+					<widgets:timer id="timer" initial="0" start="false"/>
 				</gwt:HTMLPanel>
 				<br />
 				<gwt:HTMLPanel id="panelButtons" styleName="center">
@@ -26,12 +25,23 @@
 					</gwt:horizontalPanel>
 				</gwt:HTMLPanel>
 			</gwt:HTMLPanel>
-		</crux:styledPanel>
+		</widgets:styledPanel>
 
 		<!-- Component description -->
-		<showcase:info title="Timer" library="Widgets" ie-version="8+">
+		<showcase:info 
+			title="Timer" 
+			library="Widgets" 
+			ie-version="8+"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			edge-visible="true" ie-visible="true" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.timerDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 

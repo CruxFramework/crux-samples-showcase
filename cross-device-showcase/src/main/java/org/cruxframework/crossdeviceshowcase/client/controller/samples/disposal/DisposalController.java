@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.disposal;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -17,24 +16,17 @@ import org.cruxframework.crux.smartfaces.client.menu.Type.LargeType;
 import org.cruxframework.crux.smartfaces.client.menu.Type.SmallType;
 
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.ListBox;
 
 @Controller("disposalController")
-public class DisposalController {
-	
-	@Inject
-	private DescriptionMessages componentDescription;
-
+public class DisposalController 
+{
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.topMenuDisposalDescription());
-		
 		showTopMenuDisposal();
 	}
 	
@@ -142,7 +134,6 @@ public class DisposalController {
 		FlowPanel sideMenuDisposalPanel();
 		TopMenuDisposal topMenuDisposal();
 		SideMenuDisposal sideMenuDisposal();
-		HTML componentDescription();
 		
 		FlowPanel mobileSideMenuDisposalPanel();
 		FlowPanel mobileTopMenuDisposalPanel();
@@ -153,9 +144,4 @@ public class DisposalController {
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
 	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
-	}
-
 }

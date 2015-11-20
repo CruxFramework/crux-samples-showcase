@@ -1107,3 +1107,21 @@ body
 {
 	margin-right: 20px;
 }
+
+/* Log Area */
+
+.logWrapper 
+{
+	margin-top: 95px;
+}
+
+.logEntry 
+{
+	max-width: 120px;
+}
+
+.openLogButton
+{
+	right: -30px;
+    height: 32px;
+}

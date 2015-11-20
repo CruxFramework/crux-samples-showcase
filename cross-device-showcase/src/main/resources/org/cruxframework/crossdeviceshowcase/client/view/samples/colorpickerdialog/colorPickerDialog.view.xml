@@ -1,10 +1,10 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:v="http://www.cruxframework.org/view"
+	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
-	xmlns:gwt="http://www.cruxframework.org/crux/gwt" 
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="colorPickerDialogController" 
 	onLoad="colorPickerDialogController.onLoad" 
@@ -12,20 +12,31 @@
 
 	<center>
 		<!-- Component use sample -->
-		<crux:styledPanel id="panel">
+		<widgets:styledPanel id="panel">
 			<gwt:HTMLPanel id="wrapper" styleName="center">
 				<faces:label id="labelClickButton" text="Click the button below to change the color of this text."/>
 				<hr />
 				<faces:label id="labelColorValue" styleName="choosenColor" text="Chosen color:"/>
 				<faces:button id="buttonChangeColor" text="ColorPicker" onSelect="colorPickerDialogController.showColorPicker"/>
 			</gwt:HTMLPanel>
-		</crux:styledPanel>
-		<crux:colorPickerDialog id="colorPicker" text="Choose color" onClose="colorPickerDialogController.changeColor"/>
+		</widgets:styledPanel>
+		<widgets:colorPickerDialog id="colorPicker" text="Choose color" onClose="colorPickerDialogController.changeColor"/>
 
 		<!-- Component description -->
-		<showcase:info title="ColorPicker" library="Widgets" ie-version="8+">
+		<showcase:info 
+			title="ColorPicker" 
+			library="Widgets" 
+			ie-version="8+"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			edge-visible="true" ie-visible="true" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+					${description_messages.colorPickerDialogDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 		

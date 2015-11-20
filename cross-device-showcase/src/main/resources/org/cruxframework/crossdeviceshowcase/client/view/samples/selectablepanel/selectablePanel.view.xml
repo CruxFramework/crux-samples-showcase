@@ -1,0 +1,71 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="selectablePanelController" 
+	title="Selectable Panel"> 
+
+	<style>
+		.selectablePanel
+		{
+			line-height: 100px;
+		}
+	
+		.success
+		{
+			background: #6d991a;
+		}
+		
+		.warn
+		{
+			background: #d58512;
+		}
+		
+		.error
+		{
+			background: #ac2925;
+		}
+	</style>
+
+	<center>
+		<!-- Component use sample -->
+		<widgets:styledPanel id="panel1">
+			<gwt:HTMLPanel id="html" styleName="center">
+				<faces:selectablePanel id="selectablePanel" styleName="selectablePanel">
+					<faces:label id="lbl" text="${messages_selectablePanel.text}"/>
+				</faces:selectablePanel>
+				<hr />
+				<faces:label id="h4" text="States" />
+				<div class="btn-Group">
+					<gwt:radioButton name="color" onChange="selectablePanelController.setStateDefault" id="radioDefault" text="Default" checked="true"/>
+					<gwt:radioButton name="color" onChange="selectablePanelController.setStateSuccess" id="radioSuccess" text="Success"/>
+					<gwt:radioButton name="color" onChange="selectablePanelController.setStateWarning" id="radioWarning" text="Warning"/>
+					<gwt:radioButton name="color" onChange="selectablePanelController.setStateError" id="radioError" text="Error"/>
+				</div>
+			</gwt:HTMLPanel>
+		</widgets:styledPanel>
+
+		<!-- Component description -->
+		<showcase:info 
+			title="Button" 
+			library="SmartFaces" 
+			ie-version="10+"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			edge-visible="true" ie-visible="true" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
+			<showcase:description>
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.selectablePanelDescription}
+				</faces:HTML>
+			</showcase:description>
+		</showcase:info>
+		
+	</center>
+</v:view>

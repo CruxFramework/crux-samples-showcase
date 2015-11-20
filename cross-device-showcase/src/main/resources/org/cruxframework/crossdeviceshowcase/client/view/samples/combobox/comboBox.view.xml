@@ -2,29 +2,53 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
-	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="comboBoxController"
-	onLoad="comboBoxController.onLoad"
 	title="ComboBox"> 
 
+	<style>
+		.line > *
+		{
+			display: inline-block;
+		}
+	</style>
+	
+	<core:dataProvider id="dataProvider" dataObject="countryComboBox" onLoadData="comboBoxController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+
 	<center>
-		<crux:styledPanel id="mainPanel">
+		<widgets:styledPanel id="mainPanel">
 			<gwt:flowPanel id="innerPanel">
-<!-- 				<faces:comboBox id="comboBox"> -->
-<!-- 					<faces:dataProvider dataObject="person" onLoadData="comboBoxController.loadComboData"/> -->
-<!-- 					<faces:optionsRenderer valuePath="name" labelPath="name"><faces:displayWidget><crux:button id="btn" text="name" bindPath="name"></crux:button></faces:displayWidget></faces:optionsRenderer> -->
-					
-<!-- 				</faces:comboBox> -->
+				<faces:comboBox id="comboBox" dataProvider="dataProvider" itemVar="country">
+				<faces:options value="@{country.id:integerString}" text="@{country.name}">
+					<faces:widget>
+						<gwt:flowPanel id="wrapper" styleName="line">
+							<faces:image id="imageFlag" url="${showcaseCoreResources.flag}@{country.id:integerString}" />
+							<faces:label id="lblNameCapital" text="@{country.name} - @{country.capital}"/>
+						</gwt:flowPanel>
+					</faces:widget>
+				</faces:options>
+				</faces:comboBox>
 			</gwt:flowPanel>
-		</crux:styledPanel>
+		</widgets:styledPanel>
 		
-<!-- 		Component description -->
-		<showcase:info title="ComboBox">
+		<!-- Component description -->
+		<showcase:info 
+			title="ComboBox"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			library="SmartFaces"
+			edge-visible="true" ie-visible="true" 
+			ie-version="9+" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+					${description_messages.comboBoxDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 

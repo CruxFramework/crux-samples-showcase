@@ -1,7 +1,7 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.storyboard;
 
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.styledpanel.StyledPanel;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -55,7 +55,7 @@ public class StoryboardItem extends Composite{
 			@Override
 			public void onClick(ClickEvent event) 
 			{
-				FlatMessageBox.show(clickedMsg, MessageType.INFO);
+				MessageBox.show(clickedMsg, MessageType.INFO);
 			}
 		});
 	}

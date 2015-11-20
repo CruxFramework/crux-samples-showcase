@@ -3,13 +3,13 @@
 	xmlns:t="http://www.cruxframework.org/templates" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	library="showcase"
 	useResource="showcaseCoreResources"
 	useController="mainController"> 
-<!-- 	#{teste} -->
+
 	<div class="speechBubble">
 	    <faces:label id="labelTitle" text="#{title}" styleName="textDescTitle"/>
 	    <gwt:flowPanel id="libraryPanel" visible="#{libraryPanel-visible}">
@@ -21,12 +21,13 @@
 	    	<faces:label id="browsersLabel" text="${messages_showcase.browsers}" styleName="textBrowser"/>
 	    	<gwt:flowPanel id="browsers" styleName="browser-panel sm-speech-panel">
 	    		<gwt:flowPanel id="iePanel" styleName="ie-panel">
-			    	<faces:image id="ie" url="${showcaseCoreResources.ie9}" height="27px" width="27px" visible="#{ie-visible}" styleName="faces-Image browser-image"/>
+			    	<faces:image id="ie" url="${showcaseCoreResources.ie9}" height="27px" width="27px" visible="#{ie-visible}" styleName="faces-Image browser-image" tooltip="Microsoft Internet Explorer"/>
 			    	<faces:label id="ieVersion" text="#{ie-version}" styleName="ie-version"/>
 		    	</gwt:flowPanel>
-		    	<faces:image id="chrome" url="${showcaseCoreResources.chrome}" height="27px" width="27px" visible="#{chrome-visible}" styleName="faces-Image browser-image"/>
-		    	<faces:image id="firefox" url="${showcaseCoreResources.firefox}" height="27px" width="27px" visible="#{firefox-visible}" styleName="faces-Image browser-image"/>
-		    	<faces:image id="safari" url="${showcaseCoreResources.safari}" height="27px" width="27px" visible="#{safari-visible}" styleName="faces-Image browser-image"/>
+		    	<faces:image id="edge" url="${showcaseCoreResources.edge}" height="27px" width="27px" visible="#{edge-visible}" styleName="faces-Image browser-image" tooltip="Microsoft Edge"/>
+		    	<faces:image id="chrome" url="${showcaseCoreResources.chrome}" height="27px" width="27px" visible="#{chrome-visible}" styleName="faces-Image browser-image" tooltip="Google Chrome"/>
+		    	<faces:image id="firefox" url="${showcaseCoreResources.firefox}" height="27px" width="27px" visible="#{firefox-visible}" styleName="faces-Image browser-image" tooltip="Mozilla Firefox"/>
+		    	<faces:image id="safari" url="${showcaseCoreResources.safari}" height="27px" width="27px" visible="#{safari-visible}" styleName="faces-Image browser-image" tooltip="Apple Safari"/>
 	    	</gwt:flowPanel>
 	   	</gwt:flowPanel>
 	   	
@@ -35,7 +36,7 @@
 			<t:section name="description"/>
 		</gwt:HTMLPanel>
 		<center>
-			<crux:button id="buttonShowCode" onSelect="mainController.viewSourceCode" text="${messages_core.viewSourceCode}" style="margin:10px"/>
+			<faces:button id="buttonShowCode" onSelect="mainController.viewSourceCode" text="${messages_core.viewSourceCode}" style="margin:10px"/>
 		</center>
 	</div>
 </t:template>

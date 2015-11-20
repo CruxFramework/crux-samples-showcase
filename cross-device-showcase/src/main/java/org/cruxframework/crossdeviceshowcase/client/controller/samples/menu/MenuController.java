@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.menu;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -13,16 +12,11 @@ import org.cruxframework.crux.smartfaces.client.menu.MenuItem;
 import org.cruxframework.crux.smartfaces.client.menu.Type.LargeType;
 import org.cruxframework.crux.smartfaces.client.menu.Type.SmallType;
 import org.cruxframework.showcasecore.client.resource.common.ShowcaseResourcesCommon;
-
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.ListBox;
 
 @Controller("menuController")
-public class MenuController {
-	
-	@Inject
-	private DescriptionMessages componentDescription;
-
+public class MenuController 
+{
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
@@ -33,9 +27,6 @@ public class MenuController {
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.menuDescription());		
-		
 		insertItem();
 		
 		defineListBoxItems();
@@ -117,7 +108,6 @@ public class MenuController {
 	{
 		Menu menu();
 		ListBox listMenuType();
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
@@ -125,11 +115,8 @@ public class MenuController {
 		this.myWidgetAccessor = myWidgetAccessor;
 	}
 
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
-	}
-
-	public void setResources(ShowcaseResourcesCommon resources) {
+	public void setResources(ShowcaseResourcesCommon resources) 
+	{
 		this.resources = resources;
 	}
 }

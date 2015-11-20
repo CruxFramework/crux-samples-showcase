@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.sidemenudisposal;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -15,24 +14,17 @@ import org.cruxframework.crux.smartfaces.client.menu.Type.LargeType;
 import org.cruxframework.crux.smartfaces.client.menu.Type.SmallType;
 
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.ListBox;
 
 @Controller("sideMenuDisposalController")
-public class SideMenuDisposalController {
-	
-	@Inject
-	private DescriptionMessages componentDescription;
-
+public class SideMenuDisposalController 
+{
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.sideMenuDisposalDescription());
-		
 		showPanels();
 	}
 	
@@ -97,16 +89,10 @@ public class SideMenuDisposalController {
 		FlowPanel typeMenuPanel();
 		FlowPanel sideMenuDisposalPanel();
 		FlowPanel mobileDisposalPanel();
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
 	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
-	}
-
 }

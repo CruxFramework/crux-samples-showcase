@@ -3,7 +3,6 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.listshut
 import java.util.ArrayList;
 import java.util.List;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -11,23 +10,15 @@ import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.widgets.client.listshuttle.ListShuttle;
 
-import com.google.gwt.user.client.ui.HTML;
-
 @Controller("listShuttleController")
 public class ListShuttleController 
 {
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
-	@Inject
-	private DescriptionMessages componentDescription;
-
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.listShuttleDescription());
-		
 		loadItems();
 	}
 
@@ -57,15 +48,10 @@ public class ListShuttleController
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{
 		ListShuttle<String> listShuttle();
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

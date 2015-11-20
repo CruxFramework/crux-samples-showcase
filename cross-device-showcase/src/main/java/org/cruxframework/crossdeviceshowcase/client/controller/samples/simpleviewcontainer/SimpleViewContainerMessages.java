@@ -15,9 +15,6 @@ public interface SimpleViewContainerMessages extends Messages
 	
 	@DefaultMessage("View anterior")
 	String previousView();
-	
-	@DefaultMessage("<p>O SimpleViewContainer é um componente.</p>")
-	String htmlDescText();
 }
 
 

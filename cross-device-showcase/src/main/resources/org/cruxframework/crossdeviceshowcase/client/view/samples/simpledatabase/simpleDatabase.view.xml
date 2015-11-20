@@ -2,35 +2,44 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="simpleDatabaseController"
 	useDataSource="peopleDataSource" 
 	onActivate="simpleDatabaseController.onActivate"  
-	title="CRUD Simples"> 
+	title="Offline Database"> 
 	
 	<center>
-		<crux:styledPanel id="panel">
+		<widgets:styledPanel id="panel">
 			<gwt:flowPanel id="controls">
-				<crux:sequentialPager id="peoplePager" pageable="peopleGrid"/>
-				<crux:grid id="peopleGrid" autoLoadData="false" dataSource="peopleDataSource" pageSize="8" onRowDoubleClick="simpleDatabaseController.editPerson">
-					<crux:dataColumn key="id"></crux:dataColumn>
-					<crux:dataColumn key="name"></crux:dataColumn>
-				</crux:grid>
+				<widgets:sequentialPager id="peoplePager" pageable="peopleGrid"/>
+				<widgets:grid id="peopleGrid" autoLoadData="false" dataSource="peopleDataSource" pageSize="8" onRowDoubleClick="simpleDatabaseController.editPerson">
+					<widgets:dataColumn key="id"></widgets:dataColumn>
+					<widgets:dataColumn key="name"></widgets:dataColumn>
+				</widgets:grid>
 				<gwt:horizontalPanel id="buttons">
-					<crux:button id="add" text="Adicionar" onSelect="simpleDatabaseController.add" />
-					<crux:button id="refresh" text="Atualizar Lista" onSelect="simpleDatabaseController.refreshGrid" />
+					<widgets:button id="add" text="Adicionar" onSelect="simpleDatabaseController.add" />
+					<widgets:button id="refresh" text="Atualizar Lista" onSelect="simpleDatabaseController.refreshGrid" />
 				</gwt:horizontalPanel>
 			</gwt:flowPanel>
-		</crux:styledPanel>		
+		</widgets:styledPanel>		
 
-		<showcase:info title="Database">
+		<showcase:info 
+			title="Database"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			library="Core"
+			edge-visible="true" ie-visible="true" 
+			ie-version="9+" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
 			<showcase:description>
-				<p>
-					O Crux oferece suporte a banco de dados para o lado cliente da aplicação. Cadastre novas pessoas na listagem acima, clicando no botão adicionar. 
-					Clique duas vezes em um elemento da lista para editá-lo. 
-				</p> 
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.simpleDatabaseDescription}
+				</faces:HTML> 
 			</showcase:description>
 		</showcase:info>
 

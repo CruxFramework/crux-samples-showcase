@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.topmenudisposal;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -12,23 +11,16 @@ import org.cruxframework.crux.smartfaces.client.dialog.DialogBox;
 import org.cruxframework.crux.smartfaces.client.label.Label;
 
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HTML;
 
 @Controller("topMenuDisposalController")
 public class TopMenuDisposalController 
 {
-	@Inject
-	private DescriptionMessages componentDescription;
-
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.topMenuDisposalDescription());
-		
 		showPanels();
 	}
 	
@@ -47,7 +39,8 @@ public class TopMenuDisposalController
 		if(Screen.getCurrentDevice().getSize().equals(DeviceAdaptive.Size.small))
 		{
 			return true;
-		}else
+		}
+		else
 		{
 			return false;
 		}	
@@ -64,15 +57,10 @@ public class TopMenuDisposalController
 	{
 		FlowPanel topMenuDisposalPanel();
 		FlowPanel mobileDisposalPanel();
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

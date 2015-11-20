@@ -7,8 +7,8 @@ import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 
-public class MyMenuItem extends Composite{
-
+public class MyMenuItem extends Composite
+{
 	private Image image = new Image();
 	private Label label = new Label();
 	

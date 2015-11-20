@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html 
 	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:c="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
-	xmlns:show="http://www.cruxframework.org/crux/showcase"
-	xmlns:gwt="http://www.cruxframework.org/crux/gwt">
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase">
 	
 	<head>
 		<title>Crux Framework - Cross-Device Showcase</title>
@@ -15,20 +15,19 @@
 	<body>
 		<script type="text/javascript" src="../crossdeviceshowcase/crossdeviceshowcase.nocache.js"></script>
 		
-		<c:screen useController="mainController" useView="*" 
+		<core:screen useController="mainController" useView="*" 
 				  smallViewport="user-scalable=no, width=320" 
 				  largeViewport="user-scalable=no, width=device-width, height=device-height" 
 				  useResource="xStandardResources,showcaseCoreResources,smartFacesResources" height="100%"
 				  onLoad="mainController.wellcome"/>
 			
-		<crux:menuTabsDisposal id="menuDisposal" >
-			<crux:header>
+		<widgets:menuTabsDisposal id="menuDisposal" >
+			<widgets:header>
 				<gwt:flowPanel id="headerPanel">
 					
 						<gwt:flowPanel id="filterPanel"> 
-							<crux:filter id="filter" text="Search here" animationEnabled="true" 
-								autoSelectEnabled="true" focus="true" width="200px" height="29px" style="margin-right: 350px; margin-top: 1px;"  limit="2">
-							</crux:filter>
+							<widgets:filter id="filter" text="Search here" animationEnabled="true" 
+								autoSelectEnabled="true" focus="true" width="200px" height="29px" style="margin-right: 350px; margin-top: 1px;"  limit="2"/>
 						</gwt:flowPanel>
 				
 						<gwt:flowPanel id="topBarpanel">
@@ -41,84 +40,84 @@
 								</gwt:flowPanel>
 							</faces:selectablePanel>
 							
-							<crux:button id="siteButton" text="${messages_showcase.site}" onSelect="mainController.navigateToSite" styleName="topBarIcon siteIcon"/>
-							<crux:button id="projectButton" text="${messages_showcase.project}" onSelect="mainController.navigateToProject" styleName="topBarIcon projectIcon"/>				
+							<widgets:button id="siteButton" text="${messages_showcase.site}" onSelect="mainController.navigateToSite" styleName="topBarIcon siteIcon"/>
+							<widgets:button id="projectButton" text="${messages_showcase.project}" onSelect="mainController.navigateToProject" styleName="topBarIcon projectIcon"/>				
 						</gwt:flowPanel>
 				
 				</gwt:flowPanel>
-			</crux:header>
+			</widgets:header>
 			
-			<crux:menuSection label="${messages_showcase.formElements}"/>
-			<crux:menuEntry label="Button" targetView="cruxButton"/>
-			<crux:menuEntry label="ColorPicker" targetView="colorPickerDialog"/>
-			<crux:menuEntry label="DateBox" targetView="dateBox"/>
-			<crux:menuEntry label="FileUploader" targetView="fileUploader"/>
-			<crux:menuEntry label="MaskedLabel" targetView="maskedLabel"/>
-			<crux:menuEntry label="MaskedTextBox" targetView="maskedTextBox"/>
-			<crux:menuEntry label="NumberTextBox" targetView="numberTextBox"/>
-			<crux:menuEntry label="TextArea" targetView="textArea"/>
-			<crux:menuEntry label="TextBox" targetView="gwtTextBox"/>
-			<crux:menuEntry label="SingleSelect" targetView="singleSelect"/>
+			<widgets:menuSection label="${messages_showcase.formElements}"/>
+			<widgets:menuEntry label="Button" targetView="cruxButton"/>
+			<widgets:menuEntry label="Anchor" targetView="anchor"/>
+			<widgets:menuEntry label="Label" targetView="cruxLabel"/>
+			<widgets:menuEntry label="ColorPicker" targetView="colorPickerDialog"/>
+			<widgets:menuEntry label="Date" targetView="date"/>
+			<widgets:menuEntry label="FileUploader" targetView="fileUploader"/>
+			<widgets:menuEntry label="DownloadButton" targetView="downloadButton"/>
+			<widgets:menuEntry label="MaskedLabel" targetView="maskedLabel"/>
+			<widgets:menuEntry label="MaskedTextBox" targetView="maskedTextBox"/>
+			<widgets:menuEntry label="NumberTextBox" targetView="numberTextBox"/>
+			<widgets:menuEntry label="TextArea" targetView="textArea"/>
+			<widgets:menuEntry label="TextBox" targetView="gwtTextBox"/>
+			<widgets:menuEntry label="SingleSelect" targetView="singleSelect"/>
+			<widgets:menuEntry label="Selectable Panel" targetView="selectablePanel"/>
+			<widgets:menuEntry label="Tab Panel" targetView="tabPanel"/>
 			
-			<crux:menuSection label="${messages_showcase.menusAndLists}" />
-			<crux:menuEntry label="Menu" targetView="menu"/>
-			<crux:menuEntry label="StackMenu" targetView="stackMenu"/>
-			<crux:menuEntry label="SideMenuDisposal" targetView="sideMenuDisposal"/>
-			<crux:menuEntry label="TopMenuDisposal" targetView="topMenuDisposal"/>			
-			<crux:menuEntry label="Filter" targetView="filter"/>
-			<crux:menuEntry label="ListShuttle" targetView="listShuttle"/>			
-			<crux:menuEntry label="SortableList" targetView="sortableList"/>
+			<widgets:menuSection label="${messages_showcase.menusAndLists}" />
+			<widgets:menuEntry label="Menu" targetView="menu"/>
+			<widgets:menuEntry label="SideMenuDisposal" targetView="sideMenuDisposal"/>
+			<widgets:menuEntry label="TopMenuDisposal" targetView="topMenuDisposal"/>			
+			<widgets:menuEntry label="Filter" targetView="filter"/>
+			<widgets:menuEntry label="ListShuttle" targetView="listShuttle"/>			
+			<widgets:menuEntry label="SortableList" targetView="sortableList"/>
+			<widgets:menuEntry label="Breadcrumb" targetView="breadcrumb"/>
 			
-			<crux:menuSection label="${messages_showcase.dataElements}" />
-			<crux:menuEntry label="DeviceAdaptiveGrid" targetView="adaptiveGrid"/>
-			<crux:menuEntry label="RandomPager" targetView="randomPager"/>
-			<crux:menuEntry label="SequentialPager" targetView="sequentialPager"/>
+			<widgets:menuSection label="${messages_showcase.dataElements}" />
+			<widgets:menuEntry label="DataGRID" targetView="datagrid"/>
+			<widgets:menuEntry label="WidgetList" targetView="widgetList"/>
+			<widgets:menuEntry label="ComboBox" targetView="comboBox"/>
+			<widgets:menuEntry label="Carousel" targetView="carousel"/>
+			<widgets:menuEntry label="Pagers" targetView="pagers"/>
 			
-			<crux:menuSection label="${messages_showcase.layoutsAndPanels}"/>
-			<crux:menuEntry label="FormDisplay" targetView="formDisplay" />
-			<crux:menuEntry label="RollingPanel" targetView="rollingPanel"/>
-			<crux:menuEntry label="Slider" targetView="slider"/>
-			<crux:menuEntry label="StoryBoard" targetView="storyBoard"/>
-			<crux:menuEntry label="StyledPanel" targetView="styledPanel"/>
+			<widgets:menuSection label="${messages_showcase.layoutsAndPanels}"/>
+			<widgets:menuEntry label="FormDisplay" targetView="formDisplay" />
+			<widgets:menuEntry label="RollingPanel" targetView="rollingPanel"/>
+			<widgets:menuEntry label="StoryBoard" targetView="storyBoard"/>
+			<widgets:menuEntry label="StyledPanel" targetView="styledPanel"/>
 			
-			<crux:menuSection label="${messages_showcase.dialogBoxes}"/>
-			<crux:menuEntry label="Confirm" targetView="confirm"/>
-			<crux:menuEntry label="DialogBox" targetView="dialogBox"/>
-			<crux:menuEntry label="DialogViewContainer" targetView="dialogViewContainer"/>
-			<crux:menuEntry label="MessageBox" targetView="messageBox"/>
-			<crux:menuEntry label="ProgressBox" targetView="progressBox"/>
+			<widgets:menuSection label="${messages_showcase.dialogBoxes}"/>
+			<widgets:menuEntry label="Confirm" targetView="confirm"/>
+			<widgets:menuEntry label="DialogBox" targetView="dialogBox"/>
+			<widgets:menuEntry label="MessageBox" targetView="messageBox"/>
+			<widgets:menuEntry label="ProgressBox" targetView="progressBox"/>
 			
-			<crux:menuSection label="${messages_showcase.imagesAndOthers}"/>
-			<crux:menuEntry label="Image" targetView="image"/>
-			<crux:menuEntry label="PromoBanner" targetView="promoBanner"/>
-			<crux:menuEntry label="SlideShow" targetView="slideshow"/>
-			<crux:menuEntry label="Anchor" targetView="anchor"/>
-			<crux:menuEntry label="ScrollBanner" targetView="scrollBanner"/>
-			<crux:menuEntry label="Timer" targetView="timer"/>
+			<widgets:menuSection label="${messages_showcase.imagesAndOthers}"/>
+			<widgets:menuEntry label="Image" targetView="image"/>
+			<widgets:menuEntry label="PromoBanner" targetView="promoBanner"/>
+			<widgets:menuEntry label="SlideShow" targetView="slideshow"/>
+			<widgets:menuEntry label="ScrollBanner" targetView="scrollBanner"/>
+			<widgets:menuEntry label="SwapPanel" targetView="swapPanel"/>
 			
-			<crux:menuSection label="${messages_showcase.logicalFeatures}"/>
-			<crux:menuEntry label="I18N" targetView="i18n"/>
-			<crux:menuEntry label="Rest Communication" targetView="rest"/>
-			<crux:menuEntry label="Data GRID" targetView="datagrid"/>
-			
-<!-- 			<crux:menuSection label="${messages_showcase.miscellaneousElements}" />		 -->
-<!-- 			<crux:menuSection label="News" /> -->
-<!-- 			<crux:menuEntry label="SwapPanel" targetView="swapPanel"/> -->
-<!-- 			<crux:menuEntry label="SwapViewContainer" targetView="swapViewContainer"/> -->
+			<widgets:menuSection label="${messages_showcase.containers}"/>
+			<widgets:menuEntry label="Tab View Container" targetView="tabViewContainer"/>
+			<widgets:menuEntry label="SwapViewContainer" targetView="swapViewContainer"/>
+			<widgets:menuEntry label="Simple View Container" targetView="simpleViewContainer"/>
+			<widgets:menuEntry label="DialogViewContainer" targetView="dialogViewContainer"/>
 
-<!-- 			<crux:menuEntry label="Grid" targetView="grid"/> -->
-<!-- 			<crux:menuEntry label="Download Button" targetView="downloadButton"/> -->
-<!-- 			<crux:menuEntry label="Date Picker" targetView="datePicker"/> -->
-<!-- 			<crux:menuEntry label="Selectable Panel" targetView="selectablePanel"/> -->
+			<widgets:menuSection label="${messages_showcase.logicalFeatures}"/>
+			<!-- Implement it later... -->
+			<!-- <widgets:menuEntry label="Binding" targetView="binding"/> -->
+			<widgets:menuEntry label="Rest Communication" targetView="rest"/>
+			<!-- Implement it later... -->
+			<!-- <widgets:menuEntry label="Object Cloner" targetView="objectcloner"/> -->
+			<!-- Implement it later... -->
+			<!-- <widgets:menuEntry label="Simple Database" targetView="simpleDatabase"/> -->
+		
+			<widgets:menuSection label="${messages_showcase.miscellaneousElements}" />
+			<widgets:menuEntry label="Timer" targetView="timer"/>
 
-<!-- 			<crux:menuEntry label="Rolling Tab Panel" targetView="rollingTabPanel"/> -->
-<!-- 			<crux:menuEntry label="Tab View Container" targetView="tabViewContainer"/> -->
-<!-- 			<crux:menuEntry label="Simple View Container" targetView="simpleViewContainer"/> -->
-<!-- 			<crux:menuEntry label="Horizontal Swap View Container" targetView="horizontalSwapViewContainer"/> -->
-<!-- 			<crux:menuEntry label="Horizontal Swap Panel" targetView="horizontalSwapPanel"/> -->
-<!-- 			<crux:menuEntry label="menuProblema" targetView="menuTabsDisposal"/> -->
-			
-		</crux:menuTabsDisposal>
+		</widgets:menuTabsDisposal>
 		
 	</body>
 </html>

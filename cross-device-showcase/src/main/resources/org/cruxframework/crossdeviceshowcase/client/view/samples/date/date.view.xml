@@ -1,0 +1,44 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="dateController" 
+	onLoad="dateController.onLoad" 
+	title="DateBox">
+
+	<center>
+		<!-- Component use sample -->
+		<widgets:styledPanel id="panel1">
+			<gwt:HTMLPanel id="html" styleName="center">
+				<faces:label id="labelDatePicker" text="Date Picker"/>
+				<widgets:datePicker id="datePicker" />
+				<br/>
+				<faces:label id="labelDateBox" text="Date Box"/>
+				<widgets:dateBox id="dateBox" pattern="dd/MM/yyyy" />
+			</gwt:HTMLPanel>
+		</widgets:styledPanel>
+
+		<!-- Component description -->
+		<showcase:info 
+			title="DateBox" 
+			library="Widgets" 
+			ie-version="8+"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			edge-visible="true" ie-visible="true" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
+			<showcase:description>
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.dateBoxDescription}
+				</faces:HTML>
+			</showcase:description>
+		</showcase:info>
+		
+	</center>
+</v:view>

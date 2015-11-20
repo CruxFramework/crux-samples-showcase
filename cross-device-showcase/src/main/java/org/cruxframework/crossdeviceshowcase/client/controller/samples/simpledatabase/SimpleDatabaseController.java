@@ -3,7 +3,7 @@
  */
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.simpledatabase;
 
-import org.cruxframework.crossdeviceshowcase.client.controller.samples.ShowcaseMessages;
+import org.cruxframework.crossdeviceshowcase.client.util.messages.ShowcaseMessages;
 import org.cruxframework.crux.core.client.Crux;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
@@ -14,7 +14,6 @@ import org.cruxframework.crux.core.client.db.ObjectStore;
 import org.cruxframework.crux.core.client.db.Transaction;
 import org.cruxframework.crux.core.client.db.Transaction.Mode;
 import org.cruxframework.crux.core.client.ioc.Inject;
-import org.cruxframework.crux.core.client.ioc.Inject.Scope;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.BindableView;
 import org.cruxframework.crux.core.client.screen.views.ViewAccessor;
@@ -32,10 +31,10 @@ import org.cruxframework.crux.widgets.client.grid.Grid;
 @Controller("simpleDatabaseController")
 public class SimpleDatabaseController 
 {
-	@Inject(scope=Scope.DOCUMENT)
+	@Inject
 	private CompanyDatabase database;
 
-	@Inject(scope=Scope.DOCUMENT)
+	@Inject
 	private ShowcaseMessages messages;
 	
 	@Inject

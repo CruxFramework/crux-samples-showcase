@@ -2,24 +2,33 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
 	xmlns:core="http://www.cruxframework.org/crux" 
-	xmlns:crux="http://www.cruxframework.org/crux/widgets"
-	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
-	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
-	useController="fileUploaderController" 
-	onLoad="fileUploaderController.onLoad"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	title="FileUploader"> 
 
 	<center>
 		<!-- Component use sample -->
-		<crux:styledPanel id="mainPanel">
-			<crux:fileUploader id="fileUploader" multiple="true" fileInputText="Choose files" autoUploadFiles="true" url="/upload-endpoint" />
-		</crux:styledPanel>
+		<widgets:styledPanel id="mainPanel">
+			<widgets:fileUploader id="fileUploader" multiple="true" fileInputText="Choose files" autoUploadFiles="true" url="/upload-endpoint" />
+		</widgets:styledPanel>
 
 		<!-- Component description -->
-		<showcase:info title="FileUploader" library="Widgets" ie-version="8+">
+		<showcase:info 
+			title="FileUploader"
+			library="Widgets"
+			ie-version="9+"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			edge-visible="true" ie-visible="true" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true">
 			<showcase:description>
-				<gwt:HTML id="componentDescription" />
+				<faces:HTML id="componentDescription" >
+				  ${description_messages.fileUploaderDescription}
+				</faces:HTML>
 			</showcase:description>
 		</showcase:info>
 		

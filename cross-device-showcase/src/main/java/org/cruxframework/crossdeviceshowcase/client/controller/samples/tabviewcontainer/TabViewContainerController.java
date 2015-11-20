@@ -5,9 +5,9 @@ import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
-import org.cruxframework.crux.widgets.client.tabcontainer.TabContainer;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
+import org.cruxframework.crux.smartfaces.client.tabviewcontainer.TabContainer;
 
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.TextBox;
@@ -24,9 +24,6 @@ public class TabViewContainerController
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.htmlDescText().setHTML(messages.htmlDescText());
-		
 		myWidgetAccessor.tabView().showView("simpleViewTab2");
 		myWidgetAccessor.tabView().focusView("simpleViewTab1");
 	}
@@ -48,7 +45,7 @@ public class TabViewContainerController
 			myWidgetAccessor.tabView().remove(myWidgetAccessor.tabView().getView(viewRemove));
 		} else
 		{
-			FlatMessageBox.show(messages.alert(), MessageType.ERROR);
+			MessageBox.show(messages.alert(), MessageType.ERROR);
 		}
 	}
 

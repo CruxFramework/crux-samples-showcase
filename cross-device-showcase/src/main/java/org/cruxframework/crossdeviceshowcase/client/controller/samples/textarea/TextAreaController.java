@@ -1,16 +1,14 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.textarea;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.widgets.client.textarea.TextArea;
 
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.TextBox;
 
@@ -18,13 +16,10 @@ import com.google.gwt.user.client.ui.TextBox;
 public class TextAreaController 
 {
 	@Inject
-	private DescriptionMessages componentDescription;
-
-	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 
-	private String MESSAGE_INVALID_NUMBER;
-	private String MESSAGE_NEGATIVE_NUMBER;
+	private static final String MESSAGE_INVALID_NUMBER = "Please enter a valid integer value such as 50, 73, 95 etc.";
+	private static final String MESSAGE_NEGATIVE_NUMBER = "Please enter a positive value.";
 	private static final String SUCCESS = "success";
 	private static final String WARN = "warn";
 	private static final String ERROR = "error";
@@ -33,12 +28,6 @@ public class TextAreaController
 	@Expose
 	public void onLoad()
 	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.textAreaDescription());
-		
-		MESSAGE_INVALID_NUMBER = "Please enter a valid integer value such as 50, 73, 95 etc.";
-		MESSAGE_NEGATIVE_NUMBER = "Please enter a positive value.";
-
 		applyMaxLength();	
 	}
 
@@ -51,11 +40,11 @@ public class TextAreaController
 		}
 		catch (NumberFormatException e)
 		{
-			FlatMessageBox.show(MESSAGE_INVALID_NUMBER, MessageType.ERROR);
+			MessageBox.show(MESSAGE_INVALID_NUMBER, MessageType.ERROR);
 		}
 		catch (IllegalArgumentException e1)
 		{
-			FlatMessageBox.show(MESSAGE_NEGATIVE_NUMBER, MessageType.ERROR);
+			MessageBox.show(MESSAGE_NEGATIVE_NUMBER, MessageType.ERROR);
 		}
 	}
 
@@ -105,16 +94,10 @@ public class TextAreaController
 		RadioButton radioSuccess();
 		RadioButton radioWarning();
 		RadioButton radioError();
-		
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-	
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

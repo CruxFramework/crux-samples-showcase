@@ -1,6 +1,5 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.confirm;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -10,31 +9,19 @@ import org.cruxframework.crux.smartfaces.client.button.Button;
 import org.cruxframework.crux.smartfaces.client.dialog.Confirm;
 import org.cruxframework.crux.smartfaces.client.label.Label;
 
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.TextBox;
 
 @Controller("confirmController")
 public class ConfirmController 
 {
-	Byte status = 0;
-	static final String MESSAGE_NAME = "Are you sure that want send your name?";
-	static final String MESSAGE_NAME_EMPTY = "Are you sure that want send your name empty?";
-	static final String MESSAGE_CLEAR_TEXT = "Are you sure that want clear text?";
+	private Byte status = 0;
+	private static final String MESSAGE_NAME = "Are you sure that want send your name?";
+	private static final String MESSAGE_NAME_EMPTY = "Are you sure that want send your name empty?";
+	private static final String MESSAGE_CLEAR_TEXT = "Are you sure that want clear text?";
 	
-	@Inject
-	private DescriptionMessages componentDescription;
-
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
 	
-	/** Calls methods at confirm view on Load moment. */
-	@Expose
-	public void onLoad()
-	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.confirmDescription());
-	}
-
 	/**Shows confirm dialog with informations according to status value*/
 	@Expose
 	public void showDialog()
@@ -99,15 +86,10 @@ public class ConfirmController
 		Button btnAction();
 		Label labelName();
 		TextBox textBoxName();
-		HTML componentDescription();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
 	{
 		this.myWidgetAccessor = myWidgetAccessor;
-	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
 	}
 }

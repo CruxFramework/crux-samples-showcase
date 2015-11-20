@@ -1,33 +1,15 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.formdisplay;
 
-import org.cruxframework.crossdeviceshowcase.shared.messages.DescriptionMessages;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
-import org.cruxframework.crux.core.client.ioc.Inject;
-import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.View;
-import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 
 import com.google.gwt.user.client.ui.CheckBox;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.TextBox;
 
 @Controller("formDisplayController")
-public class FormDisplayController {
-	
-	@Inject
-	private DescriptionMessages componentDescription;
-	
-	@Inject 
-	private MyWidgetAccessor myWidgetAccessor;
-	
-	@Expose
-	public void onLoad()
-	{
-		/* Insert the component description*/
-		myWidgetAccessor.componentDescription().setHTML(componentDescription.formDisplayDescription());
-	}
-	
+public class FormDisplayController 
+{
 	@Expose
 	public void clearFields()
 	{
@@ -43,19 +25,5 @@ public class FormDisplayController {
 		desktopCheckBox.setValue(false);
 		smartPhoneCheckBox.setValue(false);
 		tabletCheckBox.setValue(false);
-	}
-	
-	@BindView("formDisplay")
-	public static interface MyWidgetAccessor extends WidgetAccessor
-	{
-		HTML componentDescription();
-	}
-
-	public void setComponentDescription(DescriptionMessages componentDescription) {
-		this.componentDescription = componentDescription;
-	}
-
-	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) {
-		this.myWidgetAccessor = myWidgetAccessor;
 	}
 }

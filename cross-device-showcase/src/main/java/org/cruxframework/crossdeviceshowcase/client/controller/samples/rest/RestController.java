@@ -1,144 +1,168 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.rest;
 
-import org.cruxframework.crossdeviceshowcase.shared.dto.MyDTO;
+import java.util.ArrayList;
+
+import org.cruxframework.crux.core.client.collection.Array;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
+import org.cruxframework.crux.core.client.dataprovider.DataProviderRecord;
+import org.cruxframework.crux.core.client.dataprovider.DataSelectionEvent;
+import org.cruxframework.crux.core.client.dataprovider.DataSelectionHandler;
+import org.cruxframework.crux.core.client.dataprovider.EagerLoadEvent;
 import org.cruxframework.crux.core.client.ioc.Inject;
-import org.cruxframework.crux.core.client.rest.Callback;
 import org.cruxframework.crux.core.client.screen.views.BindView;
+import org.cruxframework.crux.core.client.screen.views.View;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
-import org.cruxframework.crux.smartfaces.client.button.Button;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox;
-import org.cruxframework.crux.widgets.client.dialog.FlatMessageBox.MessageType;
-
-import com.google.gwt.user.client.ui.TextBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
+import org.cruxframework.crux.smartfaces.client.grid.DataGrid;
 
 @Controller("restController")
 public class RestController 
 {
 	@Inject
-	private MyWidgetAccessor myWidgetAccessor;
+	private RestMessages messages;
 	
-	  /**
-		 * Create a Rest proxy to talk to the server-side.
-		 */
 	@Inject
-	private MyRestProxy myRestProxy; 
+	private PersonRestProxy personRestProxy; 
 	
-	private String name;
-	private String password;
-	private int state;
+	@Inject
+	private Widgets view;
+
+	@Expose
+	public void onLoadData(final EagerLoadEvent<PersonDTO> event)
+	{
+		clearFields();
+		
+		personRestProxy.search(new RestCallback<ArrayList<PersonDTO>>()
+		{
+			@Override
+			public void onComplete(ArrayList<PersonDTO> result)
+			{
+				if(result != null)
+				{
+					event.getSource().setData(result.toArray(new PersonDTO[result.size()]));
+				}
+			}
+		});
+	}
 	
 	@Expose
-	public void createUser()
+	public void onLoad()
 	{
-		if(checkRequiredFields())
+		view.grid().getDataProvider().addDataSelectionHandler(new DataSelectionHandler<PersonDTO>()
 		{
-			myRestProxy.save(name, password, new Callback<Void>()
+			@Override
+			public void onDataSelection(DataSelectionEvent<PersonDTO> event)
+			{
+				Array<DataProviderRecord<PersonDTO>> changedRecords = event.getChangedRecords();
+				for(int i = 0; i<changedRecords.size(); i++)
 				{
-					@Override
-					public void onSuccess(Void result) 
+					DataProviderRecord<PersonDTO> dataProviderRecord = changedRecords.get(i);
+					
+					if(dataProviderRecord.isSelected())
 					{
-						setState(1);
-						FlatMessageBox.show("Usuário criado com sucesso!", MessageType.SUCCESS);
+						personRestProxy.get(dataProviderRecord.getRecordObject().getId(), new RestCallback<PersonDTO>()
+						{
+							@Override
+							public void onComplete(PersonDTO result)
+							{
+								View.of(RestController.this).write(result);			
+							}
+						});	
 					}
+					
+				}
+			}
+		});
+	}
 
-					@Override
-					public void onError(Exception e) 
-					{
-						FlatMessageBox.show("Error in REST communication", MessageType.ERROR);
-					}
-			
-				});
+	@Expose
+	public void onSelectCreate()
+	{
+		clearFields();
+	}
+	
+	private void clearFields()
+	{
+		View.of(this).write(new PersonDTO());
+	}
+	
+	@Expose
+	public void onSelectSave()
+	{
+		final PersonDTO person = View.of(this).read(PersonDTO.class);
+		
+		if(person.getId() != null)
+		{
+			personRestProxy.update(person.getId(), person, new RestCallback<Void>()
+			{
+				@Override
+				public void onComplete(Void result)
+				{
+					view.grid().getDataProvider().remove(view.grid().getDataProvider().indexOf(person));
+					view.grid().getDataProvider().add(person);
+					MessageBox.show(messages.successUpdate(), MessageType.INFO);
+				}
+			});
 		}
 		else
 		{
-			FlatMessageBox.show("Preencha todos os campos", MessageType.WARN);
+			personRestProxy.save(person, new RestCallback<Integer>()
+			{
+				@Override
+				public void onComplete(Integer id)
+				{
+					person.setId(id);
+					View.of(RestController.this).write(person);
+					view.grid().getDataProvider().add(person);
+					MessageBox.show(messages.successSave(), MessageType.INFO);
+				}
+			});
 		}
 	}
-    
-    @Expose   
-    public void validateUser()
-    {
-    	if(checkRequiredFields())
-    	{
-    		myRestProxy.validate(name, password, new Callback<MyDTO>() 
-    			{
-					@Override
-					public void onSuccess(MyDTO result) 
-					{
-						if(result!=null)
-						{
-							setState(0);
-							FlatMessageBox.show("Welcome, "+result.getName()+"!", MessageType.SUCCESS);
-						}
-						else
-						{
-							FlatMessageBox.show("Username or password is invalid.", MessageType.ERROR);
-						}
-					}
-					
-					//Show the Rest error message to the user
-					@Override
-					public void onError(Exception e) 
-					{
-						FlatMessageBox.show("Error in REST communication", MessageType.ERROR);
-					}
-				});
-    	}
-    	else
-		{
-			FlatMessageBox.show("Preencha todos os campos", MessageType.WARN);
-		} 	
-    }  
-    
-    private boolean checkRequiredFields()
-    {
-    	name = myWidgetAccessor.txtLogin().getText();
-		password = myWidgetAccessor.txtPassword().getText();
+	
+	@Expose
+	public void onSelectRemove()
+	{
+		final PersonDTO person = View.of(this).read(PersonDTO.class);
 		
-		if(name!=null && !name.equals("") && password!=null && !password.equals(""))
+		if(person.getId() == null)
 		{
-			return true;
+			MessageBox.show(messages.selectPerson(), MessageType.INFO);
+			return;
 		}
-		return false;
-    }
-    
-    private void setState(int value)
-    {
-    	state = value;
-    	
-    	myWidgetAccessor.txtLogin().setText("");
-		myWidgetAccessor.txtPassword().setText("");
-    	
-    	if(state == 0)
-    	{
-    		myWidgetAccessor.btnCreate().setVisible(true);
-    		myWidgetAccessor.btnLogin().setVisible(false);
-    	}
-    	else
-    	{
-    		myWidgetAccessor.btnCreate().setVisible(false);
-    		myWidgetAccessor.btnLogin().setVisible(true);
-    	}
-    }
-    
-    @BindView("rest")
-    public static interface MyWidgetAccessor extends WidgetAccessor
-    {
-        TextBox txtLogin();
-        TextBox txtPassword();
-        Button btnCreate();
-        Button btnLogin();
-    }
-
-	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 
-	{
-		this.myWidgetAccessor = myWidgetAccessor;
+		
+		personRestProxy.remove(person.getId(), new RestCallback<Void>()
+		{
+			@Override
+			public void onComplete(Void result)
+			{
+				view.grid().getDataProvider().remove(view.grid().getDataProvider().indexOf(person));
+				clearFields();
+				MessageBox.show(messages.successRemove(), MessageType.INFO);
+			}
+		});
 	}
-
-	public void setMyRestProxy(MyRestProxy myRestProxy) 
+	
+	public void setMessages(RestMessages messages)
 	{
-		this.myRestProxy = myRestProxy;
+		this.messages = messages;
+	}
+	
+	public void setPersonRestProxy(PersonRestProxy personRestProxy)
+	{
+		this.personRestProxy = personRestProxy;
+	}
+	
+	public void setView(Widgets view)
+	{
+		this.view = view;
+	}
+	
+	@BindView("rest")
+	public static interface Widgets extends WidgetAccessor
+	{
+		DataGrid<PersonDTO> grid();
 	}
 }

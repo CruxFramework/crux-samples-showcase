@@ -16,7 +16,6 @@ import org.cruxframework.crux.core.client.db.ObjectStore;
 import org.cruxframework.crux.core.client.db.Transaction;
 import org.cruxframework.crux.core.client.db.Transaction.Mode;
 import org.cruxframework.crux.core.client.ioc.Inject;
-import org.cruxframework.crux.core.client.ioc.Inject.Scope;
 
 /**
  * @author Thiago da Rosa de Bustamante
@@ -26,7 +25,7 @@ import org.cruxframework.crux.core.client.ioc.Inject.Scope;
 @DataSourceRecordIdentifier("id")
 public class PeopleDataSource extends LocalPagedDataSource<PersonResume> 
 {
-	@Inject(scope=Scope.DOCUMENT)
+	@Inject
 	private CompanyDatabase database;
 
 	public void setDatabase(CompanyDatabase database) 
