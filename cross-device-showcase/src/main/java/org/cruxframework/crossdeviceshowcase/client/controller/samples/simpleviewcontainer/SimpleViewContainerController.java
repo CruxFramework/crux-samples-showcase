@@ -5,8 +5,8 @@ import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
+import org.cruxframework.crux.smartfaces.client.viewcontainer.SimpleViewContainer;
 import org.cruxframework.crux.widgets.client.button.Button;
-import org.cruxframework.crux.widgets.client.simplecontainer.SimpleViewContainer;
 
 import com.google.gwt.user.client.ui.HTML;
 

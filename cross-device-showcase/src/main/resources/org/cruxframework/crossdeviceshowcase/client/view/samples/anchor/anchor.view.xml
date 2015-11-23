@@ -1,7 +1,7 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -19,20 +19,20 @@
 					<h5>Go to Bottom of page</h5>
 				</widgets:anchor>
 
-				<gwt:HTMLPanel id="wrapper1" styleName="anchorWrapper">
+				<div id="wrapper1" class="anchorWrapper">
 					<faces:label id="labelDeclarative" text="Link implemented declaratively."/>
 					<br />
 					<widgets:anchor id="anchor" href="http://www.cruxframework.org" target="_self">
 						<button>Crux Framework</button>
 					</widgets:anchor>
-				</gwt:HTMLPanel>
+				</div>
 
-				<gwt:HTMLPanel id="wrapper2" styleName="anchorWrapper">
+				<div id="wrapper2" class="anchorWrapper">
 					<faces:label id="labelProgramatic" text="Link implemented by a controller."/>
 					<br />
 					<gwt:textBox id="textBoxUrl" text="http://www.cruxframework.org" readOnly="true"/>
 					<faces:button id="buttonLink" text="Open page" onSelect="anchorController.openUrl"/>
-				</gwt:HTMLPanel>
+				</div>
 
 				<a id="end" style="color:#1c5994"></a>
 
