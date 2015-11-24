@@ -9,8 +9,6 @@ import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.widgets.client.button.DownloadButton;
 import org.cruxframework.crux.widgets.client.button.DownloadButton.DownloadInfo;
 
-import com.google.gwt.user.client.ui.HTML;
-
 @Controller("downloadButtonController")
 public class DownloadButtonController
 {
@@ -42,7 +40,6 @@ public class DownloadButtonController
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{
 		DownloadButton downloadButton();
-		HTML htmlDescText();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 

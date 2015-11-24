@@ -13,32 +13,16 @@ public class ImageController
 {
 	@Inject
 	private MyWidgetAccessor myWidgetAccessor;
-	
-	private String MESSAGE_COLOSSEUM_TEXT;
-	private String MESSAGE_COLOSSEUM_TITLE;
-	private String MESSAGE_STATUE_TEXT;
-	private String MESSAGE_STATUE_TITLE;
-	private String MESSAGE_TOWER_TEXT;
-	private String MESSAGE_TOWER_TITLE;
-	
-	@Expose
-	public void onLoad()
-	{
-		MESSAGE_COLOSSEUM_TITLE = "Colosseum - Italy";
-		
-		MESSAGE_COLOSSEUM_TEXT = "Coliseum is an amphitheater built in the period of ancient Rome. "
-				+ "Located in central Rome, 48 meters high, was able to house some 50,000 people.";
-		
-		MESSAGE_STATUE_TITLE = "Statue of Liberty - United States";
-		
-		MESSAGE_STATUE_TEXT = "Statue of Liberty is a monument built on Liberty Island in New York City. Opened in 1886, "
-				+ "the monument commemorates the centennial of the signing of the Declaration of American Independence.";
-		
-		MESSAGE_TOWER_TEXT = "Eiffel Tower is a nineteenth-century iron lattice tower located on the Champ de Mars in Paris. "
-				+ "It is the tallest building in Paris, is the most visited paid monument in the world.";
-		
-		MESSAGE_TOWER_TITLE = "Eiffel Tower - France";
-	}
+
+	private String MESSAGE_COLOSSEUM_TEXT = "Coliseum is an amphitheater built in the period of ancient Rome. "
+		+ "Located in central Rome, 48 meters high, was able to house some 50,000 people.";
+	private String MESSAGE_COLOSSEUM_TITLE = "Colosseum - Italy";
+	private String MESSAGE_STATUE_TEXT = "Statue of Liberty is a monument built on Liberty Island in New York City. Opened in 1886, "
+		+ "the monument commemorates the centennial of the signing of the Declaration of American Independence.";
+	private String MESSAGE_STATUE_TITLE = "Statue of Liberty - EUA";
+	private String MESSAGE_TOWER_TEXT = "Eiffel Tower is a nineteenth-century iron lattice tower located on the Champ de Mars in Paris. "
+		+ "It is the tallest building in Paris, is the most visited paid monument in the world.";
+	private String MESSAGE_TOWER_TITLE = "Eiffel Tower - France";
 	
 	@Expose
 	public void detailColosseum()

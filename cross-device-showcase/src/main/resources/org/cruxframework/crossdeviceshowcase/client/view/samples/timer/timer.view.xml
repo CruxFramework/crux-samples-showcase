@@ -13,17 +13,17 @@
 		<!-- Component use sample -->
 		<widgets:styledPanel id="wrapper">
 			<gwt:HTMLPanel id="parentPanel">
-				<gwt:HTMLPanel id="timerPanel" styleName="timerPanel">
+				<div id="timerPanel" class="timerPanel">
 					<widgets:timer id="timer" initial="0" start="false"/>
-				</gwt:HTMLPanel>
+				</div>
 				<br />
-				<gwt:HTMLPanel id="panelButtons" styleName="center">
+				<div id="panelButtons" class="center">
 					<gwt:horizontalPanel id="buttonsPanel" style="display: inline-block">
 						<faces:button id="buttonStart" text="Start" onSelect="timerController.start"/>
 						<faces:button id="buttonStop" text="Stop" onSelect="timerController.stopAndRestart"/>
 						<faces:button id="buttonClear" text="Clear" onSelect="timerController.clear"/>
 					</gwt:horizontalPanel>
-				</gwt:HTMLPanel>
+				</div>
 			</gwt:HTMLPanel>
 		</widgets:styledPanel>
 

@@ -8,8 +8,6 @@ import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.viewcontainer.SimpleViewContainer;
 import org.cruxframework.crux.widgets.client.button.Button;
 
-import com.google.gwt.user.client.ui.HTML;
-
 @Controller("simpleViewContainerController")
 public class SimpleViewContainerController 
 {
@@ -43,7 +41,6 @@ public class SimpleViewContainerController
 	@BindView("simpleViewContainer")
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{
-		HTML htmlDescText();
 		SimpleViewContainer viewContainer();
 		Button buttonChangeView();
 	}

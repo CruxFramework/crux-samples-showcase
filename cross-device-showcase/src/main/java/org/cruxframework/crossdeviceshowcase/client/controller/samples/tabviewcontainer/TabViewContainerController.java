@@ -9,7 +9,6 @@ import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
 import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.smartfaces.client.tabviewcontainer.TabContainer;
 
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.TextBox;
 
 @Controller("tabViewContainerController")
@@ -54,7 +53,6 @@ public class TabViewContainerController
 	{
 		TabContainer tabView();
 		TextBox textBoxUrl();
-		HTML htmlDescText();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 

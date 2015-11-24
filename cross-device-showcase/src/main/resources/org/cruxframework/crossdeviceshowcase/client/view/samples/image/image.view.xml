@@ -8,7 +8,6 @@
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useResource="showcaseCoreResources"
 	useController="imageController" 
-	onLoad="imageController.onLoad" 
 	title="Image">
 
 	<center>
@@ -22,11 +21,11 @@
 							<faces:image id="tower" url="${showcaseCoreResources.eiffel}" styleName="faces-Image imageNormal" onSelect="imageController.detailTower" tooltip="Eiffel Tower"/>
 							<faces:image id="statue" url="${showcaseCoreResources.liberty}" styleName="faces-Image imageNormal" onSelect="imageController.detailStatue" tooltip="Statue of Liberty"/>
 						</widgets:storyboard>				
-				<gwt:HTMLPanel id="labelPanel">
+				<div id="labelPanel">
 					<faces:label id="labelTitleImage" styleName="imagelabelTitleImage"/>
 					<br />
 					<faces:label id="labelInformImage" styleName="imagelabelInformImage"/>
-				</gwt:HTMLPanel>
+				</div>
 			</gwt:HTMLPanel>
 		</widgets:styledPanel>	
 

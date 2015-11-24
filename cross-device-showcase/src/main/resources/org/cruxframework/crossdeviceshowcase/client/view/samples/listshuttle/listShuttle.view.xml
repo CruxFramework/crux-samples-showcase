@@ -13,10 +13,10 @@
 	<center>
 		<!-- Component use sample -->
 		<widgets:styledPanel id="panel" styleName="listShuttlePanel">
-			<gwt:HTMLPanel id="wrapper" styleName="center">
+			<gwt:flowPanel id="wrapper" styleName="center">
 				<faces:label id="labelChoosePlayers" text="Build your team with players available:" />
 				<widgets:listShuttle id="listShuttle" availableHeader="Availables" selectedHeader="Scaled" />
-			</gwt:HTMLPanel>
+			</gwt:flowPanel>
 		</widgets:styledPanel>
 
 		<!-- Component description -->

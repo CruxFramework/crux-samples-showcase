@@ -71,12 +71,6 @@ public class TextAreaController
 		}
 	}
 	
-	@Expose
-	public void teste()
-	{
-		setState(ERROR);
-	}
-	
 	private void setState(String state)
 	{	
 		myWidgetAccessor.textArea().removeStyleName("success");
