@@ -7,7 +7,6 @@
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="anchorController"
-	
 	title="Anchor"> 
 
 	<center>

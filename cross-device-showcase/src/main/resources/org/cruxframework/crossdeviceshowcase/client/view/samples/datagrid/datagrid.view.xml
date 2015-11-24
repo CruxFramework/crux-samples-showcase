@@ -44,7 +44,7 @@
 			browserPanel-visible="true" 
 			library="SmartFaces"
 			edge-visible="true" ie-visible="true" 
-			ie-version="9+" 
+			ie-version="10+" 
 			chrome-visible="true" 
 			firefox-visible="true" 
 			safari-visible="true"

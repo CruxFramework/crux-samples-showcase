@@ -9,19 +9,12 @@
 	useController="carouselController" 
 	title="Carousel"> 
 
-	<style>
-		.line > *
-		{
-			display: inline-block;
-		}
-	</style>
-
 	<crux:dataProvider id="dataProvider" dataObject="carCarousel" onLoadData="carouselController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 	
 	<center>
 		<!-- Component use sample -->
 		<gwt:flowPanel id="panel">
-			<faces:carousel id="carousel" itemVar="car" dataProvider="dataProvider">
+			<faces:carousel id="carousel" itemVar="car" dataProvider="dataProvider" styleName="carousel" fixedHeight="true">
 				<faces:widget>
 					<gwt:flowPanel id="wrapper" styleName="line">
 <!-- 						<faces:image id="imageFlag" url="${showcaseCoreResources.carBrand}@{car.id:integerString}" /> -->
@@ -30,7 +23,7 @@
 				</faces:widget>
 			</faces:carousel>
 			
-		    <faces:swapPager id="pagerCarousel" pageable="carousel" visible="true" animationBackward="bounce"/>
+		    <faces:swapPager id="pagerCarousel" pageable="carousel" visible="true" animationBackward="fadeLeft" animationForward="fadeRight"/>
 		</gwt:flowPanel>
 
 		<!-- Component description -->
