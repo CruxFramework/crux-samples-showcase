@@ -8,9 +8,6 @@
 		<param-name>outputCharset</param-name>
 		<param-value>UTF-8</param-value>
 	</context-param>
-	<listener>
-		<listener-class>org.cruxframework.crux.core.server.InitializerListener</listener-class>
-	</listener>
 	<servlet>
 		<servlet-name>remoteServiceServlet</servlet-name>
 		<servlet-class>org.cruxframework.crux.core.server.dispatch.RemoteServiceServlet</servlet-class>

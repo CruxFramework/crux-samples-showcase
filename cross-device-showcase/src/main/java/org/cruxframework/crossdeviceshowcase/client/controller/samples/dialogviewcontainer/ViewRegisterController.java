@@ -8,6 +8,7 @@ import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.label.Label;
 import org.cruxframework.crux.widgets.client.styledpanel.StyledPanel;
 
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.TextBox;
 
@@ -46,7 +47,7 @@ public class ViewRegisterController
 		TextBox txtAddress();
 		
 		StyledPanel formPanel();
-		HTMLPanel panelError();
+		FlowPanel panelError();
 		HTMLPanel panelResult();
 		
 		Label labelResult();

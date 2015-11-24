@@ -1,7 +1,7 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -39,8 +39,8 @@
 		
 	</style>
 
-	<core:dataProvider id="dataProvider" dataObject="personPagers" onLoadData="pagersController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
-	<core:lazyDataProvider id="lazyDataProvider" dataObject="personPagers" onFetchData="pagersController.onFetchData" onMeasureData="pagersController.onMeasureData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+	<crux:dataProvider id="dataProvider" dataObject="personPagers" onLoadData="pagersController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+	<crux:lazyDataProvider id="lazyDataProvider" dataObject="personPagers" onFetchData="pagersController.onFetchData" onMeasureData="pagersController.onMeasureData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 
 	<center>
 		<!-- Component use sample -->

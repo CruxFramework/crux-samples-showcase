@@ -1,7 +1,7 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -15,7 +15,7 @@
 			<gwt:HTMLPanel styleName="center" id="parentPanel">
 				<faces:label id="labelText" text="Choose one of the departments and then select one of the listed employees." />
 				<br />
-					<gwt:HTMLPanel id="panelDepartmentsEmployers">
+					<div id="panelDepartmentsEmployers">
 						<widgets:singleSelect id="singleSelectDepartments"
 							visibleItemCount="6" width="150px"
 							onChange="singleSelectController.selectedItemDepartments">
@@ -26,7 +26,7 @@
 						<widgets:singleSelect id="singleSelectEmployees"
 							visibleItemCount="6" width="150px"
 							onChange="singleSelectController.selectedItemEmployees" />							
-					</gwt:HTMLPanel>
+					</div>
 			</gwt:HTMLPanel>
 		</widgets:styledPanel>
 

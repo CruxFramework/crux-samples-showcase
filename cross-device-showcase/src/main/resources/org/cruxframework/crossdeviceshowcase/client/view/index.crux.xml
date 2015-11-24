@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html 
 	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -15,7 +15,7 @@
 	<body>
 		<script type="text/javascript" src="../crossdeviceshowcase/crossdeviceshowcase.nocache.js"></script>
 		
-		<core:screen useController="mainController" useView="*" 
+		<crux:screen useController="mainController" useView="*" 
 				  smallViewport="user-scalable=no, width=320" 
 				  largeViewport="user-scalable=no, width=device-width, height=device-height" 
 				  useResource="xStandardResources,showcaseCoreResources,smartFacesResources" height="100%"

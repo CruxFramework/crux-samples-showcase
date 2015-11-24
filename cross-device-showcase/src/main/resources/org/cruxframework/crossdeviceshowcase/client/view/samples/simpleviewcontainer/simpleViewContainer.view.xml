@@ -1,7 +1,7 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -10,9 +10,9 @@
 	title="${messages_simpleViewContainer.title}"> 
 	
 	<center>
-		<widgets:simpleViewContainer id="viewContainer" width="600px" height="400px">
-			<widgets:view name="view1"/>
-		</widgets:simpleViewContainer>
+		<faces:simpleViewContainer id="viewContainer" width="600px" height="400px">
+			<faces:view name="view1"/>
+		</faces:simpleViewContainer>
 		<br />
 		<widgets:button id="buttonChangeView" text="${messages_simpleViewContainer.nextView}" onSelect="simpleViewContainerController.swapView"/>
 	
