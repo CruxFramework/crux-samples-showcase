@@ -17,7 +17,7 @@
 			<faces:carousel id="carousel" itemVar="car" dataProvider="dataProvider" styleName="carousel" fixedHeight="true">
 				<faces:widget>
 					<gwt:flowPanel id="wrapper" styleName="line">
-<!-- 						<faces:image id="imageFlag" url="${showcaseCoreResources.carBrand}@{car.id:integerString}" /> -->
+						<faces:image id="imageFlag" url="crossdeviceshowcase/img/logos/car@{car.id:integerString}.png" width="30px" height="30px"/>
 						<faces:label id="lblInfo" text="@{car.brand} - @{car.source}"/>
 					</gwt:flowPanel>
 				</faces:widget>
@@ -36,13 +36,7 @@
 			chrome-visible="true" 
 			firefox-visible="true" 
 			safari-visible="true"
-			>
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-					${description_messages.carouselDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
+			description="${description_messages.carouselDescription}"/>
 		
 	</center>
 

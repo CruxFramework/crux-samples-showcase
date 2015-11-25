@@ -35,13 +35,8 @@
 			ie-version="9+" 
 			chrome-visible="true" 
 			firefox-visible="true" 
-			safari-visible="true">
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-				  ${description_messages.simpleDatabaseDescription}
-				</faces:HTML> 
-			</showcase:description>
-		</showcase:info>
+			safari-visible="true"
+			description="${description_messages.simpleDatabaseDescription}"/>
 
 	</center>		
 	

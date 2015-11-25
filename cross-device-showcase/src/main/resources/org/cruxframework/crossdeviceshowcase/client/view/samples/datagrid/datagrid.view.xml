@@ -48,14 +48,8 @@
 			chrome-visible="true" 
 			firefox-visible="true" 
 			safari-visible="true"
-			>
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-				  ${description_messages.dataGridDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
-		
+			description="${description_messages.dataGridDescription}"/>
+
 	</center>
 
 </v:view>
