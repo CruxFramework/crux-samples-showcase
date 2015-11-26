@@ -2,7 +2,6 @@ package org.cruxframework.crossdeviceshowcase.client.controller.samples.datagrid
 
 import java.util.ArrayList;
 
-import org.cruxframework.crux.core.client.collection.Array;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.dataprovider.EagerLoadEvent;
@@ -15,7 +14,6 @@ import org.cruxframework.crux.smartfaces.client.button.Button;
 import org.cruxframework.crux.smartfaces.client.grid.CellEditor;
 import org.cruxframework.crux.smartfaces.client.grid.DataGrid;
 import org.cruxframework.crux.smartfaces.client.grid.GridDataFactory;
-import org.cruxframework.crux.smartfaces.client.grid.Row;
 import org.cruxframework.crux.smartfaces.client.label.Label;
 
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -56,11 +54,7 @@ public class DataGridController
 	@Expose
 	public void onSelectEditAll()
 	{
-		Array<Row<Person>> rows = view.grid().getCurrentPageRows();
-		for(int i = 0 ; i < rows.size() ; i++)
-		{
-			rows.get(i).edit();
-		}
+		view.grid().editAllRows();
 	}
 	
 	@Expose
@@ -75,12 +69,12 @@ public class DataGridController
 		view.grid().rollback();
 	}
 
-	private void createActionColumn(DataGrid<Person> grid)
+	private void createActionColumn(final DataGrid<Person> grid)
 	{
-		grid.newColumn(new GridDataFactory<Person, Button>()
+		grid.newColumn(new GridDataFactory<Person>()
 		{
 			@Override
-			public Button createData(Person value, final Row<Person> row)
+			public Button createData(Person value, final int rowIndex)
 			{
 				Button edit = new Button();
 				edit.setText(dataGridMessages.edit());
@@ -89,7 +83,7 @@ public class DataGridController
 					@Override
 					public void onSelect(SelectEvent event)
 					{
-						row.edit();
+						grid.editRow(rowIndex);
 					}
 				});
 				
@@ -98,7 +92,7 @@ public class DataGridController
 		}, "action").setCellEditor(new CellEditor<Person, String>(true)
 		{
 			@Override
-			public IsWidget createData(Person value, final Row<Person> row)
+			public IsWidget createData(Person value, final int rowIndex)
 			{
 				FlowPanel wrapper = new FlowPanel();
 				Button cancel = new Button();
@@ -108,7 +102,7 @@ public class DataGridController
 					@Override
 					public void onSelect(SelectEvent event)
 					{
-						row.undoChanges();
+						grid.undoRowChanges(rowIndex);
 					}
 				});
 				wrapper.add(cancel);
@@ -120,7 +114,7 @@ public class DataGridController
 					@Override
 					public void onSelect(SelectEvent event)
 					{
-						row.makeChanges();
+						grid.makeRowChanges(rowIndex);
 					}
 				});
 				wrapper.add(ok);

@@ -1,14 +1,13 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useResource="showcaseCoreResources"
 	useController="imageController" 
-	onLoad="imageController.onLoad" 
 	title="Image">
 
 	<center>
@@ -22,11 +21,11 @@
 							<faces:image id="tower" url="${showcaseCoreResources.eiffel}" styleName="faces-Image imageNormal" onSelect="imageController.detailTower" tooltip="Eiffel Tower"/>
 							<faces:image id="statue" url="${showcaseCoreResources.liberty}" styleName="faces-Image imageNormal" onSelect="imageController.detailStatue" tooltip="Statue of Liberty"/>
 						</widgets:storyboard>				
-				<gwt:HTMLPanel id="labelPanel">
+				<div id="labelPanel">
 					<faces:label id="labelTitleImage" styleName="imagelabelTitleImage"/>
 					<br />
 					<faces:label id="labelInformImage" styleName="imagelabelInformImage"/>
-				</gwt:HTMLPanel>
+				</div>
 			</gwt:HTMLPanel>
 		</widgets:styledPanel>	
 
@@ -40,13 +39,8 @@
 			edge-visible="true" ie-visible="true" 
 			chrome-visible="true" 
 			firefox-visible="true" 
-			safari-visible="true">
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-				  ${description_messages.imageDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
+			safari-visible="true"
+			description="${description_messages.imageDescription}"/>
 
 	</center>
 </v:view>

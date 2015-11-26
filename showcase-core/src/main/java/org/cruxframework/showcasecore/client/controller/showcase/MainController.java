@@ -8,9 +8,11 @@ import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.Screen;
+import org.cruxframework.crux.core.client.screen.views.BindRootView;
 import org.cruxframework.crux.core.client.screen.views.View;
 import org.cruxframework.crux.core.client.screen.views.ViewActivateEvent;
 import org.cruxframework.crux.core.client.screen.views.ViewActivateHandler;
+import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.core.client.utils.StringUtils;
 import org.cruxframework.crux.widgets.client.dialogcontainer.DialogViewContainer;
 import org.cruxframework.crux.widgets.client.disposal.menutabsdisposal.MenuTabsDisposal;
@@ -27,16 +29,19 @@ import org.cruxframework.showcasecore.client.util.VisualBoxLogHandler;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.core.client.Scheduler.ScheduledCommand;
+import com.google.gwt.event.logical.shared.AttachEvent;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
 @SuppressWarnings("deprecation")
 @Controller("mainController")
 public class MainController 
 {
-	final ShowcaseResourcesCommon bundle = GWT.create(ShowcaseResourcesCommon.class);
+	private ShowcaseResourcesCommon bundle = GWT.create(ShowcaseResourcesCommon.class);
 
 	@Inject
 	private ShowcaseCoreMessages messages;
@@ -49,6 +54,29 @@ public class MainController
 	@Inject
 	private LanguageManager languageManager;
 
+	@Expose
+	public void replaceText(AttachEvent event)
+	{
+		Label label = (Label)event.getSource();
+		HTML html = (HTML) View.getView(widgets.menuDisposal().getCurrentView()).getWidget("descriptionCointainer");
+		html.setHTML(label.getText());
+	}
+	
+	@Inject
+	private MyWidgetAccessor widgets;
+	
+	public void setWidgets(MyWidgetAccessor widgets)
+	{
+		this.widgets = widgets;
+	}
+
+	@BindRootView
+	public static interface MyWidgetAccessor extends WidgetAccessor
+	{
+		MenuTabsDisposal menuDisposal();
+	}
+	
+	
 	@Expose
 	public void switchLocaleUrl()
 	{

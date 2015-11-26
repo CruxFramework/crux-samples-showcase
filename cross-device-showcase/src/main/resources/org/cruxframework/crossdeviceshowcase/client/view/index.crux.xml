@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html 
 	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -15,12 +14,15 @@
 	<body>
 		<script type="text/javascript" src="../crossdeviceshowcase/crossdeviceshowcase.nocache.js"></script>
 		
-		<core:screen useController="mainController" useView="*" 
-				  smallViewport="user-scalable=no, width=320" 
-				  largeViewport="user-scalable=no, width=device-width, height=device-height" 
-				  useResource="xStandardResources,showcaseCoreResources,smartFacesResources" height="100%"
-				  onLoad="mainController.wellcome"/>
-			
+		<crux:screen useController="mainController" useView="*" 
+			  smallViewport="user-scalable=no, width=320" 
+			  largeViewport="user-scalable=no, width=device-width, height=device-height" 
+			  useResource="xStandardResources,showcaseCoreResources,smartFacesResources" height="100%"
+			  onLoad="mainController.wellcome"
+		/>
+		
+		<crux:splashScreen style="background: url('crossdeviceshowcase/img/loading.gif') no-repeat center; width: 100%; height: 100%; margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0;"/>
+		
 		<widgets:menuTabsDisposal id="menuDisposal" >
 			<widgets:header>
 				<gwt:flowPanel id="headerPanel">

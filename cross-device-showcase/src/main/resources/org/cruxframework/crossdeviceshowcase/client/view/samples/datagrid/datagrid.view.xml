@@ -1,7 +1,7 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -10,7 +10,7 @@
 	onLoad="dataGridController.onLoad" 
 	title="Data Grid"> 
 
-	<core:dataProvider id="dataProviderPerson" dataObject="personGrid" onLoadData="dataGridController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+	<crux:dataProvider id="dataProviderPerson" dataObject="personGrid" onLoadData="dataGridController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 
 	<center>
 		<!-- Component use sample -->
@@ -44,18 +44,12 @@
 			browserPanel-visible="true" 
 			library="SmartFaces"
 			edge-visible="true" ie-visible="true" 
-			ie-version="9+" 
+			ie-version="10+" 
 			chrome-visible="true" 
 			firefox-visible="true" 
 			safari-visible="true"
-			>
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-				  ${description_messages.dataGridDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
-		
+			description="${description_messages.dataGridDescription}"/>
+
 	</center>
 
 </v:view>

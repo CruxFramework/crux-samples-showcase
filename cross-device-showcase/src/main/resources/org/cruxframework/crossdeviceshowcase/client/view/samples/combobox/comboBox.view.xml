@@ -1,7 +1,7 @@
 <v:view
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -14,23 +14,32 @@
 		{
 			display: inline-block;
 		}
+		
+		.imageFlag
+		{
+		    max-width:30px;
+		    max-height:30px;
+		    width: auto;
+		    height: auto;
+		}
 	</style>
 	
-	<core:dataProvider id="dataProvider" dataObject="countryComboBox" onLoadData="comboBoxController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+	<crux:dataProvider id="dataProvider" dataObject="countryComboBox" onLoadData="comboBoxController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 
 	<center>
 		<widgets:styledPanel id="mainPanel">
 			<gwt:flowPanel id="innerPanel">
-				<faces:comboBox id="comboBox" dataProvider="dataProvider" itemVar="country">
+				<faces:comboBox id="comboBox" dataProvider="dataProvider" itemVar="country" animation="fade">
 				<faces:options value="@{country.id:integerString}" text="@{country.name}">
 					<faces:widget>
 						<gwt:flowPanel id="wrapper" styleName="line">
-							<faces:image id="imageFlag" url="${showcaseCoreResources.flag}@{country.id:integerString}" />
+							<faces:image id="imageFlag" url="crossdeviceshowcase/img/countries/flag@{country.id:integerString}.jpg" styleName="imageFlag" />
 							<faces:label id="lblNameCapital" text="@{country.name} - @{country.capital}"/>
 						</gwt:flowPanel>
 					</faces:widget>
 				</faces:options>
 				</faces:comboBox>
+				<faces:scrollablePager pageable="comboBox" id="scrollablePager"/>
 			</gwt:flowPanel>
 		</widgets:styledPanel>
 		
@@ -44,13 +53,8 @@
 			ie-version="9+" 
 			chrome-visible="true" 
 			firefox-visible="true" 
-			safari-visible="true">
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-					${description_messages.comboBoxDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
+			safari-visible="true"
+			description="${description_messages.comboBoxDescription}"/>
 
 	</center>
 

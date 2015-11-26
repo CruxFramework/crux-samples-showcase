@@ -1,7 +1,7 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -13,17 +13,17 @@
 		<!-- Component use sample -->
 		<widgets:styledPanel id="wrapper">
 			<gwt:HTMLPanel id="parentPanel">
-				<gwt:HTMLPanel id="timerPanel" styleName="timerPanel">
+				<div id="timerPanel" class="timerPanel">
 					<widgets:timer id="timer" initial="0" start="false"/>
-				</gwt:HTMLPanel>
+				</div>
 				<br />
-				<gwt:HTMLPanel id="panelButtons" styleName="center">
+				<div id="panelButtons" class="center">
 					<gwt:horizontalPanel id="buttonsPanel" style="display: inline-block">
 						<faces:button id="buttonStart" text="Start" onSelect="timerController.start"/>
 						<faces:button id="buttonStop" text="Stop" onSelect="timerController.stopAndRestart"/>
 						<faces:button id="buttonClear" text="Clear" onSelect="timerController.clear"/>
 					</gwt:horizontalPanel>
-				</gwt:HTMLPanel>
+				</div>
 			</gwt:HTMLPanel>
 		</widgets:styledPanel>
 
@@ -37,13 +37,8 @@
 			edge-visible="true" ie-visible="true" 
 			chrome-visible="true" 
 			firefox-visible="true" 
-			safari-visible="true">
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-				  ${description_messages.timerDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
+			safari-visible="true"
+			description="${description_messages.timerDescription}"/>
 
 	</center>
 </v:view>

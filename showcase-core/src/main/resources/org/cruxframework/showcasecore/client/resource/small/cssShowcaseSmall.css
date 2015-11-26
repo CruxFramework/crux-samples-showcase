@@ -36,6 +36,14 @@ body
 	font-family:OpenSans, Arial, Helvetica Neue, Helvetica, Roboto, Ubuntu, sans-serif;
 }
 
+/* Fix to large body bug */
+.crux-MenuTabsDisposal 
+{
+    max-width: 100%;
+    overflow: hidden;
+}
+/* END - Fix to large body bug */	
+
 /* header */
 .lang-toggler-wrapper
 {
@@ -1150,6 +1158,7 @@ body
 
 .openLogButton
 {
-	right: -144px;
+	right: -50px;
+    max-width: 135px;
     height: 38px;
 }

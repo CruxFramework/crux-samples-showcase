@@ -1,7 +1,7 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -13,10 +13,10 @@
 	<center>
 		<!-- Component use sample -->
 		<widgets:styledPanel id="panel" styleName="listShuttlePanel">
-			<gwt:HTMLPanel id="wrapper" styleName="center">
+			<gwt:flowPanel id="wrapper" styleName="center">
 				<faces:label id="labelChoosePlayers" text="Build your team with players available:" />
 				<widgets:listShuttle id="listShuttle" availableHeader="Availables" selectedHeader="Scaled" />
-			</gwt:HTMLPanel>
+			</gwt:flowPanel>
 		</widgets:styledPanel>
 
 		<!-- Component description -->
@@ -29,13 +29,8 @@
 			edge-visible="true" ie-visible="true" 
 			chrome-visible="true" 
 			firefox-visible="true" 
-			safari-visible="true">
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-				  ${description_messages.listShuttleDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
+			safari-visible="true"
+			description="${description_messages.listShuttleDescription}"/>
 
 	</center>
 </v:view>

@@ -1,7 +1,7 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -10,27 +10,30 @@
 	title="Carousel"> 
 
 	<style>
-		.line > *
+		.imageFlag
 		{
-			display: inline-block;
+		    max-width:80px;
+		    max-height:80px;
+		    width: auto;
+		    height: auto;
 		}
 	</style>
 
-	<core:dataProvider id="dataProvider" dataObject="carCarousel" onLoadData="carouselController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+	<crux:dataProvider id="dataProvider" dataObject="carCarousel" onLoadData="carouselController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 	
 	<center>
 		<!-- Component use sample -->
 		<gwt:flowPanel id="panel">
-			<faces:carousel id="carousel" itemVar="car" dataProvider="dataProvider">
+			<faces:carousel id="carousel" itemVar="car" dataProvider="dataProvider" styleName="carousel" fixedHeight="true">
 				<faces:widget>
 					<gwt:flowPanel id="wrapper" styleName="line">
-						<faces:image id="imageFlag" url="${showcaseCoreResources.carBrand}@{car.id:integerString}" />
+						<faces:image id="imageFlag" url="crossdeviceshowcase/img/logos/car@{car.id:integerString}.png" styleName="imageFlag"/>
 						<faces:label id="lblInfo" text="@{car.brand} - @{car.source}"/>
 					</gwt:flowPanel>
 				</faces:widget>
 			</faces:carousel>
 			
-		    <faces:swapPager id="pagerCarousel" pageable="carousel" visible="true" animationBackward="bounce"/>
+		    <faces:swapPager id="pagerCarousel" pageable="carousel" visible="true" animationBackward="fadeLeft" animationForward="fadeRight"/>
 		</gwt:flowPanel>
 
 		<!-- Component description -->
@@ -43,13 +46,7 @@
 			chrome-visible="true" 
 			firefox-visible="true" 
 			safari-visible="true"
-			>
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-					${description_messages.carouselDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
+			description="${description_messages.carouselDescription}"/>
 		
 	</center>
 

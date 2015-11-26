@@ -1,7 +1,7 @@
 <v:view 
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -20,14 +20,14 @@
 				<hr />
 				<faces:label id="labelMaxlength" text="Choose the limit for entering the numbers"/>
 				<br />
-				<gwt:HTMLPanel id="panelBoard" styleName="radioPanel">
+				<div id="panelBoard" class="radioPanel">
 					<widgets:storyboard id="radios" height="20px" width="100%" largeDeviceItemWidth="85px">
 						<gwt:radioButton id="radioButton09" name="value" text="0 to 9" onChange="numberTextBoxController.maxLength"/>
 						<gwt:radioButton id="radioButton099" name="value" text="0 to 99" onChange="numberTextBoxController.maxLength"/>
 						<gwt:radioButton id="radioButton0999" name="value" text="0 to 999" checked="true" onChange="numberTextBoxController.maxLength" />
 						<gwt:radioButton id="radioButtonFree" name="value" text="Free" onChange="numberTextBoxController.maxLength"/>
 					</widgets:storyboard>
-				</gwt:HTMLPanel>
+				</div>
 			</gwt:HTMLPanel>
 		</widgets:styledPanel>
 
@@ -41,13 +41,8 @@
 			edge-visible="true" ie-visible="true" 
 			chrome-visible="true" 
 			firefox-visible="true" 
-			safari-visible="true">
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-				  ${description_messages.numberTextBoxDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
+			safari-visible="true"
+			description="${description_messages.numberTextBoxDescription}"/>
 
 	</center>
 </v:view>

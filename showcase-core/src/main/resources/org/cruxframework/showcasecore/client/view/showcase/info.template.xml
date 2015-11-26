@@ -2,7 +2,7 @@
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:t="http://www.cruxframework.org/templates" 
 	xmlns:v="http://www.cruxframework.org/view" 
-	xmlns:core="http://www.cruxframework.org/crux" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
 	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
@@ -32,9 +32,10 @@
 	   	</gwt:flowPanel>
 	   	
 	    <hr style="background-color:#999"/>
-		<gwt:HTMLPanel id="descriptionCointainer">
-			<t:section name="description"/>
-		</gwt:HTMLPanel>
+		
+	   	<gwt:label id="labelDescription" text="#{description}" onAttach="mainController.replaceText" style="display:none"/>
+		<gwt:HTML id="descriptionCointainer"/>
+		
 		<center>
 			<faces:button id="buttonShowCode" onSelect="mainController.viewSourceCode" text="${messages_core.viewSourceCode}" style="margin:10px"/>
 		</center>
