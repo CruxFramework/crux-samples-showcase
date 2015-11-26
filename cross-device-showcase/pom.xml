@@ -73,22 +73,13 @@
 					<execution>
 		                <goals>
 		                    <goal>generate-xsds</goal>
-							<!-- <goal>library-mapper</goal> -->
-							<!-- <goal>service-mapper</goal> -->
 							<!-- <goal>generate-html-snapshots</goal> -->
 		                    <goal>process-crux-resources</goal>
 		                </goals>
 					</execution>
 				</executions>
 				<configuration>
-					<!-- <snapshots> -->
-					<!-- <target> -->
-					<!-- <page>pages/index.html</page> -->
-					<!-- <escapedFragment>view=main</escapedFragment> -->
-					<!-- </target> -->
-					<!-- </snapshots> -->
 					<module>org.cruxframework.crossdeviceshowcase.CrossDeviceShowcase</module>
-<!-- 					<viewBaseFolder>client/view</viewBaseFolder> -->
 				</configuration>
 			</plugin>
 		</plugins>
