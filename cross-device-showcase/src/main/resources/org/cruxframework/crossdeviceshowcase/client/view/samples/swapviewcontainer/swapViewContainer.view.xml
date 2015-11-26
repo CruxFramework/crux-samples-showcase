@@ -9,6 +9,13 @@
 	useController="swapViewContainerController"
 	title="swapViewContainer"> 
 
+	<style>
+	.faces-SwapViewContainer
+	{
+		height: 640px !important;
+	}
+	</style>
+
 	<center>
 		<widgets:styledPanel id="mainPanel">
 			<gwt:flowPanel id="innerPanel">

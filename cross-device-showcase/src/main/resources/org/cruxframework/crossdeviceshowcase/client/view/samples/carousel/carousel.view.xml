@@ -9,6 +9,16 @@
 	useController="carouselController" 
 	title="Carousel"> 
 
+	<style>
+		.imageFlag
+		{
+		    max-width:80px;
+		    max-height:80px;
+		    width: auto;
+		    height: auto;
+		}
+	</style>
+
 	<crux:dataProvider id="dataProvider" dataObject="carCarousel" onLoadData="carouselController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 	
 	<center>
@@ -17,7 +27,7 @@
 			<faces:carousel id="carousel" itemVar="car" dataProvider="dataProvider" styleName="carousel" fixedHeight="true">
 				<faces:widget>
 					<gwt:flowPanel id="wrapper" styleName="line">
-						<faces:image id="imageFlag" url="crossdeviceshowcase/img/logos/car@{car.id:integerString}.png" width="30px" height="30px"/>
+						<faces:image id="imageFlag" url="crossdeviceshowcase/img/logos/car@{car.id:integerString}.png" styleName="imageFlag"/>
 						<faces:label id="lblInfo" text="@{car.brand} - @{car.source}"/>
 					</gwt:flowPanel>
 				</faces:widget>

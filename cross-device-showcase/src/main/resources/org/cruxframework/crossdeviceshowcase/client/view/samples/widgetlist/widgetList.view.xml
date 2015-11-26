@@ -14,6 +14,14 @@
 		{
 			display: inline-block;
 		}
+		
+		.imageFlag
+		{
+		    max-width:60px;
+		    max-height:60px;
+		    width: auto;
+		    height: auto;
+		}
 	</style>
 
 	<crux:dataProvider id="dataProvider" dataObject="carWidgetList" onLoadData="widgetListController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
@@ -24,7 +32,7 @@
 			<faces:widgetList id="widgetList" itemVar="car" dataProvider="dataProvider">
 				<faces:widget>
 					<gwt:flowPanel id="wrapper" styleName="line">
-						<faces:image id="imageFlag" url="crossdeviceshowcase/img/logos/car@{car.id:integerString}.png" width="60px" height="60px"/>
+						<faces:image id="imageFlag" url="crossdeviceshowcase/img/logos/car@{car.id:integerString}.png" styleName="imageFlag"/>
 						<faces:label id="lblInfo" text="@{car.brand} - @{car.source} - @{car.year:integerString}"/>
 					</gwt:flowPanel>
 				</faces:widget>
