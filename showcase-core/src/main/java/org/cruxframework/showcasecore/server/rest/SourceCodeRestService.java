@@ -35,7 +35,7 @@ public class SourceCodeRestService
 	{
 		try
 		{
-			return GitExplorer.getListSourceFilesForView(viewName);
+			return GitExplorer.getListSourceFilesForView(viewName.toLowerCase().trim());
 		}
 		catch (IOException | JSONException e)
 		{

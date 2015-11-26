@@ -32,9 +32,10 @@
 	   	</gwt:flowPanel>
 	   	
 	    <hr style="background-color:#999"/>
-		<gwt:HTMLPanel id="descriptionCointainer">
-			<t:section name="description"/>
-		</gwt:HTMLPanel>
+		
+	   	<gwt:label id="labelDescription" text="#{description}" onAttach="mainController.replaceText" style="display:none"/>
+		<gwt:HTML id="descriptionCointainer"/>
+		
 		<center>
 			<faces:button id="buttonShowCode" onSelect="mainController.viewSourceCode" text="${messages_core.viewSourceCode}" style="margin:10px"/>
 		</center>

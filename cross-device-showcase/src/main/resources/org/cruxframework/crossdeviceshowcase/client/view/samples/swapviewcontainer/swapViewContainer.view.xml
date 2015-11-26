@@ -9,6 +9,13 @@
 	useController="swapViewContainerController"
 	title="swapViewContainer"> 
 
+	<style>
+	.faces-SwapViewContainer
+	{
+		height: 640px !important;
+	}
+	</style>
+
 	<center>
 		<widgets:styledPanel id="mainPanel">
 			<gwt:flowPanel id="innerPanel">
@@ -47,13 +54,9 @@
 			edge-visible="true" ie-visible="true" 
 			chrome-visible="true" 
 			firefox-visible="true" 
-			safari-visible="true">
-			<showcase:description>
-				<faces:HTML id="componentDescription" >
-				  ${description_messages.swapViewContainerDescription}
-				</faces:HTML>
-			</showcase:description>
-		</showcase:info>
+			safari-visible="true"
+			description="${description_messages.swapViewContainerDescription}"/>
+
 	</center>
 
 </v:view>
