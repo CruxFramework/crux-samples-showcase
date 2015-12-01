@@ -9,7 +9,81 @@
 	useController="dataGridController" 
 	onLoad="dataGridController.onLoad" 
 	title="Data Grid"> 
+	
+	<style>
+/* Style for DataGrid */
 
+/* Grid header */
+.faces-DivTable .headerRow, .faces-DivTable .headerRow .rowOdd
+{
+  background: #4496C6;
+}
+
+.faces-DivTable .row--selected:not(rowOdd), .faces-DivTable .row--selected:not(rowEven)
+{
+    background: #4496C6 -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.55)), to(rgba(255, 255, 255, 0)));
+}
+
+.faces-DivTable .row--selected:not(rowOdd) .column, .faces-DivTable .row--selected:not(rowEven) .column
+{
+  border-color: #1A6299;
+}
+
+
+.faces-DivTable .row--selected:not(rowOdd) .faces-Label, .faces-DivTable .row--selected:not(rowEven) .faces-Label 
+{
+    color:#fff;
+}
+
+.headerRow .faces-Label
+{
+    color: #fff;
+}
+
+.headerRow .column
+{
+    border-color: #396986;
+}
+
+.faces-DivTable .columnGroup .headerRow
+{
+    border-color: #396986;
+}
+
+
+
+/* Grid Body */
+
+.row .column:last-child
+{
+  border-width: 1px  0 0 0;
+}
+
+.row .column .gwt-RadioButton input
+{
+    margin: 7px;
+}
+
+/* Pager */
+.faces-Pager .faces-Button:disabled
+{
+  border: none; 
+}
+
+.faces-Pager .faces-Button,
+.faces-Pager .backPanel .faces-Button,
+.faces-Pager .nextPanel .faces-Button
+{
+  padding: 14px;
+}
+
+.faces-SequentialPager 
+{
+    border: 1px solid #ccc;
+}	
+	</style>
+	
+	
 	<crux:dataProvider id="dataProviderPerson" dataObject="personGrid" onLoadData="dataGridController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 
 	<center>
