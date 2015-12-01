@@ -11,7 +11,6 @@
 @url imageColiseuUrl coliseu;
 @url imageEiffelUrl eiffel;
 @url imageLibertyUrl liberty;
-@url guileUrl guile;
 @url logoLargeUrl logoLarge;
 @url noiseUrl noise;
 
@@ -44,11 +43,6 @@ body
 .rs-right
 {
 	float:right;
-}
-
-.valueLabel
-{
-	color: #303030 !important;
 }
 
 .speechBubble
@@ -339,22 +333,7 @@ body
 {
 	display:none;
 }
-.guilePanel
-{
-	background:guileUrl no-repeat left;
-	background-size: 100px;
-	padding-left: 100px;
-	min-height: 100px;
-	overflow:auto;	
-}
-.guilePanel .crux-FormDisplay
-{
-	margin-top:22px;
-}
-.guilePanel .crux-FormDisplay td
-{
-	border-top:none;
-}
+
 .desestylize .crux-StyledPanel
 {
 	border:none;

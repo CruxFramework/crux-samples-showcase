@@ -12,7 +12,6 @@
 @url imageEiffelUrl eiffel;
 @url imageLibertyUrl liberty;
 @url mundiUrl mundi;
-@url guileUrl guile;
 @url logoSmallUrl logoSmall;
 @url noiseUrl noise;
 
@@ -382,17 +381,6 @@ body
 {
 	width:60%;
 	text-align:center;
-}
-.guilePanel
-{
-	background:guileUrl no-repeat left;
-	background-size: 100px;
-	padding-left: 100px;
-	min-height: 100px;		
-}
-.valueLabel
-{
-	font-weight:normal !important;
 }
 
 .btn-Group

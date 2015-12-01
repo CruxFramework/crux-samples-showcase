@@ -29,8 +29,7 @@ import com.google.gwt.resources.client.ImageResource;
 @Resource(value="showcaseCoreResources", supportedDevices={Device.largeDisplayArrows, Device.largeDisplayMouse, Device.largeDisplayTouch})
 public interface ShowcaseResourcesLarge extends ShowcaseResourcesCommon
 {
-	@Source({"org/cruxframework/showcasecore/client/resource/common/cssShowcaseCommon.css", "cssShowcaseLarge.css", 
-			 "org/cruxframework/showcasecore/client/resource/ie8/cssShowcaseLargeIe8.css"})
+	@Source({"org/cruxframework/showcasecore/client/resource/common/cssShowcaseCommon.css", "cssShowcaseLarge.css"})
 	CssShowcaseLarge css();
 	
 	@Source("icon-layout.png")
@@ -71,9 +70,6 @@ public interface ShowcaseResourcesLarge extends ShowcaseResourcesCommon
 	
 	@Source("crux.png")
 	ImageResource crux();
-	
-	@Source("guile.png")
-	DataResource guile();
 	
 	@Source("logo-large.png")
 	DataResource logoLarge();

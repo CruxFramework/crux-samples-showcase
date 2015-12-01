@@ -74,9 +74,6 @@ public interface ShowcaseResourcesSmall extends ShowcaseResourcesCommon
 	@Source("crux.png")
 	ImageResource crux();
 	
-	@Source("guile.png")
-	DataResource guile();
-	
 	@Source("logo-small.png")
 	DataResource logoSmall();
 	
