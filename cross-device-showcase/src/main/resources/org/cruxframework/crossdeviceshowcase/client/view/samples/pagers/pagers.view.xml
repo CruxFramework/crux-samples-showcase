@@ -21,7 +21,9 @@
 		.scrollablePagerWrapper
 		{
 		    float: left;
-		    margin: 30px;
+		    	margin: 10px;
+			    width: 30%;
+			    min-width: 250px;
 		}
 		
 		.dataProviderWrapper, 
@@ -31,13 +33,15 @@
 		}
 		/* Containers */
 		
-		.faces-WidgetList
+		.commonPagerWrapper .faces-WidgetList,
+		.swapPagerWrapper .faces-WidgetList,
+		.scrollablePagerWrapper .faces-WidgetList
 		{
 		    border: 1px solid #ccc;
 		    padding: 5px;
-		    min-width: 150px;
 		    min-height: 135px;
 		}
+
 		
 		/* Type Titles */
 		.commonPagerWrapper .gwt-Label,
@@ -72,11 +76,20 @@
 		    background: #efefef;
 		}
 		
-		.faces-SwapPanel 
+		.swapPagerWrapper .faces-SwapPanel 
 		{
 		    min-height: 75px;
-		    min-width: 150px;
+		    width: 150px;
 		}
+		
+		
+		.swapPagerWrapper .faces-WidgetList .faces-Pager .faces-SwapPanel,
+		.swapPagerWrapper .faces-WidgetList .faces-Pager .nextPanel,
+		.swapPagerWrapper .faces-WidgetList .faces-Pager .backPanel
+		{
+			display: block;
+		}
+				
 	</style>
 
 	<crux:dataProvider id="dataProvider" dataObject="personPagers" onLoadData="pagersController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>

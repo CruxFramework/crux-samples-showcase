@@ -10,18 +10,59 @@
 	title="Widget List"> 
 
 	<style>
-		.line > *
-		{
-			display: inline-block;
-		}
+.faces-WidgetList .faces-SwapPanel
+{
+    width: 500px;
+    height: 300px;
+}
+
+.faces-WidgetList .faces-SwapPanel .line
+{
+  /*Backbone*/
+  display: table-row;
+  /*Showcase*/
+  height: 60px;
+}
+
+.faces-WidgetList .faces-SwapPanel .line > *
+{
+  /*Backbone*/
+	display: table-cell;
+ 	vertical-align: middle;
+ 	margin: 6px 8px;
+}
+
+.faces-WidgetList .faces-SwapPanel .imageFlag
+{
+  /*Showcase*/
+  width: auto;
+  height: 35px;
+}
+
+.faces-WidgetList .faces-Pager .faces-SwapPager
+{
+  /*Backbone*/
+  display: table-row;
+  /*Showcase*/
+  width: 300px;
+}
+
+.faces-WidgetList .backPanel,
+.faces-WidgetList .nextPanel,
+.faces-WidgetList .faces-SwapPanel
+{
+  /*Backbone*/
+  display: table-cell;
+}
+
+.faces-WidgetList .backPanel,
+.faces-WidgetList .nextPanel,
+.faces-WidgetList .faces-SwapPanel
+{
+  /*Showcase*/
+  vertical-align: middle;
+}
 		
-		.imageFlag
-		{
-		    max-width:60px;
-		    max-height:60px;
-		    width: auto;
-		    height: auto;
-		}
 	</style>
 
 	<crux:dataProvider id="dataProvider" dataObject="carWidgetList" onLoadData="widgetListController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
