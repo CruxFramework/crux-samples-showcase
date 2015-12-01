@@ -17,7 +17,11 @@
 		<crux:screen useController="mainController" useView="*" 
 			  smallViewport="user-scalable=no, width=320" 
 			  largeViewport="user-scalable=no, width=device-width, height=device-height" 
-			  useResource="xStandardResources,showcaseCoreResources,smartFacesResources" height="100%"
+			  useResource="xStandardResources,
+			  			   smartFacesResources,
+			  			   showcaseCoreResources,
+			  			   showcaseSamplesResources"
+			  height="100%"
 			  onLoad="mainController.wellcome"
 		/>
 		

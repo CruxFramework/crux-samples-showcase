@@ -23,7 +23,7 @@
 <!--     <set-property name="device.features" value="largeDisplayMouse"/> -->
     <!-- <set-property name="device.features" value="largeDisplayTouch"/> -->
 <!--     <set-property name="device.features" value="largeDisplayArrows"/> -->
-<!-- 	<set-property name="device.features" value="smallDisplayTouch"/> -->
+	<set-property name="device.features" value="smallDisplayTouch"/>
     <!-- <set-property name="device.features" value="smallDisplayArrows"/> -->
 	
 	<!-- ******* Application paths ******* -->

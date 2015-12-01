@@ -81,6 +81,13 @@
 {
     border: 1px solid #ccc;
 }	
+
+
+	.dataGrid
+	{
+    max-width: 100%;
+    }
+    
 	</style>
 	
 	<crux:dataProvider id="dataProviderPerson" dataObject="personGrid" onLoadData="dataGridController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
