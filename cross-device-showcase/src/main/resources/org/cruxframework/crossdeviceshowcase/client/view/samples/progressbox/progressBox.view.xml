@@ -11,10 +11,10 @@
 
 	<center>
 	<!-- 		Component use sample  -->
-		<widgets:styledPanel id="panel1">
+		<div id="panel" class="baseWrapper progressBox">
 			<faces:button id="showProgressBtn" text="Show ProgressBox"
 				onSelect="progressBoxController.showProgress" />
-		</widgets:styledPanel>
+		</div>
 
 		<!-- 		Component description -->
 		<showcase:info 

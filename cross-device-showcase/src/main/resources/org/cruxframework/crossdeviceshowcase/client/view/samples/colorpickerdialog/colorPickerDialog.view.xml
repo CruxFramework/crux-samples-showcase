@@ -11,15 +11,14 @@
 	title="ColorPicker">
 
 	<center>
-		<!-- Component use sample -->
-		<widgets:styledPanel id="panel">
-			<gwt:HTMLPanel id="wrapper" styleName="center">
-				<faces:label id="labelClickButton" text="Click the button below to change the color of this text."/>
-				<hr />
-				<faces:label id="labelColorValue" styleName="choosenColor" text="Chosen color:"/>
-				<faces:button id="buttonChangeColor" text="ColorPicker" onSelect="colorPickerDialogController.showColorPicker"/>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+
+		<div id="panel" class="baseWrapper colorPickerDialog center">
+		<faces:label id="labelClickButton" text="Click the button below to change the color of this text."/>
+		<hr/>
+		<faces:label id="labelColorValue" styleName="choosenColor" text="Chosen color:"/>
+		<faces:button id="buttonChangeColor" text="ColorPicker" onSelect="colorPickerDialogController.showColorPicker"/>
+		</div>
+		
 		<widgets:colorPickerDialog id="colorPicker" text="Choose color" onClose="colorPickerDialogController.changeColor"/>
 
 		<!-- Component description -->

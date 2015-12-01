@@ -11,7 +11,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="wrapper">
+		<div id="panel" class="baseWrapper anchor">
 			<gwt:HTMLPanel id="panel" styleName="center">
 				<a id="home" style="color:#1c5994"></a>
 
@@ -41,7 +41,7 @@
 					<h2></h2>
 				</widgets:anchor>
 			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		</div>
 
 			
 

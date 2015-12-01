@@ -11,7 +11,7 @@
 	title="${messages_tabPanel.title}"> 
 
 	<center>
-		<widgets:styledPanel id="mainPanel">
+		<div id="panel" class="baseWrapper tabPanel">
 			<faces:tabPanel id="tabPanel">
 				<faces:tab tabEnabled="true">
 					<faces:tabWidget>
@@ -44,7 +44,7 @@
 					</faces:panelContent>
 				</faces:tab>
 			</faces:tabPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<showcase:info 
 			title="${messages_tabPanel.title}"

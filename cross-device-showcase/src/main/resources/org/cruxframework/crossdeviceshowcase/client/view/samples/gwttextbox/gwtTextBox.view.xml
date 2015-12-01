@@ -11,19 +11,17 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="panel1">
-			<gwt:HTMLPanel id="html" styleName="center">
-				<gwt:textBox id="gwtTxtBox" placeHolder="${gwttextbox_messages.editMe}" styleName="w200" />
-				<hr />
-				<faces:label id="h4" text="States:" />
-				<div class="btn-Group">
-					<gwt:radioButton name="color" onChange="gwtTextBoxController.handleDefault" id="radioDefault" text="Default" checked="true"></gwt:radioButton>
-					<gwt:radioButton name="color" onChange="gwtTextBoxController.handleSuccess" id="radioSuccess" text="Success"></gwt:radioButton>
-					<gwt:radioButton name="color" onChange="gwtTextBoxController.handleWarning" id="radioWarning" text="Warning"></gwt:radioButton>
-					<gwt:radioButton name="color" onChange="gwtTextBoxController.handleError" id="radioError" text="Error"></gwt:radioButton>
-				</div>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		<div id="panel" class="baseWrapper gwtTextBox center">
+			<gwt:textBox id="gwtTxtBox" placeHolder="${gwttextbox_messages.editMe}" styleName="w200" />
+			<hr />
+			<faces:label id="h4" text="States:" />
+			<div class="btn-Group">
+				<gwt:radioButton name="color" onChange="gwtTextBoxController.handleDefault" id="radioDefault" text="Default" checked="true"></gwt:radioButton>
+				<gwt:radioButton name="color" onChange="gwtTextBoxController.handleSuccess" id="radioSuccess" text="Success"></gwt:radioButton>
+				<gwt:radioButton name="color" onChange="gwtTextBoxController.handleWarning" id="radioWarning" text="Warning"></gwt:radioButton>
+				<gwt:radioButton name="color" onChange="gwtTextBoxController.handleError" id="radioError" text="Error"></gwt:radioButton>
+			</div>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

@@ -12,22 +12,20 @@
 
 	<center>
 	<!-- 		Component use sample  -->
-		<widgets:styledPanel id="mainPanel">
-			<gwt:HTMLPanel id="panel" styleName="center">
-				<faces:label id="labelText" text="Click on the images to have information"/>
+		<div id="panel" class="baseWrapper image center">
+			<faces:label id="labelText" text="Click on the images to have information"/>
+			<br />
+					<widgets:storyboard id="imagePanel">
+						<faces:image id="colosseum" url="${showcaseCoreResources.coliseu}" styleName="faces-Image imageNormal" onSelect="imageController.detailColosseum" tooltip="Colosseum"/>
+						<faces:image id="tower" url="${showcaseCoreResources.eiffel}" styleName="faces-Image imageNormal" onSelect="imageController.detailTower" tooltip="Eiffel Tower"/>
+						<faces:image id="statue" url="${showcaseCoreResources.liberty}" styleName="faces-Image imageNormal" onSelect="imageController.detailStatue" tooltip="Statue of Liberty"/>
+					</widgets:storyboard>				
+			<div id="labelPanel">
+				<faces:label id="labelTitleImage" styleName="imagelabelTitleImage"/>
 				<br />
-						<widgets:storyboard id="imagePanel">
-							<faces:image id="colosseum" url="${showcaseCoreResources.coliseu}" styleName="faces-Image imageNormal" onSelect="imageController.detailColosseum" tooltip="Colosseum"/>
-							<faces:image id="tower" url="${showcaseCoreResources.eiffel}" styleName="faces-Image imageNormal" onSelect="imageController.detailTower" tooltip="Eiffel Tower"/>
-							<faces:image id="statue" url="${showcaseCoreResources.liberty}" styleName="faces-Image imageNormal" onSelect="imageController.detailStatue" tooltip="Statue of Liberty"/>
-						</widgets:storyboard>				
-				<div id="labelPanel">
-					<faces:label id="labelTitleImage" styleName="imagelabelTitleImage"/>
-					<br />
-					<faces:label id="labelInformImage" styleName="imagelabelInformImage"/>
-				</div>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>	
+				<faces:label id="labelInformImage" styleName="imagelabelInformImage"/>
+			</div>
+		</div>	
 
 		<!-- 		Component description -->
 		<showcase:info 

@@ -8,19 +8,31 @@
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	title="Breadcrumb"> 
 
+	<style>
+		.viewPanel
+		{
+			height: 300px;
+			width: 300px;
+		}
+	
+	</style>
+
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="wrapper">
-<!-- 			<faces:breadcrumb id="breadcrumb" viewContainer="viewContainer" removeInactiveItems="true"> -->
-<!-- 				<faces:breadcrumbItem name="1" viewId="swapView1"><faces:labelText text="View 1"/></faces:breadcrumbItem> -->
-<!-- 				<faces:breadcrumbItem name="2" viewId="swapView2"><faces:labelText text="View 2"/></faces:breadcrumbItem> -->
-<!-- 				<faces:breadcrumbItem name="3" viewId="swapView3"><faces:labelText text="View 3"/></faces:breadcrumbItem> -->
-<!-- 			</faces:breadcrumb> -->
-			
+		<div id="panel" class="baseWrapper breadcrumb">
+			<faces:breadcrumb id="breadcrumb" viewContainer="viewContainer" removeInactiveItems="true">
+				<faces:divider></faces:divider>
+				<faces:breadcrumbItem name="1" viewId="view1"><faces:labelText text="View 1"/></faces:breadcrumbItem>
+				<faces:breadcrumbItem name="2" viewId="view2"><faces:labelText text="View 2"/></faces:breadcrumbItem>
+				<faces:breadcrumbItem name="3" viewId="view3"><faces:labelText text="View 3"/></faces:breadcrumbItem>
+			</faces:breadcrumb>
+		</div>
+		
+		<div id="viewPanel" class="viewPanel">
 			<faces:simpleViewContainer id="viewContainer">
-				<faces:view name="swapView1"/>
+				<faces:view name="view1"/>
 			</faces:simpleViewContainer>
-		</widgets:styledPanel>
+		</div>
 
 	<!-- Component description -->
 	<showcase:info 

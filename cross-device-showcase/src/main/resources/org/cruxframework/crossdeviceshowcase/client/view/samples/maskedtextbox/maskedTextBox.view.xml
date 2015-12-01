@@ -12,13 +12,11 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="panel">
-			<gwt:flowPanel id="flowPanel" styleName="center">
-				<faces:label id="ipLabel" text="Enter a date:" style="margin:10px"/>
-				<widgets:maskedTextBox id="dateInput" formatter="maskedDateFormatter" styleName="gwt-TextBox crux-MaskedTextBox dateInput smallWidthInput" />
-				<faces:button id="btnParseDate" onSelect="maskedTextBoxController.readDate" text="Check"/>
-			</gwt:flowPanel>
-		</widgets:styledPanel>
+		<div id="panel" class="baseWrapper maskedTextBox center">
+			<faces:label id="ipLabel" text="Enter a date:" style="margin:10px"/>
+			<widgets:maskedTextBox id="dateInput" formatter="maskedDateFormatter" styleName="gwt-TextBox crux-MaskedTextBox dateInput smallWidthInput" />
+			<faces:button id="btnParseDate" onSelect="maskedTextBoxController.readDate" text="Check"/>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

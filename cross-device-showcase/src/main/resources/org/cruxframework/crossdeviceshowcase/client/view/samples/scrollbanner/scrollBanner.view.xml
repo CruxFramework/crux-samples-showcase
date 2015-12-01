@@ -12,14 +12,14 @@
 
 	<center>
 	<!-- 		Component use sample  -->
-		<gwt:verticalPanel id="panel">
+		<div id="panel" class="baseWrapper scrollBanner">
 			<widgets:scrollBanner id="scrollBanner" messageScrollingPeriod="5000" styleName="crux-ScrollBanner scrollBannerWidth">
 				<widgets:message>Three Laws of Asimov</widgets:message>
 				<widgets:message>1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.</widgets:message>
 				<widgets:message>2. A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.</widgets:message>
 				<widgets:message>3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.</widgets:message>
 			</widgets:scrollBanner>
-		</gwt:verticalPanel>
+		</div>
 
 		<!-- 		Component description -->
 		<showcase:info 

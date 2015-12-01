@@ -10,9 +10,37 @@
 	onLoad="menuController.onLoad"
 	title="Menu"> 
 
+	<style>
+	.menuItem-image-style
+	{
+		height: 25px;
+		width: 25px;
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+<!-- 	Large -->
+.menuItem-image-style
+{
+	height: 25px;
+	width: 25px;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+<!-- Small -->
+.menuItem-image-style
+{
+	height: 25px;
+	width: 25px;
+	vertical-align: middle;
+	margin-right: 13px;
+}
+
+	</style>
+
+
 	<center>	
-		<widgets:styledPanel id="mainPanel">
-			<gwt:flowPanel id="innerPanel" styleName="center">
+		<div id="panel" class="baseWrapper menu center">
 				<faces:menu id="menu" largeType="VerticalAccordion" smallType="VerticalAccordion" style="margin-bottom: 10px; display: inline-block">
 					<faces:item>
 						<faces:itemWidget>
@@ -43,8 +71,7 @@
 					</gwt:listBox>
 				</gwt:flowPanel>
 				
-			</gwt:flowPanel>
-		</widgets:styledPanel>
+		</div>
 		
 <!-- 		Component description -->
 		<showcase:info 

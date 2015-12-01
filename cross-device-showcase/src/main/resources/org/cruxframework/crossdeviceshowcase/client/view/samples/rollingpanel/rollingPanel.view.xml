@@ -11,10 +11,22 @@
 	onLoad="rollingPanelController.onLoad"
 	title="RollingPanel"> 
 
+	<style>
+		.faces-RollingPanel
+		{
+			max-width:500px;
+		}
+		
+		.showcase-rollingPanel
+		{
+			max-width:500px;
+		}
+	</style>
+
 	<center>
 	
-		<widgets:styledPanel id="imagesRollingPanel">
-			<gwt:flowPanel id="panel">
+		<div id="panel" class="baseWrapper rollingPanel">
+		
 				<!-- Inserting image widgets to the RollingPanel component -->
 				<faces:label id="label1" text="This is a Image RollingPanel" styleName="faces-Label margin-bottom"/>
 				<faces:rollingPanel id="rollingPanelImages" tooltip="Sports" styleName="faces-RollingPanel showcase-RollingPanel" >
@@ -29,8 +41,8 @@
 					<faces:image id="swimming" url="${showcaseCoreResources.swimming}" styleName="faces-Image rollingPanel-image"/>
 					<faces:image id="volleyball" url="${showcaseCoreResources.volleyball}" styleName="faces-Image rollingPanel-image"/>
 				</faces:rollingPanel>
-			</gwt:flowPanel>
-		</widgets:styledPanel>
+		
+		</div>
 		
 		<widgets:styledPanel id="customRollingPanel">
 			<gwt:flowPanel id="innerPanel">

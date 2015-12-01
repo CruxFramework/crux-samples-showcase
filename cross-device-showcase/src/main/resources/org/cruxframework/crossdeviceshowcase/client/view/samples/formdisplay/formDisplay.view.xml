@@ -11,7 +11,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="panel">
+		<div id="panel" class="baseWrapper formDisplay">
 			<widgets:formDisplay id="form">
 				<widgets:entry label="Framework:">
 					<gwt:textBox id="frameworkTextBox" value="Crux Framework" />
@@ -33,7 +33,7 @@
 					<faces:button id="btn" text="Clean Fields" onSelect="formDisplayController.clearFields" />
 				</widgets:entry>
 			</widgets:formDisplay>
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

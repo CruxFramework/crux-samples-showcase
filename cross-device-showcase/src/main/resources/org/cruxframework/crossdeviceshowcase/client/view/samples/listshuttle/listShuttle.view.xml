@@ -12,12 +12,10 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="panel" styleName="listShuttlePanel">
-			<gwt:flowPanel id="wrapper" styleName="center">
-				<faces:label id="labelChoosePlayers" text="Build your team with players available:" />
-				<widgets:listShuttle id="listShuttle" availableHeader="Availables" selectedHeader="Scaled" />
-			</gwt:flowPanel>
-		</widgets:styledPanel>
+		<div id="panel" class="baseWrapper listShuttle center">
+			<faces:label id="labelChoosePlayers" text="Build your team with players available:" />
+			<widgets:listShuttle id="listShuttle" availableHeader="Availables" selectedHeader="Scaled" />
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

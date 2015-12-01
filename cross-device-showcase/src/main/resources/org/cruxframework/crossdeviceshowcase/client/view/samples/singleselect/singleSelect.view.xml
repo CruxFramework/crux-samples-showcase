@@ -11,8 +11,7 @@
 
 	<center>
 		<!-- 		Component use sample  -->
-		<widgets:styledPanel id="panel">
-			<gwt:HTMLPanel styleName="center" id="parentPanel">
+		<div id="panel" class="baseWrapper singleSelect">
 				<faces:label id="labelText" text="Choose one of the departments and then select one of the listed employees." />
 				<br />
 					<div id="panelDepartmentsEmployers">
@@ -27,8 +26,7 @@
 							visibleItemCount="6" width="150px"
 							onChange="singleSelectController.selectedItemEmployees" />							
 					</div>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<!-- 		Component description -->
 		<showcase:info 

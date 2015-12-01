@@ -69,7 +69,7 @@
 	
 	<center>
 		<!-- Component use sample -->
-		<gwt:flowPanel id="panel">
+		<div id="panel" class="baseWrapper widgetList">
 			<faces:widgetList id="widgetList" itemVar="car" dataProvider="dataProvider">
 				<faces:widget>
 					<gwt:flowPanel id="wrapper" styleName="line">
@@ -80,7 +80,7 @@
 			</faces:widgetList>
 				    
 		    <faces:swapPager id="pagerWidgetList" pageable="widgetList" visible="true" />
-		</gwt:flowPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info title="Data Grid"

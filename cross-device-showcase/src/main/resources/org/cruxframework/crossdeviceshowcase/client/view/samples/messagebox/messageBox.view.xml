@@ -11,14 +11,14 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="styled">
+		<div id="panel" class="baseWrapper messageBox">
 			<gwt:flowPanel id="flow" width="100%">
 				<faces:button id="showMessageBtnInfo" text="Show Info" styleName="faces-Button messageBox-Button" onSelect="messageBoxController.showInfo" />
 				<faces:button id="showMessageBtnSuccess" text="Show Success" styleName="faces-Button messageBox-Button" onSelect="messageBoxController.showSuccess" />
 				<faces:button id="showMessageBtnWarn" text="Show warn" styleName="faces-Button messageBox-Button" onSelect="messageBoxController.showWarn" />
 				<faces:button id="showMessageBtnError" text="Show Error" styleName="faces-Button messageBox-Button" onSelect="messageBoxController.showError" />
 			</gwt:flowPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

@@ -11,7 +11,9 @@
 
 	<center>
 		
-		<widgets:downloadButton id="downloadButton" text="Download" onSelect="downloadButtonController.download"/>
+		<div id="panel" class="baseWrapper downloadButton">
+			<widgets:downloadButton id="downloadButton" text="Download" onSelect="downloadButtonController.download"/>
+		</div>
 		
 		<showcase:info 
 			title="Download Button" 

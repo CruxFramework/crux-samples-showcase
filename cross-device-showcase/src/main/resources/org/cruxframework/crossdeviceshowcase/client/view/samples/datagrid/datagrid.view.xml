@@ -83,19 +83,11 @@
 }	
 	</style>
 	
-	
 	<crux:dataProvider id="dataProviderPerson" dataObject="personGrid" onLoadData="dataGridController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
-
-	<style>
-		.gridWrapper
-		{
-			width:601px;
-		}
-	</style>
 
 	<center>
 		<!-- Component use sample -->
-		<div id="panel" class="gridWrapper">
+		<div id="panel" class="baseWrapper dataGrid">
 			 <faces:dataGrid id="grid" itemVar="personGrid" dataProvider="dataProviderPerson" rowSelectStrategy="radioButton">
 				<faces:columnGroup key="nameLastName" header="${datagrid_messages.basicinfo}">
 					<faces:column key="name" header="${datagrid_messages.name}" property="@{personGrid.name}" sortable="true"/>
@@ -117,7 +109,6 @@
 				<faces:button id="btnRollback" text="${datagrid_messages.rollback}" onSelect="dataGridController.onSelectRollback"/>
 		    </gwt:flowPanel>
 		</div>
-		
 
 		<!-- Component description -->
 		<showcase:info title="Data Grid"

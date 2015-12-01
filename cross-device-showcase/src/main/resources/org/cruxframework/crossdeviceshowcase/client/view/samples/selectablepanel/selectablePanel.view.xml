@@ -33,8 +33,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="panel1">
-			<gwt:HTMLPanel id="html" styleName="center">
+		<div id="panel" class="baseWrapper selectablePanel">
 				<faces:selectablePanel id="selectablePanel" styleName="selectablePanel">
 					<faces:label id="lbl" text="${messages_selectablePanel.text}"/>
 				</faces:selectablePanel>
@@ -46,8 +45,7 @@
 					<gwt:radioButton name="color" onChange="selectablePanelController.setStateWarning" id="radioWarning" text="Warning"/>
 					<gwt:radioButton name="color" onChange="selectablePanelController.setStateError" id="radioError" text="Error"/>
 				</div>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

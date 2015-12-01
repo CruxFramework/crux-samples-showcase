@@ -11,8 +11,7 @@
 	title="SortableList"> 
 
 	<center>
-		<widgets:styledPanel id="panel">
-			<gwt:HTMLPanel id="innerPanel" styleName="center">
+		<div id="panel" class="baseWrapper sortableList">
 				<faces:label id="labelTitleText" text="Use the component sort buttons to reorder its tasks" styleName="faces-Label sortableList-item heading" />
 				<widgets:sortableList id="sortableList" header="Tasks for the day">
 					<widgets:itemWidget>
@@ -36,8 +35,7 @@
 				<gwt:textBox id="textBoxActivity" styleName="gwt-TextBox sortableList-input" />
 				<faces:button id="btnAddActivity" text="Add" onSelect="sortableListController.addActivity" />
 				<faces:button id="btnRemoveActivity" text="Remove" onSelect="sortableListController.removeActivity" />
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

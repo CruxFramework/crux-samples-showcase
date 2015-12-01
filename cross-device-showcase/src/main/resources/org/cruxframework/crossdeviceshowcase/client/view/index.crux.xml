@@ -114,7 +114,7 @@
 			<!-- Implement it later... -->
 			<!-- <widgets:menuEntry label="Object Cloner" targetView="objectcloner"/> -->
 			<!-- Implement it later... -->
-			<!-- <widgets:menuEntry label="Simple Database" targetView="simpleDatabase"/> -->
+			<widgets:menuEntry label="Offline Database" targetView="offlineDatabase"/>
 		
 			<widgets:menuSection label="${messages_showcase.miscellaneousElements}" />
 			<widgets:menuEntry label="Timer" targetView="timer"/>

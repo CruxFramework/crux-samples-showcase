@@ -10,12 +10,15 @@
 	title="${messages_simpleViewContainer.title}"> 
 	
 	<center>
-		<faces:simpleViewContainer id="viewContainer" width="600px" height="400px">
-			<faces:view name="view1"/>
-		</faces:simpleViewContainer>
-		<br />
-		<widgets:button id="buttonChangeView" text="${messages_simpleViewContainer.nextView}" onSelect="simpleViewContainerController.swapView"/>
 	
+		<div id="panel" class="baseWrapper simpleViewContainer">
+			<faces:simpleViewContainer id="viewContainer" width="600px" height="400px">
+				<faces:view name="view1"/>
+			</faces:simpleViewContainer>
+			<br />
+			<widgets:button id="buttonChangeView" text="${messages_simpleViewContainer.nextView}" onSelect="simpleViewContainerController.swapView"/>
+		</div>
+		
 		<showcase:info 
 		title="${messages_simpleViewContainer.title}"
 		libraryPanel-visible="true"

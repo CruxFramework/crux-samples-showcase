@@ -97,7 +97,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="wrapper">
+		<div id="panel" class="baseWrapper pagers">
 			<gwt:flowPanel id="pagerWrapper" styleName="pagerWrapper">
 				<gwt:flowPanel id="dataProviderWrapper" styleName="dataProviderWrapper">
 				
@@ -150,7 +150,7 @@
 			    </gwt:flowPanel>
 			</gwt:flowPanel>
 			
-		</widgets:styledPanel>
+		</div>
 
 	<!-- Component description -->
 	<showcase:info 

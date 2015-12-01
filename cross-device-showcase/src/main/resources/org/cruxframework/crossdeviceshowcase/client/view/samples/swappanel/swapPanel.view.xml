@@ -13,8 +13,7 @@
 	title="SwapPanel"> 
 
 	<center>
-		<widgets:styledPanel id="mainPanel">
-			<gwt:flowPanel id="innerPanel">
+		<div id="panel" class="baseWrapper swapPanel">
 				<faces:swapPanel id="swapPanel" styleName="faces-SwapPanel" animation="bounce" onSwap="swapPanelController.showMessage">
 					<widgets:formDisplay id="form" visible="true" height="300px" width="300px">
 						<widgets:entry label="Name: ">
@@ -59,8 +58,7 @@
 					</gwt:listBox>
 					<faces:button id="btnSwapWidget" text="Swap Widget" styleName="faces-Button sp-button-margin" onSelect="swapPanelController.swapPanel"/>
 				</gwt:flowPanel>
-			</gwt:flowPanel>	
-		</widgets:styledPanel>	
+		</div>	
 
 <!-- 		Component description -->
 		<showcase:info 

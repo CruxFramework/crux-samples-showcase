@@ -11,6 +11,7 @@
 
 	<center>
 	<!-- 		Component use sample  -->
+	<div id="panel" class="baseWrapper promoBanner">
 		<widgets:promoBanner id="promobanner"
 			largeBannersHeight="312px" smallBannersHeight="200px"
 			autoTransitionInterval="500000" transitionDuration="450" styleName="promoBannerWidth">
@@ -24,7 +25,7 @@
 				title="Live" text="To live is the rarest thing in the world. Most people exist, that´s all.  (Oscar Wilde)"
 				image="${showcaseCoreResources.banner3promo}" />
 		</widgets:promoBanner>
-
+	</div>
 		<!-- 		Component description -->
 		<showcase:info 
 			title="PromoBanner" 

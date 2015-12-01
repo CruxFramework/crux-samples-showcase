@@ -12,8 +12,7 @@
 	title="TopMenuDisposal">
 
 	<center>	
-		<widgets:styledPanel id="mainPanel">
-			<gwt:flowPanel id="innerPanel">			
+		<div id="panel" class="baseWrapper topMenuDisposal">			
 				
 				<gwt:flowPanel id="topMenuDisposalPanel" styleName="faces-TopMenuDisposal simulate-screen">
 					<faces:topMenuDisposal id="topMenuDisposal" historyControlPrefix="topview">
@@ -49,8 +48,7 @@
 					<faces:image id="topMenuDisposal_img" url="${showcaseCoreResources.topMenuDisposal}" styleName="faces-image mobileDisposal"/>
 				</gwt:flowPanel>
 					
-			</gwt:flowPanel>
-		</widgets:styledPanel>
+		</div>
 		
 		<!-- 		Component description -->
 		<showcase:info 
