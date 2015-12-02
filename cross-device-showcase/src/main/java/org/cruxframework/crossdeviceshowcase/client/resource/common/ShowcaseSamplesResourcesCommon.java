@@ -25,7 +25,56 @@ import com.google.gwt.resources.client.DataResource;
  */
 public interface ShowcaseSamplesResourcesCommon extends ClientBundle
 {
-	@Source("maskedLabelCommon.css")
+	@Source(
+		{
+		"anchorCommon.css",
+		"breadcrumbCommon.css",
+		"carouselCommon.css",
+		"colorpickerdialogCommon.css",
+		"comboboxCommon.css",
+		"confirmCommon.css",
+		"cruxbuttonCommon.css",
+		"cruxlabelCommon.css",
+		"datagridCommon.css",
+		"dateCommon.css",
+		"dialogboxCommon.css",
+		"dialogviewcontainerCommon.css",
+		"downloadbuttonCommon.css",
+		"fileuploaderCommon.css",
+		"filterCommon.css",
+		"formdisplayCommon.css",
+		"gwttextboxCommon.css",
+		"imageCommon.css",
+		"listshuttleCommon.css",
+		"maskedlabelCommon.css",
+		"maskedtextboxCommon.css",
+		"menuCommon.css",
+		"messageboxCommon.css",
+		"numbertextboxCommon.css",
+		"offlinedatabaseCommon.css",
+		"pagersCommon.css",
+		"progressboxCommon.css",
+		"promobannerCommon.css",
+		"restCommon.css",
+		"rollingpanelCommon.css",
+		"scrollbannerCommon.css",
+		"selectablepanelCommon.css",
+		"sideMenuDisposalCommon.css",
+		"simpleviewcontainerCommon.css",
+		"singleselectCommon.css",
+		"slideshowCommon.css",
+		"sortablelistCommon.css",
+		"storyboardCommon.css",
+		"styledpanelCommon.css",
+		"swappanelCommon.css",
+		"swapviewcontainerCommon.css",
+		"tabpanelCommon.css",
+		"tabviewcontainerCommon.css",
+		"textareaCommon.css",
+		"timerCommon.css",
+		"topmenudisposalCommon.css",
+		"widgetlistCommon.css"
+		})
 	CssResource cssShowcaseSamplesCommon();
 	
 	@Source("guile.png")

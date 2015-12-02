@@ -679,17 +679,6 @@ body
 	background-color: #FFFACD;
 }
 
-.anchorWrapper
-{ 	
-	margin: 6%;
-	padding: 6%;
-	border-style: dotted !important;
-	border-width: thin;
-	border-color: #1c5994 !important;
-	vertical-align: middle !important;
-	text-align:center;
-}
-
 .horizontalSwapViewPanel1
 {
 	width: 700px; 
