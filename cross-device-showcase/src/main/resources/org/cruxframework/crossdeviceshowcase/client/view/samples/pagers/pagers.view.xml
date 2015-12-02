@@ -38,8 +38,8 @@
 		.scrollablePagerWrapper .faces-WidgetList
 		{
 		    border: 1px solid #ccc;
-		    padding: 5px;
-		    min-height: 135px;
+		    padding: 8px;
+    		height: 90px !important; /* TODO: diminuir o height que está sendo setado dinamicamente */
 		}
 
 		
@@ -76,19 +76,7 @@
 		    background: #efefef;
 		}
 		
-		.swapPagerWrapper .faces-SwapPanel 
-		{
-		    min-height: 75px;
-		    width: 150px;
-		}
 		
-		
-		.swapPagerWrapper .faces-WidgetList .faces-Pager .faces-SwapPanel,
-		.swapPagerWrapper .faces-WidgetList .faces-Pager .nextPanel,
-		.swapPagerWrapper .faces-WidgetList .faces-Pager .backPanel
-		{
-			display: block;
-		}
 				
 	</style>
 
