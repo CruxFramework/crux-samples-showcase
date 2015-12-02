@@ -47,7 +47,7 @@
 					<module>org.cruxframework.crossdeviceshowcase.CrossDeviceShowcase</module>
 					<!-- <style>DETAILED</style> -->
 					<runTarget>index.html</runTarget>
-					<noServer>true</noServer>
+<!-- 					<noServer>true</noServer> -->
 					<strict>true</strict>
               		<extraJvmArgs>-Xmx1024M -Xss1024k</extraJvmArgs>
 					<!-- <extraJvmArgs>-Xmx1024M -Xss1024k -Xdebug -Xrunjdwp:transport=dt_socket,address=3331,server=y,suspend=y</extraJvmArgs> -->
@@ -58,10 +58,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.1</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
+					<compilerArgument>-proc:none</compilerArgument>
 				</configuration>
 			</plugin>
 			<!-- Crux Plugin -->
@@ -73,8 +74,9 @@
 					<execution>
 		                <goals>
 		                    <goal>generate-xsds</goal>
+		                    <goal>apt</goal>
 							<!-- <goal>generate-html-snapshots</goal> -->
-		                    <goal>process-crux-resources</goal>
+<!-- 		                    <goal>process-crux-resources</goal> -->
 		                </goals>
 					</execution>
 				</executions>
