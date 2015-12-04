@@ -36,3 +36,10 @@
   display: table-cell;
   vertical-align: middle;
 }
+
+.faces-WidgetList .faces-SwapPanel .line > *
+{
+	display: table-cell;
+	vertical-align: middle;
+	margin: 6px 8px;
+}
