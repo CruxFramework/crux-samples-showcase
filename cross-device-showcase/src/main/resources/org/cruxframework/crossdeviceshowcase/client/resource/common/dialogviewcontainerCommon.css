@@ -1,1 +1,13 @@
 @external *;
+
+.errorMessage
+{
+	color: red;
+	font-weight: bold;
+}
+
+.successMessage
+{
+	color: green;
+	font-weight: bold;
+}

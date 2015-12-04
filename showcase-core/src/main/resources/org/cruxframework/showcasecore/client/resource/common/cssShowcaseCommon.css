@@ -1,6 +1,7 @@
 @external *;
 
 /**** Sintax Highlighter ****/
+
 pre, code{
     box-shadow:none !important;
     color:#1A1A1A !important;
@@ -25,17 +26,12 @@ pre code *, pre code span
     text-decoration:none;
 }
 
-.choosenColor
-{
-	margin-bottom:10px;
-}
+/**** Layout ****/
 
 .hide
 {
 	display:none;
 }
-
-/**** Layout ****/
 
 .textDescTitle
 {
@@ -147,23 +143,6 @@ pre code *, pre code span
 	display: -ms-flex;
 	display: -ms-flexbox;
 	display:flex;
-}
-
-.simulate-screen
-{
-	border:1px solid #aaa;
-	box-shadow:0 1px 3px rgba(0,0,0,0.2);
-}
-
-.scope-confirm .gwt-TextBox
-{
-	margin-bottom:0;
-}
-
-.heading
-{
-	font-size:18px;
-	margin:10px 0;
 }
 
 /* Log Area */

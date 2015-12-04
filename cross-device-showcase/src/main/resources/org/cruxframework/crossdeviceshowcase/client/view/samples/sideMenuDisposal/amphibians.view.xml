@@ -6,13 +6,13 @@
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase" 
-	useResource="showcaseCoreResources"
+	useResource="showcaseSamplesResources"
 	title="Amphibians"> 
 
 	<center>
 		<gwt:flowPanel id="innerPanel">
 			<faces:label id="title" text="Amphibians" styleName="faces-Label disposal-views-title"/>
-			<faces:image id="image" url="${showcaseCoreResources.amphibians}" styleName="faces-Image disposal-image"/>
+			<faces:image id="image" url="${showcaseSamplesResources.amphibians}" styleName="faces-Image disposal-image"/>
 			<faces:html id="textPpanel" styleName="disposal-views-textPanel">
 				<p>
 					Amphibians are ectothermic, tetrapod vertebrates of the class Amphibia. Modern amphibians are all 

@@ -1,5 +1,6 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.menu;
 
+import org.cruxframework.crossdeviceshowcase.client.resource.common.ShowcaseSamplesResourcesCommon;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -11,7 +12,7 @@ import org.cruxframework.crux.smartfaces.client.menu.Menu;
 import org.cruxframework.crux.smartfaces.client.menu.MenuItem;
 import org.cruxframework.crux.smartfaces.client.menu.Type.LargeType;
 import org.cruxframework.crux.smartfaces.client.menu.Type.SmallType;
-import org.cruxframework.showcasecore.client.resource.common.ShowcaseResourcesCommon;
+
 import com.google.gwt.user.client.ui.ListBox;
 
 @Controller("menuController")
@@ -21,7 +22,7 @@ public class MenuController
 	private MyWidgetAccessor myWidgetAccessor;
 	
 	@Inject
-	private ShowcaseResourcesCommon resources;
+	private ShowcaseSamplesResourcesCommon resources;
 
 	/** Calls methods at menu view on Load moment. */
 	@Expose
@@ -115,7 +116,7 @@ public class MenuController
 		this.myWidgetAccessor = myWidgetAccessor;
 	}
 
-	public void setResources(ShowcaseResourcesCommon resources) 
+	public void setResources(ShowcaseSamplesResourcesCommon resources) 
 	{
 		this.resources = resources;
 	}

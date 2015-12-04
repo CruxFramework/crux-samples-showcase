@@ -1,1 +1,9 @@
 @external *;
+
+.mobileDisposal
+{
+	width: 90% !important;
+	height: 354px !important;
+	margin-top: 20px;
+	background-size: 100% !important; 
+}

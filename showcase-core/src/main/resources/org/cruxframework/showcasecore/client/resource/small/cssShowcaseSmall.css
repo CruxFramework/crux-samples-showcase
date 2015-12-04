@@ -4,13 +4,6 @@
 @url svgIconCode svgIconCode;
 @url svgIconMenu svgIconMenu;
 @url svgIconArrow svgIconArrow;
-@url svgIconPresent svgIconPresent;
-@url banner1promoUrl banner1promo;
-@url banner1promoUr2 banner1promo;
-@url banner1promoUr3 banner1promo;
-@url imageColiseuUrl coliseu;
-@url imageEiffelUrl eiffel;
-@url imageLibertyUrl liberty;
 @url mundiUrl mundi;
 @url logoSmallUrl logoSmall;
 @url noiseUrl noise;
@@ -225,7 +218,6 @@ body
 	margin-bottom:20px;
 }
 
-
 .mainWelcome
 {
 	width: 100%;
@@ -278,8 +270,6 @@ body
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
-
 
 .activeView
 {
@@ -377,11 +367,6 @@ body
 { 
 	height:auto !important;
 }
-.dateInput
-{
-	width:60%;
-	text-align:center;
-}
 
 .btn-Group
 {
@@ -436,6 +421,7 @@ body
 {
 	box-shadow:none;
 }
+
 .styledWrap
 {
 	margin:10px 0 3px;
@@ -443,127 +429,6 @@ body
 .styledWrap > .rs-left:first-child
 {
 	margin-bottom:8px;
-}
-
-.productImage
-{
-	width:80px;
-	height:70px;
-	border:1px solid #ccc;
-	background:svgIconPresent no-repeat center #eee;
-	background-size:32px auto;
-	float:left;
-}
-.productName
-{
-	font-weight:bold;
-	color:#222;
-	text-align:center;
-	margin:0px auto 10px 7px;
-	float:left;
-	font-size:18px;
-}
-.productPrice
-{
-	color:#78a32e;
-	font-weight:bold;
-	font-size:18px;
-	text-align:center;
-	margin:27px auto 0 -83px;
-	float:left;
-	font-size:16px;
-}
-.productButton
-{
-	background:#4396c6;
-	border:none;
-	box-shadow:none;
-	color:#fff;
-	font-wight:bold;
-	padding:5px 8px;
-	border-radius:4px;
-	float:right;
-	width:70px;
-}
-.storeItem
-{
-	margin-right:0;
-	margin-bottom:10px;
-}
-
-.banner1
-{
-	background:#acdf53;
-}
-
-.banner2
-{
-	background:#dfc053;
-}
-
-.banner3
-{
-	background:#bb596c;
-}
-
-.promoBannerWidth
-{
-	width:90%;
-}
-
-.scrollBannerWidth
-{
-	width:90%;
-}
-
-/* MessageBox */
-.messageBox-Button
-{
-	margin-bottom: 3px !important;
-}
-
-
-/* Image */
-.imageNormal
-{
-	width:150px !important;
-	height:100px !important; 
-	margin:5px;
-}
-
-.imageBig
-{
-	width:260px !important;
-	height:185px !important; 
-	margin:5px;
-}
-
-.imageSmall
-{
-	width:100px !important;
-	height:80px !important; 
-	margin:5px;
-	opacity:0.40;
-	-moz-opacity: 0.40;
-	filter: literal("alpha(opacity=40);");
-}
-
-
-.imagelabelInformImage
-{
-	text-align: justify;
-	color:#1c5994;
-	width: 95%;
-}
-
-.imagelabelTitleImage
-{
-	text-align: center;
-	font-size: large;
-	font-weight: bold;
-	margin-bottom: 1%;
-	color:#1c5994;
-	width: 100%;
 }
 
 .topMenuDisposalTitle
@@ -654,35 +519,6 @@ body
 	opacity:0.75;
 	-moz-opacity: 0.75;
 	filter: literal("alpha(opacity=75);");
-}
-
-.dialogBoxPanel
-{
-	vertical-align: middle;
-	text-align: center;
-	padding: 10px;
-}
-.dialogBoxPanelButton
-{
-	margin:5px 2px !important;
-}
-
-.errorMessage
-{
-	color: red;
-	font-weight: bold;
-}
-
-.successMessage
-{
-	color: green;
-	font-weight: bold;
-}
-
-.panelResultData
-{
-	font-weight: bold;
-	margin-top: 3%;
 }
 
 .topMenuDisposalTitle
@@ -776,31 +612,6 @@ body
 	filter: literal("alpha(opacity=75);");
 }
 
-.dialogViewContainer
-{
-	width:100%;
-	height:100%;
-}
-
-.dialogViewContainerResult
-{
-	margin: 12% 0;
-  width: 256px;
-  text-align: center;
-}
-
-.radioPanel
-{
-	height: 80px;
-}
-
-.timerPanel
-{
-	text-align:center;
-	box-shadow: 1px 1px 8px #888888;
-	border-radius: 3px;
-}
-
 .menuEntriesContainer .menuSectionEntries:nth-child\(12\) .menuSectionEntriesContent .menuEntry:nth-child\(3\)
 /* .menuEntriesContainer .menuSectionEntries:nth-child\(7\) .menuSectionEntriesContent .menuEntry:nth-child\(3\) */
 {
@@ -811,10 +622,6 @@ body
 	min-width: 0px !important;
 }
 
-.topMenuDisposalPanel{
-	display: none !important;
-}
-
 .explanationMobile{
 	display: block;
 	text-align: justify;
@@ -822,178 +629,6 @@ body
 
 .crux-TopMenuDisposal .headerPanel {
 	display: none;
-}
-
-
-/* Menu */
-.menuItem-wrapper
-{
-	text-align: left;
-}
-
-.menuItem-label-style
-{
-	display: inline !important;
-	vertical-align: middle;
-	margin-right: 5px;
-	color: #1c5994 !important;
-}
-
-/* Disposal */
-.mobileDisposal
-{
-	width: 90% !important;
-	height: 354px !important;
-	margin-top: 20px;
-	background-size: 100% !important; 
-}
-
-.unselected-button
-{
-	background: gray !important;
-	border: 1px solid gray !important;
-	color: lightgrey !important;
-}
-
-
-/* Confirm */
-.confirm-label
-{
-	font-size: 20px;
-	margin-bottom: 20px;
-}
-
-
-/* RollingPanel */
-.showcase-RollingPanel, .showcase-cust-RollingPanel
-{
-	width: 250px;
-}
-
-.rollingPanel-panel
-{
-	margin-bottom: 50px;
-	display: block !important;
-}
-
-.rollingPanel-image
-{
-	width: 300px !important;
-	height: 180px !important;
-	background-size: 100% !important;
-}
-
-.saleItem .faces-Image
-{
-	height: 120px;
-	width: 120px;
-	margin: 5px;
-}
-
-.saleItem .faces-Label
-{
-	font-size: 19px;
-	margin-top: 10px;
-}
-
-.saleItem .label-price
-{
-	font-size: 40px;
-	color: #e70101;
-	height: 50px;
-	background-color: rgba(255, 255, 255, 1);
-	font-family: monospace;
-}
-
-.saleItem-wrapper-panel
-{
-	height: 230px;
-	width: 200px;
-	border: solid 2px white;
-	margin: 0px 0.5px;
-	background-color: #eee;
-	border-radius: 10px;
-	border-bottom: solid 3px #c8c8c8;
-	border-right: solid 3px #c8c8c8;
-	overflow: hidden;
-}
-
-/* SwapViewContainer */
-.showcase-swapViewContainer
-{
-	width: 100%;
-	height: 500px !important;
-}
-
-.swapView-image
-{
-	width: 280px !important;
-	height: 391px !important;
-	background-size: 100% !important;
-}
-
-.swapView-topPanel
-{
-	background-color: rgb(231, 1, 1);
-	padding: 6px;
-}
-
-.swapView-topPanel-title
-{
-	color: white;
-	font-size: 30px;
-	font-weight: 900;
-	display: inline;
-}
-
-.swapView-topPanel-logo
-{
-	vertical-align: middle;
-	width: 66px !important;
-	height: 75px !important;
-	background-size: 100% !important;
-}
-
-.swapView-topPanel-login
-{
-	color: white;
-	font-size: 14px;
-	display: inline;
-	vertical-align: middle;
-}
-
-.swapView-buy-button
-{
-	background-color: #e70101 !important;
-	border: 1px solid #bc0505!important;
-	border-radius: 6px !important;
-	font-size: 15px !important;
-	width: 140px;
-}
-
-.swapView-back-button
-{
-	border-radius: 6px !important;
-	font-size: 15px !important;
-	width: 140px;
-	margin-bottom: 8px;
-}
-
-
-/* SortableList */
-.sortableList-item
-{
-	margin: 10px 0px;
-}
-
-.sortableList-input
-{
-	width :230px;
-}
-
-.showcase-slider
-{
-/* 	height: 355px !important; */
 }
 
 .slider-panel

@@ -47,11 +47,10 @@
 					<module>org.cruxframework.crossdeviceshowcase.CrossDeviceShowcase</module>
 					<!-- <style>DETAILED</style> -->
 					<runTarget>index.html</runTarget>
-<!-- 					<noServer>true</noServer> -->
+					<noServer>true</noServer>
 					<strict>true</strict>
               		<extraJvmArgs>-Xmx1024M -Xss1024k</extraJvmArgs>
 					<!-- <extraJvmArgs>-Xmx1024M -Xss1024k -Xdebug -Xrunjdwp:transport=dt_socket,address=3331,server=y,suspend=y</extraJvmArgs> -->
-
            		</configuration>	
             </plugin>
 			<!-- Compile -->
@@ -76,7 +75,7 @@
 		                    <goal>generate-xsds</goal>
 		                    <goal>apt</goal>
 							<!-- <goal>generate-html-snapshots</goal> -->
-<!-- 		                    <goal>process-crux-resources</goal> -->
+		                    <goal>process-crux-resources</goal>
 		                </goals>
 					</execution>
 				</executions>

@@ -1,1 +1,39 @@
 @external *;
+
+.carousel .backPanel,
+.carousel .nextPanel,
+.carousel .faces-SwapPanel
+{
+  display: table-cell;
+  vertical-align: baseline;
+}
+
+.carousel .faces-Pager.faces-SwapPager
+{
+  display: table-row;
+  width: 300px;
+}
+
+.carousel
+{
+  width: 80%;
+}
+
+.carousel .imageFlag
+{
+    max-width:80px;
+    max-height:80px;
+    width: auto;
+    height: auto;
+}	
+
+.carousel .faces-Pager .faces-SwapPanel
+{
+  height: 150px !important; 
+}
+
+.carousel .faces-Pager .faces-SwapPanel .item
+{
+  width: 150px !important;
+  height: auto !important;
+}

@@ -6,13 +6,13 @@
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
-	useResource="showcaseCoreResources"
+	useResource="showcaseSamplesResources"
 	title="Mammals"> 
 
 	<center>		
 			<gwt:flowPanel id="innerPanel">
 				<faces:label id="title" text="Mammals" styleName="faces-Label disposal-views-title"/>
-				<faces:image id="image" url="${showcaseCoreResources.mammals}" styleName="faces-Image disposal-image"/>
+				<faces:image id="image" url="${showcaseSamplesResources.mammals}" styleName="faces-Image disposal-image"/>
 				<faces:html id="textPpanel" styleName="disposal-views-textPanel">
 					<p>
 						Mammals (class Mammalia /məˈmeɪli.ə/) are a clade of endothermic amniotes distinguished from 

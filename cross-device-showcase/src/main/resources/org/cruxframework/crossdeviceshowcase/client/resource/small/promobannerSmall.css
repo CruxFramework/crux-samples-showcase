@@ -1,1 +1,29 @@
 @external *;
+@url banner1promoUrl banner1promo;
+@url banner1promoUr2 banner1promo;
+@url banner1promoUr3 banner1promo;
+
+.banner1
+{
+	background:#acdf53;
+}
+
+.banner2
+{
+	background:#dfc053;
+}
+
+.banner3
+{
+	background:#bb596c;
+}
+
+.promoBannerWidth
+{
+	width:90%;
+}
+
+.scrollBannerWidth
+{
+	width:90%;
+}

@@ -1,1 +1,37 @@
-@external *;
+@external * ;
+
+.dataProviderWrapper, .lazyDataProviderWrapper {
+	display: inline-block;
+}
+
+.commonPagerWrapper, .swapPagerWrapper, .scrollablePagerWrapper {
+	float: left;
+	margin: 10px;
+	width: 30%;
+	min-width: 250px;
+}
+
+.dataProviderWrapper, .lazyDataProviderWrapper {
+	width: 100%;
+}
+/* Containers */
+.commonPagerWrapper .faces-WidgetList, .swapPagerWrapper .faces-WidgetList,
+	.scrollablePagerWrapper .faces-WidgetList {
+	border: 1px solid #ccc;
+	padding: 8px;
+	height: 90px !important;
+	/* TODO: diminuir o height que está sendo setado dinamicamente */
+}
+
+/* Type Titles */
+.commonPagerWrapper .gwt-Label, .swapPagerWrapper .gwt-Label,
+	.scrollablePagerWrapper .gwt-Label {
+	font-size: 14px;
+	margin: 10px auto 20px;
+}
+
+.commonPagerWrapper .gwt-Label, .swapPagerWrapper .gwt-Label,
+	.scrollablePagerWrapper .gwt-Label {
+	font-size: 14px;
+	margin: 20px auto;
+}

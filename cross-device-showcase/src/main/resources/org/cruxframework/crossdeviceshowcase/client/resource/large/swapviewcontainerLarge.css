@@ -1,1 +1,53 @@
 @external *;
+
+.showcase-swapViewContainer
+{
+	width: 800px;
+	height: 600px !important;
+}
+
+.swapView-topPanel
+{
+	background-color: rgb(231, 1, 1);
+	padding: 10px;
+}
+
+.swapView-topPanel-title
+{
+	color: white;
+	font-size: 60px;
+	font-weight: 900;
+	display: inline;
+	vertical-align: middle;
+	margin-right: 50px;
+}
+
+.swapView-topPanel-logo
+{
+	vertical-align: middle;
+}
+
+.swapView-topPanel-login
+{
+	color: white;
+	font-size: 20px;
+	display: inline;
+	vertical-align: middle;
+	margin-left: 50px;
+}
+
+.swapView-buy-button
+{
+	background-color: #e70101 !important;
+	border: 1px solid #bc0505!important;
+	border-radius: 6px !important;
+	font-size: 18px !important;
+	width: 150px;
+}
+
+.swapView-back-button
+{
+	border-radius: 6px !important;
+	font-size: 18px !important;
+	width: 150px;
+}

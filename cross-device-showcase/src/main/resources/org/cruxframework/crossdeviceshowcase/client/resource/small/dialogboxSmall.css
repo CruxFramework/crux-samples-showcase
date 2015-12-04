@@ -1,1 +1,12 @@
 @external *;
+
+.dialogBoxPanel
+{
+	vertical-align: middle;
+	text-align: center;
+	padding: 10px;
+}
+.dialogBoxPanelButton
+{
+	margin:5px 2px !important;
+}

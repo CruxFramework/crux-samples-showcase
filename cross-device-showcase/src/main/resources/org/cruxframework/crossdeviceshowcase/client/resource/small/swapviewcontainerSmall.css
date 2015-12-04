@@ -1,1 +1,61 @@
 @external *;
+
+.showcase-swapViewContainer
+{
+	width: 100%;
+	height: 500px !important;
+}
+
+.swapView-image
+{
+	width: 280px !important;
+	height: 391px !important;
+	background-size: 100% !important;
+}
+
+.swapView-topPanel
+{
+	background-color: rgb(231, 1, 1);
+	padding: 6px;
+}
+
+.swapView-topPanel-title
+{
+	color: white;
+	font-size: 30px;
+	font-weight: 900;
+	display: inline;
+}
+
+.swapView-topPanel-logo
+{
+	vertical-align: middle;
+	width: 66px !important;
+	height: 75px !important;
+	background-size: 100% !important;
+}
+
+.swapView-topPanel-login
+{
+	color: white;
+	font-size: 14px;
+	display: inline;
+	vertical-align: middle;
+}
+
+.swapView-buy-button
+{
+	background-color: #e70101 !important;
+	border: 1px solid #bc0505!important;
+	border-radius: 6px !important;
+	font-size: 15px !important;
+	width: 140px;
+}
+
+.swapView-back-button
+{
+	border-radius: 6px !important;
+	font-size: 15px !important;
+	width: 140px;
+	margin-bottom: 8px;
+}

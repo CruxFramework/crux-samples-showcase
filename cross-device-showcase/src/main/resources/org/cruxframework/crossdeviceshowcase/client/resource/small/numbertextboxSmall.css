@@ -1,1 +1,6 @@
 @external *;
+
+.radioPanel
+{
+	height: 80px;
+}

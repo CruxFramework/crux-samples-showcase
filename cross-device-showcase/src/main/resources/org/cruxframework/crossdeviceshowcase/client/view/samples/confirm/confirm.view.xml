@@ -13,7 +13,7 @@
 		<div id="panel" class="baseWrapper confirm">
 			<gwt:flowPanel id="innerPanel" styleName="center">
 				<faces:label id="labelName" styleName="faces-Label confirm-label" />
-				<gwt:flowPanel id="formWrapper" styleName="faces--group">
+				<gwt:flowPanel id="formWrapper">
 					<gwt:textBox id="textBoxName" placeHolder="Insert your name here" />
 					<faces:button id="btnAction" text="Send Name" onSelect="confirmController.showDialog" />
 				</gwt:flowPanel>

@@ -1,1 +1,38 @@
 @external *;
+
+.faces-WidgetList .faces-SwapPanel
+{
+    width: 500px;
+    height: 300px;
+}
+
+.faces-WidgetList .faces-SwapPanel .line
+{
+  height: 60px;
+  display: table-row;
+}
+
+.faces-WidgetList .faces-SwapPanel .imageFlag
+{
+  width: auto;
+  height: 35px;
+}
+
+.faces-WidgetList .faces-Pager .faces-SwapPager
+{
+  width: 300px;
+  display: table-row;
+}
+
+.faces-WidgetList .faces-Pager .faces-SwapPager
+{
+  display: table-row;
+}
+
+.faces-WidgetList .backPanel,
+.faces-WidgetList .nextPanel,
+.faces-WidgetList .faces-SwapPanel
+{
+  display: table-cell;
+  vertical-align: middle;
+}

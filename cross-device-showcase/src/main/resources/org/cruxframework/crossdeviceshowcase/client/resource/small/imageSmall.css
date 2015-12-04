@@ -1,1 +1,46 @@
 @external *;
+@url imageColiseuUrl coliseu;
+@url imageEiffelUrl eiffel;
+@url imageLibertyUrl liberty;
+
+.imageNormal
+{
+	width:150px !important;
+	height:100px !important; 
+	margin:5px;
+}
+
+.imageBig
+{
+	width:260px !important;
+	height:185px !important; 
+	margin:5px;
+}
+
+.imageSmall
+{
+	width:100px !important;
+	height:80px !important; 
+	margin:5px;
+	opacity:0.40;
+	-moz-opacity: 0.40;
+	filter: literal("alpha(opacity=40);");
+}
+
+
+.imagelabelInformImage
+{
+	text-align: justify;
+	color:#1c5994;
+	width: 95%;
+}
+
+.imagelabelTitleImage
+{
+	text-align: center;
+	font-size: large;
+	font-weight: bold;
+	margin-bottom: 1%;
+	color:#1c5994;
+	width: 100%;
+}

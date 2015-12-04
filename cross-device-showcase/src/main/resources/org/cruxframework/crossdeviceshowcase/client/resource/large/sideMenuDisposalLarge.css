@@ -1,1 +1,26 @@
 @external *;
+
+.disposal-views-title
+{
+	font-size:20px;
+	margin:15px 0;
+}
+
+.disposal-image
+{
+	width: 700px !important;
+	height: 185px !important;
+	border-radius: 5px;
+	background-size: 100% !important;
+}
+
+.disposal-views-textPanel
+{
+	width: 700px;
+	text-align: justify;
+}
+
+.disposal-title
+{
+	font-size: 26px;
+}

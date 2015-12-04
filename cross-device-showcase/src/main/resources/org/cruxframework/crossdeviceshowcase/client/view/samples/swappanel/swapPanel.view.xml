@@ -6,7 +6,7 @@
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
-	useResource="showcaseCoreResources"
+	useResource="showcaseSamplesResources"
 	useController="swapPanelController"
 	useDataSource="simplePersonDS"
 	onLoad="swapPanelController.onLoad"

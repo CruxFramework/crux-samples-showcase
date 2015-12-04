@@ -1,1 +1,51 @@
 @external *;
+
+.tabSimpleView1Title
+{
+	text-align: center;
+	font-size: x-large;
+	font-weight: bold;
+	margin: 5%;
+	color:#1c5994;
+	margin-top: 10%;
+}
+
+.tabSimpleView1Text
+{
+	text-align: center;
+	vertical-align:middle !important;
+	font-size: large;
+	color:#1c5994;
+	line-height: 200%;
+	margin: 15%;
+}
+
+.tabSimpleView1Background
+{
+	background-color: #E6E6FA;
+}
+
+.tabSimpleView2Title
+{
+	text-align: center;
+	font-size: x-large;
+	font-weight: bold;
+	margin: 5%;
+	color:#8B0000;
+	margin-top: 10%;
+}
+
+.tabSimpleView2Text
+{
+	text-align: center;
+	vertical-align:middle !important;
+	font-size: large;
+	color:#8B0000;
+	line-height: 200%;
+	margin: 15%;
+}
+
+.tabSimpleView2Background
+{
+	background-color: #FFFACD;
+}

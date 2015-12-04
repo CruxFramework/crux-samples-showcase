@@ -9,23 +9,6 @@
 	useController="cruxLabelController" 
 	title="Label"> 
 
-	<style>
-		.success
-		{
-			color: #6d991a;
-		}
-		
-		.warn
-		{
-			color: #d58512;
-		}
-		
-		.error
-		{
-			color: #ac2925;
-		}
-	</style>
-
 	<center>
 		<!-- Component use sample -->
 		<div id="panel" class="baseWrapper label">

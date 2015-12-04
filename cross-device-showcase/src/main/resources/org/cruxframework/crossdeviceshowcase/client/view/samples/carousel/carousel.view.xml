@@ -9,59 +9,6 @@
 	useController="carouselController" 
 	title="Carousel"> 
 
-	<style>
-.carousel
-{
-  /*Showcase*/
-  width: 80%;
-  margin-top: 100px;
-}
-
-.carousel .imageFlag
-{
-    max-width:80px;
-    max-height:80px;
-    width: auto;
-    height: auto;
-}	
-
-.carousel .faces-Pager.faces-SwapPager
-{
-  /*Backbone*/
-  display: table-row;
-  /*Showcase*/
-  width: 300px;
-}
-
-.carousel .backPanel,
-.carousel .nextPanel,
-.carousel .faces-SwapPanel
-{
-  /*Backbone*/
-  display: table-cell;
-}
-
-.carousel .backPanel,
-.carousel .nextPanel,
-.carousel .faces-SwapPanel
-{
-  /*Showcase*/
-  vertical-align: baseline;
-}
-
-.carousel .faces-Pager .faces-SwapPanel
-{
-  height: 150px !important; 
-}
-
-.carousel .faces-Pager .faces-SwapPanel .item
-{
-  width: 150px !important;
-  height: auto !important;
-}
-	
-	</style>
-
 	<crux:dataProvider id="dataProvider" dataObject="carCarousel" onLoadData="carouselController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 	
 	<center>

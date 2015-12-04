@@ -1,1 +1,13 @@
-@external *;
+@external * ;
+
+.button .success {
+	background: #6d991a;
+}
+
+.button .warn {
+	background: #d58512;
+}
+
+.button .error {
+	background: #ac2925;
+}

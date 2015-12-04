@@ -6,7 +6,7 @@
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
-	useResource="showcaseCoreResources"
+	useResource="showcaseSamplesResources"
 	useController="imageController" 
 	title="Image">
 
@@ -16,9 +16,9 @@
 			<faces:label id="labelText" text="Click on the images to have information"/>
 			<br />
 					<widgets:storyboard id="imagePanel">
-						<faces:image id="colosseum" url="${showcaseCoreResources.coliseu}" styleName="faces-Image imageNormal" onSelect="imageController.detailColosseum" tooltip="Colosseum"/>
-						<faces:image id="tower" url="${showcaseCoreResources.eiffel}" styleName="faces-Image imageNormal" onSelect="imageController.detailTower" tooltip="Eiffel Tower"/>
-						<faces:image id="statue" url="${showcaseCoreResources.liberty}" styleName="faces-Image imageNormal" onSelect="imageController.detailStatue" tooltip="Statue of Liberty"/>
+						<faces:image id="colosseum" url="${showcaseSamplesResources.coliseu}" styleName="faces-Image imageNormal" onSelect="imageController.detailColosseum" tooltip="Colosseum"/>
+						<faces:image id="tower" url="${showcaseSamplesResources.eiffel}" styleName="faces-Image imageNormal" onSelect="imageController.detailTower" tooltip="Eiffel Tower"/>
+						<faces:image id="statue" url="${showcaseSamplesResources.liberty}" styleName="faces-Image imageNormal" onSelect="imageController.detailStatue" tooltip="Statue of Liberty"/>
 					</widgets:storyboard>				
 			<div id="labelPanel">
 				<faces:label id="labelTitleImage" styleName="imagelabelTitleImage"/>

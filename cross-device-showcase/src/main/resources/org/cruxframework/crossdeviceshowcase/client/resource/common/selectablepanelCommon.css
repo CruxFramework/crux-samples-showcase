@@ -1,1 +1,17 @@
-@external *;
+@external * ;
+
+.selectablePanel {
+	line-height: 100px;
+}
+
+.success {
+	background: #6d991a;
+}
+
+.warn {
+	background: #d58512;
+}
+
+.error {
+	background: #ac2925;
+}

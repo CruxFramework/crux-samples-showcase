@@ -1,12 +1,12 @@
 package org.cruxframework.crossdeviceshowcase.client.controller.samples.rollingpanel;
 
+import org.cruxframework.crossdeviceshowcase.client.resource.common.ShowcaseSamplesResourcesCommon;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.rollingpanel.RollingPanel;
-import org.cruxframework.showcasecore.client.resource.common.ShowcaseResourcesCommon;
 
 import com.google.gwt.user.client.ui.FlowPanel;
 
@@ -17,7 +17,7 @@ public class RollingPanelController
 	private MyWidgetAccessor myWidgetAccessor;
 	
 	@Inject
-	private ShowcaseResourcesCommon resources;
+	private ShowcaseSamplesResourcesCommon resources;
 	
 	/** Calls methods at rollingPanel view on Load moment. */
 	@Expose
@@ -53,7 +53,7 @@ public class RollingPanelController
 		this.myWidgetAccessor = myWidgetAccessor;
 	}
 
-	public void setResources(ShowcaseResourcesCommon resources) 
+	public void setResources(ShowcaseSamplesResourcesCommon resources) 
 	{
 		this.resources = resources;
 	}

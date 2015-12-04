@@ -1,1 +1,32 @@
 @external *;
+@url banner1promoUrl banner1promo;
+@url banner1promoUr2 banner1promo;
+@url banner1promoUr3 banner1promo;
+
+.messagePanel td
+{
+	vertical-align:bottom !important;
+}
+.messagePanel .title
+{
+	text-shadow:0 1px 0 rgba(0,0,0,0.5), 0 2px 1px rgba(0,0,0,0.5), 2px 3px 2px rgba(0,0,0,0.5), 3px 4px 3px rgba(0,0,0,0.5), 0 6px 4px rgba(0,0,0,0.5)!important;
+}
+
+.messagePanel .text
+{
+	text-shadow:0 1px 2px rgba(0,0,0,0.8), 0 2px 3px rgba(0,0,0,0.8), 2px 3px 4px rgba(0,0,0,0.8) !important;
+}
+
+.promoBannerWidth
+{
+	max-width:1024px !important;
+}
+.scrollBannerWidth
+{
+	width:350px;
+}
+
+.listShuttlePanel
+{
+	width:540px;
+}

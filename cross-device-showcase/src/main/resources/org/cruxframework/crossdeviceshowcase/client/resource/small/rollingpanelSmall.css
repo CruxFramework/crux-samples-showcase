@@ -1,1 +1,55 @@
 @external *;
+
+
+.showcase-RollingPanel, .showcase-cust-RollingPanel
+{
+	width: 250px;
+}
+
+.rollingPanel-panel
+{
+	margin-bottom: 50px;
+	display: block !important;
+}
+
+.rollingPanel-image
+{
+	width: 300px !important;
+	height: 180px !important;
+	background-size: 100% !important;
+}
+
+.saleItem .faces-Image
+{
+	height: 120px;
+	width: 120px;
+	margin: 5px;
+}
+
+.saleItem .faces-Label
+{
+	font-size: 19px;
+	margin-top: 10px;
+}
+
+.saleItem .label-price
+{
+	font-size: 40px;
+	color: #e70101;
+	height: 50px;
+	background-color: rgba(255, 255, 255, 1);
+	font-family: monospace;
+}
+
+.saleItem-wrapper-panel
+{
+	height: 230px;
+	width: 200px;
+	border: solid 2px white;
+	margin: 0px 0.5px;
+	background-color: #eee;
+	border-radius: 10px;
+	border-bottom: solid 3px #c8c8c8;
+	border-right: solid 3px #c8c8c8;
+	overflow: hidden;
+}

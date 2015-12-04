@@ -1,1 +1,11 @@
 @external *;
+
+.sortableList-item
+{
+	margin: 10px 0px;
+}
+
+.sortableList-input
+{
+	width :230px;
+}

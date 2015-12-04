@@ -10,35 +10,6 @@
 	onLoad="menuController.onLoad"
 	title="Menu"> 
 
-	<style>
-	.menuItem-image-style
-	{
-		height: 25px;
-		width: 25px;
-		vertical-align: middle;
-		margin-right: 10px;
-	}
-<!-- 	Large -->
-.menuItem-image-style
-{
-	height: 25px;
-	width: 25px;
-	vertical-align: middle;
-	margin-right: 8px;
-}
-
-<!-- Small -->
-.menuItem-image-style
-{
-	height: 25px;
-	width: 25px;
-	vertical-align: middle;
-	margin-right: 13px;
-}
-
-	</style>
-
-
 	<center>	
 		<div id="panel" class="baseWrapper menu center">
 				<faces:menu id="menu" largeType="VerticalAccordion" smallType="VerticalAccordion" style="margin-bottom: 10px; display: inline-block">

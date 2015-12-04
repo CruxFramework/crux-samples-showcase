@@ -9,13 +9,6 @@
 	useController="swapViewContainerController"
 	title="swapViewContainer"> 
 
-	<style>
-	.faces-SwapViewContainer
-	{
-		height: 640px !important;
-	}
-	</style>
-
 	<center>
 		<div id="panel" class="baseWrapper swapViewContainer">
 				<faces:swapViewContainer id="viewContainer" styleName="faces-SwapViewContainer">

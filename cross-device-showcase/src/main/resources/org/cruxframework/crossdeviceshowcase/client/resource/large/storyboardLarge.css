@@ -1,1 +1,36 @@
 @external *;
+@url svgIconPresent svgIconPresent;
+
+.productImage
+{
+	width:198px;
+	height:179px;
+	border:1px solid #ccc;
+	background:svgIconPresent no-repeat center #eee;
+	background-size:64px auto;
+}
+.productName
+{
+	font-weight:bold;
+	color:#222;
+	text-align:center;
+	margin:10px auto;
+}
+.productPrice
+{
+	color:#78a32e;
+	font-weight:bold;
+	font-size:18px;
+	text-align:center;
+	margin:10px auto;
+}
+.productButton
+{
+	background:#4396c6;
+	border:none;
+	box-shadow:none;
+	color:#fff;
+	font-wight:bold;
+	padding:5px 8px;
+	border-radius:4px;
+}

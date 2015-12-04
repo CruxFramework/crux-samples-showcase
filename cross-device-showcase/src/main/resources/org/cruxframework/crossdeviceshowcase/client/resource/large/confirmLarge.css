@@ -1,1 +1,7 @@
 @external *;
+
+.faces-Confirm .confirm-label
+{
+	font-size: 20px;
+	margin-bottom: 20px;
+}

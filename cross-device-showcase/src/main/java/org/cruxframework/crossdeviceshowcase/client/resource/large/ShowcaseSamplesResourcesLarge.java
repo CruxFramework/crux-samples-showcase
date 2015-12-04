@@ -19,6 +19,9 @@ import org.cruxframework.crossdeviceshowcase.client.resource.common.ShowcaseSamp
 import org.cruxframework.crux.core.client.resources.Resource;
 import org.cruxframework.crux.core.client.screen.DeviceAdaptive.Device;
 
+import com.google.gwt.resources.client.DataResource;
+import com.google.gwt.resources.client.ImageResource;
+
 /**
  * @author Samuel Almeida Cardoso (samuel@cruxframework.org)
  *
@@ -76,5 +79,39 @@ public interface ShowcaseSamplesResourcesLarge extends ShowcaseSamplesResourcesC
 		"org/cruxframework/crossdeviceshowcase/client/resource/common/widgetlistCommon.css", "widgetlistLarge.css"
 		})
 	CssShowcaseSamplesLarge css();
+
+	@Source("svg-icon-present.svg")
+	DataResource svgIconPresent();
 	
+	@Source("tails.png")
+	ImageResource tails();
+
+	@Source("banner1.jpg")
+	ImageResource banner1promo();
+	
+	@Source("banner2.jpg")
+	ImageResource banner2promo();
+	
+	@Source("banner3.jpg")
+	ImageResource banner3promo();
+	
+	//Image
+	@Source("coliseu.jpg")
+	ImageResource coliseu();
+	
+	@Source("eiffel.jpg")
+	ImageResource eiffel();
+	
+	@Source("liberty.jpg")
+	ImageResource liberty();
+	
+	//SwapViewContainer	
+	@Source("product.png")
+	ImageResource product();
+		
+	@Source("addedProduct.png")
+	ImageResource addedProduct();
+	
+	@Source("purchaseCompleted.png")
+	ImageResource purchaseCompleted();
 }

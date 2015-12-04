@@ -6,7 +6,7 @@
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
-	useResource="showcaseCoreResources"
+	useResource="showcaseSamplesResources"
 	title="PromoBanner"> 
 
 	<center>
@@ -17,13 +17,13 @@
 			autoTransitionInterval="500000" transitionDuration="450" styleName="promoBannerWidth">
 			<widgets:banner buttonLabel=""
 				title="Life" text="Hurry to live well and think that every day is, in itself, a life. (Seneca)"
-				image="${showcaseCoreResources.banner1promo}" styleName="messagePanel" />
+				image="${showcaseSamplesResources.banner1promo}" styleName="messagePanel" />
 			<widgets:banner buttonLabel=""
 				title="Dream and live" text="Dream as if you'll live forever, live as if you were to die tomorrow. (James Dean)"
-				image="${showcaseCoreResources.banner2promo}" />
+				image="${showcaseSamplesResources.banner2promo}" />
 			<widgets:banner buttonLabel=""
 				title="Live" text="To live is the rarest thing in the world. Most people exist, that´s all.  (Oscar Wilde)"
-				image="${showcaseCoreResources.banner3promo}" />
+				image="${showcaseSamplesResources.banner3promo}" />
 		</widgets:promoBanner>
 	</div>
 		<!-- 		Component description -->

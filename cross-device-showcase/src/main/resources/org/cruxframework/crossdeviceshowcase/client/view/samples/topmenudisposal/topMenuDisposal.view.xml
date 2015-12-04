@@ -7,7 +7,7 @@
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="topMenuDisposalController" 
-	useResource="showcaseCoreResources"
+	useResource="showcaseSamplesResources"
 	onLoad="topMenuDisposalController.onLoad"
 	title="TopMenuDisposal">
 
@@ -45,7 +45,7 @@
 				
 <!-- 				Image representing the disposals -->
 				<gwt:flowPanel id="mobileDisposalPanel" visible="false" styleName="center">
-					<faces:image id="topMenuDisposal_img" url="${showcaseCoreResources.topMenuDisposal}" styleName="faces-image mobileDisposal"/>
+					<faces:image id="topMenuDisposal_img" url="${showcaseSamplesResources.topMenuDisposal}" styleName="faces-image mobileDisposal"/>
 				</gwt:flowPanel>
 					
 		</div>

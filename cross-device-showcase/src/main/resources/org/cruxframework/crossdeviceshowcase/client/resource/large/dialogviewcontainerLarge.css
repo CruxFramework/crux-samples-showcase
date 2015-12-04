@@ -1,1 +1,18 @@
 @external *;
+
+.dialogViewContainer
+{
+	width:500px;
+	height:300px;
+}
+
+.dialogViewContainerResult
+{
+	margin-top: 12%;
+}
+
+.panelResultData
+{
+	font-weight: bold;
+	margin-top: 3%;
+}

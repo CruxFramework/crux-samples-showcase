@@ -10,7 +10,9 @@
 	title="DialogViewContainer"> 
 
 	<center>
-		<faces:dialogViewContainer id="dialogViewContainer"/>
+		<faces:dialogViewContainer id="dialogViewContainer">
+			<faces:view name="viewRegister"/>
+		</faces:dialogViewContainer>
 
 		<div id="panel" class="baseWrapper dialogViewContainer">
 			<faces:button id="buttonShowDialog" text="Show DialogViewContainer"
