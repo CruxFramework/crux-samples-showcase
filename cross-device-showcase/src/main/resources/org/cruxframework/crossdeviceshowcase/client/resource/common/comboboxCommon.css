@@ -31,3 +31,23 @@
   width: auto;
   height: auto;
 }
+
+.faces-ComboBox
+{
+  width: 223px;
+}
+
+/* Class for the combo box popup */
+.comboBoxPopup .faces-Pager .page
+{
+  padding: 6px 4px;
+  max-width: 100%;
+  display: table;
+}
+
+/* List items */
+.comboBoxPopup .itemList .faces-Pager .page .optionPanel
+{
+  padding: 4px 2px;
+  display: table-row;
+}
