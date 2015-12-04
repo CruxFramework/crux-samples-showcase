@@ -29,8 +29,7 @@ import com.google.gwt.resources.client.ImageResource;
 @Resource(value="showcaseCoreResources", supportedDevices={Device.largeDisplayArrows, Device.largeDisplayMouse, Device.largeDisplayTouch})
 public interface ShowcaseResourcesLarge extends ShowcaseResourcesCommon
 {
-	@Source({"org/cruxframework/showcasecore/client/resource/common/cssShowcaseCommon.css", "cssShowcaseLarge.css", 
-			 "org/cruxframework/showcasecore/client/resource/ie8/cssShowcaseLargeIe8.css"})
+	@Source({"org/cruxframework/showcasecore/client/resource/common/cssShowcaseCommon.css", "cssShowcaseLarge.css"})
 	CssShowcaseLarge css();
 	
 	@Source("icon-layout.png")
@@ -42,38 +41,11 @@ public interface ShowcaseResourcesLarge extends ShowcaseResourcesCommon
 	@Source("icon-project.png")
 	DataResource projectIcon();
 	
-	@Source("svg-icon-present.svg")
-	DataResource svgIconPresent();
-	
 	@Source("svg-icon-arrow.svg")
 	DataResource svgIconArrow();
 	
-	@Source("banner1.jpg")
-	ImageResource banner1promo();
-	
-	@Source("banner2.jpg")
-	ImageResource banner2promo();
-	
-	@Source("banner3.jpg")
-	ImageResource banner3promo();
-	
-	//Image
-	@Source("coliseu.jpg")
-	ImageResource coliseu();
-	
-	@Source("eiffel.jpg")
-	ImageResource eiffel();
-	
-	@Source("liberty.jpg")
-	ImageResource liberty();
-	
-	
-	
 	@Source("crux.png")
 	ImageResource crux();
-	
-	@Source("guile.png")
-	DataResource guile();
 	
 	@Source("logo-large.png")
 	DataResource logoLarge();
@@ -84,22 +56,6 @@ public interface ShowcaseResourcesLarge extends ShowcaseResourcesCommon
 	@Source("noise.png")
 	DataResource noise();
 	
-	
-	
-	
-	@Source("heads.png")
-	ImageResource heads();
-	
-	@Source("tails.png")
-	ImageResource tails();
-	
-	//SwapViewContainer	
-	@Source("product.png")
-	ImageResource product();
-		
-	@Source("addedProduct.png")
-	ImageResource addedProduct();
-	
-	@Source("purchaseCompleted.png")
-	ImageResource purchaseCompleted();
+	@Source("mundi.jpg")
+	DataResource mundi();
 }

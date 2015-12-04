@@ -1,0 +1,48 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="offlineDatabaseController"
+	onLoad="offlineDatabaseController.onLoad"
+	title="Offline Database"> 
+	
+	<crux:dataProvider id="dataProviderPerson" dataObject="personDataBase" onLoadData="offlineDatabaseController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
+	
+	<center>
+		<div id="panel" class="baseWrapper offlinePanel">
+			<gwt:flowPanel id="controls">
+				<faces:dataGrid id="peopleGrid" itemVar="person" dataProvider="dataProviderPerson">
+					<faces:column key="id" property="@{person.id:integerString}" header="${database_messages.id}"/>
+					<faces:column key="name" property="@{person.name}" header="${database_messages.name}"/>
+					<faces:column key="street" property="@{person.address.street}" header="${database_messages.address}"/>
+					<faces:column key="number" property="@{person.address.number:integerString}" header="${database_messages.number}"/>
+				</faces:dataGrid>
+				
+				<gwt:horizontalPanel id="buttons">
+					<widgets:button id="add" text="${database_messages.addPerson}" onSelect="offlineDatabaseController.add" />
+				</gwt:horizontalPanel>
+				
+				<faces:sequentialPager id="pagerGridPerson" dataProvider="dataProviderPerson"/>
+				
+			</gwt:flowPanel>
+		</div>		
+
+		<showcase:info 
+			title="Database"
+			libraryPanel-visible="true"
+			browserPanel-visible="true" 
+			library="Core"
+			edge-visible="true" ie-visible="true" 
+			ie-version="9+" 
+			chrome-visible="true" 
+			firefox-visible="true" 
+			safari-visible="true"
+			description="${description_messages.simpleDatabaseDescription}"/>
+
+	</center>		
+	
+</v:view>

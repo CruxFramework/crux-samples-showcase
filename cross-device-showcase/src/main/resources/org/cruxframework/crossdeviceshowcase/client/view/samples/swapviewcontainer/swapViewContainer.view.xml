@@ -9,16 +9,8 @@
 	useController="swapViewContainerController"
 	title="swapViewContainer"> 
 
-	<style>
-	.faces-SwapViewContainer
-	{
-		height: 640px !important;
-	}
-	</style>
-
 	<center>
-		<widgets:styledPanel id="mainPanel">
-			<gwt:flowPanel id="innerPanel">
+		<div id="panel" class="baseWrapper swapViewContainer">
 				<faces:swapViewContainer id="viewContainer" styleName="faces-SwapViewContainer">
 					<faces:view name="swapView1" active="true"/>
 					<faces:view name="swapView2"/>
@@ -41,8 +33,7 @@
 						<gwt:item label="Rotate" value="rotate"/>	
 					</gwt:listBox>
 				</gwt:flowPanel>
-			</gwt:flowPanel>
-		</widgets:styledPanel>	
+		</div>	
 
 <!-- 		Component description -->
 		<showcase:info 

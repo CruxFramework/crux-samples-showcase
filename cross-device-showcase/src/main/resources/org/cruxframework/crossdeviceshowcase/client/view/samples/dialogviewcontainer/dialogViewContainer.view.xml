@@ -10,12 +10,14 @@
 	title="DialogViewContainer"> 
 
 	<center>
-		<faces:dialogViewContainer id="dialogViewContainer"/>
+		<faces:dialogViewContainer id="dialogViewContainer">
+			<faces:view name="viewRegister"/>
+		</faces:dialogViewContainer>
 
-		<widgets:styledPanel id="mainPanel">
+		<div id="panel" class="baseWrapper dialogViewContainer">
 			<faces:button id="buttonShowDialog" text="Show DialogViewContainer"
 				onSelect="dialogViewContainerController.openDialog" />
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

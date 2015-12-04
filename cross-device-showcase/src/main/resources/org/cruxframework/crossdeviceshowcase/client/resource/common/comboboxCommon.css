@@ -1,0 +1,53 @@
+@external *;
+
+.comboBoxPopup
+{
+  min-width: 216px; /* TODO: this should be calculated */
+}
+
+.comboBoxPopup .itemList .faces-Pager .page .optionPanel:hover
+{
+  background: #e3e3e3;
+}
+
+.comboBoxPopup .itemList .faces-Pager .page .optionPanel .line
+{
+  display: table-row;
+  width: 100%;
+}
+
+.comboBoxPopup .itemList .faces-Pager .page .optionPanel .line > *
+{
+  /* Backbone */
+  display: table-cell;
+  vertical-align: middle;
+  padding: 4px;
+}
+
+.comboBoxPopup .itemList .faces-Pager .page .optionPanel .imageFlag
+{
+  max-width:30px;
+  max-height:30px;
+  width: auto;
+  height: auto;
+}
+
+.faces-ComboBox
+{
+  width: 223px;
+}
+
+/* Class for the combo box popup */
+.comboBoxPopup .faces-Pager .page
+{
+  padding: 6px 4px;
+  max-width: 100%;
+  display: table;
+}
+
+/* List items */
+.comboBoxPopup .itemList .faces-Pager .page .optionPanel
+{
+  padding: 4px 2px;
+  display: table-row;
+}

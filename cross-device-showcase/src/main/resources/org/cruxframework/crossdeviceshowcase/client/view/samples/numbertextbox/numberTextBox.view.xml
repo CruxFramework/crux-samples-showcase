@@ -12,24 +12,22 @@
 
 	<center>
 	<!-- 		Component use sample  -->
-		<widgets:styledPanel id="wrapper">
-			<gwt:HTMLPanel id="mainPanel" styleName="center">
-				<faces:label id="labelText" text="Enter a number"/>
-				<br />
-				<faces:numberBox id="boxNumber" value="44" />
-				<hr />
-				<faces:label id="labelMaxlength" text="Choose the limit for entering the numbers"/>
-				<br />
-				<div id="panelBoard" class="radioPanel">
-					<widgets:storyboard id="radios" height="20px" width="100%" largeDeviceItemWidth="85px">
-						<gwt:radioButton id="radioButton09" name="value" text="0 to 9" onChange="numberTextBoxController.maxLength"/>
-						<gwt:radioButton id="radioButton099" name="value" text="0 to 99" onChange="numberTextBoxController.maxLength"/>
-						<gwt:radioButton id="radioButton0999" name="value" text="0 to 999" checked="true" onChange="numberTextBoxController.maxLength" />
-						<gwt:radioButton id="radioButtonFree" name="value" text="Free" onChange="numberTextBoxController.maxLength"/>
-					</widgets:storyboard>
-				</div>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		<div id="panel" class="baseWrapper numberTextBox">
+			<faces:label id="labelText" text="Enter a number"/>
+			<br />
+			<faces:numberBox id="boxNumber" value="44" />
+			<hr />
+			<faces:label id="labelMaxlength" text="Choose the limit for entering the numbers"/>
+			<br />
+			<div id="panelBoard" class="radioPanel">
+				<widgets:storyboard id="radios" height="20px" width="100%" largeDeviceItemWidth="85px">
+					<gwt:radioButton id="radioButton09" name="value" text="0 to 9" onChange="numberTextBoxController.maxLength"/>
+					<gwt:radioButton id="radioButton099" name="value" text="0 to 99" onChange="numberTextBoxController.maxLength"/>
+					<gwt:radioButton id="radioButton0999" name="value" text="0 to 999" checked="true" onChange="numberTextBoxController.maxLength" />
+					<gwt:radioButton id="radioButtonFree" name="value" text="Free" onChange="numberTextBoxController.maxLength"/>
+				</widgets:storyboard>
+			</div>
+		</div>
 
 		<!-- 		Component description -->
 		<showcase:info 

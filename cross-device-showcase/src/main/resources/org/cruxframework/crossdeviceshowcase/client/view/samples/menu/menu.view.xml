@@ -11,8 +11,7 @@
 	title="Menu"> 
 
 	<center>	
-		<widgets:styledPanel id="mainPanel">
-			<gwt:flowPanel id="innerPanel" styleName="center">
+		<div id="panel" class="baseWrapper menu center">
 				<faces:menu id="menu" largeType="VerticalAccordion" smallType="VerticalAccordion" style="margin-bottom: 10px; display: inline-block">
 					<faces:item>
 						<faces:itemWidget>
@@ -43,8 +42,7 @@
 					</gwt:listBox>
 				</gwt:flowPanel>
 				
-			</gwt:flowPanel>
-		</widgets:styledPanel>
+		</div>
 		
 <!-- 		Component description -->
 		<showcase:info 

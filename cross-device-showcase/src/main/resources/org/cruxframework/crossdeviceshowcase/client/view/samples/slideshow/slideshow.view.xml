@@ -10,14 +10,18 @@
 	
 	<center>
 	<!-- 		Component use sample  -->
-		<widgets:slideshow id="slideshow" layout="classic" width="100%" height="750px" loadOnStartup="true" >
-			<widgets:service name="picasa">
-				<widgets:param name="userID" value="114650528804514463329" />
-				<widgets:param name="albumID" value="5951409748461918465" />
-				<widgets:param name="imagesSize" value="400" />
-				<widgets:param name="thumbnailsSize" value="48"/>
-			</widgets:service>
-		</widgets:slideshow>
+		<div id="panel" class="baseWrapper slideshow">
+		
+			<widgets:slideshow id="slideshow" layout="classic" width="100%" height="750px" loadOnStartup="true" >
+				<widgets:service name="picasa">
+					<widgets:param name="userID" value="114650528804514463329" />
+					<widgets:param name="albumID" value="5951409748461918465" />
+					<widgets:param name="imagesSize" value="400" />
+					<widgets:param name="thumbnailsSize" value="48"/>
+				</widgets:service>
+			</widgets:slideshow>
+			
+		</div>
 		
 		<!-- 		Component description -->
 		<showcase:info 

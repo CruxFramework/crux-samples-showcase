@@ -1,0 +1,20 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	title="Simple View 3"> 
+	
+	<center>
+		<widgets:styledPanel id="parentPanel" width="600px" height="400px">
+			<gwt:HTMLPanel id="panel">
+				<gwt:label id="labelViewTitle" text="${messages_view3.title}" />
+				<br />
+				<gwt:label id="labelViewText" text="${messages_view3.labelTextView}"/>
+			</gwt:HTMLPanel>
+		</widgets:styledPanel>
+	</center>	
+</v:view>

@@ -10,7 +10,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<gwt:HTMLPanel id="styledWrap" styleName="styledWrap">
+		<div id="panel" class="baseWrapper styledPanel">
 			<widgets:styledPanel id="panel1" height="110px" width="200px" styleName="rs-left center">
 				<faces:button id="btnSample" text="I am a button" />
 			</widgets:styledPanel>
@@ -18,7 +18,7 @@
 				<faces:label id="txtSample" text="I am a label" />
 			</widgets:styledPanel>
 			<gwt:simplePanel id="clear" styleName="clear"></gwt:simplePanel>
-		</gwt:HTMLPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

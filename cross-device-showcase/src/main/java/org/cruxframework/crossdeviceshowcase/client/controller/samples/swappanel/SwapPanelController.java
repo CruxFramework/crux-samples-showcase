@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.cruxframework.crossdeviceshowcase.client.resource.common.ShowcaseSamplesResourcesCommon;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
@@ -16,7 +17,6 @@ import org.cruxframework.crux.smartfaces.client.swappanel.SwapPanel;
 import org.cruxframework.crux.widgets.client.deviceadaptivegrid.DeviceAdaptiveGrid;
 import org.cruxframework.crux.widgets.client.formdisplay.FormDisplay;
 import org.cruxframework.crux.widgets.client.image.Image;
-import org.cruxframework.showcasecore.client.resource.common.ShowcaseResourcesCommon;
 
 import com.google.gwt.user.client.ui.ListBox;
 
@@ -34,7 +34,7 @@ public class SwapPanelController
 	private MyWidgetAccessor myWidgetAccessor;
 	
 	@Inject
-	private ShowcaseResourcesCommon showcaseResourcesCommon;
+	private ShowcaseSamplesResourcesCommon showcaseResourcesCommon;
 	
 	/** Calls methods at swapPanel view on Load moment. */
 	@Expose
@@ -151,7 +151,7 @@ public class SwapPanelController
 	}
 	
 	/** @param showcaseResourcesCommon the showcaseResourcesCommon to set*/
-	public void setShowcaseResourcesCommon(ShowcaseResourcesCommon showcaseResourcesCommon) 
+	public void setShowcaseResourcesCommon(ShowcaseSamplesResourcesCommon showcaseResourcesCommon) 
 	{
 		this.showcaseResourcesCommon = showcaseResourcesCommon;
 	}

@@ -11,7 +11,7 @@
 	title="${messages_tabViewContainer.title}">
 
 	<center>
-		<gwt:HTMLPanel id="panel">
+		<div id="panel" class="baseWrapper tabViewContainer">
 			<faces:tabViewContainer id="tabView">
 				<faces:view name="simpleViewTab1" closeable="true"/>
 			</faces:tabViewContainer>
@@ -23,7 +23,7 @@
 				<widgets:button id="buttonRemove"
 				text="${messages_tabViewContainer.buttonRemove}" onSelect="tabViewContainerController.remove" />
 			</gwt:horizontalPanel>
-		</gwt:HTMLPanel>
+		</div>
 
 		<showcase:info 
 			title="${messages_tabViewContainer.title}"

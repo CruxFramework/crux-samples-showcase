@@ -8,26 +8,11 @@
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="comboBoxController"
 	title="ComboBox"> 
-
-	<style>
-		.line > *
-		{
-			display: inline-block;
-		}
-		
-		.imageFlag
-		{
-		    max-width:30px;
-		    max-height:30px;
-		    width: auto;
-		    height: auto;
-		}
-	</style>
 	
 	<crux:dataProvider id="dataProvider" dataObject="countryComboBox" onLoadData="comboBoxController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 
 	<center>
-		<widgets:styledPanel id="mainPanel">
+		<div id="panel" class="baseWrapper comboBox">
 			<gwt:flowPanel id="innerPanel">
 				<faces:comboBox id="comboBox" dataProvider="dataProvider" itemVar="country" animation="fade">
 				<faces:options value="@{country.id:integerString}" text="@{country.name}">
@@ -41,7 +26,7 @@
 				</faces:comboBox>
 				<faces:scrollablePager pageable="comboBox" id="scrollablePager"/>
 			</gwt:flowPanel>
-		</widgets:styledPanel>
+		</div>
 		
 		<!-- Component description -->
 		<showcase:info 

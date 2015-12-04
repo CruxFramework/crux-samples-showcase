@@ -12,8 +12,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="painel">
-			<gwt:HTMLPanel id="StatesWrapper" styleName="center">
+		<div id="panel" class="baseWrapper textArea">
 				<widgets:formDisplay id="form">
 					<widgets:entry>
 						<faces:label id="labelText" text="A TextArea with dynamic max-length:" />
@@ -36,8 +35,7 @@
 					<gwt:radioButton name="color" id="radioWarning" text="Warning" onChange="textAreaController.setChosenStyle"/>
 					<gwt:radioButton name="color" id="radioError" text="Error" onChange="textAreaController.setChosenStyle"/>
 				</div>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

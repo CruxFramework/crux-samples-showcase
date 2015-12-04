@@ -1,0 +1,12 @@
+@external *;
+
+.anchor .anchorWrapper
+{ 	
+	margin: 4%;
+	padding: 4%;
+	border-style: dotted !important;
+	border-width: thin;
+	border-color: #1c5994 !important;
+	vertical-align: middle !important;
+	text-align:center;
+}

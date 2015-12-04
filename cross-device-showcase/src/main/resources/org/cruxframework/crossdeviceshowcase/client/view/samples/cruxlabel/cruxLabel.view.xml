@@ -9,38 +9,19 @@
 	useController="cruxLabelController" 
 	title="Label"> 
 
-	<style>
-		.success
-		{
-			color: #6d991a;
-		}
-		
-		.warn
-		{
-			color: #d58512;
-		}
-		
-		.error
-		{
-			color: #ac2925;
-		}
-	</style>
-
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="panel1">
-			<gwt:HTMLPanel id="html" styleName="center">
-				<faces:label id="cruxLbl" text="I am a label"/>
-				<hr />
-				<faces:label id="h4" text="States" />
-				<div class="btn-Group">
-					<gwt:radioButton name="color" onChange="cruxLabelController.setStateDefault" id="radioDefault" text="Default" checked="true"/>
-					<gwt:radioButton name="color" onChange="cruxLabelController.setStateSuccess" id="radioSuccess" text="Success"/>
-					<gwt:radioButton name="color" onChange="cruxLabelController.setStateWarning" id="radioWarning" text="Warning"/>
-					<gwt:radioButton name="color" onChange="cruxLabelController.setStateError" id="radioError" text="Error"/>
-				</div>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		<div id="panel" class="baseWrapper label">
+			<faces:label id="cruxLbl" text="I am a label"/>
+			<hr />
+			<faces:label id="h4" text="States" />
+			<div class="btn-Group">
+				<gwt:radioButton name="color" onChange="cruxLabelController.setStateDefault" id="radioDefault" text="Default" checked="true"/>
+				<gwt:radioButton name="color" onChange="cruxLabelController.setStateSuccess" id="radioSuccess" text="Success"/>
+				<gwt:radioButton name="color" onChange="cruxLabelController.setStateWarning" id="radioWarning" text="Warning"/>
+				<gwt:radioButton name="color" onChange="cruxLabelController.setStateError" id="radioError" text="Error"/>
+			</div>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

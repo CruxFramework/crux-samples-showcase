@@ -5,7 +5,7 @@
 	useController="viewRegisterController" title="Register">
 
 	<center>
-		<gwt:HTMLPanel id="parentPanel" styleName="dialogViewContainer">
+		<div class="dialogViewContainer">
 			<faces:label id="labelText" text="Enter the information requested below and click confirm." />
 			<br />
 			<gwt:flowPanel id="panelError" visible="false">
@@ -40,7 +40,7 @@
 					<faces:label id="labelResultAddress" />
 				</gwt:HTMLPanel>
 			</gwt:HTMLPanel>
-		</gwt:HTMLPanel>
+		</div>
 
 	</center>
 </v:view>

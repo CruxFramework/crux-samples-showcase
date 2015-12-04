@@ -47,35 +47,8 @@ public interface ShowcaseResourcesSmall extends ShowcaseResourcesCommon
 	@Source("svg-icon-menu.svg")
 	DataResource svgIconMenu();
 	
-	@Source("svg-icon-present.svg")
-	DataResource svgIconPresent();
-	
-	@Source("banner1.jpg")
-	ImageResource banner1promo();
-	
-	@Source("banner2.jpg")
-	ImageResource banner2promo();
-	
-	@Source("banner3.jpg")
-	ImageResource banner3promo();
-	
-//Image
-	@Source("coliseu.jpg")
-	ImageResource coliseu();
-	
-	@Source("eiffel.jpg")
-	ImageResource eiffel();
-	
-	@Source("liberty.jpg")
-	ImageResource liberty();
-	
-	
-	
 	@Source("crux.png")
 	ImageResource crux();
-	
-	@Source("guile.png")
-	DataResource guile();
 	
 	@Source("logo-small.png")
 	DataResource logoSmall();
@@ -86,25 +59,6 @@ public interface ShowcaseResourcesSmall extends ShowcaseResourcesCommon
 	@Source("noise.png")
 	DataResource noise();
 	
-	
-
-	@Source("heads.png")
-	ImageResource heads();
-	
-	@Source("tails.png")
-	ImageResource tails();
-	
 	@Source("mundi.jpg")
 	DataResource mundi();
-	
-	//SwapViewContainer	
-	@Source("mobileProduct.png")
-	ImageResource product();
-	
-	@Source("mobileAddedProduct.png")
-	ImageResource addedProduct();
-	
-	@Source("mobilePurchaseCompleted.png")
-	ImageResource purchaseCompleted();
-	
 }

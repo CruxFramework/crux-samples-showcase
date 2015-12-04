@@ -21,6 +21,8 @@
 		}
 	</style>
 	
-	<widgets:viewChoiceDisposal id="sourceChoice" width="100%" height="100%"/>
+	<center>
+		<widgets:viewChoiceDisposal id="sourceChoice" width="100%" height="100%"/>
+	</center>
 	
 </v:view>

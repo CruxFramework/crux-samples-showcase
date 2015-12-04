@@ -7,13 +7,12 @@
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="topMenuDisposalController" 
-	useResource="showcaseCoreResources"
+	useResource="showcaseSamplesResources"
 	onLoad="topMenuDisposalController.onLoad"
 	title="TopMenuDisposal">
 
 	<center>	
-		<widgets:styledPanel id="mainPanel">
-			<gwt:flowPanel id="innerPanel">			
+		<div id="panel" class="baseWrapper topMenuDisposal">			
 				
 				<gwt:flowPanel id="topMenuDisposalPanel" styleName="faces-TopMenuDisposal simulate-screen">
 					<faces:topMenuDisposal id="topMenuDisposal" historyControlPrefix="topview">
@@ -46,11 +45,10 @@
 				
 <!-- 				Image representing the disposals -->
 				<gwt:flowPanel id="mobileDisposalPanel" visible="false" styleName="center">
-					<faces:image id="topMenuDisposal_img" url="${showcaseCoreResources.topMenuDisposal}" styleName="faces-image mobileDisposal"/>
+					<faces:image id="topMenuDisposal_img" url="${showcaseSamplesResources.topMenuDisposal}" styleName="faces-image mobileDisposal"/>
 				</gwt:flowPanel>
 					
-			</gwt:flowPanel>
-		</widgets:styledPanel>
+		</div>
 		
 		<!-- 		Component description -->
 		<showcase:info 

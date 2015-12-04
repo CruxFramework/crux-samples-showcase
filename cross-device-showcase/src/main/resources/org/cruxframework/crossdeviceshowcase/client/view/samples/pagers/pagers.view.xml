@@ -9,82 +9,12 @@
 	useController="pagersController"
 	title="Pagers"> 
 
-	<style>
-		.dataProviderWrapper,
-		.lazyDataProviderWrapper
-		{
-		    display: inline-block;
-		}
-		
-		.commonPagerWrapper,
-		.swapPagerWrapper,
-		.scrollablePagerWrapper
-		{
-		    float: left;
-		    margin: 30px;
-		}
-		
-		.dataProviderWrapper, 
-		.lazyDataProviderWrapper
-		{
-		    width: 100%;
-		}
-		/* Containers */
-		
-		.faces-WidgetList
-		{
-		    border: 1px solid #ccc;
-		    padding: 5px;
-		    min-width: 150px;
-		    min-height: 135px;
-		}
-		
-		/* Type Titles */
-		.commonPagerWrapper .gwt-Label,
-		.swapPagerWrapper .gwt-Label,
-		.scrollablePagerWrapper .gwt-Label
-		{
-		    font-size: 14px;
-		    margin: 10px auto 20px;
-		}
-		
-		.commonPagerWrapper .gwt-Label,
-		.swapPagerWrapper .gwt-Label,
-		.scrollablePagerWrapper .gwt-Label
-		{
-		    font-size: 14px;
-		    margin: 20px auto;
-		}
-		
-		/* Border items */
-		.faces-SequentialPager
-		{
-		    border: 1px solid #ccc;
-		}
-		
-		.faces-SequentialPager > *
-		{
-		    border-right: 1px solid #ccc;
-		}
-		
-		.faces-SequentialPager > *:hover
-		{
-		    background: #efefef;
-		}
-		
-		.faces-SwapPanel 
-		{
-		    min-height: 75px;
-		    min-width: 150px;
-		}
-	</style>
-
 	<crux:dataProvider id="dataProvider" dataObject="personPagers" onLoadData="pagersController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 	<crux:lazyDataProvider id="lazyDataProvider" dataObject="personPagers" onFetchData="pagersController.onFetchData" onMeasureData="pagersController.onMeasureData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="wrapper">
+		<div id="panel" class="baseWrapper pagers">
 			<gwt:flowPanel id="pagerWrapper" styleName="pagerWrapper">
 				<gwt:flowPanel id="dataProviderWrapper" styleName="dataProviderWrapper">
 				
@@ -137,7 +67,7 @@
 			    </gwt:flowPanel>
 			</gwt:flowPanel>
 			
-		</widgets:styledPanel>
+		</div>
 
 	<!-- Component description -->
 	<showcase:info 

@@ -1,6 +1,7 @@
 @external *;
 
 /**** Sintax Highlighter ****/
+
 pre, code{
     box-shadow:none !important;
     color:#1A1A1A !important;
@@ -25,17 +26,12 @@ pre code *, pre code span
     text-decoration:none;
 }
 
-.choosenColor
-{
-	margin-bottom:10px;
-}
+/**** Layout ****/
 
 .hide
 {
 	display:none;
 }
-
-/**** Layout ****/
 
 .textDescTitle
 {
@@ -149,31 +145,6 @@ pre code *, pre code span
 	display:flex;
 }
 
-.simulate-screen
-{
-	border:1px solid #aaa;
-	box-shadow:0 1px 3px rgba(0,0,0,0.2);
-}
-
-.scope-confirm .gwt-TextBox
-{
-	margin-bottom:0;
-}
-
-.heading
-{
-	font-size:18px;
-	margin:10px 0;
-}
-
-.menuItem-image-style
-{
-	height: 25px;
-	width: 25px;
-	vertical-align: middle;
-	margin-right: 10px;
-}
-
 /* Log Area */
 
 .logWrapper 
@@ -270,7 +241,7 @@ pre code *, pre code span
 	box-shadow:0 0 0 2px rgba(255, 0, 0, 0.21);
 }
 
-.faces-StyledPanel
+.baseWrapper
 {
 	display: inline-block;
 	background: #fff;
@@ -280,17 +251,15 @@ pre code *, pre code span
 	margin:10px;
 }
 
-.faces-StyledPanel.block
+.baseWrapper.block
 {
 	display:block;
 }
 
-.faces-RollingPanel
+@if user.agent ie8
 {
-	max-width:500px;
-}
-
-.showcase-rollingPanel
-{
-	max-width:500px;
+		.btn-Group .gwt-RadioButton input
+	{
+		visibility: visible;
+	}
 }

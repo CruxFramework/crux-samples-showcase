@@ -7,12 +7,12 @@
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="sideMenuDisposalController"
-	useResource="showcaseCoreResources"
+	useResource="showcaseSamplesResources"
 	onLoad="sideMenuDisposalController.onLoad"
 	title="SideMenuDisposal"> 
 
 	<center>	
-		<widgets:styledPanel id="mainPanel">
+		<div id="panel" class="baseWrapper sideMenuDisposal">
 			<gwt:flowPanel id="innerPanel">			
 <!-- 				panel to change menu type for sideMenuDisposal				 -->
 				<gwt:flowPanel id="typeMenuPanel" visible="true" style="margin-bottom: 10px; text-align: center;">
@@ -56,11 +56,11 @@
 				
 <!-- 				Image representing the disposals -->
 				<gwt:flowPanel id="mobileDisposalPanel" visible="false" styleName="center">
-						<faces:image id="sideMenuDisposal_img"  url="${showcaseCoreResources.sideMenuDisposal}" styleName="faces-image mobileDisposal"/>
+						<faces:image id="sideMenuDisposal_img"  url="${showcaseSamplesResources.sideMenuDisposal}" styleName="faces-image mobileDisposal"/>
 				</gwt:flowPanel>
 				
 			</gwt:flowPanel>
-		</widgets:styledPanel>
+		</div>
 		
 <!-- 		Component description -->
 		<showcase:info 

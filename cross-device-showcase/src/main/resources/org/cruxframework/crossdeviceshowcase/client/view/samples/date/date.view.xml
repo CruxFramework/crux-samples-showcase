@@ -12,7 +12,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="panel1">
+		<div id="panel" class="baseWrapper date">
 			<gwt:HTMLPanel id="html" styleName="center">
 				<faces:label id="labelDatePicker" text="Date Picker"/>
 				<widgets:datePicker id="datePicker" />
@@ -20,7 +20,7 @@
 				<faces:label id="labelDateBox" text="Date Box"/>
 				<widgets:dateBox id="dateBox" pattern="dd/MM/yyyy" />
 			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

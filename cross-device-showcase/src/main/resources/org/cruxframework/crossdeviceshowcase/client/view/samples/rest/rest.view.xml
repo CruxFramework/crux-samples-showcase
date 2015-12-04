@@ -14,7 +14,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<gwt:flowPanel id="panel">
+		<div id="panel" class="baseWrapper rest">
 			 <faces:dataGrid id="grid" itemVar="personRest" dataProvider="dataProviderPerson" rowSelectStrategy="row">
 			 	<faces:column key="id" header="${rest_messages.id}" property="@{personRest.id:integerString}" sortable="true"/>
 				<faces:column key="name" header="${rest_messages.name}" property="@{personRest.name}" sortable="true"/>
@@ -41,7 +41,7 @@
 				<faces:button id="btnCreate" text="${rest_messages.create}" onSelect="restController.onSelectCreate"/>
 		    </gwt:flowPanel>
 		    
-		</gwt:flowPanel>
+		</div>
 
 		<!-- 		Component description -->
 		<showcase:info 

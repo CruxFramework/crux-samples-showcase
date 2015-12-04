@@ -1,0 +1,22 @@
+@external *;
+
+.menuItem-wrapper
+{
+	text-align: left;
+}
+
+.menuItem-label-style
+{
+	display: inline !important;
+	vertical-align: middle;
+	margin-right: 5px;
+	color: #1c5994 !important;
+}
+
+.menuItem-image-style
+{
+	height: 25px;
+	width: 25px;
+	vertical-align: middle;
+	margin-right: 13px;
+}

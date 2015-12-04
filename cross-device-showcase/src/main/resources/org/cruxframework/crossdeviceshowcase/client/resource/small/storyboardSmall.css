@@ -1,0 +1,48 @@
+@external *;
+@url svgIconPresent svgIconPresent;
+
+.productImage
+{
+	width:80px;
+	height:70px;
+	border:1px solid #ccc;
+	background:svgIconPresent no-repeat center #eee;
+	background-size:32px auto;
+	float:left;
+}
+.productName
+{
+	font-weight:bold;
+	color:#222;
+	text-align:center;
+	margin:0px auto 10px 7px;
+	float:left;
+	font-size:18px;
+}
+.productPrice
+{
+	color:#78a32e;
+	font-weight:bold;
+	font-size:18px;
+	text-align:center;
+	margin:27px auto 0 -83px;
+	float:left;
+	font-size:16px;
+}
+.productButton
+{
+	background:#4396c6;
+	border:none;
+	box-shadow:none;
+	color:#fff;
+	font-wight:bold;
+	padding:5px 8px;
+	border-radius:4px;
+	float:right;
+	width:70px;
+}
+.storeItem
+{
+	margin-right:0;
+	margin-bottom:10px;
+}

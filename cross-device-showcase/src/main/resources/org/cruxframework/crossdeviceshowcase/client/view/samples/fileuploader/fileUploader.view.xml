@@ -10,9 +10,9 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="mainPanel">
+		<div id="panel" class="baseWrapper fileUploader">
 			<widgets:fileUploader id="fileUploader" multiple="true" fileInputText="Choose files" autoUploadFiles="true" url="/upload-endpoint" />
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

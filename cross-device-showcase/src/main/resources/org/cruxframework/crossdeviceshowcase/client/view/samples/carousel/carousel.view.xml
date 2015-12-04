@@ -9,21 +9,11 @@
 	useController="carouselController" 
 	title="Carousel"> 
 
-	<style>
-		.imageFlag
-		{
-		    max-width:80px;
-		    max-height:80px;
-		    width: auto;
-		    height: auto;
-		}
-	</style>
-
 	<crux:dataProvider id="dataProvider" dataObject="carCarousel" onLoadData="carouselController.onLoadData" autoLoadData="true" pageSize="5" selectionMode="single"/>
 	
 	<center>
 		<!-- Component use sample -->
-		<gwt:flowPanel id="panel">
+		<div id="panel" class="baseWrapper carousel">
 			<faces:carousel id="carousel" itemVar="car" dataProvider="dataProvider" styleName="carousel" fixedHeight="true">
 				<faces:widget>
 					<gwt:flowPanel id="wrapper" styleName="line">
@@ -34,7 +24,7 @@
 			</faces:carousel>
 			
 		    <faces:swapPager id="pagerCarousel" pageable="carousel" visible="true" animationBackward="fadeLeft" animationForward="fadeRight"/>
-		</gwt:flowPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info title="Carousel"

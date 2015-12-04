@@ -16,7 +16,6 @@ public class DialogViewContainerController
 	@Expose
 	public void openDialog()
 	{	
-		viewDialog.dialogViewContainer().loadView("viewRegister", true);
 		viewDialog.dialogViewContainer().show();
 		viewDialog.dialogViewContainer().center();
 	}

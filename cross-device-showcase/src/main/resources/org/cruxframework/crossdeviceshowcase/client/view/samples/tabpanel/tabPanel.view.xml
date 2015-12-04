@@ -6,12 +6,12 @@
 	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
-	useResource="showcaseCoreResources"
+	useResource="showcaseSamplesResources"
 	useController="tabPanelController"
 	title="${messages_tabPanel.title}"> 
 
 	<center>
-		<widgets:styledPanel id="mainPanel">
+		<div id="panel" class="baseWrapper tabPanel">
 			<faces:tabPanel id="tabPanel">
 				<faces:tab tabEnabled="true">
 					<faces:tabWidget>
@@ -19,7 +19,7 @@
 					</faces:tabWidget>
 					<faces:panelContent>
 						<gwt:flowPanel id="1">
-							<faces:image id="colosseum" url="${showcaseCoreResources.coliseu}" styleName="faces-Image imageNormal" tooltip="Colosseum"/>
+							<faces:image id="colosseum" url="${showcaseSamplesResources.coliseu}" styleName="faces-Image imageNormal" tooltip="Colosseum"/>
 						</gwt:flowPanel>
 					</faces:panelContent>
 				</faces:tab>
@@ -29,7 +29,7 @@
 					</faces:tabText>
 					<faces:panelContent>
 						<gwt:flowPanel id="1">
-							<faces:image id="tower" url="${showcaseCoreResources.eiffel}" styleName="faces-Image imageNormal" tooltip="Eiffel Tower"/>
+							<faces:image id="tower" url="${showcaseSamplesResources.eiffel}" styleName="faces-Image imageNormal" tooltip="Eiffel Tower"/>
 						</gwt:flowPanel>
 					</faces:panelContent>
 				</faces:tab>
@@ -39,12 +39,12 @@
 					</faces:tabHtml>
 					<faces:panelContent>
 						<gwt:flowPanel id="1">
-							<faces:image id="statue" url="${showcaseCoreResources.liberty}" styleName="faces-Image imageNormal" tooltip="Statue of Liberty"/>
+							<faces:image id="statue" url="${showcaseSamplesResources.liberty}" styleName="faces-Image imageNormal" tooltip="Statue of Liberty"/>
 						</gwt:flowPanel>
 					</faces:panelContent>
 				</faces:tab>
 			</faces:tabPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<showcase:info 
 			title="${messages_tabPanel.title}"

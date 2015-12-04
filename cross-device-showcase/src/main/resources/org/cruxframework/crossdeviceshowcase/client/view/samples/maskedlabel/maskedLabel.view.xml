@@ -8,21 +8,23 @@
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useController="maskedLabelController"
 	useFormatter="dateFormatter" 
-	title="MaskedLabel" >
+	onLoad="maskedLabelController.setDate"
+	title="MaskedLabel">
+	
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="panel">
+		<div id="panel" class="baseWrapper maskedLabel">
 			<gwt:flowPanel id="imgPanel" styleName="guilePanel">
 				<widgets:formDisplay id="form">
 					<widgets:entry label="Caracter:">
-						<faces:label id="nameLabel" text="Guile" styleName="gwt-Label valueLabel" />
+						<faces:label id="nameLabel" text="Guile" styleName="faces-Label valueLabel" />
 					</widgets:entry>
 					<widgets:entry label="Date of birth:">
 						<widgets:maskedLabel id="birthDate" formatter="dateFormatter" styleName="crux-MaskedLabel valueLabel" />
 					</widgets:entry>
 				</widgets:formDisplay>
 			</gwt:flowPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

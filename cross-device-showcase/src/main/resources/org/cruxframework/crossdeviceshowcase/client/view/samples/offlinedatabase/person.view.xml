@@ -1,0 +1,38 @@
+<v:view 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:v="http://www.cruxframework.org/view" 
+	xmlns:crux="http://www.cruxframework.org/crux" 
+	xmlns:gwt="http://www.cruxframework.org/crux/gwt"
+	xmlns:widgets="http://www.cruxframework.org/crux/widgets"
+	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
+	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
+	useController="offlineDatabaseController"
+	onLoad="offlineDatabaseController.onLoadDialog"
+	title="Edição de Pessoa"> 
+	
+	<center>
+		<div id="panel" class="baseWrapper offlineDatabase">
+			<widgets:formDisplay id="form">
+				<widgets:entry label="${database_messages.updateList}">
+					<gwt:integerBox id="idTextBox" enabled="false" value="@{personDataBase.id}"/>
+				</widgets:entry>
+				<widgets:entry label="${database_messages.name}">
+					<gwt:textBox id="nomeTextBox" value="@{personDataBase.name}"/>
+				</widgets:entry>
+				<widgets:entry label="${database_messages.address}">
+					<gwt:textBox id="ruaTextBox" value="@{personDataBase.address.street}"/>
+				</widgets:entry>
+				<widgets:entry label="${database_messages.number}">
+					<gwt:integerBox id="numeroTextBox" value="@{personDataBase.address.number}"/>
+				</widgets:entry>			
+				<widgets:entry>
+					<gwt:flowPanel id="wrapperActionButtons">
+						<faces:button id="btn" text="${database_messages.save}" onSelect="offlineDatabaseController.savePerson"/>
+						<faces:button id="btn" text="${database_messages.remove}" onSelect="offlineDatabaseController.removePerson"/>
+					</gwt:flowPanel>	
+				</widgets:entry>
+			</widgets:formDisplay>	
+		</div>
+	</center>		
+	
+</v:view>

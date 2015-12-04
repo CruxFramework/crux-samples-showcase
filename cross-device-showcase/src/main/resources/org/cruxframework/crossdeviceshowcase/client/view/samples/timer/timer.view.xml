@@ -11,8 +11,7 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="wrapper">
-			<gwt:HTMLPanel id="parentPanel">
+		<div id="panel" class="baseWrapper timer">
 				<div id="timerPanel" class="timerPanel">
 					<widgets:timer id="timer" initial="0" start="false"/>
 				</div>
@@ -24,8 +23,7 @@
 						<faces:button id="buttonClear" text="Clear" onSelect="timerController.clear"/>
 					</gwt:horizontalPanel>
 				</div>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

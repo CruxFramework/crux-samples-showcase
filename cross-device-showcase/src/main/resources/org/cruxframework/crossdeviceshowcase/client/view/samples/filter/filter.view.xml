@@ -12,14 +12,12 @@
 
 	<center>
 		<!-- Component use sample -->
-		<widgets:styledPanel id="wrapper">
-			<gwt:HTMLPanel id="wrapperChild" styleName="center">
-				<faces:label id="labelInsertText" text="Enter a means of transport" />
-				<br />
-				<widgets:filter id="filterWidget" text="Means of transport" animationEnabled="true" 
-					autoSelectEnabled="true" focus="true" width="200px" limit="2"/>
-			</gwt:HTMLPanel>
-		</widgets:styledPanel>
+		<div id="panel" class="baseWrapper filter center">
+			<faces:label id="labelInsertText" text="Enter a means of transport" />
+			<br />
+			<widgets:filter id="filterWidget" text="Means of transport" animationEnabled="true" 
+				autoSelectEnabled="true" focus="true" width="200px" limit="2"/>
+		</div>
 
 		<!-- Component description -->
 		<showcase:info 

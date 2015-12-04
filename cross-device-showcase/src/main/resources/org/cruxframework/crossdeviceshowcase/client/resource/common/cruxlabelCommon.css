@@ -1,0 +1,13 @@
+@external * ;
+
+.label .success {
+	color: #6d991a;
+}
+
+.label .warn {
+	color: #d58512;
+}
+
+.label .error {
+	color: #ac2925;
+}

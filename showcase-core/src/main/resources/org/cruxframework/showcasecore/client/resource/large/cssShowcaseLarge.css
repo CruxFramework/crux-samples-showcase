@@ -3,15 +3,9 @@
 @url layoutSectionIconUrl layoutSectionIcon;
 @url siteIconUrl siteIcon;
 @url projectIconUrl projectIcon;
-@url svgIconPresent svgIconPresent;
 @url svgIconArrow svgIconArrow;
-@url banner1promoUrl banner1promo;
-@url banner1promoUr2 banner1promo;
-@url banner1promoUr3 banner1promo;
-@url imageColiseuUrl coliseu;
-@url imageEiffelUrl eiffel;
-@url imageLibertyUrl liberty;
-@url guileUrl guile;
+
+
 @url logoLargeUrl logoLarge;
 @url noiseUrl noise;
 
@@ -44,11 +38,6 @@ body
 .rs-right
 {
 	float:right;
-}
-
-.valueLabel
-{
-	color: #303030 !important;
 }
 
 .speechBubble
@@ -118,7 +107,6 @@ body
 	background-image: logoLargeUrl;
 	background-position: center 25px;
 }
-
 
 .layoutSectionIcon
 {
@@ -339,31 +327,13 @@ body
 {
 	display:none;
 }
-.guilePanel
-{
-	background:guileUrl no-repeat left;
-	background-size: 100px;
-	padding-left: 100px;
-	min-height: 100px;
-	overflow:auto;	
-}
-.guilePanel .crux-FormDisplay
-{
-	margin-top:22px;
-}
-.guilePanel .crux-FormDisplay td
-{
-	border-top:none;
-}
+
 .desestylize .crux-StyledPanel
 {
 	border:none;
 	box-shadow:none;
 }
-.smallWidthInput
-{
-	width:120px;
-}
+
 .bigStyledPanel
 {
 	width:86%;
@@ -425,14 +395,7 @@ body
 {
 	box-shadow:none;
 }
-.w200
-{
-	width:200px;
-}
-.smallWidthInput
-{
-	width:130px;
-}
+
 .styledWrap{
 	width:410px;
 	margin:0 auto;
@@ -448,114 +411,6 @@ body
 {
 	padding: 0px;
 	height: 30px;
-}
-
-.productImage
-{
-	width:198px;
-	height:179px;
-	border:1px solid #ccc;
-	background:svgIconPresent no-repeat center #eee;
-	background-size:64px auto;
-}
-.productName
-{
-	font-weight:bold;
-	color:#222;
-	text-align:center;
-	margin:10px auto;
-}
-.productPrice
-{
-	color:#78a32e;
-	font-weight:bold;
-	font-size:18px;
-	text-align:center;
-	margin:10px auto;
-}
-.productButton
-{
-	background:#4396c6;
-	border:none;
-	box-shadow:none;
-	color:#fff;
-	font-wight:bold;
-	padding:5px 8px;
-	border-radius:4px;
-}
-
-/****************
-    PromoBanner
-****************/
-.messagePanel td
-{
-	vertical-align:bottom !important;
-}
-.messagePanel .title
-{
-	text-shadow:0 1px 0 rgba(0,0,0,0.5), 0 2px 1px rgba(0,0,0,0.5), 2px 3px 2px rgba(0,0,0,0.5), 3px 4px 3px rgba(0,0,0,0.5), 0 6px 4px rgba(0,0,0,0.5)!important;
-}
-
-.messagePanel .text
-{
-	text-shadow:0 1px 2px rgba(0,0,0,0.8), 0 2px 3px rgba(0,0,0,0.8), 2px 3px 4px rgba(0,0,0,0.8) !important;
-}
-
-.promoBannerWidth
-{
-	max-width:1024px !important;
-}
-.scrollBannerWidth
-{
-	width:350px;
-}
-
-.listShuttlePanel
-{
-	width:540px;
-}
-
-/* Image */
-.imageNormal
-{
-	width:280px !important;
-	height:220px !important; 
-	margin:5px;
-}
-
-.imageBig
-{
-	width:350px !important;
-	height:270px !important; 
-	margin:5px;
-}
-
-.imageSmall
-{
-	width:280px !important;
-	height:220px !important; 
-	margin:5px;
-	opacity:0.40;
-	-moz-opacity: 0.40;
-	filter: alpha(opacity\=40);
-}
-
-
-.imagelabelInformImage
-{
-	text-align: justify;
-	color:#1c5994;
-	width: 900px;
-}
-
-.imagelabelTitleImage
-{
-	text-align: center;
-	font-size: large;
-	font-weight: bold;
-	margin-bottom: 1%;
-	color:#1c5994;
-	width: 900px;
 }
 
 .topMenuDisposalTitle
@@ -650,67 +505,6 @@ body
 	filter: alpha(opacity\=75);
 }
 
-.tabSimpleView1Title
-{
-	text-align: center;
-	font-size: x-large;
-	font-weight: bold;
-	margin: 5%;
-	color:#1c5994;
-	margin-top: 10%;
-}
-
-.tabSimpleView1Text
-{
-	text-align: center;
-	vertical-align:middle !important;
-	font-size: large;
-	color:#1c5994;
-	line-height: 200%;
-	margin: 15%;
-}
-
-.tabSimpleView1Background
-{
-	background-color: #E6E6FA;
-}
-
-.tabSimpleView2Title
-{
-	text-align: center;
-	font-size: x-large;
-	font-weight: bold;
-	margin: 5%;
-	color:#8B0000;
-	margin-top: 10%;
-}
-
-.tabSimpleView2Text
-{
-	text-align: center;
-	vertical-align:middle !important;
-	font-size: large;
-	color:#8B0000;
-	line-height: 200%;
-	margin: 15%;
-}
-
-.tabSimpleView2Background
-{
-	background-color: #FFFACD;
-}
-
-.anchorWrapper
-{ 	
-	margin: 6%;
-	padding: 6%;
-	border-style: dotted !important;
-	border-width: thin;
-	border-color: #1c5994 !important;
-	vertical-align: middle !important;
-	text-align:center;
-}
-
 .horizontalSwapViewPanel1
 {
 	width: 700px; 
@@ -794,266 +588,6 @@ body
 	background-image: swapView3Url;
 }
 
-.dialogBoxPanel
-{
-	vertical-align: middle;
-	text-align: center;
-	padding: 10px;
-}
-.dialogBoxPanelButton
-{
-	margin:5px 2px !important;
-}
-
-.errorMessage
-{
-	color: red;
-	font-weight: bold;
-}
-
-.successMessage
-{
-	color: green;
-	font-weight: bold;
-}
-
-.panelResultData
-{
-	font-weight: bold;
-	margin-top: 3%;
-}
-
-.dialogViewContainer
-{
-	width:500px;
-	height:300px;
-}
-
-.dialogViewContainerResult
-{
-	margin-top: 12%;
-}
-
-/* Timer */
-.timerPanel
-{
-	text-align:center;
-	box-shadow: 1px 1px 8px #888888;
-	border-radius: 3px;
-}
-
-/* TopMenuDisposal */
-.explanationMobile{
-	display:none;
-}
-
-/* Menu */
-.menuItem-wrapper
-{
-	text-align: left;
-}
-
-.menuItem-label-style
-{
-	display: inline;
-	vertical-align: middle;
-	color: #1c5994 !important;
-}
-
-.menuItem-image-style
-{
-	height: 25px;
-	width: 25px;
-	vertical-align: middle;
-	margin-right: 8px;
-}
-
-
-/* Disposal */
-.disposal-views-title
-{
-	font-size:20px;
-	margin:15px 0;
-}
-
-.disposal-image
-{
-	width: 700px !important;
-	height: 185px !important;
-	border-radius: 5px;
-	background-size: 100% !important;
-}
-
-.disposal-views-textPanel
-{
-	width: 700px;
-	text-align: justify;
-}
-
-.disposal-title
-{
-	font-size: 26px;
-}
-
-.unselected-button
-{
-	background: gray !important;
-	border: 1px solid gray !important;
-	color: lightgrey !important;
-}
-
-
-/* Confirm */
-.confirm-label
-{
-	font-size: 20px;
-	margin-bottom: 20px;
-}
-
-
-/* RollingPanel */
-.showcase-RollingPanel
-{
-	width: 460px;
-}
-
-.showcase-cust-RollingPanel
-{
-	height: 250px;
-	width: 900px;
-}
-
-
-.rollingPanel-panel
-{
-	margin-bottom: 50px;
-}
-
-.rollingPanel-image
-{
-	width: 300px !important;
-	height: 180px !important;
-	background-size: 100% !important;
-}
-
-.saleItem .faces-Image
-{
-	height: 120px;
-	width: 120px;
-	margin: 5px;
-}
-
-.saleItem .faces-Label
-{
-	font-size: 19px;
-	margin-top: 10px;
-}
-
-.saleItem .label-price
-{
-	font-size: 40px;
-	color: #e70101;
-	height: 50px;
-	background-color: rgba(255, 255, 255, 1);
-	font-family: monospace;
-}
-
-.saleItem-wrapper-panel
-{
-	height: 230px;
-	width: 200px;
-	border: solid 2px white;
-	margin: 0px 0.5px;
-	background-color: #eee;
-	border-radius: 10px;
-	border-bottom: solid 3px #c8c8c8;
-	border-right: solid 3px #c8c8c8;
-	overflow: hidden;
-}
-
-
-/* SwapPanel */
-.showcase-swapPanel
-{
-	width: 300px !important;
-	height: 280px !important;
-	text-align:center;
-}
-
-.swapPanel-input-size
-{
-	width: 200px;
-}
-
-.sp-button-margin
-{
-	margin-left: 8px;
-}
-
-/* SwapViewContainer */
-.showcase-swapViewContainer
-{
-	width: 800px;
-	height: 600px !important;
-}
-
-.swapView-topPanel
-{
-	background-color: rgb(231, 1, 1);
-	padding: 10px;
-}
-
-.swapView-topPanel-title
-{
-	color: white;
-	font-size: 60px;
-	font-weight: 900;
-	display: inline;
-	vertical-align: middle;
-	margin-right: 50px;
-}
-
-.swapView-topPanel-logo
-{
-	vertical-align: middle;
-}
-
-.swapView-topPanel-login
-{
-	color: white;
-	font-size: 20px;
-	display: inline;
-	vertical-align: middle;
-	margin-left: 50px;
-}
-
-.swapView-buy-button
-{
-	background-color: #e70101 !important;
-	border: 1px solid #bc0505!important;
-	border-radius: 6px !important;
-	font-size: 18px !important;
-	width: 150px;
-}
-
-.swapView-back-button
-{
-	border-radius: 6px !important;
-	font-size: 18px !important;
-	width: 150px;
-}
-
-
-/* SortableList */
-.sortableList-item
-{
-	margin: 10px 0px;
-}
-
-.sortableList-input
-{
-	width :230px;
-}
 
 /* Slider */
 .showcase-slider
