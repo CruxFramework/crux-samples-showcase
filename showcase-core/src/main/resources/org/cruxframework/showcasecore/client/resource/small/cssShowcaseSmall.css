@@ -747,6 +747,11 @@ body
 	display:block !important;
 }
 
+.baseWrapper 
+{
+    width: 90% !important;
+}
+
 /* Log Area */
 
 .logWrapper 
