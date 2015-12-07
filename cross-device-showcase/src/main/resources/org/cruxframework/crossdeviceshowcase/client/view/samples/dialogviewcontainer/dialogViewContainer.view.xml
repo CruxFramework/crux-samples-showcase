@@ -14,7 +14,7 @@
 			<faces:view name="viewRegister"/>
 		</faces:dialogViewContainer>
 
-		<div id="panel" class="baseWrapper dialogViewContainer">
+		<div id="panel" class="baseWrapper dialogViewContainerWrapper">
 			<faces:button id="buttonShowDialog" text="Show DialogViewContainer"
 				onSelect="dialogViewContainerController.openDialog" />
 		</div>

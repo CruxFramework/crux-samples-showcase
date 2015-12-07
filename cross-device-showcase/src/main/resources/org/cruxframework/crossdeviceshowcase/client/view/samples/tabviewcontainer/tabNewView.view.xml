@@ -11,7 +11,7 @@
 	title="${messages_tabNewView.title}">
 	
 	<center>
-		<gwt:HTMLPanel id="panel" width="700px" height="400px">
+		<gwt:HTMLPanel id="panel">
 			<gwt:frame id="frameContent" height="100%" width="100%"/>
 		</gwt:HTMLPanel>
 	</center>

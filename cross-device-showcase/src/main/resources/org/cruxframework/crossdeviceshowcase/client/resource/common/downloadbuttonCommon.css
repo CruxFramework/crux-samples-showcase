@@ -1,1 +1,6 @@
 @external *;
+
+.crux-FileUploader .fileInputButton
+{
+	width: 200px;
+}

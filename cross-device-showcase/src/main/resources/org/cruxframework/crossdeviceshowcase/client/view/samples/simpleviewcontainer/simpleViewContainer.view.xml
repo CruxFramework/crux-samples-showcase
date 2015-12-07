@@ -12,7 +12,7 @@
 	<center>
 	
 		<div id="panel" class="baseWrapper simpleViewContainer">
-			<faces:simpleViewContainer id="viewContainer" width="600px" height="400px">
+			<faces:simpleViewContainer id="viewContainer" styleName="simpleViewContainer">
 				<faces:view name="view1"/>
 			</faces:simpleViewContainer>
 			<br />

@@ -68,7 +68,11 @@
 			<widgets:menuEntry label="TextBox" targetView="gwtTextBox"/>
 			<widgets:menuEntry label="SingleSelect" targetView="singleSelect"/>
 			<widgets:menuEntry label="Selectable Panel" targetView="selectablePanel"/>
-			<widgets:menuEntry label="Tab Panel" targetView="tabPanel"/>
+			
+			<!-- Fix issue https://github.com/CruxFramework/crux-smart-faces/issues/881 -->
+			<crux:ifDevice input="mouse">
+				<widgets:menuEntry label="Tab Panel" targetView="tabPanel"/>
+			</crux:ifDevice>
 			
 			<widgets:menuSection label="${messages_showcase.menusAndLists}" />
 			<widgets:menuEntry label="Menu" targetView="menu"/>
@@ -104,9 +108,14 @@
 			<widgets:menuEntry label="SlideShow" targetView="slideshow"/>
 			<widgets:menuEntry label="ScrollBanner" targetView="scrollBanner"/>
 			<widgets:menuEntry label="SwapPanel" targetView="swapPanel"/>
+			<!-- Implement it later... -->
+			<!-- <widgets:menuEntry label="Image Processing" targetView="imageProcessing"/> -->
 			
 			<widgets:menuSection label="${messages_showcase.containers}"/>
-			<widgets:menuEntry label="Tab View Container" targetView="tabViewContainer"/>
+			<!-- Fix issue https://github.com/CruxFramework/crux-smart-faces/issues/881 -->
+			<crux:ifDevice input="mouse">
+				<widgets:menuEntry label="Tab View Container" targetView="tabViewContainer"/>
+			</crux:ifDevice>
 			<widgets:menuEntry label="SwapViewContainer" targetView="swapViewContainer"/>
 			<widgets:menuEntry label="Simple View Container" targetView="simpleViewContainer"/>
 			<widgets:menuEntry label="DialogViewContainer" targetView="dialogViewContainer"/>

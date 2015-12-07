@@ -1,13 +1,16 @@
 @external * ;
 
 .label .success {
+	background: transparent;
 	color: #6d991a;
 }
 
 .label .warn {
+	background: transparent;
 	color: #d58512;
 }
 
 .label .error {
+	background: transparent;
 	color: #ac2925;
 }
