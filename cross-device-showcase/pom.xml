@@ -11,6 +11,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<cruxVersion>5.4-SNAPSHOT</cruxVersion>
+		<java.source.version>1.7</java.source.version>
+		<java.target.version>1.7</java.target.version>
 	</properties>
 
 	<dependencies>
@@ -53,17 +55,6 @@
 					<!-- <extraJvmArgs>-Xmx1024M -Xss1024k -Xdebug -Xrunjdwp:transport=dt_socket,address=3331,server=y,suspend=y</extraJvmArgs> -->
            		</configuration>	
             </plugin>
-			<!-- Compile -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-					<compilerArgument>-proc:none</compilerArgument>
-				</configuration>
-			</plugin>
 			<!-- Crux Plugin -->
 			<plugin>
 				<groupId>org.cruxframework.plugin</groupId>
@@ -72,15 +63,26 @@
 				<executions>
 					<execution>
 		                <goals>
-		                    <goal>generate-xsds</goal>
-		                    <goal>apt</goal>
-							<!-- <goal>generate-html-snapshots</goal> -->
+		                	<goal>apt</goal>
 		                    <goal>process-crux-resources</goal>
+		                    <goal>generate-xsds</goal>
+							<!-- <goal>generate-html-snapshots</goal> -->
 		                </goals>
 					</execution>
 				</executions>
 				<configuration>
 					<module>org.cruxframework.crossdeviceshowcase.CrossDeviceShowcase</module>
+					<sourceVersion>${java.source.version}</sourceVersion>
+				</configuration>
+			</plugin>
+			<!-- Maven compile plugin -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
 				</configuration>
 			</plugin>
 		</plugins>
