@@ -110,12 +110,5 @@
 			<version>${smartfacesVersion}</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.cruxframework.plugin</groupId>
-			<artifactId>crux-maven-plugin</artifactId>
-			<version>${cruxVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-		
 	</dependencies>
 </project>
