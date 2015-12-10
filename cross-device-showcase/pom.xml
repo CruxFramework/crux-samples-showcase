@@ -10,7 +10,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<cruxVersion>5.4-SNAPSHOT</cruxVersion>
+		<cruxVersion>5.5-SNAPSHOT</cruxVersion>
 		<java.source.version>1.7</java.source.version>
 		<java.target.version>1.7</java.target.version>
 	</properties>
@@ -23,7 +23,7 @@
 		</dependency>
 	</dependencies>
 
-  <build>
+ 	<build>
   		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<!-- GWT Plugin -->
