@@ -9,7 +9,7 @@
 	title="Simple View 3"> 
 	
 	<center>
-		<widgets:styledPanel id="parentPanel" width="600px" height="400px">
+		<widgets:styledPanel id="parentPanel">
 			<gwt:HTMLPanel id="panel">
 				<gwt:label id="labelViewTitle" text="${messages_view3.title}" />
 				<br />

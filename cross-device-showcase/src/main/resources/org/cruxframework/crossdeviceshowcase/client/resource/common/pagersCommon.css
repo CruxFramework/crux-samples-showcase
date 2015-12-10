@@ -19,8 +19,6 @@
 	.scrollablePagerWrapper .faces-WidgetList {
 	border: 1px solid #ccc;
 	padding: 8px;
-	height: 90px !important;
-	/* TODO: diminuir o height que está sendo setado dinamicamente */
 }
 
 /* Type Titles */

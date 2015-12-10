@@ -14,7 +14,34 @@
 		<java.target.version>1.7</java.target.version>
 	</properties>
 
+	<!-- Enable Snapshots -->
+	<repositories>
+		<repository>
+			<id>sonatype-dependencies-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>sonatype-plugins-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<build>
+		<!-- Including resources -->
 		<resources>
 			<resource>
 				<directory>${basedir}/src/main/java</directory>
@@ -38,11 +65,12 @@
 				<executions>
 					<execution>
 		                <goals>
-		                    <goal>apt</goal>
+		                	<goal>apt</goal>
 		                </goals>
 					</execution>
 				</executions>
 			</plugin>
+			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -50,7 +78,6 @@
 				<configuration>
 					<source>${java.source.version}</source>
 					<target>${java.target.version}</target>
-					<compilerArgument>-proc:none</compilerArgument>
 				</configuration>
 			</plugin>
 		</plugins>

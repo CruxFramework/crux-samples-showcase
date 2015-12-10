@@ -11,3 +11,8 @@
 	margin-top: 20px;
 	background-size: 100% !important; 
 }
+
+.baseWrapper
+{
+	width: 100%;
+}
