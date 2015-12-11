@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import org.cruxframework.crux.core.client.controller.Controller;
 import org.cruxframework.crux.core.client.controller.Expose;
 import org.cruxframework.crux.core.client.ioc.Inject;
+import org.cruxframework.crux.core.client.screen.DeviceAdaptive.Size;
 import org.cruxframework.crux.core.client.screen.Screen;
 import org.cruxframework.crux.core.client.screen.views.BindRootView;
 import org.cruxframework.crux.core.client.screen.views.View;
@@ -100,7 +101,10 @@ public class MainController
 	public void wellcome()
 	{
 		//add the event log window
-		logger.addHandler(new VisualBoxLogHandler(messages.enableLog(), messages.disableLog()));
+		if(Screen.getCurrentDevice().getSize().equals(Size.large))
+		{
+			logger.addHandler(new VisualBoxLogHandler(messages.enableLog(), messages.disableLog()));
+		}
 
 		String hash = Window.Location.getHash();
 		MenuTabsDisposal menuDisposal = (MenuTabsDisposal) Screen.get("menuDisposal");
@@ -126,8 +130,11 @@ public class MainController
 		//Call method to verify browser language
 		languageManager.verifyAndToggleLanguage();
 
-		//Setup the top filters
-		setupFilters(menuDisposal);
+		if(Screen.getCurrentDevice().getSize().equals(Size.large))
+		{
+			//Setup the top filters
+			setupFilters(menuDisposal);
+		}
 	}
 
 	private void setupFilters(final MenuTabsDisposal menuDisposal)
