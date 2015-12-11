@@ -27,9 +27,9 @@
 
 		<!-- Component description -->
 		<showcase:info 
-			title="Button" 
+			title="Selectable Panel" 
 			library="SmartFaces" 
-			ie-version="10+"
+			ie-version="9+"
 			libraryPanel-visible="true"
 			browserPanel-visible="true" 
 			edge-visible="true" ie-visible="true" 

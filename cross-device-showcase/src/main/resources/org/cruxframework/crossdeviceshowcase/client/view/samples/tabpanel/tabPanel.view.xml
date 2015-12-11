@@ -13,7 +13,7 @@
 	<center>
 		<div id="panel" class="baseWrapper tabPanel">
 			<faces:tabPanel id="tabPanel">
-				<faces:tab tabEnabled="true">
+				<faces:tab tabEnabled="true" selected="true">
 					<faces:tabWidget>
 						<gwt:label id="label1" text="1" />
 					</faces:tabWidget>
