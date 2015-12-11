@@ -1,1 +1,6 @@
 @external *;
+
+.tabPanel .gwt-Label
+{
+	margin-bottom: 0;
+}
