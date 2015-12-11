@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.cruxframework</groupId>
 	<artifactId>cross-device-showcase</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.2-SNAPSHOT</version>
 	<name>CrossDeviceShowcase</name>
 	<packaging>war</packaging>
 	<description>Crux Cross-Device Showcase of Features</description>
@@ -19,7 +19,7 @@
 		<dependency>
 			<groupId>org.cruxframework.showcasecore</groupId>
 			<artifactId>showcase-core</artifactId>
-			<version>1.1-SNAPSHOT</version>
+			<version>1.2-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
