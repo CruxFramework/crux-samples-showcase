@@ -80,20 +80,11 @@ public class VisualBoxLogHandler extends Handler
 		logWrapper.add(wrapperLog);
 
 		RootPanel.get().add(logWrapper);
-
-		if(Screen.getCurrentDevice().equals(Device.smallDisplayArrows)
-			|| Screen.getCurrentDevice().equals(Device.smallDisplayTouch))
-		{
-			close.setVisible(false);
-			open.setVisible(true);
-			logEntries.setVisible(false);
-		}
-		else
-		{
-			close.setVisible(true);
-			open.setVisible(false);
-			logEntries.setVisible(true);
-		}
+		
+		//Setting log as closed as default
+		close.setVisible(false);
+		open.setVisible(true);
+		logEntries.setVisible(false);
 
 		Scheduler.get().scheduleFixedDelay(new RepeatingCommand()
 		{

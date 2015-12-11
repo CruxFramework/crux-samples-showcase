@@ -30,11 +30,12 @@
 		<widgets:menuTabsDisposal id="menuDisposal" >
 			<widgets:header>
 				<gwt:flowPanel id="headerPanel">
-					
-						<gwt:flowPanel id="filterPanel"> 
-							<widgets:filter id="filter" text="Search here" animationEnabled="true" 
-								autoSelectEnabled="true" focus="true" width="200px" height="29px" style="margin-right: 350px; margin-top: 1px;"  limit="2"/>
-						</gwt:flowPanel>
+						<crux:ifDevice size="large">
+							<gwt:flowPanel id="filterPanel"> 
+								<widgets:filter id="filter" text="Search here" animationEnabled="true" 
+									autoSelectEnabled="true" focus="true" width="200px" height="29px" style="margin-right: 350px; margin-top: 1px;"  limit="2"/>
+							</gwt:flowPanel>
+						</crux:ifDevice>
 				
 						<gwt:flowPanel id="topBarpanel">
 							<gwt:label text="${messages_showcase.shortWelcome}" id="activeViewPage" styleName="activeView"></gwt:label>
@@ -68,11 +69,7 @@
 			<widgets:menuEntry label="TextBox" targetView="gwtTextBox"/>
 			<widgets:menuEntry label="SingleSelect" targetView="singleSelect"/>
 			<widgets:menuEntry label="Selectable Panel" targetView="selectablePanel"/>
-			
-			<!-- Fix issue https://github.com/CruxFramework/crux-smart-faces/issues/881 -->
-			<crux:ifDevice input="mouse">
-				<widgets:menuEntry label="Tab Panel" targetView="tabPanel"/>
-			</crux:ifDevice>
+			<widgets:menuEntry label="Tab Panel" targetView="tabPanel"/>
 			
 			<widgets:menuSection label="${messages_showcase.menusAndLists}" />
 			<widgets:menuEntry label="Menu" targetView="menu"/>
@@ -112,10 +109,7 @@
 			<!-- <widgets:menuEntry label="Image Processing" targetView="imageProcessing"/> -->
 			
 			<widgets:menuSection label="${messages_showcase.containers}"/>
-			<!-- Fix issue https://github.com/CruxFramework/crux-smart-faces/issues/881 -->
-			<crux:ifDevice input="mouse">
-				<widgets:menuEntry label="Tab View Container" targetView="tabViewContainer"/>
-			</crux:ifDevice>
+			<widgets:menuEntry label="Tab View Container" targetView="tabViewContainer"/>
 			<widgets:menuEntry label="SwapViewContainer" targetView="swapViewContainer"/>
 			<widgets:menuEntry label="Simple View Container" targetView="simpleViewContainer"/>
 			<widgets:menuEntry label="DialogViewContainer" targetView="dialogViewContainer"/>
