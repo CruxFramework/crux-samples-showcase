@@ -88,6 +88,7 @@
 			<groupId>org.cruxframework</groupId>
 			<artifactId>crux-dev</artifactId>
 			<version>${cruxVersion}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.cruxframework</groupId>
@@ -98,17 +99,14 @@
 			<groupId>org.cruxframework</groupId>
 			<artifactId>crux-widgets</artifactId>
 			<version>${widgetsVersion}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.cruxframework</groupId>
 			<artifactId>crux-smart-faces</artifactId>
 			<version>${smartfacesVersion}</version>
+			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.cruxframework.plugin</groupId>
-			<artifactId>crux-maven-plugin</artifactId>
-			<version>${cruxVersion}</version>
-		</dependency>
-		
 	</dependencies>
+	
 </project>

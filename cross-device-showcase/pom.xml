@@ -10,9 +10,11 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<cruxVersion>5.4-SNAPSHOT</cruxVersion>
 		<java.source.version>1.7</java.source.version>
 		<java.target.version>1.7</java.target.version>
+		<cruxVersion>5.4-SNAPSHOT</cruxVersion>
+		<smartfacesVersion>1.3-SNAPSHOT</smartfacesVersion>
+		<widgetsVersion>5.4-SNAPSHOT</widgetsVersion>
 	</properties>
 
 	<dependencies>
@@ -20,6 +22,24 @@
 			<groupId>org.cruxframework.showcasecore</groupId>
 			<artifactId>showcase-core</artifactId>
 			<version>1.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cruxframework</groupId>
+			<artifactId>crux-dev</artifactId>
+			<version>${cruxVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.cruxframework</groupId>
+			<artifactId>crux-widgets</artifactId>
+			<version>${widgetsVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.cruxframework</groupId>
+			<artifactId>crux-smart-faces</artifactId>
+			<version>${smartfacesVersion}</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
