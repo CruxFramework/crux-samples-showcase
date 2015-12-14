@@ -1,9 +1,5 @@
 @external * ;
 
-.selectablePanel {
-	line-height: 100px;
-}
-
 .success {
 	background: #6d991a;
 }
