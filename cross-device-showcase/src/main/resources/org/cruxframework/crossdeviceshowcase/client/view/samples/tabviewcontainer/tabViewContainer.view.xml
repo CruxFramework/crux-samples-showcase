@@ -16,13 +16,13 @@
 				<faces:view name="simpleViewTab1" closeable="true"/>
 			</faces:tabViewContainer>
 			<br/>
-			<gwt:horizontalPanel id="buttonPanel">
+			<widgets:storyboard id="buttonPanel">
 				<gwt:textBox id="textBoxUrl" text="http://www.w3schools.com/" width="250px" readOnly="true"/>
 				<widgets:button id="buttonAddUrl"
 				text="${messages_tabViewContainer.buttonAddUrl}" onSelect="tabViewContainerController.add" />
 				<widgets:button id="buttonRemove"
 				text="${messages_tabViewContainer.buttonRemove}" onSelect="tabViewContainerController.remove" />
-			</gwt:horizontalPanel>
+			</widgets:storyboard>
 		</div>
 
 		<showcase:info 
