@@ -26,7 +26,7 @@ public class LanguageManager
 	{
 		if(locale == null)
 		{
-			locale = getBrowserLocale();
+			return;
 		}
 
 		if(locale.contains("pt_BR"))
@@ -42,6 +42,7 @@ public class LanguageManager
 		}
 	}
 	
+	//not used for now...
 	private native String getBrowserLocale()/*-{
 	
 		if($wnd.navigator !== undefined && $wnd.navigator.language !== undefined)
