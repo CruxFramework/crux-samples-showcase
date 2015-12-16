@@ -1,5 +1,11 @@
 @external *;
 
+.tabViewContainer
+{
+	height: 315px;
+	width: 600px;
+}
+
 .tabSimpleView1Title
 {
 	text-align: center;
@@ -16,8 +22,7 @@
 	vertical-align:middle !important;
 	font-size: large;
 	color:#1c5994;
-	line-height: 200%;
-	margin: 15%;
+	line-height: 100%;
 }
 
 .tabSimpleView1Background
@@ -41,8 +46,7 @@
 	vertical-align:middle !important;
 	font-size: large;
 	color:#8B0000;
-	line-height: 200%;
-	margin: 15%;
+	line-height: 100%;
 }
 
 .tabSimpleView2Background

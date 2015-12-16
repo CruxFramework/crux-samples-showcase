@@ -74,4 +74,7 @@ public interface ShowcaseMessages extends Messages
 
 	@DefaultMessage("Carregando")
 	String loading();
+	
+	@DefaultMessage("Buscar...")
+	String searchHere();
 }

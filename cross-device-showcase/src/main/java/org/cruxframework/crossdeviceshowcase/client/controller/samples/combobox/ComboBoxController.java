@@ -20,23 +20,24 @@ public class ComboBoxController
 	public void onLoadData(EagerLoadEvent<Country> event)
 	{
 		ArrayList<Country> countries = new ArrayList<Country>();
-		countries.add(new Country("Algeria", "Argel"));
-		countries.add(new Country("Argentina", "Buenos Aires"));
-		countries.add(new Country("Australia", "Camberra"));
-		countries.add(new Country("Brazil", "Brasília"));
-		countries.add(new Country("Canada", "Ottawa"));
-		countries.add(new Country("Chile", "Santiago"));
-		countries.add(new Country("China", "Pequim"));
-		countries.add(new Country("CostaRica", "San José"));
-		countries.add(new Country("France", "Paris"));
-		countries.add(new Country("Germany", "Berlim"));
-		countries.add(new Country("Italy", "Roma"));
-		countries.add(new Country("Japan", "Tóquio"));
-		countries.add(new Country("Mexico", "México"));
-		countries.add(new Country("Morocco", "Rabat"));
-		countries.add(new Country("South Africa", "Pretória, Cabo, Bloemfontein"));
-		countries.add(new Country("South Korea", "Seul"));
-		countries.add(new Country("USA", "Washington, D.C."));
+		countries.add(new Country(0, "Algeria", "Argel"));
+		countries.add(new Country(1, "Argentina", "Buenos Aires"));
+		countries.add(new Country(2, "Australia", "Camberra"));
+		countries.add(new Country(3, "Brazil", "Brasília"));
+		countries.add(new Country(4, "Canada", "Ottawa"));
+		countries.add(new Country(5, "Chile", "Santiago"));
+		countries.add(new Country(6, "China", "Pequim"));
+		countries.add(new Country(7, "CostaRica", "San José"));
+		countries.add(new Country(8, "France", "Paris"));
+		countries.add(new Country(9, "Germany", "Berlim"));
+		countries.add(new Country(10, "Italy", "Roma"));
+		countries.add(new Country(11, "Japan", "Tóquio"));
+		countries.add(new Country(12, "Mexico", "México"));
+		countries.add(new Country(13, "Morocco", "Rabat"));
+		countries.add(new Country(14, "South Africa", "Pretória, Cabo, Bloemfontein"));
+		countries.add(new Country(15, "South Korea", "Seul"));
+		countries.add(new Country(16, "Spain", "Madri"));
+		countries.add(new Country(17, "USA", "Washington, D.C."));
 		event.getSource().setData(countries);
 	}
 

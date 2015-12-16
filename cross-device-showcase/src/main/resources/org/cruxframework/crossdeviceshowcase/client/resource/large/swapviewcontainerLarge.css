@@ -1,5 +1,10 @@
 @external *;
 
+.swapViewContainer .faces-SwapViewContainer 
+{
+	height: 100px !important;
+}
+
 .showcase-swapViewContainer
 {
 	width: 800px;

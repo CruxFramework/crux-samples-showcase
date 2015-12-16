@@ -6,6 +6,11 @@
 	height: 500px !important;
 }
 
+.faces-SwapViewContainer
+{
+	height: 140px !important;
+}
+
 .swapView-image
 {
 	width: 280px !important;

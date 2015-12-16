@@ -18,7 +18,7 @@
 				</faces:swapViewContainer>
 				<gwt:HTMLPanel id="buttonPanel">
 					<faces:button id="backButton" text="Back" visible="false" styleName="faces-Button swapView-back-button"  onSelect="swapViewContainerController.previousView"/>
-					<faces:button id="buyButton" text="Buy Now" styleName="faces-Button swapView-buy-button" onSelect="swapViewContainerController.nextView"/>
+					<faces:button id="buyButton" text="Next" styleName="faces-Button swapView-buy-button" onSelect="swapViewContainerController.nextView"/>
 					<hr />
 				</gwt:HTMLPanel>
 				<gwt:flowPanel id="actionPanel">
