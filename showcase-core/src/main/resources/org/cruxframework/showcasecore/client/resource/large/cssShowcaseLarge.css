@@ -103,9 +103,19 @@ body
 {
 	background-repeat: no-repeat;
 	background-position: top;
-	padding-top: 80px;
-	background-image: logoLargeUrl;
-	background-position: center 25px;
+	padding-top: 120px;
+	background: logoLargeUrl no-repeat 0 10px #ececec;
+	background-position: center 18px;
+}
+
+.viewFilter 
+{
+    position: absolute;
+    z-index: 1;
+    width: 266px;
+    margin-left: 16px;
+    margin-top: 86px;
+    height: 29px;
 }
 
 .layoutSectionIcon
