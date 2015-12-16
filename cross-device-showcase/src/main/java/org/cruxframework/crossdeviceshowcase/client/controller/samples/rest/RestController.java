@@ -67,7 +67,14 @@ public class RestController
 							@Override
 							public void onComplete(PersonDTO result)
 							{
-								View.of(RestController.this).write(result);			
+								if(result == null)
+								{
+									MessageBox.show(messages.thisIsASample(), MessageType.INFO);
+								}
+								else
+								{
+									View.of(RestController.this).write(result);			
+								}
 							}
 						});	
 					}

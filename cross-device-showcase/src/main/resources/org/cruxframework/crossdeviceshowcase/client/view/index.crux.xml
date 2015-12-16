@@ -22,21 +22,18 @@
 			  			   showcaseCoreResources,
 			  			   showcaseSamplesResources"
 			  height="100%"
-			  onLoad="mainController.wellcome"
+			  onLoad="mainController.onLoad"
 		/>
 		
 		<crux:splashScreen style="background: url('crossdeviceshowcase/img/loading.gif') no-repeat center; width: 100%; height: 100%; margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0;"/>
+
+		<crux:ifDevice size="large">
+			<widgets:filter id="filter" styleName="crux-Filter viewFilter" text="${messages_showcase.searchHere}" animationEnabled="true" autoSelectEnabled="true" focus="true" limit="2"/>
+		</crux:ifDevice>
 		
 		<widgets:menuTabsDisposal id="menuDisposal" >
 			<widgets:header>
 				<gwt:flowPanel id="headerPanel">
-						<crux:ifDevice size="large">
-							<gwt:flowPanel id="filterPanel"> 
-								<widgets:filter id="filter" text="Search here" animationEnabled="true" 
-									autoSelectEnabled="true" focus="true" width="200px" height="29px" style="margin-right: 350px; margin-top: 1px;"  limit="2"/>
-							</gwt:flowPanel>
-						</crux:ifDevice>
-				
 						<gwt:flowPanel id="topBarpanel">
 							<gwt:label text="${messages_showcase.shortWelcome}" id="activeViewPage" styleName="activeView"></gwt:label>
 							<faces:selectablePanel id="langTogglerSelector" styleName="topBarIcon sm-lang-wrapper" onSelect="mainController.switchLocaleUrl">

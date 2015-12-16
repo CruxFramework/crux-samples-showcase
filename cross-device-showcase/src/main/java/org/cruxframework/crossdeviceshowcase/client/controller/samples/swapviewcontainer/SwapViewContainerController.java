@@ -60,7 +60,7 @@ public class SwapViewContainerController
 		myWidgetAccessor.viewContainer().setAnimationBackward(chooseAnimation());
 		myWidgetAccessor.viewContainer().showView("swapView1");
 		myWidgetAccessor.backButton().setVisible(false);
-		myWidgetAccessor.buyButton().setText("Buy Now");
+		myWidgetAccessor.buyButton().setText("Next");
 		count = 1;
 	}
 	
@@ -69,7 +69,7 @@ public class SwapViewContainerController
 		myWidgetAccessor.viewContainer().setAnimationBackward(chooseAnimation());
 		myWidgetAccessor.viewContainer().showView("swapView2");
 		myWidgetAccessor.backButton().setVisible(true);
-		myWidgetAccessor.buyButton().setText("Checkout");
+		myWidgetAccessor.buyButton().setText("Last");
 		count = 2;
 	}
 	

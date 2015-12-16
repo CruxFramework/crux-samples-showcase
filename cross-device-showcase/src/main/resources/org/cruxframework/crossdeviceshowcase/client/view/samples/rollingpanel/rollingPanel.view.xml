@@ -7,8 +7,6 @@
 	xmlns:faces="http://www.cruxframework.org/crux/smart-faces"
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useResource="showcaseSamplesResources"
-	useController="rollingPanelController"
-	onLoad="rollingPanelController.onLoad"
 	title="RollingPanel"> 
 
 	<center>
@@ -31,14 +29,6 @@
 				</faces:rollingPanel>
 		
 		</div>
-		
-		<widgets:styledPanel id="customRollingPanel">
-			<gwt:flowPanel id="innerPanel">
-					<!-- 				Inserting Personal widgets created to Sports Store for controller -->
-					<faces:label id="label2" text="This is a Customized Component RollingPanel" styleName="faces-Label margin-bottom"/>
-					<faces:rollingPanel id="rollingPanelCustomizedWidget" tooltip="Sports Store"/>
-			</gwt:flowPanel>
-		</widgets:styledPanel>
 		
 <!-- 		Component description -->
 		<showcase:info 

@@ -17,32 +17,8 @@
 		<div id="panel" class="baseWrapper pagers">
 			<gwt:flowPanel id="pagerWrapper" styleName="pagerWrapper">
 				<gwt:flowPanel id="dataProviderWrapper" styleName="dataProviderWrapper">
-				
-					<gwt:flowPanel id="commonPagerWrapper" styleName="commonPagerWrapper">
-						<gwt:label id="lblDataProviderWrapper" text="Data Provider"/>
-						
-						<faces:widgetList id="widgetList" itemVar="person" dataProvider="dataProvider">
-							<faces:widget>
-								<faces:label id="lblPerson" text="@{person.name} - @{person.lastName}"/>
-							</faces:widget>
-						</faces:widgetList>
-						
-						<gwt:label id="lblSequentialPager" text="Sequential Pager"/>
-						
-					    <faces:sequentialPager id="sequentialPager" dataProvider="dataProvider" visible="true" />
-					    
-					    <gwt:label id="lblBulletsPager" text="Bullets Pager"/>
-					    
-					    <faces:bulletsPager id="bulletsPager" dataProvider="dataProvider" visible="true" />
-					    
-					    <gwt:label id="lblPredictivePager" text="Predictive Pager"/>
-					    
-					    <faces:predictivePager id="predictivePager" dataProvider="dataProvider" visible="true" />
-					</gwt:flowPanel>
 				    
 				    <gwt:flowPanel id="swapPagerWrapper" styleName="swapPagerWrapper">
-					    <gwt:label id="lblSwapPager" text="Swap Pager"/>
-					    
 					    <faces:widgetList id="widgetListSwap" itemVar="person" dataProvider="dataProvider">
 							<faces:widget>
 								<faces:label id="lblPerson" text="@{person.name} - @{person.lastName}"/>
@@ -50,18 +26,7 @@
 						</faces:widgetList>
 					    
 					    <faces:swapPager pageable="widgetListSwap" id="swapPager"/>
-				    </gwt:flowPanel>
-				    
-   				    <gwt:flowPanel id="scrollablePagerWrapper" styleName="scrollablePagerWrapper">
-   				    	<gwt:label id="lblScrollablePager" text="Scrollable Pager"/>
-   				    	
-					    <faces:widgetList id="widgetListScrollable" itemVar="person" dataProvider="dataProvider">
-							<faces:widget>
-								<faces:label id="lblPerson" text="@{person.name} - @{person.lastName}"/>
-							</faces:widget>
-						</faces:widgetList>
-					    
-					    <faces:scrollablePager pageable="widgetListScrollable" id="scrollablePager"/>
+					    <faces:bulletsPager id="bulletsPager" dataProvider="dataProvider" visible="true" />
 				    </gwt:flowPanel>
 				    
 			    </gwt:flowPanel>
