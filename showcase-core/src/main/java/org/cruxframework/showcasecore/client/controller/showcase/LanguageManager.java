@@ -1,12 +1,21 @@
 package org.cruxframework.showcasecore.client.controller.showcase;
 
-import org.cruxframework.crux.core.client.screen.views.View;
-
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 
 public class LanguageManager 
 {
+	private Widget langToggler;
+	private Widget langEn;
+	private Widget langPt;
+
+	public LanguageManager(Widget langToggler, Widget langEn, Widget langPt)
+	{
+		this.langEn = langEn;
+		this.langPt = langPt;
+		this.langToggler = langToggler;
+	}
+	
 	public void verifyAndToggleLanguage()
 	{
 		String uriLocale = Window.Location.getParameter("locale");
@@ -17,13 +26,8 @@ public class LanguageManager
 	{
 		if(locale == null)
 		{
-			return;
+			locale = getBrowserLocale();
 		}
-
-		Widget langToggler = View.of(this).getWidget("langToggler");
-
-		Widget langEn = View.of(this).getWidget("langEn");
-		Widget langPt = View.of(this).getWidget("langPt");
 
 		if(locale.contains("pt_BR"))
 		{
@@ -37,11 +41,15 @@ public class LanguageManager
 			langEn.addStyleName("active");
 		}
 	}
-
+	
 	private native String getBrowserLocale()/*-{
-		if($wnd.navigator.language == "pt-br")
+	
+		if($wnd.navigator !== undefined && $wnd.navigator.language !== undefined)
 		{
-			return "pt_BR";
+			if($wnd.navigator.language == "pt" || ($wnd.navigator.language.indexOf("pt-") > -1) || ($wnd.navigator.language.indexOf("pt_") > -1))
+			{
+				return "pt_BR";
+			}
 		}
 		return "en_US";
 	}-*/;
