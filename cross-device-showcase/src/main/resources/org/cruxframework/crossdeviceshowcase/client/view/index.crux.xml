@@ -70,8 +70,6 @@
 			
 			<widgets:menuSection label="${messages_showcase.menusAndLists}" />
 			<widgets:menuEntry label="Menu" targetView="menu"/>
-			<widgets:menuEntry label="SideMenuDisposal" targetView="sideMenuDisposal"/>
-			<widgets:menuEntry label="TopMenuDisposal" targetView="topMenuDisposal"/>			
 			<widgets:menuEntry label="Filter" targetView="filter"/>
 			<widgets:menuEntry label="ListShuttle" targetView="listShuttle"/>			
 			<widgets:menuEntry label="SortableList" targetView="sortableList"/>
@@ -85,8 +83,9 @@
 			<widgets:menuEntry label="Pagers" targetView="pagers"/>
 			
 			<widgets:menuSection label="${messages_showcase.layoutsAndPanels}"/>
+			<widgets:menuEntry label="SideMenuDisposal" targetView="sideMenuDisposal"/>
+			<widgets:menuEntry label="TopMenuDisposal" targetView="topMenuDisposal"/>
 			<widgets:menuEntry label="FormDisplay" targetView="formDisplay" />
-			<widgets:menuEntry label="RollingPanel" targetView="rollingPanel"/>
 			<widgets:menuEntry label="StoryBoard" targetView="storyBoard"/>
 			<widgets:menuEntry label="StyledPanel" targetView="styledPanel"/>
 			
@@ -98,6 +97,7 @@
 			
 			<widgets:menuSection label="${messages_showcase.imagesAndOthers}"/>
 			<widgets:menuEntry label="Image" targetView="image"/>
+			<widgets:menuEntry label="RollingPanel" targetView="rollingPanel"/>
 			<widgets:menuEntry label="PromoBanner" targetView="promoBanner"/>
 			<widgets:menuEntry label="SlideShow" targetView="slideshow"/>
 			<widgets:menuEntry label="ScrollBanner" targetView="scrollBanner"/>

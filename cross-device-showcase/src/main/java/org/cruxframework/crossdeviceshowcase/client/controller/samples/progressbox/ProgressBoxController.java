@@ -17,16 +17,17 @@ public class ProgressBoxController
 	@Expose
 	public void showProgress()
 	{
-		progress = ProgressBox.show("");		
+		progress = ProgressBox.show("");
+		progress.setMax(DURATION);
+		progress.setValue(DURATION);
 		updateTitle();
-
 		timer = new Timer()
 		{
 			@Override
 			public void run()
 			{
 				timeLeftToHide--;
-
+				progress.setValue(timeLeftToHide);
 				if(timeLeftToHide == 0)
 				{
 					hideProgress();
