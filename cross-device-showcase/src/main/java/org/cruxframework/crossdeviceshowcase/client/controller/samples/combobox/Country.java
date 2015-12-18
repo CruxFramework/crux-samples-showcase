@@ -5,8 +5,7 @@ import org.cruxframework.crux.core.client.dto.DataObject;
 @DataObject("countryComboBox")
 public class Country 
 {
-	private static int idCounter = 0;
-	private int id;
+	private Integer id;
 	private String name;
 	private String capital;
 
@@ -14,9 +13,9 @@ public class Country
 	{
 	}
 	
-	public Country(String name, String capital)
+	public Country(Integer id, String name, String capital)
 	{
-		this.id = idCounter++;
+		this.id = id;
 		this.name = name;
 		this.capital = capital;
 	}
@@ -41,12 +40,12 @@ public class Country
 		this.capital = capital;
 	}
 
-	public int getId()
+	public Integer getId()
 	{
 		return id;
 	}
 
-	public void setId(int id)
+	public void setId(Integer id)
 	{
 		this.id = id;
 	}

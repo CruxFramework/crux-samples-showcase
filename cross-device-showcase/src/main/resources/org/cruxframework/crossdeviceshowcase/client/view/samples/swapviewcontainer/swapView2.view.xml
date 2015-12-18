@@ -10,13 +10,12 @@
 	title="Added Product"> 
 	
 	<center>
-		<gwt:HTMLPanel id="topPanel" styleName="swapView-topPanel">
-			<faces:label id="labelStore" text="Shop+" styleName="Faces-label swapView-topPanel-title"/>
-			<faces:image id="image" url="${showcaseSamplesResources.shopping}" styleName="faces-Image swapView-topPanel-logo"/>
-			<faces:label id="labelLogin" text="Hello, user!" styleName="Faces-label swapView-topPanel-login"/>
-		</gwt:HTMLPanel>
-		<gwt:HTMLPanel id="contentPanel">
-			<faces:image id="addedProduct" url="${showcaseSamplesResources.addedProduct}" styleName="swapView-image"/>
-		</gwt:HTMLPanel>
-	</center>	
+		<widgets:styledPanel id="parentPanel">
+			<gwt:HTMLPanel id="panel">
+				<gwt:label id="labelViewTitle" text="${messages_view2.title}" />
+				<br />
+				<gwt:label id="labelViewText" text="${messages_view2.labelTextView}"/>
+			</gwt:HTMLPanel>
+		</widgets:styledPanel>
+	</center>
 </v:view>

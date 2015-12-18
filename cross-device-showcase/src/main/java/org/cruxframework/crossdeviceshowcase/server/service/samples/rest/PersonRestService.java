@@ -16,85 +16,57 @@ import org.cruxframework.crux.core.shared.rest.annotation.PathParam;
 @Path("/person")
 public class PersonRestService
 {
-	private static final int MAX_PERSON_TO_SAVE = 100;
+	private static final int MAX_VALUE_ID = 1000;
+	private static ArrayList<PersonDTO> people = new ArrayList<PersonDTO>();
 	private static Random random = new Random();
-	private static ArrayList<PersonDTO> persons = new ArrayList<PersonDTO>();
 	
 	static
 	{
 		mockMapFill();
 	}
 	
+	private static int getRandomId()
+	{
+		return Math.abs(random.nextInt(MAX_VALUE_ID));
+	}
+	
 	private static void mockMapFill()
 	{
-		persons = new ArrayList<PersonDTO>();
-		persons.add(new PersonDTO(random.nextInt(), "John", "Nash"));
-		persons.add(new PersonDTO(random.nextInt(), "Paul", "McCartney"));
-		persons.add(new PersonDTO(random.nextInt(), "Ravi", "Shankar"));
+		people = new ArrayList<PersonDTO>();
+		people.add(new PersonDTO(getRandomId(), "John", "Nash"));
+		people.add(new PersonDTO(getRandomId(), "Paul", "McCartney"));
+		people.add(new PersonDTO(getRandomId(), "Ravi", "Shankar"));
 	}
 	
 	@DELETE
 	@Path("{id}")
 	public void remove(@PathParam("id") Integer id)
 	{
-		if(persons != null)
-		{
-			PersonDTO personToRemove = null;
-			for(PersonDTO person : persons)
-			{
-				if(person.getId() != null && person.getId().equals(id))
-				{
-					personToRemove = person;
-				}
-			}
-			
-			if(personToRemove != null)
-			{
-				persons.remove(personToRemove);
-			}
-		}
+		//code your remove person method
 	}
 	
 	@POST
 	@Path("add")
 	public Integer save(PersonDTO person)
 	{
-		int id = random.nextInt();
-		person.setId(id);
-		addPerson(person);
-		return id;
+		//code your save person method
+		return getRandomId();
 	}
 	
 	@PUT
 	@Path("update/{id}")
 	public void update(@PathParam("id") Integer id, PersonDTO personToSave)
 	{
-		if(persons != null)
-		{
-			PersonDTO personToRemove = null;
-			for(PersonDTO person : persons)
-			{
-				if(person.getId() != null && person.getId().equals(id))
-				{
-					personToRemove = person;
-				}
-			}
-			
-			if(personToRemove != null)
-			{
-				persons.remove(personToRemove);
-				addPerson(personToSave);
-			}
-		}
+		//code your update person method
 	}
 	
 	@GET
 	@Path("{id}")
 	public PersonDTO get(@PathParam("id") Integer id)
 	{
-		if(persons != null)
+		if(people != null)
 		{
-			for(PersonDTO person : persons)
+			for(PersonDTO person : people)
 			{
 				if(person.getId() != null && person.getId().equals(id))
 				{
@@ -109,15 +81,6 @@ public class PersonRestService
 	@Path("all")
 	public ArrayList<PersonDTO> search()
 	{
-		return persons;
-	}
-	
-	private static void addPerson(PersonDTO person)
-	{
-		if(persons == null || persons.size() > MAX_PERSON_TO_SAVE)
-		{
-			persons = new ArrayList<PersonDTO>();			
-		}
-		persons.add(person);
+		return people;
 	}
 }

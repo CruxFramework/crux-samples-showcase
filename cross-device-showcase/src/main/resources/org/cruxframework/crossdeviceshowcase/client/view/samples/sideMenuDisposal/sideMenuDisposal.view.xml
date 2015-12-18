@@ -25,7 +25,7 @@
 					</gwt:listBox>
 				</gwt:flowPanel>
 				
-				<gwt:flowPanel id="sideMenuDisposalPanel" visible="true" styleName="faces-SideMenuDisposal simulate-screen">
+				<gwt:flowPanel id="sideMenuDisposalPanel" visible="true" styleName="simulate-screen">
 					<faces:sideMenuDisposal id="sideMenuDisposal">
 						<faces:view name="animals" id="animals-side"/>
 						<faces:largeHeader>

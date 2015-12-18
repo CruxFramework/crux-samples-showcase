@@ -1,5 +1,10 @@
 @external *;
 
+.baseWrapper.sideMenuDisposal .simulate-screen
+{
+	height: 670px;
+}
+
 .disposal-views-title
 {
 	font-size:20px;

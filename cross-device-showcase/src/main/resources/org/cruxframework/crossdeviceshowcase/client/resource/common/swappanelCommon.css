@@ -1,1 +1,8 @@
 @external *;
+
+.baseWrapper.swapPanel .faces-SwapPanel
+{
+    height: 200px !important;
+    width: 80% !important;
+	text-align:center;
+}

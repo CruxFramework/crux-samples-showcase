@@ -1,14 +1,24 @@
 @external * ;
 
+.pagers
+{
+	text-align: center;
+}
+
 .dataProviderWrapper, .lazyDataProviderWrapper {
 	display: inline-block;
 }
 
 .commonPagerWrapper, .swapPagerWrapper, .scrollablePagerWrapper {
-	float: left;
-	margin: 10px;
-	width: 30%;
+	margin: 10px auto;
+	width: 75%;
 	min-width: 250px;
+}
+
+.swapPagerWrapper .backPanel .faces-Button,
+.swapPagerWrapper .nextPanel .faces-Button
+{
+	transform: inherit;
 }
 
 .dataProviderWrapper, .lazyDataProviderWrapper {

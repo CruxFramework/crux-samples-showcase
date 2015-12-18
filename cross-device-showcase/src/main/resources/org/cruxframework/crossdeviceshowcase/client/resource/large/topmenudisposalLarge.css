@@ -1,6 +1,12 @@
 @external *;
 
-.explanationMobile{
+.baseWrapper.topMenuDisposal .simulate-screen
+{
+	height: 709px;
+}
+
+.explanationMobile
+{
 	display:none;
 }
 

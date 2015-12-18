@@ -6,7 +6,6 @@ import org.cruxframework.crux.core.client.ioc.Inject;
 import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.input.NumberBox;
-import org.cruxframework.crux.widgets.client.storyboard.Storyboard;
 
 import com.google.gwt.user.client.ui.RadioButton;
 
@@ -53,7 +52,6 @@ public class NumberTextBoxController
 	@BindView("numberTextBox")
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{
-		Storyboard radios();
 		NumberBox boxNumber();
 		
 		RadioButton radioButton09();
