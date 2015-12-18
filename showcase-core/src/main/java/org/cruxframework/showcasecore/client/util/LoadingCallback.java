@@ -1,7 +1,8 @@
 package org.cruxframework.showcasecore.client.util;
 
-import org.cruxframework.crux.core.client.Crux;
 import org.cruxframework.crux.core.client.rest.Callback;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
+import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
 import org.cruxframework.crux.smartfaces.client.dialog.WaitBox;
 import org.cruxframework.crux.smartfaces.client.dialog.animation.DialogAnimation;
 import org.cruxframework.showcasecore.client.resource.ShowcaseCoreMessages;
@@ -113,7 +114,7 @@ public abstract class LoadingCallback<T> implements Callback<T>
 	{
 		try
 		{
-			Crux.getErrorHandler().handleError(e.getLocalizedMessage(), e);	
+			MessageBox.show(e.getMessage(), MessageType.ERROR);
 		} 
 		finally
 		{
