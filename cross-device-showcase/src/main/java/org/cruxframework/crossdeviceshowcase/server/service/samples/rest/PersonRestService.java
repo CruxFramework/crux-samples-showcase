@@ -16,6 +16,7 @@ import org.cruxframework.crux.core.shared.rest.annotation.PathParam;
 @Path("/person")
 public class PersonRestService
 {
+	private static final int MAX_VALUE_ID = 1000;
 	private static ArrayList<PersonDTO> people = new ArrayList<PersonDTO>();
 	private static Random random = new Random();
 	
@@ -24,12 +25,17 @@ public class PersonRestService
 		mockMapFill();
 	}
 	
+	private static int getRandomId()
+	{
+		return Math.abs(random.nextInt(MAX_VALUE_ID));
+	}
+	
 	private static void mockMapFill()
 	{
 		people = new ArrayList<PersonDTO>();
-		people.add(new PersonDTO(random.nextInt(), "John", "Nash"));
-		people.add(new PersonDTO(random.nextInt(), "Paul", "McCartney"));
-		people.add(new PersonDTO(random.nextInt(), "Ravi", "Shankar"));
+		people.add(new PersonDTO(getRandomId(), "John", "Nash"));
+		people.add(new PersonDTO(getRandomId(), "Paul", "McCartney"));
+		people.add(new PersonDTO(getRandomId(), "Ravi", "Shankar"));
 	}
 	
 	@DELETE
@@ -44,7 +50,7 @@ public class PersonRestService
 	public Integer save(PersonDTO person)
 	{
 		//code your save person method
-		return random.nextInt();
+		return getRandomId();
 	}
 	
 	@PUT
