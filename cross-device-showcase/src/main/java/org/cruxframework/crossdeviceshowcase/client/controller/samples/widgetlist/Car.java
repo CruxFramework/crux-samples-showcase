@@ -5,8 +5,7 @@ import org.cruxframework.crux.core.client.dto.DataObject;
 @DataObject("carWidgetList")
 public class Car 
 {
-	private static int idCounter = 0;
-	private int id;
+	private Integer id;
 	private String brand;
 	private String source;
 	private int year;
@@ -15,9 +14,9 @@ public class Car
 	{
 	}
 	
-	public Car(String brand, String source, int year)
+	public Car(Integer id, String brand, String source, int year)
 	{
-		this.id = idCounter++;
+		this.id = id;
 		this.source = source;
 		this.brand = brand;
 		this.year = year;
@@ -53,12 +52,12 @@ public class Car
 		this.year = year;
 	}
 
-	public int getId()
+	public Integer getId()
 	{
 		return id;
 	}
 
-	public void setId(int id)
+	public void setId(Integer id)
 	{
 		this.id = id;
 	}

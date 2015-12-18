@@ -20,18 +20,11 @@
 				</widgets:anchor>
 
 				<div id="wrapper1" class="anchorWrapper">
-					<faces:label id="labelDeclarative" text="Link implemented declaratively."/>
+					<faces:label id="labelDeclarative" text="Link"/>
 					<br />
 					<widgets:anchor id="anchor" href="http://www.cruxframework.org" target="_self">
 						<button>Crux Framework</button>
 					</widgets:anchor>
-				</div>
-
-				<div id="wrapper2" class="anchorWrapper">
-					<faces:label id="labelProgramatic" text="Link implemented by a controller."/>
-					<br />
-					<gwt:textBox id="textBoxUrl" text="http://www.cruxframework.org" readOnly="true"/>
-					<faces:button id="buttonLink" text="Open page" onSelect="anchorController.openUrl"/>
 				</div>
 
 				<a id="end" style="color:#1c5994"></a>

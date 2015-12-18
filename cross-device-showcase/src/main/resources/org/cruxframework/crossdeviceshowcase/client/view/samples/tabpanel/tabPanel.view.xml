@@ -8,12 +8,13 @@
 	xmlns:showcase="http://www.cruxframework.org/templates/showcase"
 	useResource="showcaseSamplesResources"
 	useController="tabPanelController"
+	onLoad="tabPanelController.onLoad"
 	title="${messages_tabPanel.title}"> 
 
 	<center>
 		<div id="panel" class="baseWrapper tabPanel">
 			<faces:tabPanel id="tabPanel">
-				<faces:tab tabEnabled="true" selected="true">
+				<faces:tab tabEnabled="true">
 					<faces:tabWidget>
 						<gwt:label id="label1" text="1" />
 					</faces:tabWidget>

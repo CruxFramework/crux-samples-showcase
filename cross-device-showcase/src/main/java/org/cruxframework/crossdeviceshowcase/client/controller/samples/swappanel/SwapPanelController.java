@@ -16,7 +16,7 @@ import org.cruxframework.crux.smartfaces.client.swappanel.SwapAnimation;
 import org.cruxframework.crux.smartfaces.client.swappanel.SwapPanel;
 import org.cruxframework.crux.widgets.client.deviceadaptivegrid.DeviceAdaptiveGrid;
 import org.cruxframework.crux.widgets.client.formdisplay.FormDisplay;
-import org.cruxframework.crux.widgets.client.image.Image;
+import org.cruxframework.crux.widgets.client.styledpanel.StyledPanel;
 
 import com.google.gwt.user.client.ui.ListBox;
 
@@ -49,7 +49,8 @@ public class SwapPanelController
 	{
 		switch (status) {
 		case 0:
-			myWidgetAccessor.swapPanel().transitTo(new Image(showcaseResourcesCommon.crux()), chooseAnimation());
+			myWidgetAccessor.messagePanel().setVisible(true);
+			myWidgetAccessor.swapPanel().transitTo(myWidgetAccessor.messagePanel(), chooseAnimation());
 			status = 1;
 			break;
 		case 1:
@@ -139,6 +140,7 @@ public class SwapPanelController
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{			
 		DeviceAdaptiveGrid grid();
+		StyledPanel messagePanel();
 		FormDisplay form();
 		ListBox listAnimation();
 		SwapPanel swapPanel();

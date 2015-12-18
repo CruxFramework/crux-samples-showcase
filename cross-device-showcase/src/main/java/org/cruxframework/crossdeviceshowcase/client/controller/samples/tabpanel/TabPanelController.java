@@ -7,7 +7,7 @@ import org.cruxframework.crux.core.client.screen.views.BindView;
 import org.cruxframework.crux.core.client.screen.views.WidgetAccessor;
 import org.cruxframework.crux.smartfaces.client.dialog.MessageBox;
 import org.cruxframework.crux.smartfaces.client.dialog.MessageBox.MessageType;
-import org.cruxframework.crux.widgets.client.rollingtabs.RollingTabPanel;
+import org.cruxframework.crux.smartfaces.client.tab.TabPanel;
 
 @Controller("tabPanelController")
 public class TabPanelController 
@@ -18,6 +18,12 @@ public class TabPanelController
 	@Inject
 	private TabPanelMessages messages;
 
+	@Expose
+	public void onLoad()
+	{
+		myWidgetAccessor.tabPanel().selectTab(0);
+	}
+	
 	@Expose
 	public void onClickButton()
 	{
@@ -39,7 +45,7 @@ public class TabPanelController
 	@BindView("tabPanel")
 	public interface MyWidgetAccessor extends WidgetAccessor
 	{
-		RollingTabPanel rollingTabPanel();
+		TabPanel tabPanel();
 	}
 
 	public void setMyWidgetAccessor(MyWidgetAccessor myWidgetAccessor) 

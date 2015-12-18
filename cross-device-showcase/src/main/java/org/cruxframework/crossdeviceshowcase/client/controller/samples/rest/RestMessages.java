@@ -39,4 +39,7 @@ public interface RestMessages extends Messages
 
 	@DefaultMessage("Por favor, selecione uma pessoa para continuar.")
 	String selectPerson();
+
+	@DefaultMessage("Este é um exemplo. Não existem dados reais salvos no servidor.")
+	String thisIsASample();
 }

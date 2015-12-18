@@ -15,7 +15,7 @@
 	<center>
 		<div id="panel" class="baseWrapper swapPanel">
 				<faces:swapPanel id="swapPanel" styleName="faces-SwapPanel" animation="bounce" onSwap="swapPanelController.showMessage">
-					<widgets:formDisplay id="form" visible="true" height="300px" width="300px">
+					<widgets:formDisplay id="form" visible="true">
 						<widgets:entry label="Name: ">
 							<gwt:textBox id="txtName"/>
 						</widgets:entry>
@@ -43,6 +43,15 @@
 						<widgets:dataColumn key="name" label="Name" width="80px"/>
 					</widgets:smallColumns>
 				</widgets:adaptiveGrid>
+				
+				<!-- 	HTMLPanel widget to swap in panel 	-->	
+				<widgets:styledPanel id="messagePanel" visible="false">
+					<gwt:HTMLPanel id="panel">
+						<gwt:label id="labelViewTitle" text="This is a sample Title" />
+						<br />
+						<gwt:label id="labelViewText" text="This is a sample Text"/>
+					</gwt:HTMLPanel>
+				</widgets:styledPanel>
 				
 				<!--	 Button to call widget transition method and ListBox to choice animation	-->
 				<gwt:flowPanel id="actionPanel">

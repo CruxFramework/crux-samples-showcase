@@ -7,9 +7,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<cruxVersion>5.4-SNAPSHOT</cruxVersion>
-		<smartfacesVersion>1.3-SNAPSHOT</smartfacesVersion>
-		<widgetsVersion>5.4-SNAPSHOT</widgetsVersion>
+		<cruxVersion>5.4.0</cruxVersion>
+		<smartfacesVersion>1.3.0</smartfacesVersion>
+		<widgetsVersion>5.4.0</widgetsVersion>
 		<java.source.version>1.7</java.source.version>
 		<java.target.version>1.7</java.target.version>
 	</properties>

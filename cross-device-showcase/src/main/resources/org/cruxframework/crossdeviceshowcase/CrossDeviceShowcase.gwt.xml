@@ -4,26 +4,27 @@
 	<inherits name='org.cruxframework.showcasecore.ShowcaseCore' />
 	
 		<!-- ******* Locale ******* -->
-    <!-- <inherits name="com.google.gwt.i18n.CldrLocales"/> -->
-    <!-- <inherits name="com.google.gwt.i18n.I18N"/> -->
-	<!-- <extend-property name="locale" values="pt_BR"/> -->
-	<!-- <extend-property name="locale" values="en_US"/> -->
-	<!-- <set-property-fallback name="locale" value="en_US"/>  -->
-
+	<inherits name="com.google.gwt.i18n.CldrLocales"/> 
+    <inherits name="com.google.gwt.i18n.I18N"/>
+    <extend-property name="locale" values="pt_BR"/>
+	<extend-property name="locale" values="en_US"/>
+    <set-property-fallback name="locale" value="en_US"/>
+    
 	<!-- ******* Compilations options ******* -->
 	
 	<!-- Define your browser -->
-    <!-- <set-property name="user.agent" value="safari" /> -->
-	<!-- <set-property name="user.agent" value="gecko1_8" /> -->
-	<!-- <set-property name="user.agent" value="opera" /> -->
-    <!-- <set-property name="user.agent" value="ie9"/> -->
-    <!-- <set-property name="user.agent" value="ie10"/> -->
+    <set-property name="user.agent" value="safari, ie9, ie10, gecko1_8" />
+<!--     <set-property name="user.agent" value="safari" /> -->
+<!-- 	<set-property name="user.agent" value="gecko1_8" /> -->
+<!--     <set-property name="user.agent" value="ie9"/> -->
+<!--     <set-property name="user.agent" value="ie10"/> -->
   
     <!-- Define your device type -->
-    <!-- <set-property name="device.features" value="largeDisplayMouse"/> -->
+    <set-property name="device.features" value="largeDisplayMouse, largeDisplayTouch, smallDisplayTouch"/>
+<!--     <set-property name="device.features" value="largeDisplayMouse"/> -->
     <!-- <set-property name="device.features" value="largeDisplayTouch"/> -->
 	<!-- <set-property name="device.features" value="largeDisplayArrows"/> -->
-	<!-- <set-property name="device.features" value="smallDisplayTouch"/> -->
+<!-- 	<set-property name="device.features" value="smallDisplayTouch"/> -->
     <!-- <set-property name="device.features" value="smallDisplayArrows"/> -->
 	
 	<!-- ******* Application paths ******* -->

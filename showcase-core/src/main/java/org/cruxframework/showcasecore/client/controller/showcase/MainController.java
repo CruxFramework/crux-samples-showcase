@@ -25,7 +25,6 @@ import org.cruxframework.showcasecore.client.proxy.SourceCodeRestProxy;
 import org.cruxframework.showcasecore.client.resource.ShowcaseCoreMessages;
 import org.cruxframework.showcasecore.client.resource.common.ShowcaseResourcesCommon;
 import org.cruxframework.showcasecore.client.util.LoadingCallback;
-import org.cruxframework.showcasecore.client.util.VisualBoxLogHandler;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
@@ -51,9 +50,8 @@ public class MainController
 
 	private Logger logger = Logger.getLogger("");
 
-	@Inject
 	private LanguageManager languageManager;
-
+	
 	@Expose
 	public void replaceText(AttachEvent event)
 	{
@@ -74,8 +72,11 @@ public class MainController
 	public static interface MyWidgetAccessor extends WidgetAccessor
 	{
 		MenuTabsDisposal menuDisposal();
+		Filter filter();
+		Widget langToggler();
+		Widget langEn();
+		Widget langPt();
 	}
-	
 	
 	@Expose
 	public void switchLocaleUrl()
@@ -98,16 +99,17 @@ public class MainController
 	}
 
 	@Expose
-	public void wellcome()
+	public void onLoad()
 	{
+		languageManager = new LanguageManager(widgets.langToggler(), widgets.langEn(), widgets.langPt());
+		
 		//add the event log window
-		if(Screen.getCurrentDevice().getSize().equals(Size.large))
-		{
-			logger.addHandler(new VisualBoxLogHandler(messages.enableLog(), messages.disableLog()));
-		}
+		//if(Screen.getCurrentDevice().getSize().equals(Size.large))
+		//{
+		//	logger.addHandler(new VisualBoxLogHandler(messages.enableLog(), messages.disableLog()));
+		//}
 
 		String hash = Window.Location.getHash();
-		MenuTabsDisposal menuDisposal = (MenuTabsDisposal) Screen.get("menuDisposal");
 		
 		if(!StringUtils.isEmpty(hash))
 		{
@@ -115,16 +117,16 @@ public class MainController
 			
 			if(!"wellcome".equals(viewName))
 			{
-				menuDisposal.showView(viewName, Direction.FORWARD);
+				widgets.menuDisposal().showView(viewName, Direction.FORWARD);
 			}
 			else
 			{
-				menuDisposal.showView("wellcome", Direction.FORWARD);
+				widgets.menuDisposal().showView("wellcome", Direction.FORWARD);
 			}
 		}
 		else
 		{
-			menuDisposal.showView("wellcome", Direction.FORWARD);			
+			widgets.menuDisposal().showView("wellcome", Direction.FORWARD);			
 		}
 
 		//Call method to verify browser language
@@ -133,14 +135,14 @@ public class MainController
 		if(Screen.getCurrentDevice().getSize().equals(Size.large))
 		{
 			//Setup the top filters
-			setupFilters(menuDisposal);
+			setupFilters();
 		}
 	}
 
-	private void setupFilters(final MenuTabsDisposal menuDisposal)
+	private void setupFilters()
 	{
-		final Filter filter = (Filter) Screen.get("filter");
-
+		final Filter filter = widgets.filter();
+		
 		filter.setFilterable(new Filterable<String>()
 		{
 			@Override
@@ -212,7 +214,7 @@ public class MainController
 			@Override
 			public void onSelectItem(String selectedItem)
 			{
-				menuDisposal.showView(selectedItem, null);
+				widgets.menuDisposal().showView(selectedItem, null);
 				filter.setText("");
 			}
 
@@ -222,8 +224,7 @@ public class MainController
 	@Expose
 	public void showMenu()
 	{
-		MenuTabsDisposal menuDisposal = (MenuTabsDisposal) Screen.get("menuDisposal");
-		menuDisposal.showMenu();
+		widgets.menuDisposal().showMenu();
 	}
 
 	@Expose
@@ -241,8 +242,7 @@ public class MainController
 	@Expose
 	public void viewSourceCode()
 	{
-		MenuTabsDisposal menuDisposal = (MenuTabsDisposal) Screen.get("menuDisposal");
-		String viewId = menuDisposal.getCurrentView();
+		String viewId = widgets.menuDisposal().getCurrentView();
 
 		service.listSourceFilesForView(viewId, new LoadingCallback<ArrayList<String>>()
 		{
@@ -348,10 +348,5 @@ public class MainController
 	public void setMessages(ShowcaseCoreMessages messages)
 	{
 		this.messages = messages;
-	}
-
-	public void setLanguageManager(LanguageManager languageManager)
-	{
-		this.languageManager = languageManager;
 	}
 }
